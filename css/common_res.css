@@ -246,8 +246,11 @@
         transition: 0.2s;
     }
     .depth2 li a {}
+    .depth2 li:hover > a {
+        color: var(--primary-font-color);
+    }
 
-    /* cv-gnb 동작 */
+    /* kcar-gnb 동작 */
     .depth1.active .depth2 {
         transform: translateY(0);
     }
