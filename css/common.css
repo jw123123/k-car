@@ -1,0 +1,623 @@
+@charset 'UTF-8';
+/* 웹폰트 CDN(Content Delivery Network) 연결 */
+@import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('var.css');
+
+
+/* 기본 디자인, 모바일 위주 */
+/* 1. 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+html {
+    /* 스크롤 시 부드럽게 움직임 */
+    /* scroll-behavior: smooth;  */
+}
+body {
+    font-size: 15px;
+    font-family: 'Asta Sans', 'Pretendard Variable', sans-serif;
+    line-height: 1.6;
+    color: #111;
+    background-color: #fff;
+}
+body.hidden {
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6 {}
+h1 {}
+h2 {
+    color: var(--main-color);
+}
+h3 {}
+h4 {}
+a {
+    color: #111;
+    text-decoration: none;
+}
+input, button, select, textarea {
+    vertical-align: middle;
+    color: #111;
+    font-size: 1em;
+    font-family: 'Asta Sans', 'Pretendard', 'Malgun Gothic', sans-serif;
+    line-height: 1.6;
+}
+button {
+    border: 0;
+    background-color: transparent;
+}
+ol, ul {
+    list-style-type: none;
+}
+p {
+    margin: 1em 0;
+}
+img {
+    vertical-align: top;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+button, label {
+    cursor: pointer;
+}
+
+/* 2. 공용클래스(공통디자인) */
+.wrap {
+    width: 100%;
+    max-width: 1740px;
+    padding: 0 15px;
+    margin: auto;
+}
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.blind, .sound-only {
+    position: absolute;
+    left: -9999em;
+}
+.m0 {
+    margin: 0 !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.bd0 {
+    border-width: 0 !important;
+}
+
+/* 3. 글자와 여백 */
+.wh, .wh a {color: #fff !important;}
+.bk, .bk a {color: #000 !important;}
+.ft-gy, .ft-gy a {color: var(--gray-font);}
+.mdk-gy {color: var(--medium-dark-gray);}
+.bl, .bl a {color: var(--main-color) !important;}
+.fz30 {font-size: 3.0em;}
+.fz25 {font-size: 2.5em;}
+.fz20 {font-size: 2.0em;}
+.fz18 {font-size: 1.8em;}
+.fz16 {font-size: 1.6em;}
+.fz15 {font-size: 1.5em;}
+.fz12 {font-size: 1.2em;}
+.fz09 {font-size: 0.9em;}
+.fz08 {font-size: 0.8em;}
+.fz07 {font-size: 0.7em;}
+
+.pd-l {padding: 60px 0;}
+.pd-m {padding: 40px 0;}
+.pd-s {padding: 20px 0;}
+
+/* 동그라미 화살표 a */
+.more-view {
+    position: relative;
+    display: block;
+    width: 56px;
+    height: 56px;
+    padding-left: 24px;
+    color: #000;
+    z-index: 1;
+    transition: 0.5s;
+}
+.more-view:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    content: '';
+    z-index: -1;
+}
+.more-view div {
+    line-height: 56px;
+    font-style: oblique;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+.more-view div:before {
+    position: absolute;
+    right: calc(50% - 5px);
+    top: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-width: 2px 2px 0 0;
+    transform: rotate(45deg);
+    content: '';
+}
+.more-view div:after {
+    position: absolute;
+    right: calc(50% - 5px);
+    top: calc(50% - 1px);
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    content: '';
+}
+.more-view span {
+    opacity: 0;
+    white-space: nowrap;
+    transform: translateX(-2em);
+    transition: 0.3s;
+}
+
+.more-view:hover {
+    width: 128px;
+}
+.more-view:hover div:before, .more-view:hover div:after {
+    right: 3px;
+}
+.more-view:hover div:before {
+    border-color: #000;
+}
+.more-view:hover div:after {
+    background-color: #000;
+}
+.more-view:hover span {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.5s 0.3s;
+}
+.center.more-view {
+    margin: auto;
+}
+.dark.more-view {
+    color: #fff;
+}
+.dark.more-view:hover div:before {
+    border-color: #fff;
+}
+.dark.more-view:hover div:after {
+    background-color: #fff;
+}
+
+
+/* 4. 영역별 설계  */
+/* 4.1 바로가기(skip) */
+#kcar-skip {
+    text-align: center;
+}
+#kcar-skip a {
+    position: fixed;
+    left: 0;
+    top : -48px;
+    width: 100%;
+    line-height: 48px;
+    background-color: var(--main-color);
+    color: #fff;
+    opacity: 1;
+    transition: 0.2s;
+}
+#kcar-skip a:focus {
+    top: 0;
+    opacity: 0;
+    z-index: 9999;
+}
+
+/* 4.2 상단(header) */
+#kcar-hd {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #000;
+}
+#kcar-hd.fixed {
+    position: fixed;
+}
+.hd-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.kcar-logo {
+    position: relative;
+    width: 109px;
+    z-index: 100;
+}
+.kcar-logo a {
+    display: block;
+    /* height: 34.65%; 부모 높이에 비례 0*/
+    padding-top: 34.65%; /*부모 너비에 비례*/
+    background: url('../images/svg/logo.svg') center center / contain no-repeat;
+}
+.kcar-logo.wh-logo a {
+    background-image: url('../images/svg/logo.svg');
+}
+#kcar-gnb { /* PC에서 사용하는 gnb*/
+    display: none;
+}
+.kcar-util-wrap {}
+.lang-wrap {
+    position: relative;
+    float: left;
+    width: 72px;
+    margin-right: 10px;
+}
+.lang-btn {
+    display: block;
+    padding-left: 32px;
+    height: 24px;
+    line-height: 24px;
+    /* background-image: url('../images/svg/i_language.svg'), url('../images/svg/i_more.svg');
+    background-position: left center, right center;
+    background-size: contain, auto 10px;
+    background-repeat: no-repeat; */
+    background: url('../images/svg/i_language_wh.svg') left center / contain no-repeat;
+}
+.lang-btn:after { /* 화살표 */
+    float: right;
+    display: block;
+    width: 16px;
+    height: 100%;
+    background: url('../images/svg/i_more_wh.svg') center center / contain no-repeat;
+    content: '';
+    transition: 0.3s;
+}
+.lang-list {
+    position: absolute;
+    left: 4px;
+    top: 32px;
+    width: 64px;
+    height: 0;
+    padding: 0;
+    background-color: var(--main-color);
+    text-align: center;
+    line-height: 24px;
+    overflow: hidden;
+    opacity: 0; 
+    transition: 0.6s;
+}
+.lang-list a {
+    display: block;
+    opacity: 0.3;
+    transition: 0.3s;
+}
+.lang-list a:hover {
+    opacity: 1;
+}
+.sitemap-open-btn {
+    float: left;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('../images/svg/i_apps.svg') center center / contain no-repeat;
+}
+
+/* 다크모드일 때 헤더 */
+.wh .kcar-logo a {
+    /* background-image: url('../images/svg/logo_wh.svg'); */
+    background-image: url('../images/svg/logo.svg');
+
+}
+.wh .lang-btn {
+    background-image: url('../images/svg/i_language_wh.svg');
+}
+.wh .lang-btn:after {
+    background-image: url('../images/svg/i_more_wh.svg');
+}
+.wh .sitemap-open-btn {
+    background-image: url('../images/svg/i_apps_wh.svg');
+}
+
+/* 언어영역 동작 */
+.lang-wrap.active .lang-btn:after {
+    transform: scaleY(-1);
+}
+.lang-wrap.active .lang-list {
+    height: 68px;
+    padding: 10px 0;
+    opacity: 1;
+}
+
+
+
+
+.kcar-mo-gnb-sec {
+    position: fixed;
+    right: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: var(--main-color);
+    overflow: auto;
+    z-index: 99;
+}
+
+.sitemap-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 28px;
+    width: 24px;
+    height: 24px;
+    background: url('../images/svg/i_close.svg') center center / 116% no-repeat;
+}
+.mo-gnb-container {
+    padding: 0 20px;
+}
+.mo-gnb-wrap {}
+.mo-gnb {}
+.mo-gnb a {
+    display: block;
+}
+.mo-depth1 {
+    margin-bottom: 1.2em;
+}
+.mo-depth1 > a {
+    padding: 0 1em;
+    font-size: 1.25em;
+    font-weight: 700;
+    line-height: 2.8;
+}
+
+.mo-depth2 {
+    padding: 0 1.2em;
+    line-height: 2.2;
+}
+.mo-depth2 li {}
+.mo-depth2 li a {}
+
+.mo-lang-container {
+    position: absolute;
+    right: 48px;
+    top: 20px;
+    display: table;
+    border-spacing: 10px;
+    font-weight: 600;
+}
+.mo-lang-container a {
+    display: table-cell;
+    width: 80px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+.mo-lang-container a:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: var(--main-color) !important;
+}
+
+
+
+
+
+
+/* 모바일 gnb (pc 사이트맵) 동작 */
+.kcar-mo-gnb-sec {
+}
+
+/* 4.3 하단(footer) */
+#kcar-ft {
+    padding: 60px 0;
+    background-color: var(--dark-gray);
+    font-size: 0.9em;
+}
+.kcar-ft-container {
+    position: relative;
+    color: var(--medium-gray);
+}
+.kcar-ft-container a {
+    color: var(--medium-gray);
+}
+
+.ft-info-wrap {
+    padding: 72px 0 48px;
+    background: url('../images/svg/logo_wh.svg') 0 0 / 109px no-repeat ;
+    background-image: url('../images/svg/imgi_1_logosKcar.svg');
+}
+.ft-info {/*왼쪽*/}
+.ft-info-dl {
+    line-height: 2;
+}
+.ft-info-dl dt, .ft-info-dl dd {
+    float: left;
+}
+.ft-info-dl dt {
+    clear: both;
+    width: 80px;
+}
+.ft-info-dl dd {}
+.ft-info-dl dd:first-of-type {
+    margin-bottom: 1em;
+}
+.ft-info-dl .wh {
+    font-weight: 700;
+}
+.ft-info-link {
+    display: flex;
+    justify-content: space-between;
+    max-width: 480px;
+    margin-top: 3em;
+}
+.ft-info-link a {
+    width: 48%;
+    text-align: center;
+    line-height: 60px;
+    background-color: #333;
+}
+.ft-sitemap {/*오른쪽*/
+    display: none;
+}
+.ft-sitemap ol {}
+.ft-depth1 {}
+.ft-depth1 > a {}
+.ft-depth2 {}
+.ft-depth2 li {}
+.ft-depth2 li a {}
+
+.ft-place-wrap {
+    position: relative;
+    max-width: 860px;
+}
+.ft-place-btn {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    padding-right: 3.5em;
+    border: 1px solid var(--medium-gray);
+    border-radius: 0;
+    background: url('../images/svg/i_more_wh.svg') right 16px center / auto 20px no-repeat;
+    color: var(--medium-gray);
+    text-align: left;
+}
+.ft-place-list {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 100%; 
+    height: 0;
+    padding: 0 1em;
+    background-color: var(--main-color);
+    color: var(--pale-gray);
+    line-height: 1.4;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.ft-place-list li {
+    margin: .8em 0;
+}
+/* 사업장 동작 */
+.ft-place-wrap:hover .ft-place-list {
+    height: 320px;
+    padding: 1em;
+}
+
+.ft-copy {
+    margin-top: 40px;
+}
+.gototop {
+    position: absolute;
+    right: 15px;
+    top: -3px;
+    width: 44px;
+    height: 44px;
+    background: #333 url('../images/svg/i_more_wh.svg') center center / 28px no-repeat;
+    transform: rotate(180deg);
+    overflow: hidden;
+}
+.mouse-pointer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: #fff;
+    font: oblique 600 0.9em / 100px "Poppins";
+    text-align: center;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+}
+.mouse-pointer.active {
+    opacity: 1;
+}
+.mouse-pointer:before, .mouse-pointer:after {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 20px;
+    margin-top: -10px;
+    background: url('../images/svg/caret-left-solid.svg') center center / contain no-repeat;
+    content: '';
+}
+.mouse-pointer:before {
+    left: -16px;
+}
+.mouse-pointer:after {
+    right: -16px;
+    transform: scaleX(-1);
+}
+
+/* 애니메이션 */
+.ani-top {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 0.5s;
+}
+.ani-top {
+    opacity: 0;
+    transform: translateY(-20%);
+    transition: 0.5s;
+}
+.ani-left {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: 0.5s;
+}
+.ani-right {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: 0.5s;
+}
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: 0.5s;
+}
+.zoom-out {
+    opacity: 1;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+.fade-in {
+    opacity: 0;
+    transition: 0.5s;
+}
+.ani-start { opacity: 1;    transform: none; }
+.txt-ani {animation: txt-ani 0.6s both ;}
+
+.slogan-ani {animation: slogan-ani 0.4s both ;}
+
+@keyframes txt-ani {
+    from {opacity: 0; transform: translateY(100%);}
+    to {opacity: 1; transform: translateY(0);}
+}
+@keyframes slogan-ani {
+    from {opacity: 0; transform:scale(0.2);}
+    90% {opacity: 1; transform:scale(1.05);}
+    to {opacity: 1; transform:scale(1.0);}
+}
+
+.delay02 {transition-delay: 0.2s; animation-delay: 0.2s;}
+.delay04 {transition-delay: 0.4s; animation-delay: 0.4s;}
+.delay06 {transition-delay: 0.6s; animation-delay: 0.6s;}
+.delay08 {transition-delay: 0.8s; animation-delay: 0.8s;}
