@@ -1,0 +1,348 @@
+@charset 'UTF-8';
+@import url('var.css');
+/* 1. mo ~767px까지 */
+@media all and (max-width: 767px) {
+    .mo-lang-container {
+        display: none;
+    }
+    .kcar-mo-gnb-sec {
+        right: -100%;
+        top: 0;
+    }
+    .mo-depth1 > a:after { /* 화살표 */
+        float: right;
+        display: block;
+        width: 20px;
+        height: 2.2em;
+        background: url('../images/svg/i_more.svg') center center / 120% no-repeat;
+        content: '';
+        opacity: 0.7;
+        transition: 0.3s;
+    }
+    .mo-depth2 { /*서브메뉴*/
+        height: 0;
+        background-color: rgba(0,0,0,0.3);
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .mo-depth1.active .mo-depth2 { /*서브메뉴 동작*/
+        height: auto;
+        padding: 1.2em;
+        opacity: 1;
+    }
+    .mo-depth1.active > a:after {
+        transform: scaleY(-1);
+    }
+}
+
+/* 2. tb 768px부터~ */
+@media all and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .pd-l {padding: 100px 0;}
+    .pd-m {padding: 60px 0;}
+    .pd-s {padding: 40px 0;}
+    .kcar-logo {
+        width: 120px;
+        z-index: 98;
+    }
+    .sitemap-close-btn {
+        right: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: #111;
+        background-size: 50%;
+        z-index: 1;
+    }
+    .mo-gnb-container {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: table;
+        width: 100%;
+        height: 100%;
+        /* background-color: #900; */
+    }
+    .mo-gnb-wrap {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .mo-gnb {}
+    .mo-depth1 {
+        position: relative;
+        padding: 10px 0 24px;
+        margin: 0;
+    }
+    .mo-depth1:before, .mo-depth1:after {
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        width: calc(100% - 40px);
+        height: 1px;
+        background-color: #fff;
+        content: '';
+    }
+    .mo-depth1:before {
+        opacity: 0.3;
+    }
+    .mo-depth1:after {
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: 1s;
+    }
+    .mo-depth1:hover:after {
+        transform: scaleX(1);
+    }
+    .mo-depth1 > a {
+        display: inline-block;
+        font-size: 1.4em;
+    }
+    .mo-depth2 {}
+    .mo-depth2:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+    .mo-depth2 li {
+        float: left;
+        padding-right: 2.4em;
+        letter-spacing: -1px;
+    }
+    .mo-depth2 li:last-child {
+        padding-right: 0;
+    }
+    .mo-depth2 li a {
+        max-width: 7em;
+        opacity: 0.3;
+        transition: 0.3s;
+    }
+    .mo-depth2 li a:hover {
+        opacity: 1;
+    }
+    .mo-depth1:nth-child(3) .mo-depth2 {
+        line-height: 1.6;
+    }
+
+
+    .mo-lang-container {
+        right: 120px;
+        top: 24px;
+        z-index: 1;
+    }
+
+    /* 푸터 */
+    #kcar-ft {
+        padding: 80px 0;
+    }
+    .ft-info-wrap {
+        padding: 80px 0 56px;
+        margin-bottom: 56px;
+        background-size: 140px;
+        border-bottom: 1px solid var(--medium-dark-gray);
+    }
+
+    /* 사업장 동작 */
+    .ft-place-wrap:hover .ft-place-list {
+        height: 250px;
+        padding: 1em;
+    }
+
+    .gototop {
+        top: inherit;
+        bottom: 56px;
+        width: 64px;
+        height: 64px;
+        background-size: 36px;
+    }
+}
+
+/* 3. only tb 768px ~ 1279px */
+@media all and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 4. pc 1280px부터~ */
+@media all and (min-width: 1280px) {
+    body {
+        font-size: 17px;
+    }
+    .hd-wrap {
+        height: auto;
+    }
+    .kcar-logo {
+        width: 135px;
+    }
+    #kcar-gnb {
+        display: block;
+        width: 48%;
+        min-width: 720px;
+    }
+    #kcar-gnb.sub-on:before {
+        height: 22rem;
+        background-color: #000;
+        box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0,0,0,0.25);
+    }
+    #kcar-gnb:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6.0rem;
+        width: 100%;
+        height: 0;
+        /* border-radius: 0 0 100% 100%; */
+        transition: 0.3s  ;
+    }
+    .kcar-gnb {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .depth1 {
+        position: relative;
+    }
+    .depth1:hover > a {
+        color: var(--primary-font-color);
+    }
+    .depth1 > a {
+        position: relative;
+        display: block;
+        padding: 0 0.5em;
+        line-height: 100px;
+        font-weight: 600;
+        font-size: 1.05em;
+        z-index: 2;
+    }
+    .depth2 {
+        position: absolute;
+        left: calc(50% - 120px);
+        top: 0;
+        width: 240px;
+        padding: 120px 0 20px;
+        letter-spacing: -1px;
+        text-align: center;
+        line-height: 2;
+        overflow: hidden;
+        z-index: 1;
+        transform: translateY(-100%);
+        transition: 0.6s;
+    }
+    .depth2:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        /* width: 100%;
+        height: 100%; */
+        /* background-color: var(--main-color); */
+        content: '';
+        z-index: -1;
+    }
+    .depth2 li {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: 0.2s;
+    }
+    .depth2 li a {}
+    .depth2 li:hover > a {
+        color: var(--primary-font-color);
+    }
+
+    /* kcar-gnb 동작 */
+    .depth1.active .depth2 {
+        transform: translateY(0);
+    }
+    .depth1.active .depth2 li {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.4s 0.5s;
+    }
+    
+    /* 사이트맵 */
+    
+    .mo-gnb-container {
+        
+    }
+    .mo-gnb-wrap {
+        
+    }
+    .kcar-mo-gnb-sec:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 25%;
+        height: 100%;
+        background: url('../images/allMenuBg.jpg') center center / cover no-repeat;
+        content: '';
+    }
+    .mo-gnb {
+        float: right;
+        width: 75%;
+    }
+    .mo-depth1 {
+        display: table;
+        width: 100%;
+        max-width: 940px;
+        padding: 24px 0;
+        margin: auto;
+    }
+    .mo-depth1 > a {
+        display: table-cell;
+        width: 7em;
+        padding-right: 0;
+    }
+    .mo-depth2 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .mo-depth2 li {}
+    .mo-depth2 li a {}
+
+    /* 4.3 하단(footer) */
+    .ft-info {/*왼쪽*/
+        float: left;
+        width: 50%;
+    }
+    .ft-sitemap {/*오른쪽*/
+        display: block;
+        float: left;
+        width: 50%;
+    }
+    .ft-sitemap ol {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 20px;
+    }
+    .ft-depth1 {
+        max-width: 120px;
+    }
+    .ft-depth1 > a {
+        color: #fff;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    .ft-depth2 {}
+    .ft-depth2 li {
+        margin: 1.5em 0;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .mo-gnb {
+        font-size: 1.2em;
+    }
+    .mo-depth1 {
+        max-width: 1140px;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 1900px) {
+    .kcar-mo-gnb-sec:before {
+        width: 32%;
+    }
+    .mo-gnb {
+        width: 68%;
+    }
+}
