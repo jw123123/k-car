@@ -1,0 +1,207 @@
+@charset 'UTF-8';
+@import url('var.css');
+/* 헤더 고정 */
+#kcar-hd.fixed {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+/* 서브 헤더 */
+.sub-hd {
+    padding-top: 100px;
+}
+.sub-hd-lnb {
+    
+}
+.sub-hd-lnb h2 {
+    font-weight: 600;
+    font-size: 2em;
+    color: #111;
+    animation: move-bottom 1s;
+}
+#kcar-lnb {
+    font-family: var(--sans-pre);
+    animation: move-right 1s 0.5s both;
+}
+.kcar-lnb-btn {}
+.kcar-lnb-list {
+    display: none;
+}
+.kcar-lnb-depth2 {}
+.kcar-lnb-list li {}
+.kcar-lnb-list a {
+    display: block;
+}
+.kcar-lnb-list a:hover {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+/* 비주얼 */
+.sub-hd-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center 0;
+}
+.sub-hd-bg:before {
+    display: block;
+    padding-top: 75%; /* 부모너비 100% 1:1 Ratio */
+    content: '';
+}
+.sub-hd-bg:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    content: '';
+    transform-origin: right center; 
+    animation: sub-visual-ani 1s both;
+}
+.bg0-0 {background-image: url('../images/sub_visual/overviewBg.jpg'); background-position: -20vw 0;}
+.bg0-1 {background-image: url('../images/sub_visual/philosophyBg.jpg');}
+.bg0-5 {background-image: url('../images/sub_visual/placeBg.jpg'); background-position: 0 0;}
+.bg1-0 {background-image: url('../images/sub_visual/pouchBg.jpg');}
+.bg2-0 {background-image: url('../images/sub_visual/ciBg.jpg');}
+.bg3-0 {background-image: url('../images/sub_visual/esgBg.jpg');}
+.bg4-0 {background-image: url('../images/sub_visual/talentBg.jpg');}
+
+/* 메인 영역 */
+#kcar-main, #kcar-main > * {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.sub-sec h2 {
+    font-size: 1.5em;
+    color: var(--dark-gray);
+}
+
+/* 반응형 */
+
+/* 1. mo ~767px까지 */
+@media all and (max-width: 767px) {
+    .sub-hd-lnb h2, #kcar-lnb, .sub-hd-bg:after {
+        animation-duration: 0.5s;
+    }
+    #kcar-lnb {
+        position: relative;
+        width: 200px;
+        animation-delay: 0s;
+        z-index: 1;
+    }
+    .kcar-lnb-btn {
+        display: block;
+        padding-left: 15px;
+        line-height: 48px;
+        font-weight: 700;
+        font-size: 1.1em;
+        background: url('../images/svg/i_more.svg') right center / auto 24px no-repeat;
+    }
+    .kcar-lnb-list {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 48px;
+        width: 100%;
+        padding: 15px;
+        background-color: #fff;
+        line-height: 36px;
+        box-shadow: 0 5px 8px rgba(0,0,0,0.25);
+    }
+    
+}
+
+/* 2. tb 768px부터~ */
+@media all and (min-width: 768px) {
+    .sub-hd-lnb h2 {
+        margin: 1em 0;
+        font-size: 3.2em;
+    }
+    .kcar-lnb-btn {
+        display: none;
+    }
+    .kcar-lnb-list {
+        /* display: flex; */
+        margin: 1.5em 0;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    .kcar-lnb-list li {
+        padding: 0 5px;
+        margin-right: 2em;
+    }
+    .kcar-lnb-list a {
+        color: var(--pale-gray);
+    }
+    .kcar-lnb-list li.active {
+        border-bottom: 3px solid var(--main-color);
+    }
+    .kcar-lnb-list li.active a {
+        color: var(--main-color);
+        font-weight: 600;
+    }
+    /* 비주얼 이미지 */
+    .sub-hd-bg {
+        height: auto;
+        background-position: 0 0;
+    }
+    .sub-hd-bg:before {
+        padding-top: 56.25%; /* 16:9 Ratio */
+    }
+
+    /* 메인 영역 */
+    #kcar-main, #kcar-main > * {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .sub-sec h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* 3. only tb 768px ~ 1279px */
+@media all and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 4. pc 1280px부터~ */
+@media all and (min-width: 1280px) {
+    .sub-hd-bg {
+        margin-top: 44px;
+    }
+    .sub-hd-bg:before {
+        padding-top: 30%; /* 10:3 Ratio */
+    }
+    .sub-hd-lnb h2 {
+        margin: 0.5em 0;
+        font-size: 6em;
+    }
+    /* 메인 영역 */
+    #kcar-main, #kcar-main > * {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .sub-sec h2 {
+        font-size: 2.4em;
+    }
+}
+
+/* 4. pc 1600px부터~ */
+@media screen and (min-width: 1600px) {
+    .sub-hd .wrap, #kcar-main .wrap {
+        max-width: 1580px;
+    } 
+}
+
+
+/* 애니메이션 */
+@keyframes move-right {
+    from {transform: translateX(-100px); opacity: 0;}
+    to {transform: translateX(0px); opacity: 1;}
+}
+@keyframes move-bottom {
+    from {transform: translateY(-50%); opacity: 0;}
+    to {transform: translateY(0px); opacity: 1;}
+}
+@keyframes sub-visual-ani {
+    from {transform: scaleX(1);}
+    to {transform: scaleX(0);}
+}

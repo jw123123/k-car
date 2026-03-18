@@ -97,7 +97,7 @@ button, label {
 
 /* 3. 글자와 여백 */
 .wh, .wh a {color: #fff }
-.bk, .bk a {color: #000 }
+.bk, .bk a {color: #222 }
 .ft-gy, .ft-gy a {color: var(--gray-font);}
 .mdk-gy {color: var(--medium-dark-gray);}
 .bl, .bl a {color: var(--main-color) }
@@ -233,6 +233,9 @@ button, label {
     z-index: 100;
     background-color: #000;
 }
+body.sub #kcar-hd {
+    background-color: transparent;
+}
 #kcar-hd.fixed {
     position: fixed;
 }
@@ -277,6 +280,9 @@ button, label {
     background-repeat: no-repeat; */
     background: url('../images/svg/i_language_wh.svg') left center / contain no-repeat;
 }
+body.sub .lang-btn {
+    background-image: url('../images/svg/i_language.svg');
+}
 .lang-btn:after { /* 화살표 */
     float: right;
     display: block;
@@ -285,6 +291,9 @@ button, label {
     background: url('../images/svg/i_more_wh.svg') center center / contain no-repeat;
     content: '';
     transition: 0.3s;
+}
+body.sub .lang-btn:after {
+    background-image: url('../images/svg/i_more.svg');
 }
 .lang-list {
     position: absolute;
@@ -300,9 +309,12 @@ button, label {
     opacity: 0; 
     transition: 0.6s;
 }
+body.sub .lang-list {
+    background-color: #fff;
+}
 .lang-list a {
     display: block;
-    opacity: 0.3;
+    /* opacity: 0.3; */
     transition: 0.3s;
 }
 .lang-list a:hover {
@@ -314,14 +326,15 @@ button, label {
     display: block;
     width: 24px;
     height: 24px;
-    background: url('../images/svg/i_apps.svg') center center / contain no-repeat;
+    background: url('../images/svg/i_apps_wh.svg') center center / contain no-repeat;
+}
+body.sub .sitemap-open-btn {
+    background-image: url('../images/svg/i_apps.svg');
 }
 
 /* 다크모드일 때 헤더 */
 .wh .kcar-logo a {
-    /* background-image: url('../images/svg/logo_wh.svg'); */
-    background-image: url('../images/svg/logo.svg');
-
+    background-image: url('../images/svg/logo_wh.svg'); 
 }
 .wh .lang-btn {
     background-image: url('../images/svg/i_language_wh.svg');
@@ -440,7 +453,6 @@ button, label {
 .ft-info-wrap {
     padding: 72px 0 48px;
     background: url('../images/svg/logo_wh.svg') 0 0 / 109px no-repeat ;
-    background-image: url('../images/svg/imgi_1_logosKcar.svg');
 }
 .ft-info {/*왼쪽*/}
 .ft-info-dl {
