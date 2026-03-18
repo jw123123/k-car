@@ -36,8 +36,8 @@ $(function(){
   
 
   // 헤더 제어
-  const hd = $("#cv-hd");
-  const ft = $("#cv-ft");
+  const hd = $("#kcar-hd");
+  const ft = $("#kcar-ft");
   let hdHeight = hd.height();
   let ftOffset = ft.offset().top - 200;
   
@@ -69,10 +69,10 @@ $(function(){
 
   });
 
-  const siteMap = $(".cv-mo-gnb-sec");
+  const siteMap = $(".kcar-mo-gnb-sec");
   const openBtn = $(".sitemap-open-btn");
   const closeBtn = $(".sitemap-close-btn");
-  const logo = $(".cv-logo");
+  const logo = $(".kcar-logo");
   const speed = 600;
   
   openBtn.click(function(){
@@ -119,7 +119,7 @@ $(function(){
    // $(this).removeClass("active");
   });
 
-  const gnb = "#cv-gnb";
+  const gnb = "#kcar-gnb";
 
   // PC GNB 구현 : depth1에 마우스가 진입하면 depth2가 슬라이드다운
   $(gnb).mouseenter(function(){

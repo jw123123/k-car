@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+/* 변수선언 */
+:root {
+    --primary-color: #B70F28;
+    --primary-font-color: #D82631;
+    
+    --gray-font: #B1B0AF;
+    --main-color: #2d3a80;
+    --light-gray: #f2f2f2;
+    --pale-gray: #ccc;
+    --medium-gray: #999;
+    --medium-dark-gray: #555;
+    --dark-gray: #121212;
+    --serif-font: 'Noto Sans Serif', serif;
+    --sans-pre: 'Pretendard Variable', sans-serif;
+}

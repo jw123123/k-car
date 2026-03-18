@@ -96,11 +96,11 @@ button, label {
 }
 
 /* 3. 글자와 여백 */
-.wh, .wh a {color: #fff !important;}
-.bk, .bk a {color: #000 !important;}
+.wh, .wh a {color: #fff }
+.bk, .bk a {color: #000 }
 .ft-gy, .ft-gy a {color: var(--gray-font);}
 .mdk-gy {color: var(--medium-dark-gray);}
-.bl, .bl a {color: var(--main-color) !important;}
+.bl, .bl a {color: var(--main-color) }
 .fz30 {font-size: 3.0em;}
 .fz25 {font-size: 2.5em;}
 .fz20 {font-size: 2.0em;}
@@ -293,7 +293,7 @@ button, label {
     width: 64px;
     height: 0;
     padding: 0;
-    background-color: var(--main-color);
+    background-color: #000;
     text-align: center;
     line-height: 24px;
     overflow: hidden;
@@ -306,6 +306,7 @@ button, label {
     transition: 0.3s;
 }
 .lang-list a:hover {
+    color:var(--primary-font-color);
     opacity: 1;
 }
 .sitemap-open-btn {
