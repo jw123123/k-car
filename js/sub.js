@@ -5,7 +5,7 @@ $(function(){
   const lnbBtn = $(".kcar-lnb-btn");
   const subBg = $(".sub-hd-bg");
   let lnb = $(".kcar-lnb-list");
-  let pageTitle = "Company,Service,Notice,Sustainability,Career,IR";
+  let pageTitle = "Company,Service,Notice,Sustainability,Career,Investor Relations";
   pageTitle = pageTitle.split(",");
   //console.log(pageTitle);
   let bodyNum, mainNum, subNum;
