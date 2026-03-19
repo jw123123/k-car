@@ -356,9 +356,6 @@ body.sub .sitemap-open-btn {
     opacity: 1;
 }
 
-
-
-
 .kcar-mo-gnb-sec {
     position: fixed;
     right: 0;
@@ -439,7 +436,7 @@ body.sub .sitemap-open-btn {
 /* 4.3 하단(footer) */
 #kcar-ft {
     padding: 60px 0;
-    background-color: var(--dark-gray);
+    background-color: #000;
     font-size: 0.9em;
 }
 .kcar-ft-container {
@@ -451,27 +448,70 @@ body.sub .sitemap-open-btn {
 }
 
 .ft-info-wrap {
-    padding: 72px 0 48px;
-    background: url('../images/svg/logo_wh.svg') 0 0 / 109px no-repeat ;
+    /* padding: 72px 0 48px; */
+    background: url('../images/svg/logo.svg') 0 0 / 109px no-repeat ;
 }
 .ft-info {/*왼쪽*/}
 .ft-info-dl {
+    display: flex;
+    gap: 0.5em;
     line-height: 2;
 }
-.ft-info-dl dt, .ft-info-dl dd {
-    float: left;
+.ft-info-dl dd {
+  padding-right: 1.5em;
 }
 .ft-info-dl dt {
-    clear: both;
-    width: 80px;
+    opacity: 0.5;
+    /* clear: both; */
+    /* width: 160px; */
+}
+
+.ft-info-dl dt:after {
+    content: " : ";
 }
 .ft-info-dl dd {}
 .ft-info-dl dd:first-of-type {
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
 }
 .ft-info-dl .wh {
     font-weight: 700;
 }
+.ft-sns ,.ft-award-info {
+    display: flex;
+}
+.ft-award-info li {
+    padding-left: 90px;
+    padding-right: 30px;
+}
+
+.ft-award-info li:nth-child(1) {
+    background: url('../images/svg/logo-NCSI-Award.svg') left center / contain no-repeat;
+}
+.ft-award-info li:nth-child(2) {
+    background: url('../images/logo-firstBrandAward.png') left center / contain no-repeat;
+}
+
+.ft-sns-btn {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+.ft-sns-btn:nth-child(1) {
+    background: url('../images/svg/i-sns-facebook.svg') center center / contain no-repeat;
+}
+.ft-sns-btn:nth-child(2) {
+    background: url('../images/svg/i-sns-instagram.svg') center center / contain no-repeat;
+}
+.ft-sns-btn:nth-child(3) {
+    background: url('../images/svg/i-sns-youtube.svg') center center / contain no-repeat;
+}
+.ft-sns-btn:nth-child(4) {
+    background: url('../images/svg/i-sns-blog.svg') center center / contain no-repeat;
+}
+.ft-sns-btn:nth-child(5) {
+    background: url('../images/svg/i-sns-cafe.svg') center center / contain no-repeat;
+}
+
 .ft-info-link {
     display: flex;
     justify-content: space-between;
