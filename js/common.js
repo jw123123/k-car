@@ -79,31 +79,22 @@ $(function(){
     body.addClass("hidden");
     siteMap.attr("style", "");
     //해상도가 모바일이라면 = body의 클래스가 "mo"라면
-    if(body.hasClass("mo")){
-      //console.log("모바일이다");
-      logo.addClass("wh-logo");
+    if(body.hasClass("pc")){
+      siteMap.addClass("active");
+    } else { //mo, tb일 때
       siteMap.stop().animate({
         "right": "0",
-        "opacity": "1"
-      }, speed);
-    } else { //tb, pc일 때
-      siteMap.stop().animate({
-        "top": "0",
         "opacity": "1"
       }, speed);
     }
   });
   closeBtn.click(function(){
     body.removeClass("hidden");
-    if(body.hasClass("mo")){
-      logo.removeClass("wh-logo");
+    if(body.hasClass("pc")){
+      siteMap.removeClass("active");
+    } else { //mo, tb일 때
       siteMap.stop().animate({
         "right": "-100%",
-        "opacity": "0"
-      }, speed);
-    } else { //tb, pc일 때
-      siteMap.stop().animate({
-        "top": "-100%",
         "opacity": "0"
       }, speed);
     }
