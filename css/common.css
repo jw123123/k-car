@@ -487,11 +487,7 @@ body.sub .sitemap-open-btn {
     top: -100%;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    padding-top: 100px;
-=======
     padding-top: 150px;
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     background-color: #fff;
     overflow: auto;
     z-index: 99;
@@ -535,19 +531,11 @@ body.sub .sitemap-open-btn {
 .mo-depth2 {
     line-height: 2.2;
 }
-<<<<<<< HEAD
-.mo-depth2 li {
-}
-
-.mo-depth2 li:hover a {
-    color: var(--point-font-color);
-=======
 
 .mo-depth2 li {}
 
 .mo-depth2 li:hover a {
     color: var(--primary-color);
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
 }
 
 .mo-lang-container {

@@ -6,16 +6,10 @@
         display: none;
     }
 
-<<<<<<< HEAD
-    .kcar-mo-gnb-sec {
-        right: -100%;
-        top: 0;
-=======
     .kcar-mo-gnb-sec {}
 
     .mo-gnb-container {
         padding: 0 25px;
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     }
 
     .mo-depth1>a:after {
@@ -38,8 +32,6 @@
         opacity: 0;
     }
 
-<<<<<<< HEAD
-=======
     .mo-depth1>a {
         padding: 0 1em;
     }
@@ -55,7 +47,6 @@
         width: 40%;
     }
 
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     .mo-depth1.active .mo-depth2 {
         /*서브메뉴 동작*/
         height: auto;
@@ -63,13 +54,10 @@
         opacity: 1;
     }
 
-<<<<<<< HEAD
-=======
     .mo-depth1.active>a {
         color: var(--primary-color);
     }
 
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     .mo-depth1.active>a:after {
         transform: scaleY(-1);
     }
@@ -108,14 +96,11 @@
         z-index: 1;
     }
 
-<<<<<<< HEAD
-=======
     .sitemap-close-btn:before {
         font-size: 50px;
     }
 
 
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
 
     .mo-gnb-container {
         position: absolute;
@@ -139,13 +124,6 @@
         margin: 0;
     }
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     .mo-depth1>a {
         display: inline-block;
         font-size: 1.4em;
@@ -173,15 +151,6 @@
         max-width: 7em;
         transition: 0.3s;
     }
-<<<<<<< HEAD
-
-    .mo-depth2 li a:hover {
-        opacity: 1;
-    }
-
-    .mo-lang-container {
-        display: none;
-=======
 
     .mo-lang-container {
         display: none;
@@ -191,7 +160,6 @@
         width: 90%;
         margin: 0;
         /* margin: 2em auto; */ /* 버튼 가운데 정렬 */
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     }
 
     /* 푸터 */
@@ -225,11 +193,6 @@
 @media all and (min-width: 768px) and (max-width: 1279px) {
     .kcar-mo-gnb-sec {
         width: 80%;
-<<<<<<< HEAD
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-
-=======
         background-color: rgba(255, 255, 255, 0.95);
     }
     .mo-gnb{
@@ -367,84 +330,7 @@
     }
 
     /* 사이트맵 */
-<<<<<<< HEAD
 
-    .mo-gnb-container {
-        padding: 0;
-    }
-
-    .mo-gnb-wrap {}
-
-    .kcar-mo-gnb-sec:before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../images/allMenuBg.jpg') center center / cover no-repeat;
-        content: '';
-    }
-
-    .mo-gnb {
-        display: flex;
-        height: 100%;
-    }
-
-    .mo-depth1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: calc(100% / 6);
-        height: 100%;
-        padding: 250px 0 0;
-        background-color: #fff;
-    }
-
-    .mo-depth1:hover {
-        background-color: var(--primary-color);
-    }
-
-    .mo-depth1>a {
-        font-size: 32px;
-    }
-
-    .mo-depth1:hover>a {
-        color: #fff;
-    }
-
-    .mo-depth2 {
-        /* display: flex;
-        flex-direction: column; */
-    }
-
-    .mo-depth2 li {
-        display: block;
-        width: 100%;
-        padding: 0;
-        text-align: center;
-    }
-
-    .mo-depth2 li a {
-        display: inline-block;
-        margin-bottom: 5px;
-        white-space: nowrap;
-        opacity: 1;
-    }
-
-    .mo-depth2 li:hover a:after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 1px;
-        width: 100%;
-        border-bottom: 2px solid #fff;
-    }
-
-    .mo-depth2 li:hover a {
-        position: relative;
-        color: #fff;
-=======
     .kcar-mo-gnb-sec {
         display: none;
         top: 0;
@@ -553,7 +439,6 @@
 
     .shop-btn {
         display: none;
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
     }
 
     /* 4.3 하단(footer) */
@@ -598,20 +483,6 @@
         font-size: 1.2em;
     }
 
-<<<<<<< HEAD
-}
-
-@media screen and (min-width: 1900px) {
-    .kcar-mo-gnb-sec:before {
-        width: 32%;
-    }
-
-    .mo-gnb {
-        width: 68%;
-    }
-=======
-}
-
 @media screen and (min-width: 1900px) {
     body {
         font-size: 18px;
@@ -631,5 +502,4 @@
 @keyframes circle_ani {
     form{transform: rotate(0);}
     to{transform: rotate(360deg);}
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
 }
