@@ -1,7 +1,7 @@
 $(function(){
   let vH = window.innerHeight;
   let scTop = $(window).scrollTop();
-  const hd = $("#cv-hd");
+  const hd = $("#kcar-hd");
 
   // 각 섹션별 헤더 디자인 제어
   $(".main-sec.wh").each(function(){
@@ -23,6 +23,28 @@ $(function(){
     });
   });
 
+  //chatGPT
+  const steps = document.querySelectorAll('.step');
+  const texts = document.querySelectorAll('.text-item');
+  const images = document.querySelectorAll('.image-item');
+
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const index = [...steps].indexOf(entry.target);
+
+      texts.forEach(t => t.classList.remove('active'));
+      images.forEach(i => i.classList.remove('active'));
+
+      texts[index].classList.add('active');
+      images[index].classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+steps.forEach(step => observer.observe(step));
 
   // 1. 메인 제품 영역 변수
 

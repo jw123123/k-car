@@ -62,14 +62,13 @@
 }
 .txt-wrap span {
     padding-top: 8%;
-    background-image: url('../images/svg/visual_txt.svg');
     background-size: auto 100%;
 }
-.txt1-clavis {
+.txt1-slogan {
     display: none;
     width: 42%;
 }
-.txt2-slogan {
+.txt2-kcar {
     display: none;
     width: 58%;
     background-position: right top;
@@ -82,17 +81,33 @@
 }
 .txt3-intro1 {
     display: block;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: -1px;
     line-height: 1.4;
 }
 .txt4-intro2 {
     display: block;
+    font-weight: 900;
     letter-spacing: -1px;
 }
 
-/* 2. Product 영역 */
-.main-product-sec {}
+/* 2. Company 영역 */
+.main-company-sec {}
+.main-company-container {
+    position: relative;
+}
+.company-overview {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--primary-font-color);
+}
+.company-overview h1{
+    font-size: 3.0em;
+    font-weight: 800;
+    color: var(--point-font-color);
+}
+/* .main-company-sec {}
 .main-product-sec h2 {
     font-size: 1em;
     font-weight: 600;
@@ -182,29 +197,80 @@
 .product-dl dd:last-of-type {
     font-size: 0.85em;
     color: var(--medium-gray);
+} */
+
+/* Service 영역 */
+/* Service 동작 --chatGPT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* product-item 동작 */
-.product-item a, .product-item a:after, .product-item dt, .product-item dd {
-    transition: 0.3s;
+.service {
+  position: relative;
+  /* height: 500vh; 5개 섹션 느낌 */
 }
-.product-item a:hover {
-    background-position: right bottom 20px;
+
+/* 내부 고정 영역 */
+.service-inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
 }
-.product-item a:hover:after {
-    opacity: 1;
+
+/* 왼쪽 텍스트 */
+.service-left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
 }
-.product-item a:hover dt {
-    color: var(--main-color);
+
+.text-item {
+  opacity: 0.2;
+  transition: 0.4s;
+  position: absolute;
 }
-.product-item a:hover .product-dl dd:last-of-type {
-    color: var(--medium-dark-gray);
+
+.text-item.active {
+  opacity: 1;
+  position: relative;
 }
-.product-item a:hover .product-dl dd:first-of-type {
-    transform: translate(1.5em, -0.3em);
+
+/* 오른쪽 이미지 */
+.service-right {
+  width: 60%;
+  position: relative;
 }
+
+.image-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.image-item.active {
+  opacity: 1;
+}
+
+/* 스크롤 영역 */
+/* .scroll-area {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.step {
+  height: 100vh;
+} */
 /* 페이지 표시 */
-.main-product-page {
+/* .main-product-page {
     display: flex;
     gap: 5px;
     margin-top: 1em;
@@ -248,10 +314,10 @@
 .main-product-list li.active a:before {
     content: '-';
     margin-right: 0.5em;
-}
+} */
 
 /* 3. 핵심역량 */
-.main-capability-sec {
+/* .main-capability-sec {
     position: relative;
     background: url('../images/capabilityBg.jpg') center center / cover;
     z-index: 1;
@@ -270,16 +336,16 @@
     opacity: 0.8;
 }
 .main-capability-sec:after {
-    background: linear-gradient(to right, rgba(36,44,88,0) 0%, rgba(36,44,88,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
+    background: linear-gradient(to right, rgba(36,44,88,0) 0%, rgba(36,44,88,0.8) 100%); 원래주석됐던것 W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/* }
 .main-capability-container {}
 .main-capability-wrap {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; */
     /* justify-content: space-between; 
-    align-items: center;*/
-    height: 1400px;
+    align-items: center; 원래 주석 됐던 것*/
+    /* height: 1400px;
 }
 .capability-item {
     position: relative;
@@ -313,11 +379,11 @@
     z-index: -1;
     backdrop-filter: blur(2px);
     transition: 0.5s;
-}
-.capability-item a {
-    width: 92%;
-    /* background-color: #000; */
-}
+} */
+/* .capability-item a {
+    width: 92%; */
+    /* background-color: #000; 원래 주석처리 됐던 것*/
+/* }
 .capability-dl {}
 .capability-dl dt {
     font-size: 1.4em;
@@ -353,19 +419,19 @@
     border-radius: 50%;
     background-color: #fff;
     content: '';
-}
+} */
 /* 호버 동작 */
-.capability-item:hover {
+/* .capability-item:hover {
     background-position: right -120px top -150px;
 }
 .capability-item:hover:before {
     right: 0;
     transition-delay: 0.3s;
-}
+} */
 
 
 /* 4. 핵심가치 */
-.main-value-sec {
+/* .main-value-sec {
     background: url('../images/valueBg.jpg') center center / cover;
 }
 .main-value-container {}
@@ -402,16 +468,16 @@
     box-shadow: inset 0 0 5px rgba(255,255,255,0.75);
     overflow: hidden;
     z-index: 1;
-}
-.value-item:before {
+} */
+/* .value-item:before {
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    content: '';
-    /* background-color: #fff; */
-    -webkit-backdrop-filter: blur(5px);
+    content: ''; */
+    /* background-color: #fff; 원래 주석처리됐던 것*/
+    /* -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: -1;
     transition: 0.5s;
@@ -462,10 +528,10 @@
 }
 .value-item:hover:before {
     background-color: rgba(0,0,0,0.5);
-}
+} */
 
 /* 5. 글로벌 */
-.main-global-sec {
+/* .main-global-sec {
     background: #f8f8f8 url('../images/company/companyPoint.png') center center / 100% auto no-repeat;
 }
 .main-global-container {
@@ -490,5 +556,5 @@
     margin: 10% auto;
 }
 .main-global-wrap .txt-wrap:before {
-    background-color: var(--medium-gray);
+    background-color: var(--medium-gray); */
 }
