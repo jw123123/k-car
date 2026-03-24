@@ -448,7 +448,7 @@ body.sub .sitemap-open-btn {
 }
 
 .ft-info-wrap {
-    /* padding: 72px 0 48px; */
+    padding: 72px 0 48px;
     background: url('../images/svg/logo.svg') 0 0 / 109px no-repeat ;
 }
 .ft-info {/*왼쪽*/}
@@ -457,11 +457,19 @@ body.sub .sitemap-open-btn {
     gap: 0.5em;
     line-height: 2;
 }
+
+.ft-info-dl:first-child {
+    flex-direction: column;
+}
+.ft-info-dl:first-child dt {
+    display: inherit;
+}
 .ft-info-dl dd {
   padding-right: 1.5em;
 }
 .ft-info-dl dt {
     opacity: 0.5;
+    white-space: nowrap;;
     /* clear: both; */
     /* width: 160px; */
 }
@@ -469,14 +477,15 @@ body.sub .sitemap-open-btn {
 .ft-info-dl dt:after {
     content: " : ";
 }
-.ft-info-dl dd {}
+.ft-info-dl dd {
+}
 .ft-info-dl dd:first-of-type {
-    /* margin-bottom: 1em; */
+    margin-bottom: 1em;
 }
 .ft-info-dl .wh {
     font-weight: 700;
 }
-.ft-sns ,.ft-award-info {
+.ft-sns {
     display: flex;
 }
 .ft-award-info li {
