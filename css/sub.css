@@ -18,8 +18,10 @@
     color: #111;
     animation: move-bottom 1s;
 }
-#kcar-lnb {
-    font-family: var(--sans-pre);
+.sub-hd-lnb > div {
+    height: 100%;
+}
+#kcar-lnb, #sub-title {
     animation: move-right 1s 0.5s both;
 }
 .kcar-lnb-btn {}
@@ -30,41 +32,13 @@
 .kcar-lnb-list li {}
 .kcar-lnb-list a {
     display: block;
+    transition: 0.3s;
 }
 .kcar-lnb-list a:hover {
-    color: var(--main-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
-/* 비주얼 */
-.sub-hd-bg {
-    position: relative;
-    background-size: cover;
-    background-position: center 0;
-}
-.sub-hd-bg:before {
-    display: block;
-    padding-top: 75%; /* 부모너비 100% 1:1 Ratio */
-    content: '';
-}
-.sub-hd-bg:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    content: '';
-    transform-origin: right center; 
-    animation: sub-visual-ani 1s both;
-}
-.bg0-0 {background-image: url('../images/sub_visual/overviewBg.jpg'); background-position: -20vw 0;}
-.bg0-1 {background-image: url('../images/sub_visual/philosophyBg.jpg');}
-.bg0-5 {background-image: url('../images/sub_visual/placeBg.jpg'); background-position: 0 0;}
-.bg1-0 {background-image: url('../images/sub_visual/pouchBg.jpg');}
-.bg2-0 {background-image: url('../images/sub_visual/ciBg.jpg');}
-.bg3-0 {background-image: url('../images/sub_visual/esgBg.jpg');}
-.bg4-0 {background-image: url('../images/sub_visual/talentBg.jpg');}
 
 /* 메인 영역 */
 #kcar-main, #kcar-main > * {
@@ -83,15 +57,21 @@
     .sub-hd-lnb h2, #kcar-lnb, .sub-hd-bg:after {
         animation-duration: 0.5s;
     }
-    #kcar-lnb {
+    .sub-hd-lnb > div{
+        display: flex;
+        gap: 10px;
+    }
+    .lnb-btn {
         position: relative;
-        width: 200px;
+        width: 300px;
         animation-delay: 0s;
         z-index: 1;
+        border: 1px solid rgba(0,0,0,0.05);
     }
-    .kcar-lnb-btn {
+    .kcar-lnb-btn, .sub-hd-btn {
         display: block;
         padding-left: 15px;
+        margin-right: 5px;
         line-height: 48px;
         font-weight: 700;
         font-size: 1.1em;
@@ -108,6 +88,10 @@
         line-height: 36px;
         box-shadow: 0 5px 8px rgba(0,0,0,0.25);
     }
+
+    .kcar-lnb-depth1.active {
+        display: block;
+    }
     
 }
 
@@ -117,28 +101,35 @@
         margin: 1em 0;
         font-size: 3.2em;
     }
-    .kcar-lnb-btn {
+    #sub-title {
+        display: none;
+    }
+    #kcar-lnb {
+        /* height: 100px; */
+    }
+    .sub-hd-btn {
         display: none;
     }
     .kcar-lnb-list {
         /* display: flex; */
         margin: 1.5em 0;
         font-size: 1.2em;
-        font-weight: 700;
+        font-weight: 600;
     }
     .kcar-lnb-list li {
-        padding: 0 5px;
-        margin-right: 2em;
+        padding: 15px 0;
+        width: 100%; 
+        border: 1px solid rgba(0,0,0,0.05);
     }
     .kcar-lnb-list a {
-        color: var(--pale-gray);
+        color: var(--primary-font-color);
+        text-align: center;
     }
     .kcar-lnb-list li.active {
-        border-bottom: 3px solid var(--main-color);
+        background-color: var(--primary-color);
     }
     .kcar-lnb-list li.active a {
-        color: var(--main-color);
-        font-weight: 600;
+        color: #fff;
     }
     /* 비주얼 이미지 */
     .sub-hd-bg {
