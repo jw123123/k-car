@@ -13,6 +13,67 @@
     <script src="js/lenis.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
+    <style>
+        .mission-box {
+            position: relative;
+            margin-top: 3.2rem;
+            height: 38rem;
+            background-color: #f6f8fa;
+            border-radius: .8rem 4rem .8rem 4rem;
+        }
+        .mission-box .desc {
+            padding-top: 25.6rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.43;
+            letter-spacing: -.4px;
+            text-align: center;
+            color: #16171d;
+        }
+        .mission-diagram {
+            display: flex;
+            gap: 2em;
+        }
+        .mission-diagram:before {
+            display: block;
+            content: "";
+            width: 40.6rem;
+            height: .1rem;
+            border-bottom: 1px dotted #16171d;
+            position: absolute;
+            top: 14rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .mission-diagram>li {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 100%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 6.4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        .mission-diagram>li:first-of-type {
+            background-color: #b70f28;
+            margin-left: -25rem;
+        }
+        .mission-diagram>li:nth-of-type(2) {
+            background-color: #fff;
+            border: 1px solid #979797;
+        }
+        .mission-diagram>li:nth-of-type(3) {
+            background-color: #f01d29;
+            margin-left: 25rem;
+        }
+    </style>
 </head>
 <body class="sub0-3 sub">
     <!-- 1. 바로가기 메뉴 -->
@@ -220,9 +281,24 @@
     <!-- 3. 메인영역 -->
     <main id="kcar-main">
         <section class="sub-sec company-philosophy-sec wrap">
-            <h2>경영이념</h2>
+            <h2>Mission & Vision</h2>
             <div class="philosophy-container">
-                
+                <div class="mission-box">
+                    <ul class="mission-diagram">
+                        <li><strong>Mission</strong>
+                            <p>신뢰는 우리의 과거,<br>현재 그리고 미래다.</p>
+                        </li>
+                        <li><img src="images/logos-kcar-text.png" alt=""></li>
+                        <li><strong>Vision</strong>
+                            <p>대한민국 No. 1<br>자동차 유통 전문기업</p>
+                        </li>
+                    </ul>
+                    <p class="desc">
+                        브랜드 미션은 K Car의 존재 이유이자 어떤 상황에서도 흔들림 없는 신념으로서, 궁극적으로 나아갈 방향을 제시하는 등대 역할을 합니다.<br>본사에서 직접 차량을 매입, 진단, 관리, 판매하는
+                        직영시스템으로 전국의 모든 매장을 운영하고 관리하는 이유 또한, 우리의 미션인 ‘신뢰’를 만들고 지켜가는 K Car만의 방식입니다.<br>K Car의 지향점과 목적지를 보다 구체적인 언어로 그려낸
+                        비전은 모든 구성원의 역량과 에너지를 핵심으로 모으고 이끌어가는 이정표 역할을 합니다.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
