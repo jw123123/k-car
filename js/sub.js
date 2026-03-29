@@ -20,26 +20,30 @@ $(function(){
   subHdEl = subHdEl.split(",");
   // console.log(subHdEl);
   let subEl = lnb.eq(mainNum).children().eq(subNum);
-
+  
+  // 서브헤더 네비 내용 삽입
+    let navi = `> ${subHdEl[mainNum]} > ${subEl.text()}`;
+  $(".navigation").append(navi);
+  
 
   // 페이지 타이틀 입력
   subH2.text(pageTitle[mainNum]);
-
+  
   // LNB 화면에 표시(해상도에 따라)
   if(body.hasClass("mo")) { // 모바일이라면
-        lnb.eq(mainNum).css("display", "none");
+    lnb.eq(mainNum).css("display", "none");
   } else {
-        lnb.eq(mainNum).css("display", "flex");
+    lnb.eq(mainNum).css("display", "flex");
   }
-
+  
   // 활성화되는 서브메뉴
   subEl.addClass("active");
-
-
+  
+  
   // 모바일 LNB Label 입력
   lnbBtn.text(subEl.text());
   subHdBtn.text(subHdEl[mainNum]);
-
+  
 
   // LNB 리스트 제어(해상도에 따라)
   $(window).resize(function () {

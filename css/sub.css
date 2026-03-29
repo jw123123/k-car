@@ -107,9 +107,12 @@
     #kcar-lnb {
         /* height: 100px; */
     }
-    .sub-hd-btn {
+    .sub-hd-btn, .kcar-lnb-btn {
         display: none;
     }
+    .navigation{}
+    .hd-navi {}
+    .sub-navi {}
     .kcar-lnb-list {
         /* display: flex; */
         margin: 1.5em 0;
