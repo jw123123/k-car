@@ -155,11 +155,13 @@
     .mo-lang-container {
         display: none;
     }
+
     .shop-btn {
         display: block;
         width: 90%;
         margin: 0;
-        /* margin: 2em auto; */ /* 버튼 가운데 정렬 */
+        /* margin: 2em auto; */
+        /* 버튼 가운데 정렬 */
     }
 
     /* 푸터 */
@@ -195,9 +197,11 @@
         width: 80%;
         background-color: rgba(255, 255, 255, 0.95);
     }
-    .mo-gnb{
+
+    .mo-gnb {
         padding-top: 3em;
     }
+
     .mo-gnb-wrap {
         padding: 0 4em;
     }
@@ -205,13 +209,11 @@
     .mo-depth1>a {
         line-height: 1.5;
     }
-    
-    .mo-depth1{
+
+    .mo-depth1 {
         width: 90%;
     }
 
-
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
 }
 
 /* 4. pc 1280px부터~ */
@@ -337,11 +339,13 @@
         left: 0;
         overflow: hidden;
     }
+
     .kcar-mo-gnb-sec.active {
         display: block;
     }
-    
-    .sitemap-close-btn:after { /* circle */
+
+    .sitemap-close-btn:after {
+        /* circle */
         position: absolute;
         right: -20px;
         top: -20px;
@@ -352,7 +356,7 @@
         content: '';
         animation: circle_ani 10s linear infinite;
     }
-    
+
     .sitemap-close-btn:before {
         font-size: 60px;
     }
@@ -363,7 +367,8 @@
 
     .mo-gnb-wrap {}
 
-    .kcar-mo-gnb-sec:before { /* x버튼 */
+    .kcar-mo-gnb-sec:before {
+        /* x버튼 */
         position: absolute;
         left: 30px;
         bottom: 30px;
@@ -483,9 +488,10 @@
         font-size: 1.2em;
     }
 
-@media screen and (min-width: 1900px) {
-    body {
-        font-size: 18px;
+    @media screen and (min-width: 1900px) {
+        body {
+            font-size: 18px;
+        }
     }
 }
 
@@ -493,13 +499,12 @@
 
 /* 애니메이션 */
 
-.circle_ani{
-    transform: rotate(0);
-}
-
-
-
 @keyframes circle_ani {
-    form{transform: rotate(0);}
-    to{transform: rotate(360deg);}
+    form {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
