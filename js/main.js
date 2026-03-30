@@ -1,74 +1,43 @@
-$(function(){
-  let vH = window.innerHeight;
-  let scTop = $(window).scrollTop();
-  const hd = $("#kcar-hd");
+$(window).on('scroll', function() {
+    const scrollTop = $(window).scrollTop();
+    const $section = $('#service-section');
+    const $wrapper = $('.service-fixed-wrapper');
+    
+    const sectionTop = $section.offset().top;
+    const sectionHeight = $section.height();
+    const windowHeight = $(window).height();
+    const sectionBottom = sectionTop + sectionHeight;
 
-  // 각 섹션별 헤더 디자인 제어
-  $(".main-sec.wh").each(function(){
-    let sec = $(this);
-    let secOffsetMin = sec.offset().top - vH;
-    let secOffsetMax = sec.offset().top + sec.innerHeight();
-    //console.log(sec.index(), secOffsetMin, secOffsetMax);
-    $(window).scroll(function() {
-      scTop = $(window).scrollTop();
-      if(scTop >= secOffsetMin && scTop < secOffsetMax){ //2번째 섹션일 때
-        hd.addClass("wh");
-      } else {
-        hd.removeClass("wh");
-      }
-      // 맨위
-      if(scTop < vH) {
-        hd.addClass("wh");
-      }
-    });
-  });
-
-  //chatGPT
-  const steps = document.querySelectorAll('.step');
-  const texts = document.querySelectorAll('.text-item');
-  const images = document.querySelectorAll('.image-item');
-
-  const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const index = [...steps].indexOf(entry.target);
-
-      texts.forEach(t => t.classList.remove('active'));
-      images.forEach(i => i.classList.remove('active'));
-
-      texts[index].classList.add('active');
-      images[index].classList.add('active');
+    // 1. 화면 고정 제어 (is-fixed)
+    if (scrollTop >= sectionTop && scrollTop < sectionBottom - windowHeight) {
+        $wrapper.addClass('is-fixed').removeClass('is-bottom');
+    } else if (scrollTop >= sectionBottom - windowHeight) {
+        $wrapper.removeClass('is-fixed').addClass('is-bottom');
+    } else {
+        $wrapper.removeClass('is-fixed').removeClass('is-bottom');
     }
-  });
-}, {
-  threshold: 0.5
+
+    // 2. 콘텐츠 교체 제어
+    let progress = (scrollTop - sectionTop) / (sectionHeight - windowHeight);
+    progress = Math.max(0, Math.min(1, progress));
+
+    const totalItems = 5;
+    const idx = Math.min(Math.floor(progress * totalItems), totalItems - 1);
+
+    $('.service-text-item').eq(idx).addClass('active').siblings().removeClass('active');
+    $('.service-img-item').eq(idx).addClass('active').siblings().removeClass('active');
 });
 
-steps.forEach(step => observer.observe(step));
-
-  // 1. 메인 제품 영역 변수
 
 
-  // 현재페이지 / 전체페이지
 
 
-  // 화면 사이즈가 조정될 때마다 제품 좌표 리셋
 
-
-  // 제품리스트 클릭할 때 실행
-
-
-  // 선택한 제품 슬라이드 함수
-
-
-  // 제품 슬라이드 영역에서 마우스 커서 바꾸기
-  
-  
-  /*
-  easing.js 추가한 후 다른 그래프 사용 가능
-  사용가능 easing (참고:https://api.jqueryui.com/easings/)
-  linear swing easeInQuad easeOutQuad easeInOutQuad easeInCubic easeOutCubic easeInOutCubic easeInQuart easeOutQuart easeInOutQuart easeInQuint easeOutQuint
-  easeInOutQuint easeInSine easeOutSine easeInOutSine easeInExpo easeOutExpo easeInOutExpo easeInCirc easeOutCirc easeInOutCirc easeInElastic easeOutElastic 
-  easeInOutElastic easeInBack easeOutBack easeInOutBack easeInBounce easeOutBounce easeInOutBounce
-  */
+    // 2. ESG 섹션 함수 (전체 초기화 후 활성화)
+$(function() {
+    $('.side-bar-item').on('click', function() {
+        const idx = $(this).attr('data-target');
+        $('.esg-slide').removeClass('active');
+        $('.esg-slide').eq(idx).addClass('active');
+    });
 });
