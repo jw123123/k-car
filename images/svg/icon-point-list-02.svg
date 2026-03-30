@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="80" viewBox="0 0 90 80">
+    <path data-name="Fill 1" d="M0 80h90V0H0z" style="fill:none"/>
+    <g data-name="Group 29">
+        <path d="M59.091 51.558V2.438A2.6 2.6 0 0 0 56.347 0H2.743A2.6 2.6 0 0 0 0 2.438v49.12" style="fill:#fff" transform="translate(15.455 18.859)"/>
+        <path data-name="Stroke 13" d="M53.181 9.274V2.439A2.6 2.6 0 0 0 50.439 0H2.743A2.6 2.6 0 0 0 0 2.439v6.835" style="fill:#e2e8ee" transform="translate(18.41 9.584)"/>
+        <path data-name="Path" d="M59.091 51.558V2.438A2.6 2.6 0 0 0 56.347 0H2.743A2.6 2.6 0 0 0 0 2.438v49.12" transform="translate(15.455 18.859)" style="stroke:#111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none"/>
+        <path data-name="Stroke 5" d="M0 27.857V2.613A2.791 2.791 0 0 1 2.941 0h29.573a2.792 2.792 0 0 1 2.941 2.613v25.244" transform="translate(27.28 42.56)" style="stroke:#111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none"/>
+        <path data-name="Stroke 7" d="M0 .5h0z" transform="translate(27.28 51.345)" style="stroke:#111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none"/>
+        <path data-name="Stroke 9" d="M0 .5h0z" transform="translate(27.28 60.631)" style="stroke:#111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none"/>
+        <path data-name="Stroke 11" d="M0 .5h0z" transform="translate(12.5 69.916)" style="stroke:#111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none"/>
+        <path data-name="Stroke 13" d="M53.181 9.274V2.439A2.6 2.6 0 0 0 50.439 0H2.743A2.6 2.6 0 0 0 0 2.439v6.835" transform="translate(18.41 9.584)" style="stroke:#111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none"/>
+        <g>
+            <path data-name="Fill 15" d="M2.522 2.494 4.971 0h-1.6l-2.01 2.127V0H0v5.283h1.361V2.969l1.553 1.782a1.624 1.624 0 0 0 1.222.532h.929z" transform="translate(40.522 28.974)" style="fill:#db2730"/>
+            <path data-name="Fill 17" d="M1.639 4.088C.6 4.088 0 3.632 0 2.836 0 1.8 1.289 1.518 2.051 1.518c.263 0 .47 0 .726.01-.023-.566-.3-.8-.941-.8a2.146 2.146 0 0 0-.7.121.524.524 0 0 1-.172.033.519.519 0 0 1-.256-.068A.434.434 0 0 1 .48.473L.474.391.525.364A3.042 3.042 0 0 1 1.96 0c1.22 0 1.788.519 1.788 1.633V3.18a5.576 5.576 0 0 0 .032.72l.015.1H3.5a.641.641 0 0 1-.6-.384 1.762 1.762 0 0 1-1.261.472zM2.382 2.2c-.509 0-1.362.082-1.362.633 0 .356.409.522.686.522.662 0 1.073-.343 1.073-.9v-.238h-.152a2.06 2.06 0 0 0-.245-.017z" transform="translate(52.644 30.258)" style="fill:#db2730"/>
+            <path data-name="Fill 19" d="M2.45.05A2.523 2.523 0 0 0 1.936 0 1.4 1.4 0 0 0 .875.528a.748.748 0 0 0-.7-.44H0V4h.969V2.212c0-.874.413-1.439 1.05-1.439a1.134 1.134 0 0 1 .391.06l.134.049V.067z" transform="translate(56.963 30.258)" style="fill:#db2730"/>
+            <path data-name="Fill 21" d="m4.516 4.188-.081.034-.168.07a3.561 3.561 0 0 1-1.133.222A1.791 1.791 0 1 1 3.175.946a2.429 2.429 0 0 1 .5.053A.793.793 0 0 0 4.271.9a.629.629 0 0 0 .3-.468l.011-.159-.117-.045A3.582 3.582 0 0 0 3.135 0C1.29 0 0 1.114 0 2.709 0 4.38 1.227 5.46 3.128 5.46a3.976 3.976 0 0 0 1.342-.19l.118-.043z" transform="translate(47.72 28.885)" style="fill:#db2730"/>
+            <path data-name="Fill 25" d="M3.243 0A3.366 3.366 0 0 0 0 2.883a.257.257 0 0 0 .278.258h2.978a.262.262 0 0 0 .277-.241V.247A.262.262 0 0 0 3.243 0" transform="translate(34.413 28.318)" style="fill:#db2730"/>
+            <path data-name="Fill 26" d="M0 .258A3.367 3.367 0 0 0 3.243 3.14a.261.261 0 0 0 .29-.247V.247A.262.262 0 0 0 3.257 0H.278A.259.259 0 0 0 0 .258" transform="translate(34.413 31.768)" style="fill:#b1b3b2"/>
+            <path data-name="Fill 27" d="M3.2 0H.278A.264.264 0 0 0 0 .248v2.6a.264.264 0 0 0 .278.248H3.2a.265.265 0 0 0 .279-.248v-2.6A.265.265 0 0 0 3.2 0" transform="translate(30.586 28.366)" style="fill:#db2730"/>
+            <path data-name="Fill 28" d="M3.2 0H.278A.264.264 0 0 0 0 .248v2.6a.264.264 0 0 0 .278.248H3.2a.265.265 0 0 0 .279-.248v-2.6A.265.265 0 0 0 3.2 0" transform="translate(30.586 31.768)" style="fill:#b1b3b2"/>
+        </g>
+    </g>
+</svg>
