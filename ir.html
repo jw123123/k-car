@@ -14,9 +14,21 @@
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
     <style>
-        .announce-item-list {
+        .announce-item-list ,.event-item-list {
             display: flex;
             gap: 2rem;
+        }
+        .event-item-list {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .announce-item, .event-item {            
+            padding: 2em;
+            border: 0.1rem solid #222;
+            border-radius: 0.5rem;
+        }
+        .event-item { 
+            width: 48%;
         }
         .dl_file {
             padding-left: 2.4rem;
@@ -274,7 +286,7 @@
                             <dd>K Car_IR PT_KR_202602.pdf  </dd>
                         </dl>
                     </div>
-                    <div class="annouce-item">
+                    <div class="announce-item">
                         <dl class="dl_title">
                             <dt class="blind">자료명</dt>
                             <dd >회사소개자료</dd>
