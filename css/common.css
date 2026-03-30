@@ -165,22 +165,6 @@ h3 {
   font-weight: 600;
 }
 
-/* 버튼 */
-.btn-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 7em;
-  height: 7em;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-}
-
-.btn-circle.highlight {
-  background: #111;
-  /* color: #fff; */
-}
-
 /* 4. 영역별 설계  */
 /* 4.1 바로가기(skip) */
 #kcar-skip {
