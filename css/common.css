@@ -28,7 +28,7 @@ ol, ul {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #fff;
 }
 
 img {
@@ -90,12 +90,6 @@ button:focus {outline: 0;}
 
 
 
-
-
-
-
-
-
 /* 2. 공용클래스(공통디자인) */
 .wrap {
     width: 100%;
@@ -116,20 +110,18 @@ button:focus {outline: 0;}
     left: -9999em;
 }
 
-/* 공통 버튼 스타일 (요청하신 빨간색 호버 효과) */
-.btn-more, .btn-recruit {
+/* 공통 버튼 스타일 */
+.service-more, .btn-more, .btn-recruit, .btn-recruitment {
     display: inline-block;
-    padding: 12px 40px;
-    border: 1px solid var(--medium-gray);
-    background: transparent;
-    color: var(--primary-font-color);
+    padding: 12px 120px; /*btn-recruit 40*/
     border-radius: 6px;
     font-weight: 600;
-    transition: all 0.5s;
+    background-color: var(--primary-color); /* KCar의 빨간색 */
+    color: #fff;
     cursor: pointer;
 }
 .btn-more:hover, .btn-recruit:hover {
-    background-color: var(--primary-color); /* KCar의 빨간색 */
+    font-size: 1.1em;
     color: #fff;
 }
 
@@ -197,6 +189,8 @@ h3 {
     top: 0;
     width: 100%;
     z-index: 100;
+    color: #fff;
+    font-weight: 300;
     background-color: #000;
 }
 
@@ -262,21 +256,6 @@ body.sub #kcar-hd {
 body.sub .lang-btn {
     background-image: url('../images/svg/i_language.svg');
 }
-
-/* 화살표 */
-/* .lang-btn:after {
-    float: right;
-    display: block;
-    width: 16px;
-    height: 100%;
-    background: url('../images/svg/i_more_wh.svg') center center / contain no-repeat;
-    content: '';
-    transition: 0.3s;
-}
-
-body.sub .lang-btn:after {
-    background-image: url('../images/svg/i_more.svg');
-} */
 
 .lang-list {
     position: absolute;
