@@ -14,9 +14,21 @@
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
     <style>
-        .announce-item-list {
+        .announce-item-list ,.event-item-list {
             display: flex;
             gap: 2rem;
+        }
+        .event-item-list {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .announce-item, .event-item {            
+            padding: 2em;
+            border: 0.1rem solid #222;
+            border-radius: 0.5rem;
+        }
+        .event-item { 
+            width: 48%;
         }
         .dl_file {
             padding-left: 2.4rem;
@@ -208,7 +220,23 @@
     <header class="sub-hd">
         <section class="sub-hd-lnb wrap">
             <h2></h2>
-            <nav id="kcar-lnb">
+            <div>
+            <nav id="sub-title" class="lnb-btn">
+                <h3 class="blind">서브페이지 헤더LNB</h3>
+                <a href="#" class="sub-hd-btn">K Car소개</a>
+                <ol class="kcar-lnb-depth1 kcar-lnb-list">
+                    <li><a href="ceo.html">K Car소개</a></li>
+                    <li><a href="capability.html">서비스</a></li>
+                    <li><a href="report.html">PR센터</a></li>
+                    <li><a href="sustainability.html">ESG</a></li>
+                    <li><a href="career.html">인재채용</a></li>
+                    <li><a href="ir.html">IR</a></li>
+                </ol>
+            </nav>
+            <div class="navigation">
+                <img src="images/svg/sub_home.svg" alt="메인페이지">
+            </div>
+            <nav id="kcar-lnb" class="lnb-btn">
                 <h3 class="blind">LNB 서브메뉴</h3>
                 <a href="#" class="kcar-lnb-btn">회사개요</a>
                 <ol class="kcar-lnb-depth2 kcar-lnb-list">
@@ -251,6 +279,7 @@
                     <li><a href="ir.html?lnb-id=ir-contact">IR Contact</a></li>
                 </ol>
             </nav>
+            </div>
         </section>
     </header>
 
@@ -274,7 +303,7 @@
                             <dd>K Car_IR PT_KR_202602.pdf  </dd>
                         </dl>
                     </div>
-                    <div class="annouce-item">
+                    <div class="announce-item">
                         <dl class="dl_title">
                             <dt class="blind">자료명</dt>
                             <dd >회사소개자료</dd>
