@@ -209,9 +209,6 @@
     .mo-depth1{
         width: 90%;
     }
-
-
->>>>>>> d23287680c448929dbe2b7a646b7aab512c0c2dd
 }
 
 /* 4. pc 1280px부터~ */
@@ -266,7 +263,7 @@
     }
 
     .depth1:hover>a {
-        color: var(--primary-font-color);
+        color: var(--primary-color);
     }
 
     .depth1>a {
@@ -315,7 +312,7 @@
     .depth2 li a {}
 
     .depth2 li:hover>a {
-        color: var(--primary-font-color);
+        color: var(--primary-color);
     }
 
     /* kcar-gnb 동작 */
@@ -482,7 +479,7 @@
     .mo-gnb {
         font-size: 1.2em;
     }
-
+}
 @media screen and (min-width: 1900px) {
     body {
         font-size: 18px;
