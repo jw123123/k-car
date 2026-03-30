@@ -63,10 +63,10 @@ img {
 *:after {
     box-sizing: border-box;
 }
-/* 
+
 html {}
 
-body.hidden {
+body.fixed {
     position: fixed;
     overflow: hidden;
 }
@@ -76,12 +76,18 @@ button,
 select,
 textarea {
     vertical-align: middle;
-    color: #111;
+    color: #222;
     font-size: 1em;
     font-family: 'Asta Sans', 'Pretendard', 'Malgun Gothic', sans-serif;
     line-height: 1.6;
+    background: none; /* 배경색 제거 (또는 transparent) */
+    border: none; /* 기본 테두리 제거 */
+    cursor: pointer;
+    padding: 0;
 }
-*/
+
+button:focus {outline: 0;}
+
 
 
 
@@ -133,11 +139,6 @@ textarea {
 
 .bk,
 .bk a {color: #222}
-
-.ft-gy,
-.ft-gy a {color: var(--gray-font);}
-
-.mdk-gy {color: var(--medium-dark-gray);}
 
 .red,
 .red a {color: var(--primary-color)}
