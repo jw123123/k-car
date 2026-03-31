@@ -86,20 +86,29 @@ button:focus {
 /* 공통 버튼 스타일 */
 .service-more,
 .btn-more,
-.btn-recruit,
-.btn-recruitment {
+.btn-career {
     display: inline-block;
     padding: 12px 120px;
     border-radius: 6px;
-    font-weight: 600;
     background-color: var(--primary-color);
-    color: #fff;
     cursor: pointer;
 }
-
-.btn-more:hover,
-.btn-recruit:hover {
+.service-more span,
+.btn-more span,
+.btn-career span {
+    display: inline-block;
+    font-weight: 600;
     color: #fff;
+    transition: 0.3s;
+}
+.service-more:hover span {
+    transform: scale(1.1);
+}
+.btn-more:hover span {
+    transform: scale(1.1);
+}
+.btn-career:hover span {
+    transform: scale(1.1);
 }
 
 /* 3. 글자와 여백 */
@@ -294,8 +303,8 @@ button:focus {
     transform: translateY(100%);
     transition: 0.2s;
 }
-.depth1:hover > a {
-    color: var(--primary-color);
+#kcar-gnb a:hover {
+  color: var(--primary-color);
 }
 .lang-wrap.active .lang-btn:after {
     transform: scaleY(-1);
