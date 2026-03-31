@@ -28,7 +28,7 @@ ol, ul {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #fff;
 }
 
 img {
@@ -90,12 +90,6 @@ button:focus {outline: 0;}
 
 
 
-
-
-
-
-
-
 /* 2. 공용클래스(공통디자인) */
 .wrap {
     width: 100%;
@@ -116,32 +110,33 @@ button:focus {outline: 0;}
     left: -9999em;
 }
 
-/* 공통 버튼 스타일 (요청하신 빨간색 호버 효과) */
-.btn-more, .btn-recruit {
+/* 공통 버튼 스타일 */
+.service-more, .btn-more, .btn-recruit, .btn-recruitment{
     display: inline-block;
-    padding: 12px 40px;
-    border: 1px solid var(--medium-gray);
-    background: transparent;
-    color: var(--primary-font-color);
+    padding: 12px 120px; /*btn-recruit 40*/
     border-radius: 6px;
     font-weight: 600;
-    transition: all 0.5s;
+    background-color: var(--primary-color); /* KCar의 빨간색 */
+    color: #fff;
     cursor: pointer;
 }
 .btn-more:hover, .btn-recruit:hover {
-    background-color: var(--primary-color); /* KCar의 빨간색 */
+    font-size: 1.1em;
     color: #fff;
 }
 
 /* 3. 글자와 여백 */
-.wh,
-.wh a {color: #fff}
+.wh, .wh a {
+    color: #fff
+}
 
-.bk,
-.bk a {color: #222}
+.bk, .bk a {
+    color: #222
+}
 
-.red,
-.red a {color: var(--primary-color)}
+.red, .red a {
+    color: var(--primary-color)
+}
 
 /* -----레이아웃-----  */
 .main-sec {
@@ -197,11 +192,13 @@ h3 {
     top: 0;
     width: 100%;
     z-index: 100;
+    color: #fff;
+    font-weight: 400;
     background-color: #000;
 }
 
 body.sub #kcar-hd {
-    background-color: transparent;
+    background-color: #fff;
 }
 
 #kcar-hd.fixed {
@@ -237,105 +234,119 @@ body.sub #kcar-hd {
     /* PC에서 사용하는 gnb*/
     display: none;
 }
+#kcar-gnb li:hover > a {
+  color: var(--primary-color);
+}
 
-.kcar-util-wrap {}
+.kcar-util-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* 버튼 사이 간격 */
+}
 
 .lang-wrap {
-    position: relative;
-    float: left;
-    width: 72px;
-    margin-right: 10px;
+  position: relative;
 }
 
 .lang-btn {
-    display: block;
-    padding-left: 32px;
-    height: 24px;
-    line-height: 24px;
-    /* background-image: url('../images/svg/i_language.svg'), url('../images/svg/i_more.svg');
-    background-position: left center, right center;
-    background-size: contain, auto 10px;
-    background-repeat: no-repeat; */
-    background: url('../images/svg/i_language_wh.svg') left center / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 
-body.sub .lang-btn {
-    background-image: url('../images/svg/i_language.svg');
+.lang-btn:before {
+  content: '\e894';
+  font-family: var(--google-icon);
+  font-size: 24px;
+  color: #fff;
 }
-
-/* 화살표 */
-/* .lang-btn:after {
-    float: right;
-    display: block;
-    width: 16px;
-    height: 100%;
-    background: url('../images/svg/i_more_wh.svg') center center / contain no-repeat;
-    content: '';
-    transition: 0.3s;
-}
-
-body.sub .lang-btn:after {
-    background-image: url('../images/svg/i_more.svg');
-} */
 
 .lang-list {
-    position: absolute;
-    left: 4px;
-    top: 32px;
-    width: 64px;
-    height: 0;
-    padding: 0;
-    background-color: #000;
-    text-align: center;
-    line-height: 24px;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.6s;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 50px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  text-align: center;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
 }
 
-body.sub .lang-list {
-    background-color: #fff;
-}
-
+.lang-list li {}
 .lang-list a {
-    display: block;
-    /* opacity: 0.3; */
-    transition: 0.3s;
+  color: #fff;
+  opacity: 0.7;
+  display: block;
+  margin: 0;
+  font-weight: 400;
+  transition: 0.3s;
 }
 
 .lang-list a:hover {
-    color: var(--primary-font-color);
-    opacity: 1;
+  opacity: 1;
 }
-
 .sitemap-open-btn {
-    float: left;
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url('../images/svg/i_apps_wh.svg') center center / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.sitemap-open-btn:before {
+  content: '\e5c3';
+  font-family: var(--google-icon);
+  font-size: 24px;
+  color: #fff;
+  line-height: 1;
 }
 
-body.sub .sitemap-open-btn {
-    background-image: url('../images/svg/i_apps.svg');
+/* 다크모드 */
+/* .wh #kcar-hd {
+    background-color: #000;
+    color: #fff;
 }
 
-/* 다크모드일 때 헤더 */
+.wh #kcar-hd a,
+.wh #kcar-hd button {
+    color: #fff;
+}
+
 .wh .kcar-logo a {
-    background-image: url('../images/svg/logo_wh.svg');
+    background-image: url('../images/svg/logo.svg');
+} */
+
+/* 라이트모드 (sub 페이지 기준) */
+body.sub #kcar-hd {
+    background-color: #fff;
+    color: #222;
 }
 
-.wh .lang-btn {
-    background-image: url('../images/svg/i_language_wh.svg');
+body.sub #kcar-hd a, body.sub #kcar-hd button {
+    color: #222;
 }
 
-.wh .lang-btn:after {
-    background-image: url('../images/svg/i_more_wh.svg');
+body.sub .kcar-logo a {
+    background-image: url('../images/svg/logo.svg');
 }
 
-.wh .sitemap-open-btn {
-    background-image: url('../images/svg/i_apps_wh.svg');
+body.sub .lang-btn:before {
+    color: #222;
 }
+
+body.sub .lang-btn:before {
+    color: #222;
+}
+body.sub .sitemap-open-btn:before {
+    color: #222;
+}
+
 
 /* 언어영역 동작 */
 .lang-wrap.active .lang-btn:after {
@@ -343,9 +354,9 @@ body.sub .sitemap-open-btn {
 }
 
 .lang-wrap.active .lang-list {
-    height: 68px;
-    padding: 10px 0;
     opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
 }
 
 .sitemap-open-btn {
@@ -353,7 +364,7 @@ body.sub .sitemap-open-btn {
     display: block;
     width: 24px;
     height: 24px;
-    background: url('../images/svg/i_apps_wh.svg') center center / contain no-repeat;
+    /* background: url('../images/svg/i_apps_wh.svg') center center / contain no-repeat; */
 }
 /* 사이트맵 */
 .kcar-mo-gnb-sec {
@@ -407,6 +418,10 @@ body.sub .sitemap-open-btn {
     line-height: 2.2;
 }
 
+.mo-depth1 > a:hover, .mo-depth2 a:hover {
+  color: var(--primary-color);
+}
+
 .mo-depth2 li {}
 
 .mo-depth2 li:hover a {
@@ -418,7 +433,6 @@ body.sub .sitemap-open-btn {
     right: 48px;
     top: 20px;
     display: table;
-    border-spacing: 10px;
     font-weight: 600;
 }
 
@@ -444,7 +458,6 @@ body.sub .sitemap-open-btn {
     padding-left: 1em;
     margin-top: 2em;
     background-color: var(--primary-color);
-    border-radius: 10px;
     text-align: left;
     font-size: 1.4em;
     font-weight: 700;
@@ -454,7 +467,6 @@ body.sub .sitemap-open-btn {
 
 .shop-btn:after {
     position: absolute;
-    right: 10px;
     content: '\e5cc';
     font-family: var(--google-icon);
     font-weight: 600;
@@ -473,124 +485,131 @@ body.sub .sitemap-open-btn {
 /* 4.3 하단(footer) */
 /* 4. 푸터 영역 */
 #kcar-ft {
-    padding: 80px 0 60px;
+    width: 100%;
+    height: 356px;
     background-color: #000;
-    color: #999;
-    font-size: 14px;
+    padding: 60px 0 40px;
+    box-sizing: border-box;
 }
 
-.kcar-ft-container {
+#kcar-ft .ft-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
     position: relative;
 }
 
-/* 상단 메인 레이아웃 (좌우 분할) */
-.ft-main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #222; /* 경계선 추가 */
-}
-
-/* 좌측 영역: 로고 + 정보 */
-.ft-left {
-    flex: 1;
-}
-.ft-logo {
-    width: 110px;
-    height: 30px;
+/* 로고 및 텍스트 스타일 */
+#kcar-ft .ft-logo {
+    width: 135px;
+    height: 32px;
     background: url('../images/svg/logo.svg') no-repeat left center / contain;
     text-indent: -9999px;
     margin-bottom: 35px;
 }
 
-.ft-info-dl {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-    line-height: 1.6;
+#kcar-ft .ft-company-info p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
 }
-.ft-info-dl dt {
-    color: #666; /* 라벨은 어둡게 */
-    margin-right: 8px;
-}
-.ft-info-dl dt::after { content: ":"; margin-left: 2px; }
-.ft-info-dl dd {
-    margin-right: 20px;
-    color: #999;
-}
-.ft-info-dl dd.wh { color: #ccc; } /* 강조 텍스트 */
 
-/* 우측 영역: 수상 + SNS */
-.ft-right {
-    text-align: right;
+#kcar-ft .ft-sns-icons {
+    display: flex;
+    gap: 18px;
+    margin: 25px 0 30px;
+}
+
+#kcar-ft .ft-sns-icons a {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1); /* 흰색 아이콘으로 변경 필요시 사용 */
+}
+
+/* 각 아이콘 이미지 연결 */
+#kcar-ft .sns-fb { background-image: url('../images/icon-sns_facebook.png'); }
+#kcar-ft .sns-ig { background-image: url('../images/icon_instagram.png'); }
+#kcar-ft .sns-yt { background-image: url('../images/icon_youtube.png'); }
+#kcar-ft .sns-bg { background-image: url('../images/icon_blog.png'); }
+#kcar-ft .sns-cf { background-image: url('../images/icon_cafe.png'); }
+
+#kcar-ft .copyright { 
+    color: #fff; 
+    font-size: 16px;
+}
+
+/* 오른쪽 영역 정렬 */
+#kcar-ft .ft-right-content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-.ft-award-info {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-.ft-award-info li {
-    padding-left: 70px;
-    text-align: left;
-    font-size: 12px;
-    line-height: 1.5;
-    background-size: 55px auto !important;
-}
-.ft-award-info li:nth-child(1) { background: url('../images/svg/logo-NCSI-Award.svg') no-repeat left center; }
-.ft-award-info li:nth-child(2) { background: url('../images/logo-firstBrandAward.png') no-repeat left center; }
-.ft-award-info li strong { 
-    color: #fff; 
-    display: block; 
-    margin-bottom: 4px; 
-}
-
-/* SNS 버튼 */
-.ft-sns { 
-    display: flex; 
-    gap: 12px; }
-.ft-sns-btn {
-    display: block;
-    width: 36px; height: 36px;
-    background-color: #222;
-    border-radius: 50%;
-    transition: 0.3s;
-    background-size: 20px auto !important;
-}
-.ft-sns-btn:hover { 
-    background-color: #E02020; 
-    transform: translateY(-3px); }
-
-/* SNS 아이콘 개별 적용 */
-.ft-sns-btn.fb { background: url('../images/svg/i-sns-facebook.svg') no-repeat center; }
-.ft-sns-btn.ig { background: url('../images/svg/i-sns-instagram.svg') no-repeat center; }
-.ft-sns-btn.yt { background: url('../images/svg/i-sns-youtube.svg') no-repeat center; }
-.ft-sns-btn.bg { background: url('../images/svg/i-sns-blog.svg') no-repeat center; }
-.ft-sns-btn.cf { background: url('../images/svg/i-sns-cafe.svg') no-repeat center; }
-
-/* 하단 카피라이트 및 Top 버튼 */
-.ft-bottom {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
 }
-.ft-copy { 
-    font-size: 13px; 
-    color: #fff; }
 
-.gototop {
+#kcar-ft .family-site-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    height: 45px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#kcar-ft .ft-awards-list { 
+    list-style: none; 
+}
+
+#kcar-ft .ft-awards-list li {
+    position: relative;
+    padding-left: 55px;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+#kcar-ft .ft-awards-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 0;
     width: 45px; 
     height: 45px;
-    background: #222 url('../images/svg/i_more_wh.svg') no-repeat center / 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#kcar-ft .ncsi::before { 
+    background-image: url('../images/svg/logo-NCSI-Award.svg'); 
+}
+#kcar-ft .first::before { 
+    background-image: url('../images/logo-firstBrandAward.png'); 
+}
+
+/* TOP 버튼 */
+#kcar-ft .btn-top-scroll {
+    width: 50px;
+    height: 50px;
+    background: #333 url('../images/svg/i_more_wh.svg') no-repeat center / 24px;
     transform: rotate(180deg);
     border-radius: 4px;
     transition: 0.3s;
 }
-.gototop:hover {
-    background-color: var(--primary-color);
-}
+
+#kcar-ft .btn-top-scroll:hover { 
+    background-color: var(--primary-color); }
