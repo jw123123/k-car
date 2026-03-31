@@ -267,6 +267,7 @@ body.sub #kcar-hd {
   position: absolute;
   left: 50%;
   top: 100%;
+  transform: translateX(-50%);
   width: 50px;
   padding: 10px;
   border-radius: 4px;
