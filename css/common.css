@@ -39,7 +39,7 @@ img {
 }
 .wrap { 
     width: 100%; 
-    max-width: 1400px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 0 20px; 
 }
@@ -95,7 +95,7 @@ button:focus {outline: 0;}
     width: 100%;
     max-width: 120em; /* 1920 기준 */
     margin: 0 auto;
-    padding: 0 1.25em;
+    padding: 0 96px;
 }
 
 .clearfix:after {
@@ -121,7 +121,6 @@ button:focus {outline: 0;}
     cursor: pointer;
 }
 .btn-more:hover, .btn-recruit:hover {
-    font-size: 1.1em;
     color: #fff;
 }
 
@@ -144,22 +143,9 @@ button:focus {outline: 0;}
   width: 100%;
 }
 
-/* 타이포그래피 */
-h1 {
-  font-size: 3em;
-  font-weight: 700;
-}
 
-h2 {
-  font-size: 2.4em;
-  font-weight: 700;
-  color: var(--main-color);
-}
 
-h3 {
-  font-size: 1.6em;
-  font-weight: 600;
-}
+
 
 /* 4. 영역별 설계  */
 /* 4.1 바로가기(skip) */
@@ -173,7 +159,6 @@ h3 {
     top: -48px;
     width: 100%;
     line-height: 48px;
-    background-color: var(--main-color);
     color: #fff;
     opacity: 1;
     transition: 0.2s;
@@ -196,9 +181,6 @@ h3 {
     background-color: #000;
 }
 
-body.sub #kcar-hd {
-    background-color: #fff;
-}
 
 #kcar-hd.fixed {
     position: fixed;
@@ -320,6 +302,12 @@ body.sub #kcar-hd {
 .wh .kcar-logo a {
     background-image: url('../images/svg/logo.svg');
 } */
+/* 
+body.sub #kcar-hd {
+    background-color: #fff;
+} */
+
+
 
 /* 라이트모드 (sub 페이지 기준) */
 body.sub #kcar-hd {
@@ -492,9 +480,6 @@ body.sub .sitemap-open-btn:before {
 }
 
 #kcar-ft .ft-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -556,11 +541,11 @@ body.sub .sitemap-open-btn:before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 180px;
+    width: 200px;
     height: 45px;
     padding: 0 15px;
     margin-bottom: 30px;
-    font-weight: 600;
+    font-weight: 400;
     background-color: var(--primary-color);
     color: #fff;
     border-radius: 6px;
@@ -578,7 +563,7 @@ body.sub .sitemap-open-btn:before {
     opacity: 0.7;
     font-size: 12px;
     line-height: 1.4;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     white-space: nowrap;
 }
 
@@ -611,4 +596,5 @@ body.sub .sitemap-open-btn:before {
 }
 
 #kcar-ft .btn-top-scroll:hover { 
-    background-color: var(--primary-color); }
+    background-color: var(--primary-color);
+}

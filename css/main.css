@@ -10,13 +10,13 @@
 }
 
 /* 스크롤바 숨기기 */
-html, body { 
+/* html, body { 
     -ms-overflow-style: none; 
     scrollbar-width: none; 
-}
-html::-webkit-scrollbar, body::-webkit-scrollbar { 
+} */
+/* html::-webkit-scrollbar, body::-webkit-scrollbar { 
     display: none; 
-}
+} */
 
 
 
@@ -392,7 +392,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     width: 100%;
     padding: 100px 0 140px;
     overflow: hidden;
-    /* [수정] 섹션 자체의 층을 만들어 배경이 가려지지 않게 함 */
     z-index: 1; 
 }
 /* SERVICE h2와 동일한 스타일 강제 적용 */
@@ -432,26 +431,20 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     color: #fff;
 }
 .news-header .sec-title {
-    font-size: 50px; 
-    font-weight: 900;
-    color: #fff;
     line-height: 1.1;
-    margin: 0; /* 기본 마진 제거 */
     text-align: left;
-    letter-spacing: -1.5px;
 }
 .btn-more {
     padding: 12px 60px;
 }
 .btn-more:hover {
     color: #fff;
-    font-size: 20px;
 }
 /* 뉴스 리스트 정렬 */
 .news-list {
     display: flex;
     gap: 25px;
-    align-items: stretch;
+    justify-content: space-between;
 }
 /* 뉴스 아이템 카드 */
 .news-item {
