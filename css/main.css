@@ -214,24 +214,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     line-height: 1.4; 
     margin-bottom: 25px; 
 }
-
-/* 빨간색 호버 버튼 */
-.service-more {
-    display: inline-block; 
-    padding: 12px 120px; 
-    border: 1px solid var(--pale-gray);
-    border-radius: 12px;
-    color: var(--primary-font-color); 
-    text-decoration: none; 
-    font-weight: 700; 
-    transition: 0.3s;
-}
-.service-more:hover { 
-    background: var(--primary-color); 
-    border-color: var(--primary-color); 
-    color: #fff; 
-}
-
 .service-right { 
     width: 450px; 
     height: 450px; 
@@ -274,7 +256,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     color: #fff; 
     font-size: 42px; 
     font-weight: 700; 
-    z-index: 100;
+    z-index: 1;
 }
 /* 카드 컨테이너 비율 최적화 (가로 줄이고 세로 탄탄하게) */
 #esg-section .esg-card-container {
@@ -290,7 +272,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     border-radius: 24px; 
     padding: 50px 60px; 
     color: #fff;
-    z-index: 20;
+    z-index: 1;
 }
 /* 제목 아래 가로 긴 스트로크 (구분선) */
 #esg-section .card-title {
@@ -368,7 +350,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     top: 0; 
     height: 100%; 
     display: flex; 
-    z-index: 150; 
+    z-index: 1; 
 }
 #esg-section .right-side { 
     right: 0; 
@@ -428,7 +410,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    /* [수정] 부모보다 뒤로 보냄 */
     z-index: -1; 
 }
 .news-bg-area img {
@@ -460,21 +441,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     letter-spacing: -1.5px;
 }
 .btn-more {
-    display: inline-block;
     padding: 12px 60px;
-    border: 1px solid var(--pale-gray);
-    border-radius: 12px;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s /*ease*/;
-    margin-bottom: 5px; 
 }
 .btn-more:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
     color: #fff;
+    font-size: 20px;
 }
 /* 뉴스 리스트 정렬 */
 .news-list {
@@ -484,7 +455,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 /* 뉴스 아이템 카드 */
 .news-item {
-    flex: 1;
+    width: 400px;
+    height: 500px;
     background: #fff;
     border-radius: 24px;
     position: relative; /* 오버레이 배치의 기준 */
@@ -496,9 +468,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     position: absolute;
     top: 0; 
     left: 0;
-    width: 100%; height: 100%;
-    /* 시안의 느낌을 살린 불투명한 진회색 */
-    background-color: var(--pale-gray); 
+    width: 100%; 
+    height: 100%;
+    background-color: var(--primary-color); 
+    border-radius: 24px;
     opacity: 0; /* 평소엔 숨김 */
     transition: opacity 0.3s ease;
     z-index: 1; /* 텍스트 보다는 아래, 배경 보다는 위 */
@@ -513,7 +486,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .news-link {
     display: block;
     padding: 45px 35px;
-    height: 100%;
     text-decoration: none;
     position: relative;
     z-index: 5; /* 오버레이보다 위로 올려서 글씨가 보이게 함 */
@@ -537,7 +509,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-size: 17px;
     line-height: 1.7;
     color: var(--primary-font-color);
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     flex-grow: 1;
     overflow: hidden;
 }
@@ -547,10 +519,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-weight: 500;
     transition: color 0.3s ease;
 }
-/* [효과] 호버 시 글자색 변경 (흰색 계열) */
-.news-item:hover .news-title { color: var(--primary-font-color); }
+/* [효과] 호버 시 글자색 변경 */
+/* .news-item:hover .news-title { color: var(--primary-font-color); }
 .news-item:hover .news-desc { color: var(--primary-font-color); }
-.news-item:hover .news-date { color: var(--primary-font-color); }
+.news-item:hover .news-date { color: var(--primary-font-color); } */
 
 
 
@@ -603,34 +575,20 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     margin-bottom: 50px;
 }
 .btn-recruitment {
-    display: inline-flex; /* 아이콘과 텍스트 가로 정렬 */
-    align-items: center;
     padding: 12px 60px;
-    background: transparent;
-    border: 1px solid var(--pale-gray);
-    border-radius: 12px;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
     gap: 15px; /* 텍스트와 아이콘 사이 간격 */
 }
 /* 아이콘 자리 스타일 */
-.btn-recruitment .icon-arrow_upward {
-    content: ''
+.btn-recruitment .icon-open_in_new {
+    content: '\e89e';
+    font-family: var(--google-icon);
     font-style: normal;
     display: inline-block;
     vertical-align: middle;
 }
-/* 마우스 올렸을 때 빨간색 배경 */
-.btn-recruitment:hover {
-    background-color: var(--primary-color); 
-    border: 1px solid var(--primary-color);
-}
 .career-btns {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 /* 공통 원형 버튼 스타일 */
 .btn-circle {
@@ -640,12 +598,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* backdrop-filter: blur(8px); 유리 질감 효과 */
     color: #fff;
     font-size: 20px;
     font-weight: 700;
     text-align: center;
-    transition: all 0.3s ease;
 }
 .btn-circle.color-1 {
     background: var(--primary-color);
@@ -655,9 +611,4 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 .btn-circle.color-3 {
     background: #D23A03;
-}
-/* 텍스트 가독성을 위한 섀도우 추가 */
-.btn-circle span {
-    line-height: 1.4;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }

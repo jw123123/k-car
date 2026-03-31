@@ -112,6 +112,9 @@
         display: none;
     }
     .navigation{}
+    .navigation img {
+        vertical-align: top;
+    }
     .hd-navi {}
     .sub-navi {}
     .kcar-lnb-list {
