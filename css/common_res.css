@@ -165,16 +165,9 @@
     }
 
     /* 푸터 */
-    #kcar-ft {
-        padding: 80px 0;
-    }
+    #kcar-ft {}
 
-    .ft-info-wrap {
-        padding: 80px 0 56px;
-        margin-bottom: 56px;
-        background-size: 140px;
-        /* border-bottom: 1px solid var(--medium-dark-gray); */
-    }
+    .ft-info-wrap {}
 
     /* 사업장 동작 */
     .ft-place-wrap:hover .ft-place-list {
@@ -213,7 +206,6 @@
     .mo-depth1 {
         width: 90%;
     }
-
 }
 
 /* 4. pc 1280px부터~ */
@@ -223,7 +215,8 @@
     }
 
     .hd-wrap {
-        height: auto;
+        height: 80px;
+        /*auto 에서 변경*/
     }
 
     .kcar-logo {
@@ -237,7 +230,7 @@
     }
 
     #kcar-gnb.sub-on:before {
-        height: 22rem;
+        height: 20rem;
         background-color: #000;
         box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0, 0, 0, 0.25);
     }
@@ -250,7 +243,7 @@
         content: '';
         position: absolute;
         left: 0;
-        top: 6.0rem;
+        top: 100%;
         width: 100%;
         height: 0;
         /* border-radius: 0 0 100% 100%; */
@@ -267,244 +260,229 @@
         position: relative;
     }
 
-    .depth1:hover>a {
-        color: var(--primary-font-color);
+    /* .depth1:hover>a {
+        color: var(--primary-color);
     }
 
     .depth1>a {
         position: relative;
-        display: block;
-        padding: 0 0.5em;
-        line-height: 100px;
-        font-weight: 600;
-        font-size: 1.05em;
-        z-index: 2;
-    }
-
-    .depth2 {
-        position: absolute;
-        left: calc(50% - 120px);
-        top: 0;
-        width: 240px;
-        padding: 120px 0 20px;
-        text-align: center;
-        line-height: 2;
-        overflow: hidden;
-        z-index: 1;
-        transform: translateY(-100%);
-        transition: 0.6s;
-    }
-
-    .depth2:before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        /* width: 100%;
-        height: 100%; */
-        /* background-color: var(--main-color); */
-        content: '';
-        z-index: -1;
-    }
-
-    .depth2 li {
-        opacity: 0;
-        transform: translateY(100%);
-        transition: 0.2s;
-    }
-
-    .depth2 li a {}
-
-    .depth2 li:hover>a {
-        color: var(--primary-font-color);
-    }
-
-    /* kcar-gnb 동작 */
-    .depth1.active .depth2 {
-        transform: translateY(0);
-    }
-
-    .depth1.active .depth2 li {
-        opacity: 1;
-        transform: translateY(0);
-        transition: 0.4s 0.5s;
-    }
-
-    /* 사이트맵 */
-
-    .kcar-mo-gnb-sec {
-        display: none;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-    }
-
-    .kcar-mo-gnb-sec.active {
-        display: block;
-    }
-
-    .sitemap-close-btn:after {
-        /* circle */
-        position: absolute;
-        right: -20px;
-        top: -20px;
-        display: block;
-        width: 140%;
-        height: 140%;
-        background: url(../images/sitemap_circle.png) center center / cover no-repeat;
-        content: '';
-        animation: circle_ani 10s linear infinite;
-    }
-
-    .sitemap-close-btn:before {
-        font-size: 60px;
-    }
-
-    .mo-gnb-container {
-        padding: 0;
-    }
-
-    .mo-gnb-wrap {}
-
-    .kcar-mo-gnb-sec:before {
-        /* x버튼 */
-        position: absolute;
-        left: 30px;
-        bottom: 30px;
-        width: 40%;
-        height: 100%;
-        background: url('../images/svg/logo_gr_site.svg') left bottom / 60% no-repeat;
-        content: '';
-        opacity: 0.3;
-    }
-
-
-    .mo-gnb {
         display: flex;
-        height: 100%;
-    }
-
-    .mo-depth1 {
-        display: flex;
-        flex-direction: column;
         align-items: center;
-        width: calc(100% / 6);
-        height: 100%;
-        padding: 15% 0 0;
-        background-color: transparent;
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .mo-depth1:hover {
-        background-color: var(--primary-color);
-    }
-
-    .mo-depth1>a {
-        font-size: 1.7em;
-    }
-
-    .mo-depth1:hover>a {
-        color: #fff;
-    }
-
-    .mo-depth2 {
-        /* display: flex;
-        flex-direction: column; */
-    }
-
-    .mo-depth2 li {
-        display: block;
-        width: 100%;
-        padding: 0;
-        text-align: center;
-    }
-
-    .mo-depth2 li a {
-        display: inline-block;
+        height: 80px;
+        padding: 0 0.5em;
         font-size: 1.1em;
-        white-space: nowrap;
-        opacity: 1;
+        z-index: 2;
+    } */
+    
+    .depth1:hover a { 
+        color: var(--primary-color);
     }
 
-    .mo-depth2 li:hover a:after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        border-bottom: 2px solid #fff;
-    }
-
-    .mo-depth2 li:hover a {
-        position: relative;
+    .depth1 a {
         color: #fff;
     }
+}
 
-    .shop-btn {
-        display: none;
-    }
+.depth2 {
+    position: absolute;
+    left: calc(50% - 120px);
+    top: 100%;
+    width: 240px;
+    padding: 20px 0;
+    text-align: center;
+    line-height: 2;
+    overflow: hidden;
+    z-index: 1;
+    transform: none;
+    transition: 0.6s;
+}
 
-    /* 4.3 하단(footer) */
-    .ft-info {
-        /*왼쪽*/
-        /* float: left;
-        width: 50%; */
-    }
+.depth2:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: -1;
+}
 
-    .ft-sitemap {
-        /*오른쪽*/
-        display: block;
-        float: left;
-        width: 50%;
-    }
+.depth2 li {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.2s;
+}
 
-    .ft-sitemap ol {
-        display: flex;
-        justify-content: space-between;
-        padding-right: 20px;
-    }
+.depth2 li a {}
 
-    .ft-depth1 {
-        max-width: 120px;
-    }
+.depth2 li:hover>a {
+    color: var(--primary-color);
+}
 
-    .ft-depth1>a {
-        color: #fff;
-        font-size: 1.2em;
-        font-weight: 600;
-    }
+/* kcar-gnb 동작 */
+.depth1.active .depth2 {
+    transform: translateY(0);
+}
 
-    .ft-depth2 {}
+.depth1.active .depth2 li {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s 0.5s;
+}
 
-    .ft-depth2 li {
-        margin: 1.5em 0;
-    }
+/* 사이트맵 */
+
+.kcar-mo-gnb-sec {
+    display: none;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.kcar-mo-gnb-sec.active {
+    display: block;
+}
+
+.sitemap-close-btn:after {
+    /* circle */
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    display: block;
+    width: 140%;
+    height: 140%;
+    background: url(../images/sitemap_circle.png) center center / cover no-repeat;
+    content: '';
+    animation: circle_ani 10s linear infinite;
+}
+
+.sitemap-close-btn:before {
+    font-size: 60px;
+}
+
+.mo-gnb-container {
+    padding: 0;
+}
+
+.mo-gnb-wrap {}
+
+.kcar-mo-gnb-sec:before {
+    /* x버튼 */
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    width: 40%;
+    height: 100%;
+    background: url('../images/svg/logo_gr_site.svg') left bottom / 60% no-repeat;
+    content: '';
+    opacity: 0.3;
+}
+
+
+.mo-gnb {
+    display: flex;
+    height: 100%;
+}
+
+.mo-depth1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% / 6);
+    height: 100%;
+    padding: 15% 0 0;
+    background-color: transparent;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mo-depth1:hover {
+    background-color: var(--primary-color);
+}
+
+.mo-depth1>a {
+    font-size: 1.7em;
+}
+
+.mo-depth1:hover>a {
+    color: #fff;
+}
+
+.mo-depth2 {
+    /* display: flex;
+        flex-direction: column; */
+}
+
+.mo-depth2 li {
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.mo-depth2 li a {
+    display: inline-block;
+    font-size: 1.1em;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.mo-depth2 li:hover a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+}
+
+.mo-depth2 li:hover a {
+    position: relative;
+    color: #fff;
+}
+
+.shop-btn {
+    display: none;
+}
+
+/* 4.3 하단(footer) */
+.ft-info {}
+
+.ft-sitemap {
+    /*오른쪽*/
+    /* display: block; */
+}
+
+.ft-sitemap ol {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.ft-depth1 {
+    max-width: 120px;
+}
+
+.ft-depth1>a {
+    /* color: #fff;
+    font-size: 1.2em;
+    font-weight: 600; */
+}
+
+.ft-depth2 {}
+
+.ft-depth2 li {
+    margin: 1.5em 0;
 }
 
 @media screen and (min-width: 1600px) {
     .mo-gnb {
         font-size: 1.2em;
     }
-
-    @media screen and (min-width: 1900px) {
-        body {
-            font-size: 18px;
-        }
-    }
 }
 
-
-
-/* 애니메이션 */
-
-@keyframes circle_ani {
-    form {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
+@media screen and (min-width: 1900px) {
+    body {
+        font-size: 18px;
     }
 }
