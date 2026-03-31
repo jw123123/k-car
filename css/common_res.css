@@ -6,8 +6,6 @@
         display: none;
     }
 
-    .kcar-mo-gnb-sec {}
-
     .mo-gnb-container {
         padding: 0 25px;
     }
@@ -36,17 +34,6 @@
         padding: 0 1em;
     }
 
-
-    .ir .mo-depth2 {
-        display: flex;
-        flex-wrap: wrap;
-        padding-right: 2em;
-    }
-
-    .ir li {
-        width: 40%;
-    }
-
     .mo-depth1.active .mo-depth2 {
         /*서브메뉴 동작*/
         height: auto;
@@ -67,21 +54,18 @@
 
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
+    .wrap {
+    padding: 0 60px;
+    }
+    .ft-inner {
+    flex-direction: column; /* 아직 세로 유지 */
+    }
+
+    
     body {
         font-size: 16px;
     }
 
-    .pd-l {
-        padding: 100px 0;
-    }
-
-    .pd-m {
-        padding: 60px 0;
-    }
-
-    .pd-s {
-        padding: 40px 0;
-    }
 
     .kcar-logo {
         width: 120px;
@@ -101,7 +85,7 @@
     }
 
 
-
+/* !!!!!!!! mo 붙어있는 건 건들지 말기!!!! */
     .mo-gnb-container {
         position: absolute;
         right: 0;
@@ -156,13 +140,6 @@
         display: none;
     }
 
-    .shop-btn {
-        display: block;
-        width: 90%;
-        margin: 0;
-        /* margin: 2em auto; */
-        /* 버튼 가운데 정렬 */
-    }
 
     /* 푸터 */
     #kcar-ft {}
@@ -210,112 +187,39 @@
 
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
+    .wrap {
+    padding: 0 96px;
+    }
     body {
         font-size: 17px;
     }
-
-    .hd-wrap {
-        height: 80px;
-        /*auto 에서 변경*/
-    }
-
-    .kcar-logo {
-        width: 135px;
-    }
-
     #kcar-gnb {
         display: block;
         width: 48%;
         min-width: 720px;
     }
-
     #kcar-gnb.sub-on:before {
         height: 20rem;
         background-color: #000;
         box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0, 0, 0, 0.25);
     }
-
     body.sub #kcar-gnb.sub-on:before {
         background-color: #fff;
     }
-
-    #kcar-gnb:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        height: 0;
-        /* border-radius: 0 0 100% 100%; */
-        transition: 0.3s;
+    .kcar-logo {
+        width: 135px;
     }
-
-    .kcar-gnb {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .depth1 {
-        position: relative;
-    }
-
-    .depth1:hover>a {
-        color: var(--primary-color);
-    }
-
-    .depth1>a {
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 80px;
-        padding: 0 0.5em;
-        font-size: 1.1em;
-        z-index: 2;
-    }
-    .depth1 a {
-        color: #fff;
-    }
+    .kcar-logo a {
+    display: block;
+    /* height: 34.65%; 부모 높이에 비례 0*/
+    padding-top: 34.65%;
+    /*부모 너비에 비례*/
+    background: url('../images/svg/logo.svg') center center / contain no-repeat;
 }
-
-.depth2 {
-    position: absolute;
-    left: calc(50% - 120px);
-    top: 100%;
-    width: 240px;
-    padding: 20px 0;
-    text-align: center;
-    line-height: 2;
-    overflow: hidden;
-    z-index: 1;
-    transform: translateY(-100%);
-    transition: 0.6s;
-}
-
-.depth2:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    z-index: -1;
-}
-
-.depth2 li {
-    opacity: 0;
-    transform: translateY(100%);
-    transition: 0.2s;
-}
-
-.depth2 li a {}
-
-.depth2:hover>a {
-    color: var(--primary-color);
 }
 
 
-/* kcar-gnb 동작 */
+/* kcar-gnb 동작 마우스 진입했을 때 */
 .depth1.active .depth2 {
     transform: translateY(0);
 }
@@ -325,6 +229,9 @@
     transform: translateY(0);
     transition: 0.4s 0.5s;
 }
+
+
+
 
 /* 사이트맵 */
 
@@ -437,40 +344,8 @@
     color: #fff;
 }
 
-.shop-btn {
-    display: none;
-}
 
 /* 4.3 하단(footer) */
-.ft-info {}
-
-.ft-sitemap {
-    /*오른쪽*/
-    /* display: block; */
-}
-
-.ft-sitemap ol {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
-}
-
-.ft-depth1 {
-    max-width: 120px;
-}
-
-.ft-depth1>a {
-    /* color: #fff;
-    font-size: 1.2em;
-    font-weight: 600; */
-}
-
-.ft-depth2 {}
-
-.ft-depth2 li {
-    margin: 1.5em 0;
-}
-
 @media screen and (min-width: 1600px) {
     .mo-gnb {
         font-size: 1.2em;
