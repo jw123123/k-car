@@ -260,7 +260,7 @@
         position: relative;
     }
 
-    .depth1:hover>a {
+    /* .depth1:hover>a {
         color: var(--primary-color);
     }
 
@@ -272,6 +272,14 @@
         padding: 0 0.5em;
         font-size: 1.1em;
         z-index: 2;
+    } */
+    
+    .depth1:hover a { 
+        color: var(--primary-color);
+    }
+
+    .depth1 a {
+        color: #fff;
     }
 }
 
