@@ -107,9 +107,7 @@ button:focus {
 .btn-more:hover span {
     transform: scale(1.1);
 }
-.btn-career:hover span {
-    transform: scale(1.1);
-}
+
 
 /* 3. 글자와 여백 */
 .wh,.wh a { 
@@ -530,7 +528,14 @@ body.sub .sitemap-open-btn:before {
     color: #fff;
     cursor: pointer;
 }
-
+.icon-add:before {
+    content: '\e145';
+    font-family: var(--google-icon);
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+}
 #kcar-ft .ft-awards-list {
     list-style: none;
 }
