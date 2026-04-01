@@ -258,7 +258,6 @@
     font-weight: 700; 
     z-index: 1;
 }
-/* 카드 컨테이너 비율 최적화 (가로 줄이고 세로 탄탄하게) */
 #esg-section .esg-card-container {
     position: absolute; 
     top: 55%; 
@@ -281,7 +280,7 @@
     padding-bottom: 36px;
     position: relative;
 }
-#esg-section .card-title::after {
+#esg-section .card-title:after {
     content: ''; 
     position: absolute; 
     bottom: 0; 
@@ -302,7 +301,34 @@
 #esg-section .num small { 
     font-size: 48px; 
     font-weight: 500; 
-    margin-left: 2px; }
+    margin-left: 2px; 
+}
+
+.ico-up:before {
+    content: '\e5d8';
+    font-family: var(--google-icon);
+    left: 12%;
+    position: absolute;
+    top: 5%;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+}
+.ico-up2:before {
+    content: '\e5d8';
+    font-family: var(--google-icon);
+    left: 20%;
+    position: absolute;
+    top: 5%;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+}
+
+
+
 
 /* 가로 3단 정렬 및 구분선 */
 #esg-section .card-stats { 
@@ -567,12 +593,12 @@
     color: #fff;
     margin-bottom: 50px;
 }
-.btn-recruitment {
+.btn-career {
     padding: 12px 60px;
     gap: 15px; /* 텍스트와 아이콘 사이 간격 */
 }
 /* 아이콘 자리 스타일 */
-.btn-recruitment .icon-open_in_new {
+.btn-career .icon-open_in_new {
     content: '\e89e';
     font-family: var(--google-icon);
     font-style: normal;
