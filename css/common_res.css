@@ -57,9 +57,6 @@
     .wrap {
     padding: 0 60px;
     }
-    .ft-inner {
-    flex-direction: column; /* 아직 세로 유지 */
-    }
 
     
     body {
