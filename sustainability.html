@@ -14,6 +14,11 @@
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
     <style>
+      h3 {
+        margin-top: 2.4rem;
+        margin-bottom: 2.4rem;
+        font-size: 1.5em;
+      }
     .title-context {
         width: 100%;
         margin-top: 2.4rem;
@@ -27,12 +32,91 @@
       display: flex;
       justify-content: space-between;
     }
-    .esg-list > li {
-        height: 20.3rem;
+    .esg-contents {
+        height: 14rem;
         padding: 1.8rem;
         border: 1px solid #e2e8ee;
         border-bottom-left-radius: .4rem;
         border-bottom-right-radius: .4rem;
+    }
+    .box-in-title {
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #16171d;
+      margin-bottom: 0.5rem;
+    }
+    .esg-list > li {
+      width: 23.1rem;
+    }
+    .esg-list > li img {
+      width: 100%;
+    }
+    .esg-link-lists li {
+      display: inline-flex;
+      flex-wrap: wrap;
+      margin-right: 1rem;
+    }
+    .esg-result table thead tr th {
+        padding: 1.2rem 0;
+        background-color: #f9fafb;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-align: center;
+        color: #16171d;
+        border-left: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    .esg-result table tbody tr td {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.86;
+      text-align: center;
+      color: #54555a;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .esg-result table tbody tr td:first-child {
+      border-left: 0;
+    }
+    .esg-record, .esg-value-list {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .esg-record {
+      position: relative;
+      height: 100%;
+    }
+    .esg-value-list>li {
+      width: 2.4rem;
+      height: 2.4rem;
+      text-align: center;
+      background-color: #f2f2f2;
+      color: #cfcfcf;
+    }
+    .esg-value-list>li.on {
+      background-color: #b70f28;
+      color: #fff;
+    }
+    .esg-primary-value {
+      width: 16rem;
+      margin-right: 0 !important;
+      font-size: 8rem !important;
+      letter-spacing: -.9rem !important;
+      color: #b70f28;
+      text-align: left;
+      font-weight: 700;
+    }
+    .esg-record .desc {
+      position: absolute;
+      left: 16.8rem;
+      bottom: 50%;
+      width: calc(3.2rem * 7);
+      transform: translateY(calc(50% + 2.4rem));
+      font-size: 0;
+      font-size: 0.8rem;
+      line-height: 1.38;
+      text-align: left;
     }
     </style>
 </head>
@@ -264,175 +348,138 @@
                 케이카는 ESG 경영위원회를 설립하여, 환경, 정보보호, 고객가치 혁신, 지배구조, 윤리경영 등 ESG 경영 전반에 걸친 전략을 수립하고 성과를 점검하고 있습니다.
                 지속적인 ESG경영 활동을 통해 케이카를 둘러싼 이해관계자 보호 및 더 나아가 사회와 환경의 사회적 책임과 지속 가능성을 실현해 나가겠습니다.
               </div>
-                <ul class="esg-list">
-                  <li>
-                    <img src="images/esg-list-01.png"  class="imageye-selected">
-                    <div class="esg-contents">
-                      <p class="tit">
-                        ESG 경영
-                      </p>
-                      <ul class="esgLinkLists">
-                        <li><a href="#" ># ESG 경영</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><span class="esgContentsImg"><img src="images/esg-list-02.png" alt="환경"
-                        class="imageye-selected"></span>
-                    <div class="esgContents">
-                      <p class="tit">
-                        환경
-                      </p>
-                      <ul class="esgLinkLists">
-                        <li><a href="#" ># 환경정책</a></li>
-                        <li><a href="#" ># 환경조직</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><span class="esgContentsImg"><img src="images/esg-list-03.png" alt="사회"
-                        class="imageye-selected"></span>
-                    <div class="esgContents">
-                      <p class="tit">
-                        사회
-                      </p>
-                      <ul class="esgLinkLists">
-                        <li><a href="#" ># 사회공헌</a></li>
-                        <li><a href="#" ># 안전보건</a></li>
-                        <li class="mt8 mL0"><a href="#" ># 노사상생협약</a></li>
-                        <li class="mt8"><a href="#" ># 정보보호</a></li>
-                        <li class="mt8 mL0"><a href="#" ># 고객의 소리</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><span class="esgContentsImg"><img src="images/esg-list-04.png" alt="지배구조"
-                        class="imageye-selected"></span>
-                    <div class="esgContents">
-                      <p class="tit">
-                        지배구조
-                      </p>
-                      <ul class="esgLinkLists">
-                        <li><a href="#" ># 기업지배구조헌장</a></li>
-                        <li class="mt8 mL0"><a href="#" ># 주주정보</a></li>
-                        <li class="mt8 mL0"><a href="#" ># 이사회 및 위원회</a></li>
-                        <li class="mt8 mL0"><a href="#" ># 정관 및 규정</a></li>
-                        <li class="mt8 mL0"><a href="#" ># 주주총회 및 배당</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><span class="esgContentsImg"><img src="images/esg-list-05.png" alt="윤리경영"
-                        class="imageye-selected"></span>
-                    <div class="esgContents">
-                      <p class="tit">
-                        윤리경영
-                      </p>
-                      <ul class="esgLinkLists">
-                        <li><a href="#" ># 윤리강령</a></li>
-                        <li><a href="#" ># 비윤리제보</a></li>
-                        <li class="mt8 mL0"><a href="#" ># K-ITAS</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-                <div class="esgResultBox">
-                  <h3 class="tit">
-                    주요 평가 기관 2024년 ESG 평가 결과
-                  </h3>
-                  <div class="esgResultTbl stateTbl">
-                    <table cellpadding="0" cellspacing="0" width="100%">
-                      <caption>주요 평가 기관 2024년 ESG 평가 결과</caption>
-                      <colgroup>
-                        <col width="350px">
-                        <col width="*">
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th>평가 기관</th>
-                          <th>2024년도 평가 결과</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><img src="/images/tit-state-01.png" alt="한국ESG기준원" class="imageye-selected"></td>
-                          <td>
-                            <div class="esgReT_record">
-                              <div class="esgReT_ranking">
-                                <div class="esgReT_numB">
-                                  B
-                                </div>
-                                <div>
-                                  <ul class="esgReT_numList">
-                                    <li>S</li>
-                                    <li>A+</li>
-                                    <li>A</li>
-                                    <li>B+</li>
-                                    <li class="on">
-                                      B
-                                    </li>
-                                    <li>C</li>
-                                    <li>D</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img src="/images/tit-state-03.png" alt="SUSTINVEST" class="imageye-selected"></td>
-                          <td>
-                            <div class="esgReT_record">
-                              <div class="esgReT_ranking">
-                                <div class="esgReT_numB">
-                                  A
-                                </div>
-                                <div>
-                                  <ul class="esgReT_numList">
-                                    <li>AA</li>
-                                    <li class="on">
-                                      A
-                                    </li>
-                                    <li>BB</li>
-                                    <li>B</li>
-                                    <li>C</li>
-                                    <li>D</li>
-                                    <li>E</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img src="/images/tit-state-02.png" alt="한국ESG연구소" class="imageye-selected"></td>
-                          <td>
-                            <div class="esgReT_record">
-                              <div class="esgReT_ranking">
-                                <div class="esgReT_numB">
-                                  B<span>+</span></div>
-                                <div>
-                                  <ul class="esgReT_numList">
-                                    <li>S</li>
-                                    <li>A+</li>
-                                    <li>A</li>
-                                    <li class="on">
-                                      B+
-                                    </li>
-                                    <li>B</li>
-                                    <li>C</li>
-                                    <li>D</li>
-                                  </ul>
-                                  <p class="desc">
-                                    ※ 한국 ESG 연구소 등급은 2023년 평가 결과이며,
-                                    <br>2024년 평가 결과는 2025년 1월 중 발표 후 게시 예정
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <ul class="esg-list">
+                <li>
+                  <img src="images/esg-list-01.png"  alt="ESG 경영">
+                  <div class="esg-contents">
+                    <div class="box-in-title">ESG 경영</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># ESG 경영</a></li>
+                    </ul>
                   </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-02.png" alt="환경">
+                  <div class="esg-contents">
+                    <div class="box-in-title">환경</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 환경정책</a></li>
+                      <li><a href="#" ># 환경조직</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-03.png" alt="사회"">
+                  <div class="esg-contents">
+                    <div class="box-in-title">사회</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 사회공헌</a></li>
+                      <li><a href="#" ># 안전보건</a></li>
+                      <li><a href="#" ># 노사상생협약</a></li>
+                      <li><a href="#" ># 정보보호</a></li>
+                      <li><a href="#" ># 고객의 소리</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-04.png" alt="지배구조">
+                  <div class="esg-contents">
+                    <div class="box-in-title">지배구조</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 기업지배구조헌장</a></li>
+                      <li><a href="#" ># 주주정보</a></li>
+                      <li><a href="#" ># 이사회 및 위원회</a></li>
+                      <li><a href="#" ># 정관 및 규정</a></li>
+                      <li><a href="#" ># 주주총회 및 배당</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-05.png" alt="윤리경영">
+                  <div class="esg-contents">
+                    <div class="box-in-title">윤리경영</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 윤리강령</a></li>
+                      <li><a href="#" ># 비윤리제보</a></li>
+                      <li><a href="#" ># K-ITAS</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <h3>주요 평가 기관 2024년 ESG 평가 결과</h3>
+              <div class="esg-result">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                  <caption class="blind">주요 평가 기관 2024년 ESG 평가 결과</caption>
+                  <colgroup>
+                    <col width="40%">
+                    <col width="*">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>평가 기관</th>
+                      <th>2024년도 평가 결과</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><img src="images/tit-state-01.png" alt="한국ESG기준원" ></td>
+                      <td>
+                        <div class="esg-record">
+                          <div class="esg-primary-value">B</div>
+                          <ul class="esg-value-list">
+                            <li>S</li>
+                            <li>A+</li>
+                            <li>A</li>
+                            <li>B+</li>
+                            <li class="on">B</li>
+                            <li>C</li>
+                            <li>D</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img src="images/tit-state-03.png" alt="SUSTINVEST" ></td>
+                      <td>
+                        <div class="esg-record">
+                          <div class="esg-primary-value">A</div>
+                          <ul class="esg-value-list">
+                            <li>AA</li>
+                            <li class="on">A</li>
+                            <li>BB</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                            <li>E</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img src="images/tit-state-02.png" alt="한국ESG연구소" ></td>
+                      <td>
+                        <div class="esg-record">
+                          <div class="esg-primary-value">B<span>+</span></div>
+                          <ul class="esg-value-list">
+                            <li>S</li>
+                            <li>A+</li>
+                            <li>A</li>
+                            <li class="on">B+</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                          </ul>
+                          <p class="desc">
+                            ※ 한국 ESG 연구소 등급은 2023년 평가 결과이며,
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2024년 평가 결과는 2025년 1월 중 발표 후 게시 예정
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- esg-result 종료 -->
+            </div><!-- business-container 종료 -->
         </section>
     </main>
 

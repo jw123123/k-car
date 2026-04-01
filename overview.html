@@ -80,24 +80,31 @@
         .core-lists {
             display: flex;
             flex-wrap: wrap;
+            gap: 2rem;
             justify-content: space-between;
+            margin: 2rem 0;
         }
         .core-lists>li {
             display: flex;
-            width: 48%;
-            padding: 4rem;
-            margin-top: 2.4rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem;
             border: 1px solid #e2e8ee;
             border-radius: 0.8rem;
         }
+@media all and (min-width: 1024px) {.core-lists>li { width: 48%;}}
+
+        .core-lists>li div {
+            right: 0;
+            width: calc(100% - 10rem);
+        }
         .core-lists>li:before {
-            display: block;
             content: "";
-            padding: 4rem;
             width: 8rem;
             height: 8rem;
             border-radius: 100%;
-            margin-right: 2rem;
             border: 1px solid #d8dee8;
         }
         .core-lists>li:first-of-type:before {
