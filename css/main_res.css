@@ -1,293 +1,32 @@
 @charset 'UTF-8';
 /* 1. mo ~767px까지 */
 @media all and (max-width: 767px) {
-    .txt-wrap {
-        max-width: 429px;
-    }
+
 }
 
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
-    .main-sec {
-        padding: 80px 0;
-    }
-    .main-visual-sec {
-        height: 75vw;
-    }
-    .main-visual-video {
-        transform: scale(1.3);
-    }
-    .main-visual-txt {
-        min-width: 640px;
-        font-size: 1.2em;
-    }
-    .txt-wrap {
-        width: 640px;
-    }
-    .txt3-intro1 {
-        width: auto;
-    }
 
-    /* 2. Product 영역 */
-    .main-product-sec {
-        position: relative;
-    }
-    .main-product-container {
-        min-height: 360px;
-    }
-    .main-product-wrap {
-        position: absolute;
-        right: 0;
-        top: calc(50% - 180px);
-        width: 55%;
-        height: 360px;
-        font-size: 1.15em;
-    }
-    .product-item a {
-        background-size: auto 170px;
-    }
-    .main-product-page {
-        position: absolute;
-        right: calc(55% + 24px);
-        bottom: 2px;
-    }
-
-    /* 3. 핵심역량 */
-    .main-capability-sec {}
-    .main-capability-container {}
-    .main-capability-wrap {
-        position: relative;
-        flex-direction: row;
-        height: auto;
-    }
-    
-    .capability-item {
-        width: 50%;
-        height: 420px;
-        padding: 1.5em;
-        border-width: 0; 
-    }
-    /* 4. 핵심가치 */
-    .main-value-sec {}
-    .main-value-container {}
-    .main-value-wrap {}
-
-    .value-hd h2 {}
-    .value-hd .big {
-        font-size: 2em;
-    }
-    .value-hd .h2-desc {}
-    .more-view {}
-
-    .value-dl {
-        display: flex;
-        height: 480px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .value-item {
-        display: flex;
-        flex-direction: column; /*Y축 기준*/
-        justify-content: flex-end;
-        width: 32%;
-        margin: 0;
-    }
-    /* 5. 글로벌 */
-    .main-global-wrap h2 {
-        font-size: 2.4em;
-    }
 }
 
 /* 3. only tb 768px ~ 1279px */
 @media all and (min-width: 768px) and (max-width: 1279px) {
-    .main-capability-wrap:before, .main-capability-wrap:after {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        background-color: #fff;
-        content: '';
-        opacity: 0.2;
-        transform: translate(-50%, -50%);
-    }
-    .main-capability-wrap:before {
-        width: 100%;
-        height: 1px;
-    }
-    .main-capability-wrap:after {
-        width: 1px;
-        height: 100%;
-    }
-    .more-view {
-        margin-bottom: 2em;
-    }
+
 }
 
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
-    .main-sec {
-        height: 100vh;
-        padding: 100px 0;
-    }
-    .main-visual-sec {
-        background-color: #603535;
-    }
-    .main-visual-video {
-        transform: none;
-    }
-    .main-visual-txt {
-        margin-top: 50px;
-    }
-    .txt-wrap {
-        width: 920px;
-    }
-
-    /* 2. Product */
-    .main-product-sec {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-    .main-product-container {     }
-    .h2-desc {
-        font-size: 2.8em;
-    }
-    .main-product-wrap {
-        width: calc(50% + 200px);
-        height: 440px;
-        font-size: 1.2em;
-    }
-    .main-product {
-        width: 2400px;
-    }
-    .product-item {
-        width: 480px;
-        padding-right: 40px;
-    }
-    .product-item a {
-        background-size: auto 200px;
-        transition: 0.3s;
-    }
-    .product-item a:hover {
-        border-radius: 50%;
-    }
-    .main-product-page {
-        right: calc(50% + 224px);
-    }
-
-    /* 3. 핵심역량 */
-    .main-capability-sec {
-        background: url('../images/capabilityBg.jpg') center center / cover;
-    }
-    .main-capability-container {
-        height: 100%;
-    }
-    .main-capability-wrap {
-        height: 100%;
-    }
-    .capability-item {
-        width: 25%;
-        height: 100%;
-        border-right: 1px solid rgba(255,255,255,.2);
-        background-position: left -50px top calc(50% - 100px);
-        background-size: 160px;
-    }
-    .capability-detail {
-        height: 0;
-        opacity: 0;
-        transition: 0.5s;
-    }
-    .capability-detail:before {
-        transform: translateX(100%);
-        opacity: 0;
-        transition: 0.5s 0.5s;
-    }
-    /* 호버 동작 */
-    .capability-item:hover {
-        background-position: left -200px top calc(50% - 100px);
-    }
-    .capability-item:hover .capability-detail{
-        height: 200px;
-        opacity: 0.8;
-    }
-    .capability-item:hover .capability-detail:before{
-        transform: translateX(0);
-        opacity: 0.5;
-    }
-
-
-    /* 4. 핵심가치 */
-    .main-value-sec {}
-    .main-value-container {
-        display: flex;
-        align-items: center;
-        height: 100%;
-    }
-    .main-value-wrap {
-        display: flex;
-        align-items: center;
-    }
-    .main-value-wrap > * {
-        
-    }
-    .value-hd {
-        max-width: 400px;
-        padding-right: 40px;
-        flex-grow: 1;
-    }
-    .value-hd h2 {}
-    .value-hd .big {
-        font-size: 2.8em;
-    }
-    .value-hd .h2-desc {}
-    .more-view {}
-
-    .value-dl {
-        flex-grow: 2;
-        font-size: 1.2em;
-    }
-    .value-item {}
-    .value-item dt {
-        font-size: 2em;
-    }
-    .value-item dd:first-of-type {
-        font-size: 1.8em;
-    }
-    .value-item dd:last-of-type {}
-    .value-detail {
-        height: 0;
-        opacity: 0;
-        transition: 0.5s;
-    }
-    .value-detail li {}
-    .value-item:hover .value-detail {
-        height: 160px;
-        opacity: 1;
-    }
-    /* 5. 글로벌 */
-    .main-global-wrap h2 {
-        font-size: 3.2em;
-    }
 }
+
+    
 
 /* 5. pc 1600px부터~ */
 @media all and (min-width: 1600px) {
-    .main-capability-wrap {
-        font-size: 1.2em;
-    }
-    .value-hd {
-        max-width: inherit;
-    }
-    .value-dl {
-        height: 600px;
-    }
+
 }
 /* 6. pc 1920px부터~ */
 @media all and (min-width: 1920px) {
-    .main-product-wrap {
-        width: calc(50% + 320px);
-    }
-    .main-product-page {
-        right: calc(50% + 344px);
-    }
+
+
 }
 
