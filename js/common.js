@@ -101,11 +101,11 @@ $(function () {
 
 
   //사이트맵 제어
-   openBtn.click(function(){
+  openBtn.click(function () {
     body.addClass("fixed");
     siteMap.attr("style", "");
     //해상도가 모바일이라면 = body의 클래스가 "mo"라면
-    if(body.hasClass("pc")){
+    if (body.hasClass("pc")) {
       siteMap.addClass("active");
     } else { //mo, tb일 때
       siteMap.stop().animate({
@@ -114,9 +114,9 @@ $(function () {
       }, speed);
     }
   });
-  closeBtn.click(function(){
+  closeBtn.click(function () {
     body.removeClass("fixed");
-    if(body.hasClass("pc")){
+    if (body.hasClass("pc")) {
       siteMap.removeClass("active");
     } else { //mo, tb일 때
       siteMap.stop().animate({
@@ -126,8 +126,8 @@ $(function () {
     }
   });
 
-  moDepth1.click(function(e){
-    if(body.hasClass("mo")){
+  moDepth1.click(function (e) {
+    if (body.hasClass("mo")) {
       e.preventDefault();
       $(this).parent().toggleClass("active");
       $(this).parent().siblings().removeClass("active");
