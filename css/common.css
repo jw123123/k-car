@@ -224,12 +224,11 @@ button:focus {
 .kcar-util-wrap {
     display: flex;
     align-items: center;
-    gap: 24px;
-    /* 버튼 사이 간격 */
 }
 
 .lang-wrap {
     position: relative;
+    padding-right: 24px;
 }
 
 .lang-btn {
@@ -415,7 +414,8 @@ body.sub .sitemap-open-btn:before {
     font-size: 40px;
 }
 
-.mo-gnb-container {}
+.mo-gnb-container {
+}
 
 .mo-gnb-wrap {}
 
@@ -439,11 +439,6 @@ body.sub .sitemap-open-btn:before {
     line-height: 2.2;
 }
 
-.mo-depth1>a:hover,
-.mo-depth2 a:hover {
-    color: var(--primary-color);
-}
-
 .mo-depth2 li {}
 
 .mo-depth2 li:hover a {
@@ -455,6 +450,7 @@ body.sub .sitemap-open-btn:before {
     right: 48px;
     top: 20px;
     display: table;
+    border-spacing: 10px;
     font-weight: 600;
 }
 
@@ -481,6 +477,28 @@ body.sub .sitemap-open-btn:before {
 }
 
 
+.shop-btn {
+    position: relative;
+    width: 100%;
+    padding-left: 1em;
+    margin-top: 2em;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 2.2em;
+}
+
+.shop-btn:after {
+    position: absolute;
+    right: 10px;
+    content: '\e5cc';
+    font-family: var(--google-icon);
+    font-weight: 600;
+    font-size: 28px;
+}
 
 /* 4.3 하단(footer) */
 /* 4. 푸터 영역 */
