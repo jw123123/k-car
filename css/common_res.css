@@ -55,10 +55,10 @@
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
     .wrap {
-    padding: 0 60px;
+        padding: 0 60px;
     }
 
-    
+
     body {
         font-size: 16px;
     }
@@ -82,7 +82,7 @@
     }
 
 
-/* !!!!!!!! mo 붙어있는 건 건들지 말기!!!! */
+    /* !!!!!!!! mo 붙어있는 건 건들지 말기!!!! */
     .mo-gnb-container {
         position: absolute;
         right: 0;
@@ -139,16 +139,6 @@
 
 
     /* 푸터 */
-    #kcar-ft {}
-
-    .ft-info-wrap {}
-
-    /* 사업장 동작 */
-    .ft-place-wrap:hover .ft-place-list {
-        height: 250px;
-        padding: 1em;
-    }
-
     .gototop {
         top: inherit;
         bottom: 56px;
@@ -185,34 +175,116 @@
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
     .wrap {
-    padding: 0 96px;
+        padding: 0 96px;
     }
+
     body {
         font-size: 17px;
     }
+
     #kcar-gnb {
         display: block;
         width: 48%;
         min-width: 720px;
     }
+
     #kcar-gnb.sub-on:before {
         height: 20rem;
         background-color: #000;
         box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0, 0, 0, 0.25);
     }
+
     body.sub #kcar-gnb.sub-on:before {
         background-color: #fff;
     }
+
     .kcar-logo {
         width: 135px;
     }
-    .kcar-logo a {
-    display: block;
-    /* height: 34.65%; 부모 높이에 비례 0*/
-    padding-top: 34.65%;
-    /*부모 너비에 비례*/
-    background: url('../images/svg/logo.svg') center center / contain no-repeat;
-}
+
+    /* pc푸터 */
+    #kcar-ft {
+        padding: 60px 0;
+    }
+
+    #kcar-ft .ft-logo {
+        width: 150px;
+        height: 38px;
+    }
+
+    .ft-bottom {
+        gap: 60px;
+    }
+
+    #kcar-ft .ft-awards-list {
+        display: block;
+        position: absolute;
+        right: 96px;
+        top: 66px;
+    }
+
+    #kcar-ft .ft-awards-list li {
+        padding-right: 0;
+        padding-bottom: 10px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    #kcar-ft .ft-family-site {
+        right: 96px;
+    }
+
+    #kcar-ft .family-site-btn {
+        justify-content: space-between;
+        width: 200px;
+        height: 46px;
+        padding: 0 16px;
+        margin-bottom: 28px;
+        border: 0;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .ft-company-info .company dl:after {
+        content: " | ";
+        padding-right: 1em;
+    }
+
+    .ft-company-info .company dl:last-child:after {
+        display: none;
+    }
+
+    #kcar-ft .ft-company-info,
+    #kcar-ft .copyright {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .ft-company-info .company {
+        display: flex;
+    }
+
+
+    #kcar-ft .ft-sns-icons {
+        display: flex;
+        gap: 18px;
+        margin: 24px 0 28px;
+    }
+
+    #kcar-ft .ft-sns-icons a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.7;
+    }
+
+    #kcar-ft .btn-top-scroll {
+        margin-top: 8px;
+        margin-left: auto;
+    }
 }
 
 
