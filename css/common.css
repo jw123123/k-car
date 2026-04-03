@@ -94,32 +94,59 @@ button:focus {
 }
 
 /* 공통 버튼 스타일 */
-.service-more,
-.btn-more,
-.btn-career {
-    display: inline-block;
-    padding: 12px 120px;
+.btn-common {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 50px;
     border-radius: 6px;
     background-color: var(--primary-color);
+    box-sizing: border-box;
+    text-decoration: none;
     cursor: pointer;
+    white-space: nowrap;
+    /* min-width: 160px; */
 }
 
-.service-more span,
-.btn-more span,
-.btn-career span {
-    display: inline-block;
-    font-weight: 600;
+/* 안쪽 텍스트/아이콘 묶음 */
+.btn-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.1;
     color: #fff;
-    transition: 0.3s;
 }
 
-.service-more:hover span {
-    transform: scale(1.1);
+/* 버튼 안 텍스트 */
+.btn-label span {
+    display: inline-block;
+    color: #fff;
 }
 
-.btn-more:hover span {
-    transform: scale(1.1);
+/* 버튼 안 아이콘 */
+.btn-label i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 1;
+    font-size: 18px;
+    flex-shrink: 0;
 }
+
+a.btn-common {
+    color: inherit;
+}
+
+button.btn-common {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 
 
 /* 3. 글자와 여백 */
@@ -214,6 +241,7 @@ button:focus {
     height: 0;
     transition: 0.3s;
 }
+
 #kcar-gnb:after {
     display: none;
     content: '';
@@ -226,7 +254,7 @@ button:focus {
     opacity: 0.2;
 }
 
- body.sub #kcar-gnb:after {
+body.sub #kcar-gnb:after {
     display: none;
     content: '';
     position: absolute;
@@ -236,7 +264,7 @@ button:focus {
     height: 1px;
     background-color: #000;
     opacity: 0.2;
- }
+}
 
 .kcar-gnb {
     display: flex;
@@ -634,26 +662,19 @@ body.sub .sitemap-open-btn:before {
     right: 20px;
 }
 
-#kcar-ft .family-site-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 36px;
-    border-radius: 6px;
-    font-size: 14px;
+.family-site-btn {
+    /* min-width: 160px; */
     background: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
 }
 
-.icon-add:before {
+.family-site-btn i {
+    font-size: 18px;
+}
+
+.icon-plus:before {
     content: '\e145';
     font-family: var(--google-icon);
     font-style: normal;
-    display: inline-block;
-    vertical-align: middle;
-    color: #fff;
 }
 
 #kcar-ft .ft-awards-list {

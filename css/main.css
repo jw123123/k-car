@@ -289,6 +289,7 @@
     height: 100%;
     object-fit: cover;
 }
+.btn-service {}
 
 
 
@@ -310,7 +311,6 @@
     font-weight: 700;
     z-index: 1;
 }
-
 .esg-section .esg-card-container {
     position: absolute;
     top: 55%;
@@ -645,9 +645,7 @@
 }
 
 .btn-more {
-    /* padding: 12px 60px; */
-    /* padding: 12px 120px; */
-    min-width: 120px;
+    /* min-width: 120px; */
 }
 
 /* 뉴스 리스트 정렬 */
@@ -788,27 +786,19 @@
     margin-bottom: 50px;
 }
 
+
 .btn-career {
-    position: relative;
-    padding: 12px 60px;
-    text-align: center;
-    /* gap: 10px;  */
+    /* min-width: 160px; */
 }
 
-.btn-career span {
-    position: relative;
-    left: -15px;
+.btn-career i {
+    font-size: 18px;
+    
 }
-
-/* 아이콘 자리 스타일 */
-.btn-career:before {
+.icon-open_in_new:before {
     content: '\e89e';
     font-family: var(--google-icon);
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff
+    font-style: normal;
 }
 
 .career-btns {
