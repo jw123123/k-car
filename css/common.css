@@ -214,6 +214,29 @@ button:focus {
     height: 0;
     transition: 0.3s;
 }
+#kcar-gnb:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0.2;
+}
+
+ body.sub #kcar-gnb:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    opacity: 0.2;
+ }
 
 .kcar-gnb {
     display: flex;
@@ -248,7 +271,7 @@ button:focus {
 
 .lang-list {
     position: absolute;
-    left: 50%;
+    left: 25%;
     top: 100%;
     transform: translateX(-50%);
     width: 50px;

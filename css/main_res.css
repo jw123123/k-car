@@ -4,7 +4,13 @@
 
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
-
+  .hero-container {
+    padding-top: 56.25%; /* 75% = 4:3 비율 박스 /// 나는 가로형이라 56.25% = 16:9 비율 박스 */
+  }
+  .hero-video {
+    object-position: center center; /* -- 태블릿부터 center center */
+  }
+  
   .kcar-title {
     font-size: 62px;
     font-weight: 900;
@@ -31,7 +37,13 @@
     height: 100vh;
     overflow: hidden;
   }
-
+  .hero-container {
+    padding-top: 0;
+    height: calc(100vh - 100px);
+  }
+  .hero-video {
+    position: static;
+  }
   .kcar-title {
     font-size: 96px;
     font-weight: 900;
