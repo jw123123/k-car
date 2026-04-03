@@ -42,7 +42,7 @@ $(function () {
     }
   }
   // 화면에 요소 보일 때쯤 애니메이션
-  let aniEl = $(".ani-top, .ani-bottom,.ani-left, .ani-right, .fade-in");
+  let aniEl = $(".move-top, .ani-bottom,.ani-left, .ani-right, .fade-in");
   aniEl.each(function () {
     let aniElTop = $(this).offset().top - vH;
     if (scTop > aniElTop) {
@@ -149,4 +149,7 @@ $(function () {
 
   // 임시링크 문서 꼭대기로 이동하는 것 막아주기
 
+
+  // AOS 플러그인
+    AOS.init();
 });
