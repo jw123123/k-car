@@ -10,7 +10,7 @@
   .hero-video {
     object-position: center center; /* -- 태블릿부터 center center */
   }
-  
+
   .kcar-title {
     font-size: 62px;
     font-weight: 900;
@@ -132,26 +132,6 @@
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 50px;
-  }
-
-  .btn-career {
-    position: relative;
-    padding: 12px 60px;
-    text-align: center;
-    /* gap: 10px;  */
-  }
-
-  .btn-career span {
-    position: relative;
-    left: -15px;
-  }
-
-  .btn-career:before {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff
   }
 
   .career-btns {

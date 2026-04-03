@@ -364,17 +364,6 @@
         right: 96px;
     }
 
-    #kcar-ft .family-site-btn {
-        justify-content: space-between;
-        width: 200px;
-        height: 46px;
-        padding: 0 16px;
-        margin-bottom: 28px;
-        border: 0;
-        border-radius: 6px;
-        font-size: 16px;
-    }
-
     .ft-company-info .company dl:after {
         content: " | ";
         padding-right: 1em;
