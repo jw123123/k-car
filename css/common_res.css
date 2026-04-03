@@ -205,8 +205,15 @@
         box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0, 0, 0, 0.25);
     }
 
+    #kcar-gnb.sub-on:after {
+        display: block;
+    }
+
     body.sub #kcar-gnb.sub-on:before {
         background-color: #fff;
+    }
+    body.sub #kcar-gnb.sub-on:after {
+        display: block;
     }
 
     .kcar-logo {
