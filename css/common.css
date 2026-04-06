@@ -109,6 +109,7 @@ button:focus {
     white-space: nowrap;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
 .btn-common:hover {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
@@ -670,12 +671,15 @@ body.sub .sitemap-open-btn:before {
 .family-site-btn {
     background: var(--primary-color);
 }
+
 .family-site-btn i {
     font-size: 18px;
 }
+
 .family-site-btn:hover {
-    box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
+
 .icon-plus:before {
     content: '\e145';
     font-family: var(--google-icon);
