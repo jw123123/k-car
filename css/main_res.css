@@ -1,32 +1,164 @@
 @charset 'UTF-8';
 /* 1. mo ~767px까지 */
-@media all and (max-width: 767px) {
-
-}
+@media all and (max-width: 767px) {}
 
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
+  .hero-container {
+    padding-top: 56.25%; /* 75% = 4:3 비율 박스 /// 나는 가로형이라 56.25% = 16:9 비율 박스 */
+  }
+  .hero-video {
+    object-position: center center; /* -- 태블릿부터 center center */
+  }
+
+  .kcar-title {
+    font-size: 62px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+  }
+
+  .txt-s {
+    font-size: 32px;
+    font-weight: 900;
+  }
+
 
 }
 
 /* 3. only tb 768px ~ 1279px */
-@media all and (min-width: 768px) and (max-width: 1279px) {
-
-}
+@media all and (min-width: 768px) and (max-width: 1279px) {}
 
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
+  .main-sec.main-sec-visual {
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .hero-container {
+    padding-top: 0;
+    height: calc(100vh - 100px);
+  }
+  .hero-video {
+    position: static;
+  }
+  .kcar-title {
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+  }
+
+  .txt-s {
+    font-size: 54px;
+    font-weight: 900;
+  }
+
+  .main-company-sec {
+    height: 100vh;
+    /* 섹션 밖으로 나가는 것은 모두 숨김 */
+  }
+
+  .main-company-sec img {
+    opacity: 0.1;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -32%);
+    z-index: 4;
+  }
+
+  .company-title {
+    font-size: 96px;
+    font-weight: 700;
+    z-index: 5;
+    /* margin-bottom: 10px; */
+  }
+
+  .company-desc {
+    font-size: 36px;
+    line-height: 1.6;
+    z-index: 5;
+  }
+
+
+  /* 인재채용 */
+  .main-career-sec {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .career-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .career-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 컨테이너 및 내부 배치 */
+  .career-content-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .career-title {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
+
+  .career-desc {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+
+  .career-btns {
+    display: flex;
+    gap: 24px;
+  }
+
+  /* 공통 원형 버튼 스타일 */
+  .btn-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+
 }
 
-    
+
 
 /* 5. pc 1600px부터~ */
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1600px) {}
 
-}
 /* 6. pc 1920px부터~ */
-@media all and (min-width: 1920px) {
-
-
-}
-
+@media all and (min-width: 1920px) {}

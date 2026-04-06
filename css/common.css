@@ -94,32 +94,59 @@ button:focus {
 }
 
 /* 공통 버튼 스타일 */
-.service-more,
-.btn-more,
-.btn-career {
-    display: inline-block;
-    padding: 12px 120px;
+.btn-common {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 50px;
     border-radius: 6px;
     background-color: var(--primary-color);
+    box-sizing: border-box;
+    text-decoration: none;
     cursor: pointer;
+    white-space: nowrap;
+    /* min-width: 160px; */
 }
 
-.service-more span,
-.btn-more span,
-.btn-career span {
-    display: inline-block;
-    font-weight: 600;
+/* 안쪽 텍스트/아이콘 묶음 */
+.btn-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.1;
     color: #fff;
-    transition: 0.3s;
 }
 
-.service-more:hover span {
-    transform: scale(1.1);
+/* 버튼 안 텍스트 */
+.btn-label span {
+    display: inline-block;
+    color: #fff;
 }
 
-.btn-more:hover span {
-    transform: scale(1.1);
+/* 버튼 안 아이콘 */
+.btn-label i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 1;
+    font-size: 18px;
+    flex-shrink: 0;
 }
+
+a.btn-common {
+    color: inherit;
+}
+
+button.btn-common {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 
 
 /* 3. 글자와 여백 */
@@ -215,6 +242,30 @@ button:focus {
     transition: 0.3s;
 }
 
+#kcar-gnb:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0.2;
+}
+
+body.sub #kcar-gnb:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    opacity: 0.2;
+}
+
 .kcar-gnb {
     display: flex;
     justify-content: space-between;
@@ -224,12 +275,11 @@ button:focus {
 .kcar-util-wrap {
     display: flex;
     align-items: center;
-    gap: 24px;
-    /* 버튼 사이 간격 */
 }
 
 .lang-wrap {
     position: relative;
+    padding-right: 24px;
 }
 
 .lang-btn {
@@ -249,7 +299,7 @@ button:focus {
 
 .lang-list {
     position: absolute;
-    left: 50%;
+    left: 25%;
     top: 100%;
     transform: translateX(-50%);
     width: 50px;
@@ -439,11 +489,6 @@ body.sub .sitemap-open-btn:before {
     line-height: 2.2;
 }
 
-.mo-depth1>a:hover,
-.mo-depth2 a:hover {
-    color: var(--primary-color);
-}
-
 .mo-depth2 li {}
 
 .mo-depth2 li:hover a {
@@ -455,6 +500,7 @@ body.sub .sitemap-open-btn:before {
     right: 48px;
     top: 20px;
     display: table;
+    border-spacing: 10px;
     font-weight: 600;
 }
 
@@ -481,6 +527,28 @@ body.sub .sitemap-open-btn:before {
 }
 
 
+.shop-btn {
+    position: relative;
+    width: 100%;
+    padding-left: 1em;
+    margin-top: 2em;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 2.2em;
+}
+
+.shop-btn:after {
+    position: absolute;
+    right: 10px;
+    content: '\e5cc';
+    font-family: var(--google-icon);
+    font-weight: 600;
+    font-size: 28px;
+}
 
 /* 4.3 하단(footer) */
 /* 4. 푸터 영역 */
@@ -594,26 +662,19 @@ body.sub .sitemap-open-btn:before {
     right: 20px;
 }
 
-#kcar-ft .family-site-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 36px;
-    border-radius: 6px;
-    font-size: 14px;
+.family-site-btn {
+    /* min-width: 160px; */
     background: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
 }
 
-.icon-add:before {
+.family-site-btn i {
+    font-size: 18px;
+}
+
+.icon-plus:before {
     content: '\e145';
     font-family: var(--google-icon);
     font-style: normal;
-    display: inline-block;
-    vertical-align: middle;
-    color: #fff;
 }
 
 #kcar-ft .ft-awards-list {
