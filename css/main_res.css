@@ -1,62 +1,402 @@
 @charset 'UTF-8';
 /* 1. mo ~767px까지 */
-@media all and (max-width: 767px) {}
+@media all and (max-width: 767px) {
+  /* 서비스 */
+  #service-section {
+        padding: 60px 0;
+    }
+
+    .service-header {
+        margin-bottom: 36px;
+    }
+
+    .service-header h2 {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .service-header span {
+        font-size: 16px;
+    }
+
+    .service-slide {
+        flex: 0 0 86%;
+    }
+
+    .service-title {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .service-desc {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .service-slide-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    .service-pagination {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
 
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
-  .hero-container {
-    padding-top: 56.25%; /* 75% = 4:3 비율 박스 /// 나는 가로형이라 56.25% = 16:9 비율 박스 */
+
+  #kcar-main {
+    padding-top: 71px;
+}
+
+    .main-visual-container {
+      padding-top: 56.25%;
+    height: calc(100vh - 71px);
   }
-  .hero-video {
-    object-position: center center; /* -- 태블릿부터 center center */
+
+  .container-s {
+    padding: 0 60px 40px;
+
   }
 
   .kcar-title {
     font-size: 62px;
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: 5px;
-    margin-bottom: 5px;
+    letter-spacing: 4px;
   }
 
   .txt-s {
     font-size: 32px;
-    font-weight: 900;
   }
+}
+
+/* 3. only tb 768px ~ 1279px */
+@media all and (min-width: 768px) and (max-width: 1279px) {
+  
+
+  /* 서비스 */
+    #service-section {
+        padding: 100px 0;
+    }
+
+    .service-header {
+        margin-bottom: 50px;
+    }
+
+    .service-header h2 {
+        font-size: 44px;
+        line-height: 1.1;
+    }
+
+    .service-header span {
+        font-size: 18px;
+    }
+
+    .service-slide {
+        flex: 0 0 78%;
+    }
+
+    .service-slide-text {
+        margin-bottom: 32px;
+    }
+
+    .service-title {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .service-desc {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    .service-slide-img {
+        width: 320px;
+        height: 320px;
+        border-radius: 24px;
+    }
+
+    .service-pagination {
+        margin-top: 24px;
+        font-size: 24px;
+    }
+  
+  
+  
+  /* 지속가능경영 */
+.esg-section {
+    height: 430px;
+}
+
+.esg-section .esg-main-title {
+    top: 22px;
+    left: 20px;
+    font-size: 18px;
+}
+
+.esg-section .esg-card-container {
+    top: 80px;
+    width: calc(100% - 40px);
+    max-width: 745px;
+    min-height: 240px;
+    padding: 14px 16px 12px;
+    border-radius: 12px;
+}
+
+.esg-section .card-title {
+    padding-bottom: 12px;
+    font-size: 12px;
+}
+
+.esg-section .card-stats {
+    display: flex;
+    margin-top: 8px;
+}
+
+.esg-section .stat {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    min-height: 126px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.esg-section .stat:not(:last-child)::after {
+    left: auto;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    width: 1px;
+    height: 94px;
+    transform: translateY(-50%);
+}
+
+.esg-section .num {
+    flex: none;
+    justify-content: center;
+    padding-left: 12px;
+    font-size: 34px;
+}
+
+.esg-section .num small {
+    font-size: 18px;
+}
+
+.icon-up:before {
+    top: 2px;
+    left: 0;
+    font-size: 12px;
+}
+
+.esg-section .stat > i {
+    flex: none;
+}
+
+.icon-heart:before,
+.icon-partner_heart:before,
+.icon-eco:before,
+.icon-edit_square:before,
+.icon-diversity:before,
+.icon-balance:before {
+    font-size: 24px;
+}
+
+.esg-section .desc {
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.esg-pagination {
+    bottom: 16px;
+}
+
+.esg-page-btn {
+    width: 40px;
+}
+
+ /* NEWS */
+    .main-news-sec {
+        min-height: 500px;
+        padding: 40px 0 48px;
+    }
+
+    .news-header {
+        margin-bottom: 24px;
+    }
+
+    .news-header .sec-title {
+        font-size: 34px;
+    }
+
+    .news-header .btn-more {
+        display: none;
+    }
+
+    .news-slider {
+        padding-left: 36px;
+    }
+
+    .news-list {
+        gap: 16px;
+        padding-right: 36px;
+    }
+
+    .news-item {
+        flex: 0 0 270px;
+        border-radius: 16px;
+    }
+
+    .news-link {
+        padding: 24px 20px 20px;
+    }
+
+    .news-title {
+        min-height: 54px;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .news-desc {
+        font-size: 12px;
+        -webkit-line-clamp: 8;
+    }
+
+    .news-date {
+        margin-top: 18px;
+        font-size: 11px;
+    }
+
+    /* CAREER */
+    .main-career-sec {
+        min-height: 620px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .career-content-wrap {
+        min-height: 620px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        text-align: left;
+        column-gap: 28px;
+    }
+
+    .career-text {
+        align-self: center;
+    }
+
+    .career-title {
+        font-size: 54px;
+        line-height: 1.15;
+        margin-bottom: 18px;
+    }
+
+    .career-desc {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 22px;
+    }
+
+    .career-actions {
+        display: contents;
+    }
+
+    .career-btns {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        align-self: end;
+        margin-bottom: 0;
+    }
+
+    .btn-circle {
+        width: 110px;
+        height: 110px;
+        font-size: 16px;
+    }
+
+    .btn-career {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start;
+    }
+
 
 
 }
 
-/* 3. only tb 768px ~ 1279px */
-@media all and (min-width: 768px) and (max-width: 1279px) {}
-
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
+
+    #kcar-main {
+    /* padding-top: 80px; */
+}
+  .main-sec {
+        min-height: 100vh;
+    /* position: relative;
+    padding: 100px 0;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden; */
+  }
+
+
+
   .main-sec.main-sec-visual {
-    padding: 0;
     height: 100vh;
-    overflow: hidden;
   }
-  .hero-container {
+
+  .main-visual-container {
+    height: calc(100vh - 80px);
     padding-top: 0;
-    height: calc(100vh - 100px);
   }
-  .hero-video {
-    position: static;
+
+  .main-visual-video {
+    /* position: static; */
   }
+
+  .container-s {
+    /* padding: 0 96px 80px;
+    top: 60%;
+    transform: translate(20%, -50%);
+    text-align: right; */
+
+        position: absolute;
+    top: 60%;
+    left: 45%;
+    transform: translate(-30%, -50%);
+    text-align: right;
+    z-index: 5;
+    width: 100%;  
+  }
+
   .kcar-title {
     font-size: 96px;
     font-weight: 900;
-    line-height: 1.1;
     letter-spacing: 5px;
     margin-bottom: 5px;
   }
 
   .txt-s {
     font-size: 54px;
-    font-weight: 900;
   }
 
+
+
+
+  /* 기업소개 */
   .main-company-sec {
     height: 100vh;
     /* 섹션 밖으로 나가는 것은 모두 숨김 */
@@ -87,71 +427,436 @@
   }
 
 
-  /* 인재채용 */
-  .main-career-sec {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1;
-  }
+  /*서비스  */
+/* ===== SERVICE : pc ===== */
+@media all and (min-width: 1280px) {
 
-  .career-bg {
+
+
+  /* 서비스 */
+    #service-section {
+        position: relative;
+        height: 500vh;
+        padding: 0;
+        background: #fff;
+    }
+
+    .service-fixed-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-fixed-wrapper.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .service-fixed-wrapper.is-bottom {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+    }
+
+    .service-inner {
+        height: 100%;
+        padding-top: 196px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .service-header {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .service-header h2 {
+        font-size: 50px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 18px;
+    }
+
+    .service-header span {
+        display: block;
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--primary-font-color);
+    }
+
+    .service-content-wrap {
+        flex: 1;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+    }
+
+    .service-track {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-right: 0;
+    }
+
+    .service-slide {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        flex: none;
+    }
+
+    .service-slide.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .service-slide-text {
+        width: 45%;
+        margin-bottom: 0;
+    }
+
+    .service-title {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .service-desc {
+        font-size: 24px;
+        color: var(--primary-font-color);
+        line-height: 1.4;
+        margin-bottom: 25px;
+    }
+
+    .service-slide-img {
+        width: 450px;
+        height: 450px;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .service-slide-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .service-pagination {
+        position: absolute;
+        left: 0;
+        bottom: 80px;
+        margin-top: 0;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--primary-font-color);
+    }
+
+    .service-pagination .current,
+    .service-pagination .total {
+        min-width: 28px;
+    }
+}
+/* 지속가능경영 */
+.esg-section {
+    height: 100vh;
+}
+
+.esg-section .esg-main-title {
+    top: 60px;
+    left: 96px;
+    font-size: 42px;
+}
+
+.esg-section .esg-card-container {
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    max-width: 980px;
+    min-height: 0;
+    height: 460px;
+    padding: 50px 60px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.esg-section .card-title {
+    padding-bottom: 36px;
+    font-size: 26px;
+}
+
+.esg-section .card-stats {
+    display: flex;
+    margin-top: 40px;
+    height: 240px;
+}
+
+.esg-section .stat {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    min-height: 0;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.esg-section .stat:not(:last-child)::after {
+    left: auto;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    width: 1px;
+    height: 205px;
+    transform: translateY(-50%);
+}
+
+.esg-section .num {
+    justify-content: center;
+    flex: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    font-size: 64px;
+}
+
+.esg-section .num small {
+    font-size: 36px;
+}
+
+.icon-up:before {
+    top: -8px;
+    left: -22px;
+    font-size: 24px;
+}
+
+.esg-section .stat > i {
+    flex: none;
+    min-height: 72px;
+    margin-bottom: 26px;
+}
+
+.icon-heart:before,
+.icon-partner_heart:before,
+.icon-eco:before,
+.icon-edit_square:before,
+.icon-diversity:before,
+.icon-balance:before {
+    font-size: 60px;
+}
+
+.esg-section .desc {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.esg-section .side-nav-wrap {
     position: absolute;
     top: 0;
+    display: flex;
+    height: 100%;
+    z-index: 4;
+}
+
+.esg-section .left-side {
     left: 0;
-    width: 100%;
+}
+
+.esg-section .right-side {
+    right: 0;
+}
+
+.esg-section .side-bar-item {
+    width: 85px;
     height: 100%;
-    z-index: -1;
-  }
-
-  .career-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* 컨테이너 및 내부 배치 */
-  .career-content-wrap {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .career-title {
-    font-size: 50px;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 30px;
-  }
-
-  .career-desc {
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 50px;
-  }
-
-  .career-btns {
-    display: flex;
-    gap: 24px;
-  }
-
-  /* 공통 원형 버튼 스타일 */
-  .btn-circle {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    color: #fff;
+    padding: 0 0 90px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.esg-section .side-bar-item span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
     font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-  }
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.esg-section .side-bar-item:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.esg-section .side-bar-item:hover span {
+    color: #fff;
+}
+
+.esg-pagination {
+    display: none;
+}
+
+
+/* 5. NEWS 영역 */
+ .main-news-sec {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0 140px;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .news-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 60px;
+    }
+
+    .news-header .sec-title {
+        font-size: 52px;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1;
+        margin: 0;
+        text-align: left;
+        letter-spacing: -1.5px;
+    }
+
+    .news-header .btn-more {
+        display: inline-flex;
+    }
+
+    .news-slider {
+        overflow: visible;
+        padding-left: 0;
+    }
+
+    .news-list {
+        width: 100%;
+        display: flex;
+        gap: 25px;
+        justify-content: space-between;
+        padding-right: 0;
+    }
+
+    .news-item {
+        flex: 0 0 calc((100% - 75px) / 4);
+        height: 500px;
+        border-radius: 24px;
+    }
+
+    .news-link {
+        height: 100%;
+        padding: 45px 35px;
+    }
+
+    .news-title {
+        min-height: 68px;
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .news-desc {
+        font-size: 17px;
+        line-height: 1.7;
+        display: block;
+        overflow: hidden;
+    }
+
+    .news-date {
+        margin-top: 32px;
+        font-size: 15px;
+    }
+
+    /* CAREER */
+    .main-career-sec {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .career-content-wrap {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        width: 100%;
+        min-height: 0;
+        column-gap: 40px;
+        text-align: left;
+    }
+
+    .career-text {
+        color: #fff;
+    }
+
+    .career-title {
+        font-size: 50px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 30px;
+    }
+
+    .career-desc {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+
+    .career-actions {
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: end;
+        gap: 28px;
+    }
+
+    .career-btns {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .btn-circle {
+        width: 180px;
+        height: 180px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .btn-career {
+        justify-self: start;
+    }
 
 }
 
