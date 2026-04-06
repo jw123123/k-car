@@ -1,88 +1,143 @@
-(function () {
-    const $window = $(window);
+$(function () {
+    const $win = $(window);
     const $section = $('#service-section');
     const $wrapper = $('.service-fixed-wrapper');
     const $contentWrap = $('.service-content-wrap');
+    const $track = $('.service-track');
     const $slides = $('.service-slide');
-    const $current = $('.service-pagination .current');
-    const $total = $('.service-pagination .total');
-    const totalItems = $slides.length;
+    const $current = $('.service-page-num .current');
+    const $total = $('.service-page-num .total');
+    const $prev = $('.service-prev');
+    const $next = $('.service-next');
 
-    $total.text(totalItems);
+    const total = $slides.length;
+    let currentIndex = 0;
 
-    function updatePcService() {
+    if (!$section.length || !$slides.length) return;
+
+    $total.text(total);
+
+    function setPagination(index) {
+        const safeIndex = isNaN(index) ? 0 : index;
+        $current.text(safeIndex + 1);
+    }
+
+    function setButtons(index) {
+        if (window.innerWidth >= 1280) return;
+        $prev.prop('disabled', index <= 0);
+        $next.prop('disabled', index >= total - 1);
+    }
+
+    function setPcSlide(index) {
+        const safeIndex = Math.max(0, Math.min(index, total - 1));
+        currentIndex = safeIndex;
+        $slides.removeClass('active').eq(currentIndex).addClass('active');
+        setPagination(currentIndex);
+    }
+
+    function setMobileSlide(index) {
+        const safeIndex = Math.max(0, Math.min(index, total - 1));
+        currentIndex = safeIndex;
+
+        const wrapWidth = $contentWrap.innerWidth();
+        $track.css('transform', 'translateX(-' + (currentIndex * wrapWidth) + 'px)');
+
+        setPagination(currentIndex);
+        setButtons(currentIndex);
+    }
+
+    function updatePcScroll() {
         if (window.innerWidth < 1280) {
             $wrapper.removeClass('is-fixed is-bottom');
             return;
         }
 
-        const scrollTop = $window.scrollTop();
         const sectionTop = $section.offset().top;
         const sectionHeight = $section.outerHeight();
-        const windowHeight = $window.height();
-        const sectionBottom = sectionTop + sectionHeight;
+        const winHeight = $win.height();
+        const scrollTop = $win.scrollTop();
+        const scrollRange = sectionHeight - winHeight;
 
-        if (scrollTop >= sectionTop && scrollTop < sectionBottom - windowHeight) {
+        if (scrollTop >= sectionTop && scrollTop < sectionTop + scrollRange) {
             $wrapper.addClass('is-fixed').removeClass('is-bottom');
-        } else if (scrollTop >= sectionBottom - windowHeight) {
+        } else if (scrollTop >= sectionTop + scrollRange) {
             $wrapper.removeClass('is-fixed').addClass('is-bottom');
         } else {
             $wrapper.removeClass('is-fixed is-bottom');
         }
 
-        let progress = (scrollTop - sectionTop) / (sectionHeight - windowHeight);
+        if (scrollRange <= 0) {
+            setPcSlide(0);
+            return;
+        }
+
+        let progress = (scrollTop - sectionTop) / scrollRange;
         progress = Math.max(0, Math.min(1, progress));
 
-        const idx = Math.min(Math.floor(progress * totalItems), totalItems - 1);
-
-        $slides.eq(idx).addClass('active').siblings().removeClass('active');
-        $current.text(idx + 1);
+        const index = Math.min(Math.floor(progress * total), total - 1);
+        setPcSlide(index);
     }
 
-    function updateMobileServicePagination() {
+    function resetMobileLayout() {
         if (window.innerWidth >= 1280) return;
 
-        const slideWidth = $slides.eq(0).outerWidth(true);
-        const scrollLeft = $contentWrap.scrollLeft();
-        const idx = Math.round(scrollLeft / slideWidth);
-        const currentIdx = Math.max(0, Math.min(idx, totalItems - 1));
+        const wrapWidth = $contentWrap.innerWidth();
+        $track.css('width', (wrapWidth * total) + 'px');
+        $slides.css({
+            width: wrapWidth + 'px',
+            flex: '0 0 ' + wrapWidth + 'px'
+        });
 
-        $current.text(currentIdx + 1);
+        setMobileSlide(currentIndex);
     }
 
-    function resetServiceMode() {
+    function resetPcLayout() {
+        if (window.innerWidth < 1280) return;
+
+        $track.css({
+            width: '',
+            transform: 'none'
+        });
+
+        $slides.attr('style', '');
+        setPcSlide(0);
+        updatePcScroll();
+    }
+
+    $prev.on('click', function () {
+        if (window.innerWidth >= 1280) return;
+        setMobileSlide(currentIndex - 1);
+    });
+
+    $next.on('click', function () {
+        if (window.innerWidth >= 1280) return;
+        setMobileSlide(currentIndex + 1);
+    });
+
+    $win.on('scroll', function () {
+        updatePcScroll();
+    });
+
+    $win.on('load resize', function () {
         if (window.innerWidth >= 1280) {
-            $contentWrap.scrollLeft(0);
-            $slides.removeClass('active').eq(0).addClass('active');
-            $current.text(1);
-            updatePcService();
+            resetPcLayout();
         } else {
-            $wrapper.removeClass('is-fixed is-bottom');
-            $slides.removeClass('active').eq(0).addClass('active');
-            $current.text(1);
+            currentIndex = 0;
+            resetMobileLayout();
         }
+    });
+
+    if (window.innerWidth >= 1280) {
+        resetPcLayout();
+    } else {
+        resetMobileLayout();
     }
 
-    $window.on('scroll', function () {
-        updatePcService();
-    });
-
-    $contentWrap.on('scroll', function () {
-        updateMobileServicePagination();
-    });
-
-    $window.on('load resize', function () {
-        resetServiceMode();
-    });
-
-    resetServiceMode();
-})();
+    
+});
 
 
-
-
-
-
+//지속가능경영
 document.addEventListener("DOMContentLoaded", function () {
     const esgSlides = document.querySelectorAll(".esg-slide");
     const esgPageBtns = document.querySelectorAll(".esg-page-btn");

@@ -111,7 +111,7 @@
     height: 100%;
     background: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 60px 0;
 }
 
 .main-company-sec img {
@@ -149,19 +149,15 @@
 /* 3. 서비스 */
 #service-section {
     position: relative;
-    height: auto;
-    padding: 60px 0;
+    padding-bottom: 60px;
     background: #fff;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .service-fixed-wrapper {
     position: relative;
-    top: auto;
-    left: auto;
     width: 100%;
     height: auto;
-    display: block;
 }
 
 .service-inner {
@@ -175,10 +171,10 @@
 }
 
 .service-header h2 {
+    margin-bottom: 16px;
     font-size: 34px;
     font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 16px;
+    line-height: 1.1;
 }
 
 .service-header span {
@@ -189,77 +185,122 @@
 }
 
 .service-content-wrap {
+    overflow: hidden;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-
-.service-content-wrap::-webkit-scrollbar {
-    display: none;
 }
 
 .service-track {
     display: flex;
-    gap: 20px;
-    padding-right: 20px;
+    width: 100%;
+    transition: transform 0.45s ease;
+    will-change: transform;
 }
 
 .service-slide {
-    flex: 0 0 85%;
-    scroll-snap-align: start;
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.service-slide-inner {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-slide-text {
+    width: 100%;
+    text-align: center;
     margin-bottom: 28px;
 }
 
+.service-slide-text .btn-service {
+    margin: 0 auto;
+}
+
 .service-title {
-    font-size: 30px;
-    line-height: 1.4;
+    margin-bottom: 18px;
+    font-size: 28px;
+    line-height: 1.35;
     font-weight: 700;
-    margin-bottom: 15px;
 }
 
 .service-desc {
+    margin-bottom: 24px;
     font-size: 15px;
-    color: var(--primary-font-color);
     line-height: 1.6;
-    margin-bottom: 25px;
+    color: var(--primary-font-color);
+}
+
+.btn-service {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
 }
 
 .service-slide-img {
     width: 200px;
     height: 200px;
+    margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
 }
 
 .service-slide-img img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .service-pagination {
-    margin-top: 24px;
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    text-align: center;
+}
+
+.service-page-num {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1;
     color: var(--primary-font-color);
 }
 
-.service-pagination .current,
-.service-pagination .total {
-    display: inline-block;
-    min-width: 20px;
+.service-page-num .current,
+.service-page-num .total {
+    min-width: 18px;
+    text-align: center;
 }
 
-.btn-service {
+.service-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--primary-font-color);
+    cursor: pointer;
 }
+
+.service-nav:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
 
 
 
@@ -275,7 +316,7 @@
 .esg-section .esg-main-title {
     position: absolute;
     top: 28px;
-    left: 12px;
+    /* left: 12px; */
     z-index: 5;
     color: #fff;
     font-size: 24px;
@@ -321,9 +362,9 @@
     transform: translateX(-50%);
     width: calc(100% - 24px);
     max-width: 351px;
-    min-height: 400px;
-    padding: 18px 18px 14px;
-    border-radius: 14px;
+    /* min-height: 430px; */
+    padding: 38px 38px 0;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -334,8 +375,8 @@
 
 .esg-section .card-title {
     position: relative;
-    padding-bottom: 16px;
-    font-size: 14px;
+    padding-bottom: 38px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -351,7 +392,7 @@
 }
 
 .esg-section .card-stats {
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 
 .esg-section .stat {
@@ -360,7 +401,7 @@
     align-items: center;
     gap: 14px;
     min-height: 108px;
-    padding: 18px 0;
+    padding: 38px 0;
     box-sizing: border-box;
 }
 
@@ -380,9 +421,9 @@
     flex: 0 0 108px;
     display: inline-flex;
     align-items: baseline;
-    justify-content: flex-start;
-    padding-left: 16px;
-    font-size: 44px;
+    justify-content: center;
+    /* padding-left: 16px; */
+    font-size: 36px;
     font-weight: 700;
     line-height: 1;
     transform: none;
@@ -413,14 +454,14 @@
     left: 0;
     top: 0;
     font-size: 14px;
-        font-style: normal;
+    font-style: normal;
     font-weight: normal;
     line-height: 1;
 }
 
 /* Social / Governance 아이콘 */
 .esg-section .stat > i {
-    flex: 0 0 108px;
+    flex: 0 0 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -449,7 +490,7 @@
 
 .esg-section .desc {
     flex: 1;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     line-height: 1.5;
     color: #fff;
@@ -464,7 +505,7 @@
 .esg-pagination {
     position: absolute;
     left: 50%;
-    bottom: 110px;
+    bottom: 70px;
     transform: translateX(-50%);
     z-index: 10;
     display: flex;
@@ -547,7 +588,7 @@
 
 .news-list {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     width: max-content;
     padding-right: 20px;
 }
@@ -642,7 +683,7 @@
     font-size: 23px;
     font-weight: 900;
     line-height: 1.28;
-    margin-bottom: 0;
+    margin-bottom: 36px;
 }
 
 .career-desc {
