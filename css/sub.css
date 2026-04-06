@@ -58,8 +58,8 @@
 .sub-sec h2 {
     font-size: 3.2em;
     font-weight: 800;
-    width: 70%;
-    line-height: 1.7em;
+    width: 90%;
+    line-height: 1.3em;
     padding-bottom:2em;
 }
 
@@ -256,7 +256,7 @@
 
     /* 메인 영역 */
     .sub-sec {
-        padding-top: 120px;
+        padding-top: 100px;
         padding-bottom: 200px;
     }
 

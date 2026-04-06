@@ -4,22 +4,13 @@
 
 .sub-sec {}
 
-.sub-sec h3 {
-  display: inline-block;
-  margin-bottom: 2em;
-  border-bottom: 2px solid var(--primary-color);
-}
-
 .career-sec {}
 
 .career-container {
   text-align: center;
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 
-.talent-wrap {
-  padding-bottom: 200px;
-}
 
 .card-list {
   display: flex;
@@ -79,7 +70,7 @@
   font-weight: 300;
 }
 
-.process-list {
+/* .process-list {
   display: flex;
   gap: 3em;
   justify-content: center;
@@ -105,12 +96,8 @@
   position: absolute;
   right: -55px;
   content: '';
-  /* content: '\f46a';
-  font-family: var(--google-icon);
-  font-size: 2em; */
   border: 1px dashed #000;
   width: 50px;
-  /* color: var(--primary-font-color); */
 }
 
 .process:last-child:after {
@@ -118,19 +105,13 @@
   border-color: transparent;
 }
 
-.process div {}
+.process div {} */
 
-
-
-/* 애니메이션 */
-@keyframes move-top {
-    from {
-        transform: translateY(50%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
+.explain-list {}
+.explain {display: flex;}
+.explain img {width: 40%;}
+.explain dt {}
+.explain dd {}
+.explain dd:before {
+  content: '-';
 }
