@@ -93,12 +93,13 @@ button:focus {
     clip: rect(0, 0, 0, 0);
 }
 
-/* 공통 버튼 스타일 */
+/* btn 공통 스타일 */
 .btn-common {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
+    /* min-width: 30px; */
     padding: 12px 50px;
     border-radius: 6px;
     background-color: var(--primary-color);
@@ -106,7 +107,10 @@ button:focus {
     text-decoration: none;
     cursor: pointer;
     white-space: nowrap;
-    /* min-width: 160px; */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.btn-common:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 /* 안쪽 텍스트/아이콘 묶음 */
@@ -202,7 +206,7 @@ button.btn-common {
     top: 0;
     width: 100%;
     z-index: 100;
-    font-weight: 400;
+    /* font-weight: 400; */
     background-color: #000;
 }
 
@@ -214,15 +218,16 @@ button.btn-common {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 60px;
 }
 
 .kcar-logo {
     position: relative;
-    width: 109px;
+    width: 80px;
     height: 100%;
     z-index: 100;
     background: url('../images/svg/logo.svg') center center / contain no-repeat;
+    cursor: pointer;
 }
 
 .kcar-logo a {}
@@ -663,14 +668,14 @@ body.sub .sitemap-open-btn:before {
 }
 
 .family-site-btn {
-    /* min-width: 160px; */
     background: var(--primary-color);
 }
-
 .family-site-btn i {
     font-size: 18px;
 }
-
+.family-site-btn:hover {
+    box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+}
 .icon-plus:before {
     content: '\e145';
     font-family: var(--google-icon);

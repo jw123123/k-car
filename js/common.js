@@ -93,6 +93,10 @@ $(function () {
     $(this).removeClass("sub-on");
   });
 
+  // 로고링크 제어
+  logo.click(function () {
+    $(location).attr('href', 'index.html');
+  });
 
   // 언어영역 제어
   langBtn.click(function () {
