@@ -64,6 +64,9 @@
     body {
         font-size: 16px;
     }
+.kcar-logo {
+    z-index: 0;
+}
 
 
     .kcar-logo {
@@ -286,6 +289,7 @@
         padding: 15% 0 0;
         background-color: transparent;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
     }
 
     .mo-depth1:hover {
@@ -299,7 +303,12 @@
     .mo-depth1:hover>a {
         color: #fff;
     }
-
+    .mo-depth1:hover .mo-depth2 li a{
+        color: #fff;
+        opacity: 0.7;
+        transition: 0.3s;
+    }
+    
     .mo-depth2 {
         /* display: flex;
         flex-direction: column; */
@@ -319,6 +328,17 @@
         opacity: 1;
     }
 
+    .mo-depth2 li a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 2px solid #fff;
+        transform: scaleX(0);
+        transition: 0.3s;
+    }
     .mo-depth2 li:hover a:after {
         content: '';
         display: block;
@@ -327,12 +347,14 @@
         bottom: 0;
         width: 100%;
         border-bottom: 2px solid #fff;
-        /* transform-origin: center center; */ 
+        transform: scaleX(100%);
+        transform-origin: center center; 
     }
 
-    .mo-depth2 li:hover a {
+    .mo-depth1:hover .mo-depth2 li:hover a {
         position: relative;
         color: #fff;
+        opacity: 1;
     }
 
     /* pc푸터 */
