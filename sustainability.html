@@ -13,6 +13,112 @@
     <script src="js/lenis.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
+    <style>
+      h3 {
+        margin-top: 2.4rem;
+        margin-bottom: 2.4rem;
+        font-size: 1.5em;
+      }
+    .title-context {
+        width: 100%;
+        margin-top: 2.4rem;
+        margin-bottom: 2.4rem;
+        padding: 2rem 2rem;
+        background-color: #f9fafb;
+        border-radius: .8rem;
+        text-align: left;
+      }
+    .esg-list {
+      display: flex;
+      justify-content: space-between;
+    }
+    .esg-contents {
+        height: 14rem;
+        padding: 1.8rem;
+        border: 1px solid #e2e8ee;
+        border-bottom-left-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+    }
+    .box-in-title {
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #16171d;
+      margin-bottom: 0.5rem;
+    }
+    .esg-list > li {
+      width: 23.1rem;
+    }
+    .esg-list > li img {
+      width: 100%;
+    }
+    .esg-link-lists li {
+      display: inline-flex;
+      flex-wrap: wrap;
+      margin-right: 1rem;
+    }
+    .esg-result table thead tr th {
+        padding: 1.2rem 0;
+        background-color: #f9fafb;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-align: center;
+        color: #16171d;
+        border-left: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    .esg-result table tbody tr td {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.86;
+      text-align: center;
+      color: #54555a;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .esg-result table tbody tr td:first-child {
+      border-left: 0;
+    }
+    .esg-record, .esg-value-list {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .esg-record {
+      position: relative;
+      height: 100%;
+    }
+    .esg-value-list>li {
+      width: 2.4rem;
+      height: 2.4rem;
+      text-align: center;
+      background-color: #f2f2f2;
+      color: #cfcfcf;
+    }
+    .esg-value-list>li.on {
+      background-color: #b70f28;
+      color: #fff;
+    }
+    .esg-primary-value {
+      width: 16rem;
+      margin-right: 0 !important;
+      font-size: 8rem !important;
+      letter-spacing: -.9rem !important;
+      color: #b70f28;
+      text-align: left;
+      font-weight: 700;
+    }
+    .esg-record .desc {
+      position: absolute;
+      left: 16.8rem;
+      bottom: 50%;
+      width: calc(3.2rem * 7);
+      transform: translateY(calc(50% + 2.4rem));
+      font-size: 0;
+      font-size: 0.8rem;
+      line-height: 1.38;
+      text-align: left;
+    }
+    </style>
 </head>
 <body class="sub3-0 sub">
     <!-- 1. 바로가기 메뉴 -->
@@ -24,157 +130,156 @@
     </div>
 
     <!-- 2. 상단영역 -->
-    <header id="kcar-hd">
-        <div class="wrap hd-wrap">
-            <h1 class="kcar-logo"><a href="index.html" title="메인으로 이동합니다."><span class="blind">KCar 로고</span></a></h1>
-            <nav id="kcar-gnb" class="ft-gy">
-                <h2 class="blind">주 메뉴</h2>
-                <ol class="kcar-gnb">
-                    <li class="depth1">
-                        <a href="overview.html">K Car 소개</a>
-                        <ul class="depth2">
-                            <li><a href="ceo.html">대표 인사말</a></li>
-                            <li><a href="overview.html">사업소개</a></li>
-                            <li><a href="#">연혁</a></li>
-                            <li><a href="philosophy.html">Mission & Vision</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth1">
-                        <a href="capability.html">서비스</a>
-                        <ul class="depth2">
-                            <li><a href="capability.html">국내 최대 직영시스템</a></li>
-                            <li><a href="#">내차팔기 홈서비스</a></li>
-                            <li><a href="#">K Car 품질 점검</a></li>
-                            <li><a href="#">내차사기 홈서비스</a></li>
-                            <li><a href="#">책임환불제</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth1">
-                        <a href="report.html">PR센터</a>
-                        <ul class="depth2">
-                            <li><a href="report.html">보도자료</a></li>
-                            <li><a href="#">홍보영상</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth1">
-                        <a href="sustainability.html">ESG</a>
-                        <ul class="depth2">
-                            <li><a href="sustainability.html">ESG 경영</a></li>
-                            <li><a href="#">환경</a></li>
-                            <li><a href="#">사회</a></li>
-                            <li><a href="#">지배구조</a></li>
-                            <li><a href="#">윤리경영</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth1">
-                        <a href="career.html">인재채용</a>
-                        <ul class="depth2">
-                            <li><a href="career.html">인재상</a></li>
-                            <li><a href="#">인재채용</a></li>
-                            <li><a href="#">인사/복지제도</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth1">
-                        <a href="ir.html">IR</a>
-                        <ul class="depth2">
-                            <li><a href="ir.html?lnb-id=ir-announce">IR 자료</a></li>
-                            <li><a href="ir.html?lnb-id=ir-event">IR일정</a></li>
-                            <li><a href="ir.html?lnb-id=earning-result">실적발표</a></li>
-                            <li><a href="ir.html?lnb-id=ir-notice">전자공고</a></li>
-                            <li><a href="ir.html?lnb-id=disclosure-info">공시</a></li>
-                            <li><a href="ir.html?lnb-id=dividend-info">배당내역</a></li>
-                            <li><a href="ir.html?lnb-id=sholder-info">주주구성</a></li>
-                            <li><a href="ir.html?lnb-id=ir-contact">IR Contact</a></li>
-                        </ul>
-                    </li>
-                </ol>
-            </nav>
-            <nav class="kcar-util-wrap clearfix wh">
-                <h2 class="blind">유틸 메뉴</h2>
-                <div class="lang-wrap fz09">
-                    <a href="#" class="lang-btn">KR</a>
-                    <div class="lang-list">
-                        <a href="#">EN</a>
-                        <a href="#">CH</a>
-                    </div>
-                </div>
-                <button class="sitemap-open-btn"><span class="blind">사이트맵</span></button>
-            </nav>
-            <section class="kcar-mo-gnb-sec">
-                <h2 class="blind">모바일 메뉴</h2>
-                <nav class="mo-lang-container fz09">
-                    <a href="#">KR</a>
-                    <a href="#">EN</a>
-                    <a href="#">CH</a>
-                </nav>
-                <button class="sitemap-close-btn"><span class="blind">닫기</span></button>
-                <nav class="mo-gnb-container">
-                    <div class="mo-gnb-wrap">
-                        <ol class="mo-gnb">
-                            <li class="mo-depth1">
-                                <a href="overview.html">K Car 소개</a>
-                                <ul class="mo-depth2">
-                                    <li><a href="ceo.html">대표 인사말</a></li>
-                                    <li><a href="overview.html">사업소개</a></li>
-                                    <li><a href="#">연혁</a></li>
-                                    <li><a href="philosophy.html">Mission & Vision</a></li>
-                                </ul>
-                            </li>
-                            <li class="mo-depth1">
-                                <a href="#">서비스</a>
-                                <ul class="mo-depth2">
-                                    <li><a href="capability.html">직영 시스템</a></li>
-                                    <li><a href="#">내차팔기 서비스</a></li>
-                                    <li><a href="#">품질점검</a></li>
-                                    <li><a href="#">내차사기 서비스</a></li>
-                                    <li><a href="#">책임환불제</a></li>
-                                </ul>
-                            </li>
-                            <li class="mo-depth1">
-                                <a href="#">PR센터</a>
-                                <ul class="mo-depth2">
-                                    <li><a href="report.html">보도자료</a></li>
-                                    <li><a href="#">홍보영상</a></li>
-                                </ul>
-                            </li>
-                            <li class="mo-depth1">
-                                <a href="#">ESG</a>
-                                <ul class="mo-depth2">
-                                    <li><a href="sustainability.html">ESG 경영</a></li>
-                                    <li><a href="#">환경</a></li>
-                                    <li><a href="#">사회</a></li>
-                                    <li><a href="#">지배구조</a></li>
-                                    <li><a href="#">윤리경영</a></li>
-                                </ul>
-                            </li>
-                            <li class="mo-depth1">
-                                <a href="#">인재채용</a>
-                                <ul class="mo-depth2">
-                                    <li><a href="career.html">인재상</a></li>
-                                    <li><a href="#">인재채용</a></li>
-                                    <li><a href="#">인사/복지제도</a></li>
-                                </ul>
-                            </li>
-                            <li class="mo-depth1 ir">
-                                <a href="#">IR</a>
-                                <ul class="mo-depth2">
-                                    <li><a href="ir.html?lnb-id=ir-announce">IR 자료</a></li>
-                                    <li><a href="ir.html?lnb-id=ir-event">IR일정</a></li>
-                                    <li><a href="ir.html?lnb-id=earning-result">실적발표</a></li>
-                                    <li><a href="ir.html?lnb-id=ir-notice">전자공고</a></li>
-                                    <li><a href="ir.html?lnb-id=disclosure-info">공시</a></li>
-                                    <li><a href="ir.html?lnb-id=dividend-info">배당내역</a></li>
-                                    <li><a href="ir.html?lnb-id=sholder-info">주주구성</a></li>
-                                    <li><a href="ir.html?lnb-id=ir-contact">IR Contact</a></li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <button class="shop-btn">K Car</button>
-                    </div>
-                </nav>
-            </section>
-        </div>
-    </header>
+  <header id="kcar-hd">
+    <div class="wrap hd-wrap">
+      <h1 class="kcar-logo"><a href="index.html" title="메인으로 이동합니다."><span class="blind">KCar 로고</span></a></h1>
+      <nav id="kcar-gnb" class="ft-gy">
+        <h2 class="blind">주 메뉴</h2>
+        <ol class="kcar-gnb">
+          <li class="depth1">
+            <a href="overview.html">K Car 소개</a>
+            <ul class="depth2">
+              <li><a href="ceo.html">대표 인사말</a></li>
+              <li><a href="overview.html">사업소개</a></li>
+              <li><a href="#">연혁</a></li>
+              <li><a href="philosophy.html">Mission & Vision</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <a href="capability.html">서비스</a>
+            <ul class="depth2">
+              <li><a href="capability.html">국내 최대 직영시스템</a></li>
+              <li><a href="#">내차팔기 홈서비스</a></li>
+              <li><a href="#">K Car 품질 점검</a></li>
+              <li><a href="#">내차사기 홈서비스</a></li>
+              <li><a href="#">책임환불제</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <a href="report.html">PR센터</a>
+            <ul class="depth2">
+              <li><a href="report.html">보도자료</a></li>
+              <li><a href="#">홍보영상</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <a href="sustainability.html">ESG</a>
+            <ul class="depth2">
+              <li><a href="sustainability.html">ESG 경영</a></li>
+              <li><a href="#">환경</a></li>
+              <li><a href="#">사회</a></li>
+              <li><a href="#">지배구조</a></li>
+              <li><a href="#">윤리경영</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <a href="career.html">인재채용</a>
+            <ul class="depth2">
+              <li><a href="career.html">인재상</a></li>
+              <li><a href="#">인재채용</a></li>
+              <li><a href="#">인사/복지제도</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <a href="ir.html?lnb-id=ir-announce">IR</a>
+            <ul class="depth2">
+              <li><a href="ir.html?lnb-id=ir-announce">IR 자료</a></li>
+              <li><a href="ir.html?lnb-id=ir-event">IR일정</a></li>
+              <li><a href="ir.html?lnb-id=earning-result">실적발표</a></li>
+              <li><a href="ir.html?lnb-id=ir-notice">전자공고</a></li>
+              <li><a href="ir.html?lnb-id=disclosure-info">공시</a></li>
+              <li><a href="ir.html?lnb-id=dividend-info">배당내역</a></li>
+              <li><a href="ir.html?lnb-id=sholder-info">주주구성</a></li>
+              <li><a href="ir.html?lnb-id=ir-contact">IR Contact</a></li>
+            </ul>
+          </li>
+        </ol>
+      </nav>
+      <nav class="kcar-util-wrap clearfix">
+        <h2 class="blind">유틸 메뉴</h2>
+        <div class="lang-wrap">
+          <button class="lang-btn"><span class="blind">언어선택</span></button>
+            <ul class="lang-list">
+              <li><a href="#">KO</a></li>
+              <li><a href="#">EN</a></li>
+            </ul>
+        </div>       
+        <button class="sitemap-open-btn"><span class="blind">사이트맵</span></button>
+      </nav>
+      <section class="kcar-mo-gnb-sec">
+        <h2 class="blind">모바일 메뉴</h2>
+        <nav class="mo-lang-container">
+          <a href="#">KR</a>
+          <a href="#">EN</a>
+        </nav>
+        <button class="sitemap-close-btn"><span class="blind">닫기</span></button>
+        <nav class="mo-gnb-container">
+          <div class="mo-gnb-wrap">
+            <ol class="mo-gnb">
+              <li class="mo-depth1">
+                <a href="overview.html">K Car 소개</a>
+                <ul class="mo-depth2">
+                  <li><a href="ceo.html">대표 인사말</a></li>
+                  <li><a href="overview.html">사업소개</a></li>
+                  <li><a href="#">연혁</a></li>
+                  <li><a href="philosophy.html">Mission & Vision</a></li>
+                </ul>
+              </li>
+              <li class="mo-depth1">
+                <a href="#">서비스</a>
+                <ul class="mo-depth2">
+                  <li><a href="capability.html">직영 시스템</a></li>
+                  <li><a href="#">내차팔기 서비스</a></li>
+                  <li><a href="#">품질점검</a></li>
+                  <li><a href="#">내차사기 서비스</a></li>
+                  <li><a href="#">책임환불제</a></li>
+                </ul>
+              </li>
+              <li class="mo-depth1">
+                <a href="#">PR센터</a>
+                <ul class="mo-depth2">
+                  <li><a href="report.html">보도자료</a></li>
+                  <li><a href="#">홍보영상</a></li>
+                </ul>
+              </li>
+              <li class="mo-depth1">
+                <a href="#">ESG</a>
+                <ul class="mo-depth2">
+                  <li><a href="sustainability.html">ESG 경영</a></li>
+                  <li><a href="#">환경</a></li>
+                  <li><a href="#">사회</a></li>
+                  <li><a href="#">지배구조</a></li>
+                  <li><a href="#">윤리경영</a></li>
+                </ul>
+              </li>
+              <li class="mo-depth1">
+                <a href="#">인재채용</a>
+                <ul class="mo-depth2">
+                  <li><a href="career.html">인재상</a></li>
+                  <li><a href="#">인재채용</a></li>
+                  <li><a href="#">인사/복지제도</a></li>
+                </ul>
+              </li>
+              <li class="mo-depth1 ir">
+                <a href="#">IR</a>
+                <ul class="mo-depth2">
+                  <li><a href="ir.html?lnb-id=ir-announce">IR 자료</a></li>
+                  <li><a href="ir.html?lnb-id=ir-event">IR일정</a></li>
+                  <li><a href="ir.html?lnb-id=earning-result">실적발표</a></li>
+                  <li><a href="ir.html?lnb-id=ir-notice">전자공고</a></li>
+                  <li><a href="ir.html?lnb-id=disclosure-info">공시</a></li>
+                  <li><a href="ir.html?lnb-id=dividend-info">배당내역</a></li>
+                  <li><a href="ir.html?lnb-id=sholder-info">주주구성</a></li>
+                  <li><a href="ir.html?lnb-id=ir-contact">IR Contact</a></li>
+                </ul>
+              </li>
+            </ol>
+            <button class="shop-btn">K Car</button>
+          </div>
+        </nav>
+      </section>
+    </div>
+  </header>
 
     <!-- 3. 서브헤더 & 비주얼 -->
     <header class="sub-hd">
@@ -234,104 +339,214 @@
     </header>
 
     <!-- 3. 메인영역 -->
-    <main id="kcar-main">
-        <section class="sub-sec sustainability-business-sec wrap">
+    <main id="kcar-main" class="wrap">
+        <section class="sub-sec sustainability-business-sec">
             <h2>ESG 경영</h2>
             <div class="business-container">
-                
-            </div>
+              <div class="title-context">
+                케이카는 중고차 유통 사업 분야 리더로 급변하는 경영환경 속에서도 장기적이고 지속 가능한 성장을 위하여 ESG 경영을 추구하고 있습니다.
+                케이카는 ESG 경영위원회를 설립하여, 환경, 정보보호, 고객가치 혁신, 지배구조, 윤리경영 등 ESG 경영 전반에 걸친 전략을 수립하고 성과를 점검하고 있습니다.
+                지속적인 ESG경영 활동을 통해 케이카를 둘러싼 이해관계자 보호 및 더 나아가 사회와 환경의 사회적 책임과 지속 가능성을 실현해 나가겠습니다.
+              </div>
+              <ul class="esg-list">
+                <li>
+                  <img src="images/esg-list-01.png"  alt="ESG 경영">
+                  <div class="esg-contents">
+                    <div class="box-in-title">ESG 경영</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># ESG 경영</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-02.png" alt="환경">
+                  <div class="esg-contents">
+                    <div class="box-in-title">환경</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 환경정책</a></li>
+                      <li><a href="#" ># 환경조직</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-03.png" alt="사회"">
+                  <div class="esg-contents">
+                    <div class="box-in-title">사회</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 사회공헌</a></li>
+                      <li><a href="#" ># 안전보건</a></li>
+                      <li><a href="#" ># 노사상생협약</a></li>
+                      <li><a href="#" ># 정보보호</a></li>
+                      <li><a href="#" ># 고객의 소리</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-04.png" alt="지배구조">
+                  <div class="esg-contents">
+                    <div class="box-in-title">지배구조</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 기업지배구조헌장</a></li>
+                      <li><a href="#" ># 주주정보</a></li>
+                      <li><a href="#" ># 이사회 및 위원회</a></li>
+                      <li><a href="#" ># 정관 및 규정</a></li>
+                      <li><a href="#" ># 주주총회 및 배당</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/esg-list-05.png" alt="윤리경영">
+                  <div class="esg-contents">
+                    <div class="box-in-title">윤리경영</div>
+                    <ul class="esg-link-lists">
+                      <li><a href="#" ># 윤리강령</a></li>
+                      <li><a href="#" ># 비윤리제보</a></li>
+                      <li><a href="#" ># K-ITAS</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <h3>주요 평가 기관 2024년 ESG 평가 결과</h3>
+              <div class="esg-result">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                  <caption class="blind">주요 평가 기관 2024년 ESG 평가 결과</caption>
+                  <colgroup>
+                    <col width="40%">
+                    <col width="*">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>평가 기관</th>
+                      <th>2024년도 평가 결과</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><img src="images/tit-state-01.png" alt="한국ESG기준원" ></td>
+                      <td>
+                        <div class="esg-record">
+                          <div class="esg-primary-value">B</div>
+                          <ul class="esg-value-list">
+                            <li>S</li>
+                            <li>A+</li>
+                            <li>A</li>
+                            <li>B+</li>
+                            <li class="on">B</li>
+                            <li>C</li>
+                            <li>D</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img src="images/tit-state-03.png" alt="SUSTINVEST" ></td>
+                      <td>
+                        <div class="esg-record">
+                          <div class="esg-primary-value">A</div>
+                          <ul class="esg-value-list">
+                            <li>AA</li>
+                            <li class="on">A</li>
+                            <li>BB</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                            <li>E</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img src="images/tit-state-02.png" alt="한국ESG연구소" ></td>
+                      <td>
+                        <div class="esg-record">
+                          <div class="esg-primary-value">B<span>+</span></div>
+                          <ul class="esg-value-list">
+                            <li>S</li>
+                            <li>A+</li>
+                            <li>A</li>
+                            <li class="on">B+</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                          </ul>
+                          <p class="desc">
+                            ※ 한국 ESG 연구소 등급은 2023년 평가 결과이며,
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2024년 평가 결과는 2025년 1월 중 발표 후 게시 예정
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- esg-result 종료 -->
+            </div><!-- business-container 종료 -->
         </section>
     </main>
 
-    <!-- 4. 하단영역 -->
-    <footer id="kcar-ft">
-        <div class="kcar-ft-container wrap">
-            <div class="ft-info-wrap clearfix">
-                <h2 class="blind">하단 회사 정보와 사이트맵</h2>
-                <div class="ft-info">
-                    <dl class="ft-info-dl clearfix">
-                        <dt class="blind">회사명</dt>
-                        <dd class="wh fz12">(주)클라비스</dd>
-                        <dt class="wh">TEL</dt>
-                        <dd><a href="tel:+82-43-217-6146">+82-43-217-6146</a></dd>
-                        <dt class="wh">FAX</dt>
-                        <dd><a href="tel:+82-43-217-6140">+82-43-217-6140</a></dd>
-                        <dt class="wh">E-MAIL</dt>
-                        <dd><a href="mailto:info@claviscorp.com">info@claviscorp.com</a></dd>
-                    </dl>
-                    <div class="ft-info-link">
-                        <a href="#">개인정보취급방침</a>
-                        <a href="#">회사소개서</a>
-                    </div>
-                </div>
-                <nav class="ft-sitemap">
-                    <ol>
-                        <li class="ft-depth1">
-                            <a href="#">회사소개</a>
-                            <ul class="ft-depth2">
-                                <li><a href="ceo.html">대표 인사말</a></li>
-                                <li><a href="overview.html">사업소개</a></li>
-                                <li><a href="#">연혁</a></li>
-                                <li><a href="philosophy.html">Mission & Vision</a></li>
-                            </ul>
-                        </li>
-                        <li class="ft-depth1">
-                            <a href="#">핵심역량</a>
-                            <ul class="ft-depth2">
-                                <li><a href="capability.html">정밀접착기술</a></li>
-                                <li><a href="#">정밀사출기술</a></li>
-                                <li><a href="#">생산기술</a></li>
-                                <li><a href="#">품질관리 시스템</a></li>
-                                <li><a href="#">연구개발</a></li>
-                            </ul>
-                        </li>
-                        <li class="ft-depth1">
-                            <a href="#">제품소개</a>
-                            <ul class="ft-depth2">
-                                <li><a href="product.html">파우치형 리튬이온 2차전지 부품</a></li>
-                                <li><a href="#">원형 리튬이온 2차전지 부품</a></li>
-                                <li><a href="#">각형 리튬이온 2차전지 부품</a></li>
-                                <li><a href="#">사출 성형 부품</a></li>
-                                <li><a href="#">프레스 성형 부품</a></li>
-                            </ul>
-                        </li>
-                        <li class="ft-depth1">
-                            <a href="#">지속가능경영</a>
-                            <ul class="ft-depth2">
-                                <li><a href="sustainability.html">윤리경영</a></li>
-                                <li><a href="#">ESG경영</a></li>
-                                <li><a href="#">품질경영</a></li>
-                                <li><a href="#">사회공헌</a></li>
-                            </ul>
-                        </li>
-                        <li class="ft-depth1">
-                            <a href="#">인재채용</a>
-                            <ul class="ft-depth2">
-                                <li><a href="career.html">인재상</a></li>
-                                <li><a href="#">인사제도</a></li>
-                                <li><a href="#">직무소개</a></li>
-                                <li><a href="#">채용공고</a></li>
-                                <li><a href="#">회사소식</a></li>
-                            </ul>
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="ft-place-wrap">
-                <h2 class="blind">사업장 주소</h2>
-                <button class="ft-place-btn">오창사업장 : 충청북도 청주시 청원구 오창읍 양청송대길 61</button>
-                <ul class="ft-place-list">
-                    <li>오창사업장 : 충청북도 청주시 청원구 오창읍 양청송대길 61</li>
-                    <li>대전사업장 : 대전광역시 유성구 테크노3로 77</li>
-                    <li>서울사무소 : 서울특별시 종로구 율곡로 47, 601호</li>
-                    <li>중국남경법인 : No.4 Xingwen Road, Economic & Technological Development Zone, Nanjing, China</li>
-                    <li>중국천진법인 : No.11 Xianghou Road, Tianxiang Industry Park, Liqizhuang Street, Xiqing District, Tianjin, China</li>
-                    <li>일본오카야마법인 : 73-1 Yata, Wake-cho, Wake-gun, Okayama,709-0511, Japan, 709-0511</li>
-                </ul>
-            </div>
-            <div class="ft-copy">Copyright ⓒ CLAVIS Corp.,Ltd. ALL Rights Reserved.</div>
-            <a href="#" class="gototop"><span class="blind">위로가기</span></a>
+  <!-- 4. 하단영역 -->
+  <footer id="kcar-ft">
+    <div class="ft-wrap wrap">
+      <div class="ft-inner">
+        <h2 class="ft-logo">K Car</h2>
+        <div class="ft-company-info">
+          <div class="company">
+            <dl>
+              <dd>상호명</dd>
+              <dt>케이카 주식회사</dt>
+            </dl>
+            <dl>
+              <dd>대표자</dd>
+              <dt>정인국</dt>
+            </dl>
+            <dl>
+              <dd>개인정보보호책임자</dd>
+              <dt>이우근</dt>
+            </dl>
+            <dl>
+              <dd>사업자등록번호</dd>
+              <dt>787-87-00729</dt>
+            </dl>
+          </div>
+          <div class="license">
+            <dl>
+              <dd>통신판매업 신고번호</dd>
+              <dt>제 2018-서울영등포-0562호</dt>
+            </dl>
+          </div>
+          <div>
+            <dl class="address">
+              <dd>사업장 소재지</dd>
+              <dt>서울특별시 영등포구 선유로 43길 27, 3층(양평동3가, 청우오토프라자)</dt>
+            </dl>
+          </div>
         </div>
-    </footer>
+        <ul class="ft-awards-list">
+          <li class="ncsi">2025<br>국가고객만족도(NCSI)<br>중고차 플랫폼 부문 1위</li>
+          <li class="first">2020-2026<br>대한민국 퍼스트브랜드 대상<br>중고차 유통부문 7년 연속 1위</li>
+        </ul>
+        <div class="ft-sns-icons">
+          <a href="https://www.facebook.com/kcar.official" target="_blank" class="sns-fb"></a>
+          <a href="https://www.instagram.com/kcar.official" target="_blank" class="sns-ig"></a>
+          <a href="https://www.youtube.com/c/KCar%EC%A7%81%EC%98%81%EC%A4%91%EA%B3%A0%EC%B0%A8" target="_blank"
+            class="sns-yt"></a>
+          <a href="https://blog.naver.com/kcar-official" target="_blank" class="sns-bg"></a>
+          <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https://cafe.naver.com/kcarofficial"
+            target="_blank" class="sns-cf"></a>
+        </div>
+      </div><!-- ft-inner 종료 -->
+      <div class="ft-family-site">
+        <a href="https://www.kcarauction.com/kcar/main.do" class=" btn-common family-site-btn">
+          <span class="btn-label">
+            <span>Family Site</span>
+            <i class="icon-plus"></i>
+          </span>
+        </a>
+      </div>
+      <div class="ft-bottom">
+        <p class="copyright">Copyright ⓒ 케이카 주식회사 All rights reserved.</p>
+        <a href="#" class="btn-top-scroll"></a>
+      </div><!-- ft-bottom 종료 -->
+    </div><!-- ft-wrap 종료 -->
+  </footer>
 </body>
 </html>

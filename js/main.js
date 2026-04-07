@@ -1,43 +1,111 @@
-$(window).on('scroll', function() {
-    const scrollTop = $(window).scrollTop();
-    const $section = $('#service-section');
-    const $wrapper = $('.service-fixed-wrapper');
-    
-    const sectionTop = $section.offset().top;
-    const sectionHeight = $section.height();
-    const windowHeight = $(window).height();
-    const sectionBottom = sectionTop + sectionHeight;
+let svcSwiper = null;
 
-    // 1. 화면 고정 제어 (is-fixed)
-    if (scrollTop >= sectionTop && scrollTop < sectionBottom - windowHeight) {
-        $wrapper.addClass('is-fixed').removeClass('is-bottom');
-    } else if (scrollTop >= sectionBottom - windowHeight) {
-        $wrapper.removeClass('is-fixed').addClass('is-bottom');
-    } else {
-        $wrapper.removeClass('is-fixed').removeClass('is-bottom');
+function buildSvcSwiper() {
+  const isPC = $('body').hasClass('pc');
+
+  if (svcSwiper) {
+    svcSwiper.destroy(true, true);
+    svcSwiper = null;
+  }
+
+  svcSwiper = new Swiper('.svc-swiper', {
+    direction: isPC ? 'vertical' : 'horizontal',
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    speed: 850,
+    resistanceRatio: 0,
+    observer: true,
+    observeParents: true,
+
+    allowTouchMove: !isPC,
+    simulateTouch: !isPC,
+
+    mousewheel: isPC
+      ? {
+          forceToAxis: true,
+          releaseOnEdges: true,
+          sensitivity: 1.8,
+          thresholdDelta: 40,
+          thresholdTime: 400
+        }
+      : false,
+
+    pagination: {
+      el: '.svc-pagination',
+      type: 'fraction',
+      clickable: false
+    },
+
+    navigation: {
+      nextEl: '.svc-next',
+      prevEl: '.svc-prev'
     }
+  });
+}
 
-    // 2. 콘텐츠 교체 제어
-    let progress = (scrollTop - sectionTop) / (sectionHeight - windowHeight);
-    progress = Math.max(0, Math.min(1, progress));
-
-    const totalItems = 5;
-    const idx = Math.min(Math.floor(progress * totalItems), totalItems - 1);
-
-    $('.service-text-item').eq(idx).addClass('active').siblings().removeClass('active');
-    $('.service-img-item').eq(idx).addClass('active').siblings().removeClass('active');
+$(window).on('load', function () {
+  buildSvcSwiper();
 });
 
+$(window).on('resize', function () {
+  clearTimeout(window.svcResizeTimer);
+  window.svcResizeTimer = setTimeout(function () {
+    buildSvcSwiper();
+  }, 150);
+});
 
+$(window).on('load', function () {
+    buildSvcSwiper();
+    updateSvcPcByScroll();
+    bindSvcWheelControl();
+});
 
+$(window).on('resize', function () {
+    clearTimeout(window.svcResizeTimer);
+    window.svcResizeTimer = setTimeout(function () {
+        buildSvcSwiper();
+        updateSvcPcByScroll();
+        bindSvcWheelControl();
+    }, 150);
+});
 
+$(window).on('scroll', function () {
+    updateSvcPcByScroll();
+});
 
+//지속가능경영
+$(function () {
+  const $esgSection = $('.esg-section');
+  const $slides = $('.esg-slide');
+  const $pageBtns = $('.esg-page-btn');
+  const $sideBtns = $('.side-bar-item');
 
-    // 2. ESG 섹션 함수 (전체 초기화 후 활성화)
-$(function() {
-    $('.side-bar-item').on('click', function() {
-        const idx = $(this).attr('data-target');
-        $('.esg-slide').removeClass('active');
-        $('.esg-slide').eq(idx).addClass('active');
-    });
+  function setEsgSlide(index) {
+    index = Number(index);
+
+    $slides.removeClass('active').eq(index).addClass('active');
+    $pageBtns.removeClass('active').eq(index).addClass('active');
+
+    $esgSection.removeClass('is-e is-s is-g');
+
+    if (index === 0) {
+      $esgSection.addClass('is-e');
+    } else if (index === 1) {
+      $esgSection.addClass('is-s');
+    } else if (index === 2) {
+      $esgSection.addClass('is-g');
+    }
+  }
+
+  $pageBtns.on('click', function () {
+    setEsgSlide($(this).data('target'));
+  });
+
+  $sideBtns.on('click', function () {
+    setEsgSlide($(this).data('target'));
+  });
+
+  // 처음 진입 상태
+  setEsgSlide(0);
 });

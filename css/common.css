@@ -4,6 +4,7 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('var.css');
 
 
@@ -14,57 +15,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+ol,
+ul {
+    list-style-type: none;
+}
+
 body {
-    font-size: 1em; /*16px*/
+    font-size: 1em;
+    /*16px*/
     font-family: 'Asta Sans', 'Pretendard Variable', sans-serif;
     line-height: 1.6;
     color: var(--primary-font-color);
-    word-break: keep-all; 
+    word-break: keep-all;
     background-color: #fff;
-}
-ol, ul {
-    list-style-type: none;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--primary-font-color);
 }
 
 img {
-    /* display: block; */
     max-width: 100%;
     vertical-align: middle;
-    /* height: auto; */
 }
-.wrap { 
-    width: 100%; 
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px; 
-}
-.blind { 
-    position: absolute; 
-    width: 1px; 
-    height: 1px; 
-    overflow: hidden; 
-    clip: rect(0,0,0,0); 
-}
-.clearfix::after { 
-    content: ''; 
-    display: block; 
-    clear: both;
-}
-
-
-
-
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
-html {}
 
 body.fixed {
     position: fixed;
@@ -80,107 +55,127 @@ textarea {
     font-size: 1em;
     font-family: 'Asta Sans', 'Pretendard', 'Malgun Gothic', sans-serif;
     line-height: 1.6;
-    background: none; /* 배경색 제거 (또는 transparent) */
-    border: none; /* 기본 테두리 제거 */
-    cursor: pointer;
+    background: none;
+    /* 배경색 제거 (또는 transparent) */
+    border: none;
+    /* 기본 테두리 제거 */
     padding: 0;
 }
 
-button:focus {outline: 0;}
+button {
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
+button:focus {
+    outline: 0;
+}
 
 /* 2. 공용클래스(공통디자인) */
 .wrap {
     width: 100%;
-    max-width: 120em; /* 1920 기준 */
-    margin: 0 auto;
-    padding: 0 1.25em;
+    max-width: 120em;
+    /* 1920 기준 */
+    margin: 0 0;
+    padding: 0 20px;
 }
 
-.clearfix:after {
+.clearfix::after {
+    content: '';
     display: block;
     clear: both;
-    content: '';
 }
 
-.blind,
-.sound-only {
+.blind {
     position: absolute;
-    left: -9999em;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
 
-/* 공통 버튼 스타일 (요청하신 빨간색 호버 효과) */
-.btn-more, .btn-recruit {
-    display: inline-block;
-    padding: 12px 40px;
-    border: 1px solid var(--medium-gray);
-    background: transparent;
-    color: var(--primary-font-color);
+/* btn 공통 스타일 */
+.btn-common {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    /* min-width: 30px; */
+    padding: 12px 50px;
     border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.5s;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    text-decoration: none;
     cursor: pointer;
+    white-space: nowrap;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.btn-more:hover, .btn-recruit:hover {
-    background-color: var(--primary-color); /* KCar의 빨간색 */
+
+.btn-common:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* 안쪽 텍스트/아이콘 묶음 */
+.btn-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.1;
     color: #fff;
 }
 
+/* 버튼 안 텍스트 */
+.btn-label span {
+    display: inline-block;
+    color: #fff;
+}
+
+/* 버튼 안 아이콘 */
+.btn-label i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 1;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+a.btn-common {
+    color: inherit;
+}
+
+button.btn-common {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+
 /* 3. 글자와 여백 */
 .wh,
-.wh a {color: #fff}
+.wh a {
+    color: #fff
+}
 
 .bk,
-.bk a {color: #222}
+.bk a {
+    color: #222
+}
 
 .red,
-.red a {color: var(--primary-color)}
+.red a {
+    color: var(--primary-color)
+}
 
 /* -----레이아웃-----  */
 .main-sec {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
-/* 타이포그래피 */
-h1 {
-  font-size: 3em;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 2.4em;
-  font-weight: 700;
-  color: var(--main-color);
-}
-
-h3 {
-  font-size: 1.6em;
-  font-weight: 600;
-}
-
-/* 버튼 */
-.btn-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 7em;
-  height: 7em;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-}
-
-.btn-circle.highlight {
-  background: #111;
-  /* color: #fff; */
-}
 
 /* 4. 영역별 설계  */
 /* 4.1 바로가기(skip) */
@@ -194,7 +189,6 @@ h3 {
     top: -48px;
     width: 100%;
     line-height: 48px;
-    background-color: var(--main-color);
     color: #fff;
     opacity: 1;
     transition: 0.2s;
@@ -213,11 +207,8 @@ h3 {
     top: 0;
     width: 100%;
     z-index: 100;
+    /* font-weight: 400; */
     background-color: #000;
-}
-
-body.sub #kcar-hd {
-    background-color: transparent;
 }
 
 #kcar-hd.fixed {
@@ -228,149 +219,231 @@ body.sub #kcar-hd {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 60px;
 }
 
 .kcar-logo {
     position: relative;
-    width: 109px;
+    width: 80px;
+    height: 100%;
     z-index: 100;
-}
-
-.kcar-logo a {
-    display: block;
-    /* height: 34.65%; 부모 높이에 비례 0*/
-    padding-top: 34.65%;
-    /*부모 너비에 비례*/
     background: url('../images/svg/logo.svg') center center / contain no-repeat;
+    cursor: pointer;
 }
 
-.kcar-logo.wh-logo a {
-    background-image: url('../images/svg/logo.svg');
-}
+.kcar-logo a {}
 
 #kcar-gnb {
     /* PC에서 사용하는 gnb*/
     display: none;
 }
 
-.kcar-util-wrap {}
-
-.lang-wrap {
-    position: relative;
-    float: left;
-    width: 72px;
-    margin-right: 10px;
-}
-
-.lang-btn {
-    display: block;
-    padding-left: 32px;
-    height: 24px;
-    line-height: 24px;
-    /* background-image: url('../images/svg/i_language.svg'), url('../images/svg/i_more.svg');
-    background-position: left center, right center;
-    background-size: contain, auto 10px;
-    background-repeat: no-repeat; */
-    background: url('../images/svg/i_language_wh.svg') left center / contain no-repeat;
-}
-
-body.sub .lang-btn {
-    background-image: url('../images/svg/i_language.svg');
-}
-
-/* 화살표 */
-/* .lang-btn:after {
-    float: right;
-    display: block;
-    width: 16px;
-    height: 100%;
-    background: url('../images/svg/i_more_wh.svg') center center / contain no-repeat;
+#kcar-gnb:before {
     content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 0;
     transition: 0.3s;
 }
 
-body.sub .lang-btn:after {
-    background-image: url('../images/svg/i_more.svg');
-} */
+#kcar-gnb:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0.2;
+}
+
+body.sub #kcar-gnb:after {
+    display: none;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    opacity: 0.2;
+}
+
+.kcar-gnb {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.kcar-util-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.lang-wrap {
+    position: relative;
+    padding-right: 24px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.lang-btn:before {
+    content: '\e894';
+    font-family: var(--google-icon);
+    font-size: 24px;
+    color: #fff;
+}
 
 .lang-list {
     position: absolute;
-    left: 4px;
-    top: 32px;
-    width: 64px;
-    height: 0;
-    padding: 0;
-    background-color: #000;
+    left: 25%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
     text-align: center;
-    line-height: 24px;
-    overflow: hidden;
+    font-size: 16px;
     opacity: 0;
-    transition: 0.6s;
-}
-
-body.sub .lang-list {
-    background-color: #fff;
+    pointer-events: none;
+    transition: 0.3s;
 }
 
 .lang-list a {
+    color: #fff;
+    opacity: 0.7;
     display: block;
-    /* opacity: 0.3; */
+    margin: 0;
+    font-weight: 400;
     transition: 0.3s;
 }
 
 .lang-list a:hover {
-    color: var(--primary-font-color);
     opacity: 1;
 }
 
 .sitemap-open-btn {
-    float: left;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 24px;
     height: 24px;
-    background: url('../images/svg/i_apps_wh.svg') center center / contain no-repeat;
 }
 
-body.sub .sitemap-open-btn {
-    background-image: url('../images/svg/i_apps.svg');
+.sitemap-open-btn:before {
+    content: '\e5c3';
+    font-family: var(--google-icon);
+    font-size: 24px;
+    color: #fff;
+    line-height: 1;
 }
 
-/* 다크모드일 때 헤더 */
-.wh .kcar-logo a {
-    background-image: url('../images/svg/logo_wh.svg');
+.depth1 {
+    position: relative;
 }
 
-.wh .lang-btn {
-    background-image: url('../images/svg/i_language_wh.svg');
+.depth1>a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 0.5em;
+    font-size: 1.1em;
+    z-index: 2;
 }
 
-.wh .lang-btn:after {
-    background-image: url('../images/svg/i_more_wh.svg');
+.depth1 a {
+    color: #fff;
 }
 
-.wh .sitemap-open-btn {
-    background-image: url('../images/svg/i_apps_wh.svg');
+.depth2 {
+    position: absolute;
+    left: calc(50% - 120px);
+    top: 100%;
+    width: 240px;
+    padding: 20px 0;
+    text-align: center;
+    line-height: 2;
+    overflow: hidden;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: 0.6s;
 }
 
-/* 언어영역 동작 */
+.depth2:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: -1;
+}
+
+.depth2 li {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.2s;
+}
+
+#kcar-gnb a:hover {
+    color: var(--primary-color);
+}
+
 .lang-wrap.active .lang-btn:after {
     transform: scaleY(-1);
 }
 
 .lang-wrap.active .lang-list {
-    height: 68px;
-    padding: 10px 0;
     opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
 }
 
-.sitemap-open-btn {
-    float: left;
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url('../images/svg/i_apps_wh.svg') center center / contain no-repeat;
+
+/* 라이트모드 (sub 페이지 기준) */
+body.sub #kcar-hd {
+    background-color: #fff;
+    color: #222;
 }
+
+body.sub #kcar-hd a {
+    color: #222;
+}
+
+body.sub #kcar-hd .lang-list a {
+    color: #fff;
+}
+
+body.sub #kcar-hd .depth1 a:hover,
+body.sub #kcar-hd .depth2 a:hover {
+    color: var(--primary-color);
+}
+
+body.sub .kcar-logo a {
+    background-image: url('../images/svg/logo.svg');
+}
+
+body.sub .lang-btn:before {
+    color: #222;
+}
+
+body.sub .sitemap-open-btn:before {
+    color: #222;
+}
+
+
+
 /* 사이트맵 */
 .kcar-mo-gnb-sec {
     position: fixed;
@@ -398,8 +471,7 @@ body.sub .sitemap-open-btn {
     font-size: 40px;
 }
 
-.mo-gnb-container {
-}
+.mo-gnb-container {}
 
 .mo-gnb-wrap {}
 
@@ -454,6 +526,13 @@ body.sub .sitemap-open-btn {
     color: var(--main-color) !important;
 }
 
+/* 모바일 gnb (pc 사이트맵) 동작 */
+.kcar-mo-gnb-sec {
+    right: -100%;
+    top: 0;
+}
+
+
 .shop-btn {
     position: relative;
     width: 100%;
@@ -477,136 +556,184 @@ body.sub .sitemap-open-btn {
     font-size: 28px;
 }
 
-
-/* 모바일 gnb (pc 사이트맵) 동작 */
-.kcar-mo-gnb-sec {
-    right: -100%;
-    top: 0;
-}
-
-
-
 /* 4.3 하단(footer) */
 /* 4. 푸터 영역 */
 #kcar-ft {
-    padding: 80px 0 60px;
-    background-color: #000;
-    color: #999;
-    font-size: 14px;
+    width: 100%;
+    background: #000;
+    padding: 40px 0;
 }
 
-.kcar-ft-container {
+.ft-wrap {
     position: relative;
 }
 
-/* 상단 메인 레이아웃 (좌우 분할) */
-.ft-main-content {
+.ft-inner {}
+
+.ft-bottom {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #222; /* 경계선 추가 */
 }
 
-/* 좌측 영역: 로고 + 정보 */
-.ft-left {
-    flex: 1;
-}
-.ft-logo {
-    width: 110px;
-    height: 30px;
-    background: url('../images/svg/logo.svg') no-repeat left center / contain;
-    text-indent: -9999px;
-    margin-bottom: 35px;
+#kcar-ft .ft-left-content {
+    flex: 1 1 auto;
 }
 
-.ft-info-dl {
+#kcar-ft .ft-right-content {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-    line-height: 1.6;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    flex-shrink: 0;
 }
-.ft-info-dl dt {
-    color: #666; /* 라벨은 어둡게 */
-    margin-right: 8px;
-}
-.ft-info-dl dt::after { content: ":"; margin-left: 2px; }
-.ft-info-dl dd {
-    margin-right: 20px;
-    color: #999;
-}
-.ft-info-dl dd.wh { color: #ccc; } /* 강조 텍스트 */
 
-/* 우측 영역: 수상 + SNS */
-.ft-right {
-    text-align: right;
+#kcar-ft .ft-right-group {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.ft-award-info {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-.ft-award-info li {
-    padding-left: 70px;
-    text-align: left;
-    font-size: 12px;
-    line-height: 1.5;
-    background-size: 55px auto !important;
-}
-.ft-award-info li:nth-child(1) { background: url('../images/svg/logo-NCSI-Award.svg') no-repeat left center; }
-.ft-award-info li:nth-child(2) { background: url('../images/logo-firstBrandAward.png') no-repeat left center; }
-.ft-award-info li strong { 
-    color: #fff; 
-    display: block; 
-    margin-bottom: 4px; 
+#kcar-ft .ft-logo {
+    width: 80px;
+    height: 20px;
+    margin-bottom: 32px;
+    background: url('../images/svg/logo.svg') no-repeat left center / contain;
+    text-indent: -9999px;
 }
 
-/* SNS 버튼 */
-.ft-sns { 
-    display: flex; 
-    gap: 12px; }
-.ft-sns-btn {
+#kcar-ft .ft-company-info,
+#kcar-ft .copyright {
+    color: #fff;
+    opacity: 0.7;
+    font-size: 13px;
+    line-height: 1.4;
+    padding-bottom: 14px;
+}
+
+.ft-company-info dl {
+    display: flex;
+    gap: 1em;
+}
+
+.ft-company-info dt:before {
+    content: " : ";
+    padding-right: 1em;
+}
+
+.ft-company-info .address {
+    display: inline-flex;
+}
+
+#kcar-ft .ft-sns-icons {
+    display: flex;
+    gap: 20px;
+    margin: 24px 0 28px;
+}
+
+#kcar-ft .ft-sns-icons a {
     display: block;
-    width: 36px; height: 36px;
-    background-color: #222;
-    border-radius: 50%;
-    transition: 0.3s;
-    background-size: 20px auto !important;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.7;
 }
-.ft-sns-btn:hover { 
-    background-color: #E02020; 
-    transform: translateY(-3px); }
 
-/* SNS 아이콘 개별 적용 */
-.ft-sns-btn.fb { background: url('../images/svg/i-sns-facebook.svg') no-repeat center; }
-.ft-sns-btn.ig { background: url('../images/svg/i-sns-instagram.svg') no-repeat center; }
-.ft-sns-btn.yt { background: url('../images/svg/i-sns-youtube.svg') no-repeat center; }
-.ft-sns-btn.bg { background: url('../images/svg/i-sns-blog.svg') no-repeat center; }
-.ft-sns-btn.cf { background: url('../images/svg/i-sns-cafe.svg') no-repeat center; }
+#kcar-ft .sns-fb {
+    background-image: url('../images/icon-sns_facebook.png');
+}
 
-/* 하단 카피라이트 및 Top 버튼 */
-.ft-bottom {
+#kcar-ft .sns-ig {
+    background-image: url('../images/icon_instagram.png');
+}
+
+#kcar-ft .sns-yt {
+    background-image: url('../images/icon_youtube.png');
+}
+
+#kcar-ft .sns-bg {
+    background-image: url('../images/icon_blog.png');
+}
+
+#kcar-ft .sns-cf {
+    background-image: url('../images/icon_cafe.png');
+}
+
+#kcar-ft .ft-family-site {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.family-site-btn {
+    background: var(--primary-color);
+}
+
+.family-site-btn i {
+    font-size: 18px;
+}
+
+.family-site-btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+}
+
+.icon-plus:before {
+    content: '\e145';
+    font-family: var(--google-icon);
+    font-style: normal;
+}
+
+#kcar-ft .ft-awards-list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
+    list-style: none;
 }
-.ft-copy { 
-    font-size: 13px; 
-    color: #fff; }
 
-.gototop {
-    width: 45px; 
+#kcar-ft .ft-awards-list li {
+    position: relative;
+    min-height: 45px;
+    padding-left: 58px;
+    padding-right: 10px;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 10px;
+    line-height: 1.2;
+
+}
+
+
+#kcar-ft .ft-awards-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
     height: 45px;
-    background: #222 url('../images/svg/i_more_wh.svg') no-repeat center / 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#kcar-ft .ncsi::before {
+    background-image: url('../images/svg/logo-NCSI-Award.svg');
+}
+
+#kcar-ft .first::before {
+    background-image: url('../images/logo-firstBrandAward.png');
+}
+
+#kcar-ft .btn-top-scroll {
+    /* display: block; */
+    width: 50px;
+    height: 50px;
+    background: #333 url('../images/svg/i_more_wh.svg') no-repeat center / 24px;
     transform: rotate(180deg);
     border-radius: 4px;
     transition: 0.3s;
 }
-.gototop:hover {
+
+#kcar-ft .btn-top-scroll:hover {
     background-color: var(--primary-color);
 }
