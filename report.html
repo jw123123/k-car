@@ -4,15 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K Car, 자동차 이커머스(E-Commerce)시장의 선두주자</title>
-    <link rel="shortcut icon" id="appIcon" href="https://file.irgo.co.kr/data/IRPAGE/FAVICON/4126/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" id="appIcon" href="https://file.irgo.co.kr/data/IRPAGE/FAVICON/4126/favicon.ico"
+      type="image/x-icon">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/common_res.css">
     <link rel="stylesheet" href="css/sub.css">
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src='js/jquery-ui.min.js'></script>
     <script src="js/lenis.min.js"></script>
+    <script src="js/aos.js"></script>
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
+    <style>
+      .news-list  {
+        display: flex;
+        gap: 2em;
+        justify-content: space-between;
+        margin:2em 0;
+      }
+      .news-item {
+        width: 24%;
+        border: 0.2rem solid #e2e8ee;
+        border-radius: 2.4rem;
+        position: relative;
+      }
+
+      .news-link {
+        display: block;
+        height: 100%;
+        padding: 4rem 3rem;
+        text-decoration: none;
+        z-index: 5;
+        box-sizing: border-box;
+      }
+
+      .news-desc {
+          line-height: 1.7;
+          margin-bottom: 0;
+          overflow: hidden;
+          word-break: keep-all;
+      }
+      .news-item:hover .news-title, .news-item:hover .news-date {
+        display: none;
+      }
+      .news-item:hover {
+        background-color: var(--primary-color);
+      }
+      .news-item:hover .news-desc{
+        font-size: 1.2em;
+        color: #fff;
+      }
+      .search-wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        border-radius: .4rem;
+        background-color: #f9fafb;
+      }
+
+      .search-wrap input[type="text"] {
+        height: 4.8rem;
+        border: 1px solid #d8dee8;
+        border-radius: .8rem;
+        font-family: "Spoqa Han Sans Neo";
+        font-weight: 400;
+        line-height: 1.43;
+        letter-spacing: -.4px;
+        color: #16171d;
+        padding: 0 5rem 0 1.2rem;
+      }
+      .search-input {
+          width: 48%;
+      }
+      .search-input:hover {
+          width: 100%;
+          border-color: #16171d ;
+      }
+      .table-wrapper table {
+        width: 100%;
+        border-collapse: collapse;;
+      }
+      .table-wrapper thead {
+        color: #909399;
+        background-color: #eee8e8;
+        font-weight: 500;
+        border-top: 1px solid #000;
+      }
+      .table-wrapper td, .table-wrapper th {
+        text-align: center;
+        padding: 1em;
+      }
+      .pagination , .paging {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+      }
+      .pagination {
+        width: 100%;
+        position: relative;
+      }
+    </style>
 </head>
 <body class="sub2-0 sub">
     <!-- 1. 바로가기 메뉴 -->
@@ -233,13 +326,189 @@
     </header>
 
     <!-- 3. 메인영역 -->
-    <main id="kcar-main">
-        <section class="sub-sec notice-report-sec wrap">
-            <h2>보도자료</h2>
-            <div class="report-container">
-                
+    <main id="kcar-main" class="wrap">
+      <section class="sub-sec notice-report-sec">
+        <h2>보도자료</h2>
+        <div class="main-news-container">
+          <ul class="news-list">
+            <li class="news-item">
+              <a href="report.html" class="news-link">
+                <div class="news-text">
+                  <h3 class="news-title">
+                    케이카, 설 맞이 ‘설프라이즈’<br>
+                    프로모션 진행
+                  </h3>
+                  <div class="news-desc">
+                    ⋯정인국 케이카 사장은 “새로운 시작을 앞둔 2월을 맞아 고객들에게 ‘서프라이즈’한 경험을 드리고자 이번 프로모션을 준비했다”며
+                    “이번 기획전을 통해 첫차 구매나 차량 교체를 고민하는 소비자들이 케이카만의 차별화된 혜택을 누리길 바란다”고 밝혔다.
+                  </div>
+                  <span class="news-date">2026.02.13</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="news-item">
+              <a href="report.html" class="news-link">
+                <div class="news-text">
+                  <h3 class="news-title">
+                    케이카, 매출 2조4388억·영업익 760억 사상 최고치 경신
+                  </h3>
+                  <div class="news-desc">
+                    ⋯국내 최대 직영중고차 플랫폼기업 K Car(케이카)는 K-IFRS기준 2025년 연간 잠정 실적을 집계한 결과
+                    매출 2조4388억원, 영업이익 760억원으로 전년대비 각각 6.0%, 11.5% 증가했다고 10일 밝혔다.
+                    매출과 영업이익 모두 역대 최고치다.
+                  </div>
+                  <span class="news-date">2026.02.10</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="news-item">
+              <a href="report.html" class="news-link">
+                <div class="news-text">
+                  <h3 class="news-title">
+                    케이카, '2025 임직원 시상식' 개최
+                  </h3>
+                  <div class="news-desc">
+                    ⋯수상은 판매, 고객 만족, 안전관리 등 각 사업 영역에서 탁월한 성과를 창출하며 조직의 경쟁력을 높인 임직원을 대상으로 이루어졌다.
+                    개인뿐 아니라 팀과 조직 단위의 수상도 함께 진행해 협업을 통해 더 큰 가치를 만들어내는 케이카의 일하는 방식을 강조했다.
+                  </div>
+                  <span class="news-date">2026.02.05</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="news-item">
+              <a href="report.html" class="news-link">
+                <div class="news-text">
+                  <h3 class="news-title">
+                    “타던 차 매각 더욱 편리하게” 케이카, '내차팔기 홈서비스' 리뉴얼
+                  </h3>
+                  <div class="news-desc">
+                    ⋯사용자 중심의 이용 편의 개선을 위해 ‘내차팔기 홈서비스’를 전면 개편했다고 2일 밝혔다. 이번 개편은 소비자 이용 편의 측면의 UI/UX(사용자 상호작용/경험) 개선이 주
+                    목적이다.
+                    먼저 신청 절차를 2단계로 간소화해 차량 정보와 서류를 여러 번 확인해야 하는 불편을 없앴다.
+                  </div>
+                  <span class="news-date">2026.02.02</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="search-wrap">
+            <div class="search-input"><input type="text" readonly="readonly" placeholder="제목"></div>
+            <div class="search-input"><input type="text" placeholder="검색어를 입력해주세요" ></div>
+            <div><button type="button"></button></div>
+          </div>
+          <div class="table-caption">총 <span class="red">300</span>건의 글이 있습니다</div>
+          <div class="table-wrapper">            
+            <table >
+              <colgroup>
+                <col width ="8rem"/>
+                <col/>
+                <col width ="16rem"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div>번호</div>
+                  </th>
+                  <th>제목</th>
+                  <th>날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>300</td>
+                  <td>
+                    <a href="#">케이카, 4월 중고차 시세 전망 “전쟁에 시장 숨고르기…경차는 견조”</a>
+                  </td>
+                  <td>2026.03.27</td>
+                </tr>
+                <tr>
+                  <td>299</td>
+                  <td>
+                    <a href="#">케이카X카리나 광고, 2천만 뷰 돌파…전 차량 6개월 보증 혜택 쏜다</a>
+                  </td>
+                  <td>2026.03.13</td>
+                </tr>
+                <tr>
+                  <td>298</td>
+                  <td>
+                    <a href="#">케이카, ‘경차’보다 빨리 팔린 이 차…2월 최단 판매기간 차량은?</a>
+                  </td>
+                  <td>2026.03.10</td>
+                </tr>
+                <tr>
+                  <td>297</td>
+                  <td>
+                    <a href="#">케이카, 브랜드 모델 카리나 발탁…“차가 먼저인 사람들” 캠페인 공개</a>
+                  </td>
+                  <td>2026.03.03</td>
+                </tr>
+                <tr>
+                  <td>296</td>
+                  <td>
+                    <a href="#">케이카, “소형 SUV가 성수기 뉴노멀?”…가성비 소형 SUV 시세↑</a>
+                  </td>
+                  <td>2026.02.26</td>
+                </tr>
+                <tr>
+                  <td>295</td>
+                  <td>
+                    <a href="#">케이카, 설 맞이 ‘설프라이즈’ 프로모션 진행</a>
+                  </td>
+                  <td>2026.02.13</td>
+                </tr>
+                <tr>
+                  <td>294</td>
+                  <td>
+                    <a href="#">케이카, 매출 2조4388억·영업익 760억…사상 최고치 경신</a>
+                  </td>
+                  <td>2026.02.10</td>
+                </tr>
+                <tr>
+                  <td>293</td>
+                  <td>
+                    <a href="#">케이카, ‘2025 임직원 시상식’ 개최</a>
+                  </td>
+                  <td>2026.02.05</td>
+                </tr>
+                <tr>
+                  <td>292</td>
+                  <td>
+                    <a href="#">“타던 차 매각 더욱 편리하게”…케이카, ‘내차팔기 홈서비스’ 리뉴얼</a>
+                  </td>
+                  <td>2026.02.02</td>
+                </tr>
+                <tr>
+                  <td>291</td>
+                  <td>
+                    <a href="#">K Car(케이카), “캐스퍼 출고 지연에 2월 레이 시세 최대 2%↑”</a>
+                  </td>
+                  <td>2026.01.28</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- table종료 -->
+            <div class="pagination">
+                <ul class="paging">
+                  <li class="pagingNum"><span class="textRed">1</span></li>
+                  <li class="pagingNum"><span class="">2</span></li>
+                  <li class="pagingNum"><span class="">3</span></li>
+                  <li class="pagingNum"><span class="">4</span></li>
+                  <li class="pagingNum"><span class="">5</span></li>
+                  <li class="pagingNum"><span class="">6</span></li>
+                  <li class="pagingNum"><span class="">7</span></li>
+                  <li class="pagingNum"><span class="">8</span></li>
+                  <li class="pagingNum"><span class="">9</span></li>
+                  <li class="pagingNum"><span class="">10</span></li>
+                  <li><button type="button" class="el-button pageNext el-button--default"><span>
+                    <img  src="images/svg/pagenation-btn-right.svg" alt="다음"></span></button></li>
+                </ul>
             </div>
-        </section>
+          </div><!-- table-wrapper  -->
+        </div><!-- main-news-container 종료 -->
+      </section>
     </main>
 
   <!-- 4. 하단영역 -->
