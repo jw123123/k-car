@@ -1,0 +1,213 @@
+@charset 'UTF-8';
+
+.kcar-main {}
+
+.sub-sec {}
+
+.career-sec {}
+
+.career-container {
+  text-align: center;
+  /* padding-top: 100px; */
+}
+
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  padding: 32px 24px;
+  width: 400px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(34, 34, 34, 0.1);
+  text-align: center;
+  background-position: center top 60px;
+  background-repeat: no-repeat;
+}
+
+.card img {
+  display: none;
+}
+
+.trust img {
+  width: 30%;
+}
+
+.card dt {
+  padding-bottom: 1em;
+  font-size: 1.6em;
+  font-weight: 600;
+  line-height: 1.1em;
+}
+
+.card dd {
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.1em;
+}
+
+.explain-list {}
+
+.explain {
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 5em;
+}
+
+.explain img {
+  width: 100%;
+  padding-bottom: 2em;
+}
+
+.explain div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+  padding-bottom: 2em;
+}
+
+.explain dt {
+  font-size: 1.8em;
+  font-weight: 700;
+  padding-bottom: 0.3em;
+}
+
+.explain dd {
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+
+/* 반응형 */
+/* 1. mo tiny */
+@media screen and (max-width: 360px) {}
+
+/* 2. mo */
+@media screen and (max-width: 767px) {}
+
+/* 3. tb~ */
+@media screen and (min-width: 768px) {
+  .card-list {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    justify-content: center;
+    padding: 84px 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding: 32px 16px;
+  }
+
+  .card img {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+  }  
+  .trust img {
+    width: 33%;
+  }
+
+  .card dt {
+  padding: 1em 0;
+  font-size: 1.4em;
+}
+
+.card dd {
+  font-size: 1em;
+  font-weight: 300;
+}
+}
+
+/* 4. only tb */
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 5. laptop 1280~ */
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 360px;
+  }
+
+  .card-list {
+    display: flex;
+    gap: 4em;
+    justify-content: center;
+  padding: 0 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding: 64px 28px;
+    width: 320px;
+  }
+
+  .card dt {
+    padding: 1em 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 1.3em;
+  }
+  
+  .card dd {
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.2em;
+  }
+
+  .explain {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 5em;
+  }
+
+  .explain:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+
+  .explain:nth-child(2) div {
+    text-align: right;
+  }
+
+  .explain img {
+    width: 40%;
+  }
+
+  .explain div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    padding-bottom: 2em;
+  }
+
+  .explain dt {
+    font-size: 1.8em;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+  }
+
+  .explain dd {
+    font-size: 1.2em;
+  }
+}
+
+/* 6. laptop 1440~ */
+@media screen and (min-width: 1440px) {}
+
+/* 6. laptop 1921~ */
+@media screen and (min-width: 1921px) {}
