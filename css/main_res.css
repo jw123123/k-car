@@ -13,8 +13,8 @@
   }
 
   .main-visual-container {
-    padding-top: 56.25%;
     height: calc(100vh - 71px);
+    padding-top: 0;
   }
 
   .container-s {
@@ -34,82 +34,75 @@
 
 /* 3. only tb 768px ~ 1279px */
 @media all and (min-width: 768px) and (max-width: 1279px) {
+  #kcar-hd {
+    height: 71px;
+  }
 
-
-  .main-visual-container {
-    height: calc(100vh - 71px);
-    padding-top: 0;
+  #kcar-hd .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   /* 서비스 */
+  .svc-section {
+    padding: 100px 0;
+  }
 
- #service-section {
-        padding: 100px 0;
-    }
+  .svc-head {
+    padding-top: 90px;
+    margin-bottom: 50px;
+  }
 
-    .service-header {
-        margin-bottom: 50px;
-    }
+  .svc-head-title {
+    font-size: 44px;
+  }
 
-    .service-header h2 {
-        font-size: 44px;
-    }
+  .svc-head-desc {
+    font-size: 18px;
+  }
 
-    .service-header span {
-        font-size: 18px;
-    }
+  .svc-slide-inner {
+    max-width: 680px;
+  }
 
-    .service-slide-inner {
-        max-width: 680px;
-    }
+  .svc-slide-img {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 34px;
+    border-radius: 24px;
+  }
 
-    .service-slide-text {
-        margin-bottom: 34px;
-    }
+  .svc-title {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
 
-    .service-title {
-        margin-bottom: 20px;
-        font-size: 40px;
-    }
+  .svc-desc {
+    margin-bottom: 28px;
+    font-size: 20px;
+  }
 
-    .service-desc {
-        margin-bottom: 28px;
-        font-size: 20px;
-    }
-
-    .btn-service {
-        min-width: 180px;
-        padding: 14px 32px;
-        font-size: 18px;
-    }
-
-    .service-slide-img {
-        width: 320px;
-        height: 320px;
-        border-radius: 24px;
-    }
-
-    .service-pagination {
-        gap: 18px;
-        margin-top: 32px;
-    }
-
-    .service-page-num {
-        font-size: 24px;
-    }
-
-    .service-nav {
-        font-size: 24px;
-    }
-
-
-  .btn-service {
+  .svc-btn {
     min-width: 180px;
     padding: 14px 32px;
     font-size: 18px;
   }
 
+  .svc-controls {
+    gap: 18px;
+    margin-top: 32px;
+  }
 
+  .svc-pagination {
+    font-size: 24px;
+  }
+
+  .svc-prev,
+  .svc-next {
+    width: 22px;
+    height: 22px;
+  }
 
 
 
@@ -213,7 +206,7 @@
   }
 
   .news-header {
-    margin-bottom: 24px;
+    margin-bottom: 34px;
   }
 
   .news-header .sec-title {
@@ -221,20 +214,28 @@
   }
 
   .news-header .btn-more {
-    display: none;
+    display: inline-flex;
+    min-height: 36px;
+    padding: 8px 18px;
+  }
+
+  .news-header .btn-more .btn-label {
+    font-size: 14px;
   }
 
   .news-slider {
-    padding-left: 36px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .news-list {
     gap: 16px;
-    padding-right: 36px;
+    padding-right: 12px;
   }
 
   .news-item {
-    flex: 0 0 270px;
+    flex: 0 0 240px;
+    min-height: 320px;
     border-radius: 16px;
   }
 
@@ -246,15 +247,18 @@
     min-height: 54px;
     font-size: 16px;
     margin-bottom: 16px;
+    line-height: 1.4;
   }
 
   .news-desc {
     font-size: 12px;
+    line-height: 1.7;
     -webkit-line-clamp: 8;
   }
 
   .news-date {
-    margin-top: 18px;
+    margin-top: auto;
+    padding-top: 18px;
     font-size: 11px;
   }
 
@@ -290,7 +294,6 @@
     font-size: 14px;
     font-weight: 400;
     color: #fff;
-    margin-bottom: 22px;
   }
 
   .career-actions {
@@ -314,9 +317,9 @@
   }
 
   .btn-career {
-    grid-column: 1;
+    /* grid-column: 1;
     grid-row: 2;
-    justify-self: start;
+    justify-self: start; */
   }
 
 }
@@ -413,156 +416,112 @@
   }
 
 
-    /* 서비스  */
-    #service-section {
-        position: relative;
-        height: 500vh;
-        padding: 0;
-        background: #fff;
-        overflow: visible;
-    }
+  /* 서비스  */
+  .svc-section {
+    position: relative;
+    height: 500vh;
+    padding: 0;
+    /* display: flex; */
+    align-items: center;
+    overflow: visible;
+  }
 
-    .service-fixed-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-    }
+  .svc-pin-wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
 
-    .service-fixed-wrapper.is-fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 50;
-    }
+  .svc-wrap {
+    width: 100%;
+  }
 
-    .service-fixed-wrapper.is-bottom {
-        position: absolute;
-        top: auto;
-        bottom: 0;
-    }
+  .svc-head {
+    padding-top: 100px;
+    margin-bottom: 56px;
+  }
 
-    .service-inner {
-        position: relative;
-        height: 100vh;
-        padding-top: 196px;
-        display: flex;
-        flex-direction: column;
-    }
+  .svc-head-title {
+    font-size: 56px;
+  }
 
-    .service-header {
-        margin-bottom: 0;
-        text-align: left;
-    }
+  .svc-head-desc {
+    font-size: 20px;
+  }
 
-    .service-header h2 {
-        margin-bottom: 18px;
-        font-size: 50px;
-        font-weight: 900;
-        line-height: 1.1;
-    }
+  .svc-swiper {
+    height: 460px;
+    overflow: hidden;
+  }
 
-    .service-header span {
-        font-size: 18px;
-        line-height: 1.6;
-    }
+  .svc-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
 
-    .service-content-wrap {
-        position: relative;
-        flex: 1;
-        /* overflow: hidden; */
-        width: 100%;
-    }
+  .svc-slide {
+    height: 460px;
+  }
 
-    .service-track {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        transform: none !important;
-    }
+  .svc-slide-inner {
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 56px;
+  }
 
-    .service-slide {
-        position: absolute;
-        inset: 0;
-        /* opacity: 0; */
-        /* visibility: hidden; */
-        pointer-events: none;
-        transition: opacity 0.45s ease, visibility 0.45s ease;
-    }
+  .svc-slide-img {
+    order: 2;
+    width: 450px;
+    height: 450px;
+    margin: 0;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
 
-    .service-slide.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
+  .svc-slide-text {
+    order: 1;
+    width: calc(100% - 506px);
+    max-width: none;
+    text-align: left;
+  }
 
-    .service-slide-inner {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        max-width: none;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 60px;
-    }
+  .svc-title {
+    margin-bottom: 15px;
+    font-size: 42px;
+  }
 
-    .service-slide-text {
-        width: calc(100% - 510px);
-        max-width: none;
-        margin-bottom: 0;
-        text-align: left;
-    }
+  .svc-desc {
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 1.45;
+  }
 
-    .service-slide-text .btn-service {
-        margin: 0;
-    }
+  .svc-btn {
+    min-width: 180px;
+    margin: 0;
+  }
 
-    .service-title {
-        margin-bottom: 15px;
-        font-size: 42px;
-        line-height: 1.35;
-        font-weight: 700;
-    }
+  .svc-controls {
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 40px;
+  }
 
-    .service-desc {
-        margin-bottom: 25px;
-        font-size: 24px;
-        line-height: 1.45;
-    }
+  .svc-pagination {
+    font-size: 28px;
+  }
 
-    .service-slide-img {
-        width: 450px;
-        height: 450px;
-        margin: 0;
-        border-radius: 20px;
-        flex-shrink: 0;
-    }
-
-    .service-pagination {
-        position: absolute;
-        left: 0;
-        bottom: 80px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 10px;
-        margin-top: 0;
-    }
-
-    .service-page-num {
-        font-size: 28px;
-    }
-
-    .service-nav {
-        display: none;
-    }
+  .svc-prev,
+  .svc-next {
+    display: none;
+  }
 
   /* 지속가능경영 */
   .esg-section {
@@ -570,9 +529,11 @@
   }
 
   .esg-section .esg-main-title {
-    top: 60px;
-    left: 96px;
-    font-size: 42px;
+    padding-top: 100px;
+    /*헤더 높이만큼 패딩줌*/
+    left: 180px;
+    /*패딩만큼 96px할랬는데 왼쪽으로 넘어가는 사이드 바 면적으로 이렇게 진행*/
+    font-size: 50px;
   }
 
   .esg-section .esg-card-container {
@@ -589,14 +550,15 @@
   }
 
   .esg-section .card-title {
-    padding-bottom: 36px;
-    font-size: 26px;
+    padding-bottom: 45px;
+    font-size: 28px;
   }
 
   .esg-section .card-stats {
     display: flex;
     margin-top: 40px;
     height: 240px;
+    align-items: center;
   }
 
   .esg-section .stat {
@@ -676,10 +638,11 @@
   .esg-section .side-bar-item {
     width: 85px;
     height: 100%;
-    display: flex;
+    display: none;
+    /* 기본 숨김 */
     align-items: flex-end;
     justify-content: center;
-    padding: 0 0 90px;
+    padding: 0 0 160px;
     border: 0;
     background: rgba(255, 255, 255, 0.05);
     border-left: 1px solid rgba(255, 255, 255, 0.08);
@@ -690,16 +653,34 @@
   .esg-section .side-bar-item span {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 20px;
+    font-size: 24px;
     color: rgba(255, 255, 255, 0.45);
   }
 
   .esg-section .side-bar-item:hover {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.45);
   }
 
   .esg-section .side-bar-item:hover span {
     color: #fff;
+  }
+
+  /* E 활성: 오른쪽에 Social + Governance */
+  .esg-section.is-e .right-side .side-bar-item[data-target="1"],
+  .esg-section.is-e .right-side .side-bar-item[data-target="2"] {
+    display: flex;
+  }
+
+  /* S 활성: 왼쪽에 Environment / 오른쪽에 Governance */
+  .esg-section.is-s .left-side .side-bar-item[data-target="0"],
+  .esg-section.is-s .right-side .side-bar-item[data-target="2"] {
+    display: flex;
+  }
+
+  /* G 활성: 왼쪽에 Environment + Social */
+  .esg-section.is-g .left-side .side-bar-item[data-target="0"],
+  .esg-section.is-g .left-side .side-bar-item[data-target="1"] {
+    display: flex;
   }
 
   .esg-pagination {
@@ -721,68 +702,75 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 60px;
+    margin-bottom: 72px;
   }
 
   .news-header .sec-title {
-    font-size: 52px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1;
-    margin: 0;
-    text-align: left;
-    letter-spacing: -1.5px;
+    font-size: 56px;
+    font-weight: 900;
   }
 
   .news-header .btn-more {
     display: inline-flex;
+    min-height: 42px;
+    padding: 10px 24px;
+  }
+
+  .news-header .btn-more .btn-label {
+    font-size: 15px;
   }
 
   .news-slider {
-    overflow: visible;
+    overflow: hidden;
     padding-left: 0;
+    padding-right: 0;
+
   }
 
   .news-list {
     width: 100%;
     display: flex;
-    gap: 25px;
-    justify-content: space-between;
+    gap: 18px;
+    justify-content: flex-start;
     padding-right: 0;
   }
 
   .news-item {
-    flex: 0 0 calc((100% - 75px) / 4);
-    height: 500px;
-    border-radius: 24px;
+    flex: 0 0 calc((100% - 54px) / 4 - 24px);
+    min-height: 360px;
+    border-radius: 20px;
   }
 
   .news-link {
     height: 100%;
-    padding: 45px 35px;
+    padding: 24px 20px 22px;
   }
 
   .news-title {
-    min-height: 68px;
-    font-size: 24px;
-    margin-bottom: 25px;
+    min-height: 56px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.4;
   }
 
   .news-desc {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.7;
-    display: block;
-    overflow: hidden;
+    -webkit-line-clamp: 7;
   }
 
   .news-date {
-    margin-top: 32px;
-    font-size: 15px;
+    margin-top: auto;
+    padding-top: 22px;
+    font-size: 14px;
   }
 
   /* CAREER */
+  .main-career-sec * {
+    /* border: 1px solid #f00; */
+  }
+
   .main-career-sec {
-    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -795,10 +783,12 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
+    justify-content: center;
     width: 100%;
     min-height: 0;
     column-gap: 40px;
     text-align: left;
+    position: relative;
   }
 
   .career-text {
@@ -817,7 +807,6 @@
     font-size: 18px;
     font-weight: 400;
     color: #fff;
-    margin-bottom: 50px;
   }
 
   .career-actions {
@@ -825,6 +814,7 @@
     grid-template-columns: auto;
     justify-items: end;
     gap: 28px;
+    margin-top: 0;
   }
 
   .career-btns {
@@ -841,7 +831,10 @@
   }
 
   .btn-career {
-    justify-self: start;
+    /* justify-self: start; */
+    position: absolute;
+    left: 0;
+    top: calc(50% + 10rem);
   }
 
 }
