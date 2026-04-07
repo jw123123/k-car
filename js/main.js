@@ -57,22 +57,27 @@ $(window).on('resize', function () {
 
 $(window).on('load', function () {
     buildSvcSwiper();
-    updateSvcPcByScroll();
-    bindSvcWheelControl();
+    // updateSvcPcByScroll();
+    // bindSvcWheelControl();
 });
 
 $(window).on('resize', function () {
     clearTimeout(window.svcResizeTimer);
     window.svcResizeTimer = setTimeout(function () {
         buildSvcSwiper();
-        updateSvcPcByScroll();
-        bindSvcWheelControl();
+        // updateSvcPcByScroll();
+        // bindSvcWheelControl();
     }, 150);
 });
 
-$(window).on('scroll', function () {
-    updateSvcPcByScroll();
-});
+// $(window).on('scroll', function () {
+//     updateSvcPcByScroll();
+// });
+
+
+
+
+
 
 //지속가능경영
 $(function () {
