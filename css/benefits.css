@@ -2,29 +2,87 @@
 
 .benefits-sec {}
 .benefits-container {
-  padding: 0 80px;
 }
 .benefits-wrap {
-    display: flex;
-    justify-content: space-between;
-  padding-top: 150px;
+  padding-top: 64px;
 }
 
 .benefits-wrap h3 {
-  font-size: 2em;
-  /* color: var(--primary-color); */
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  color: var(--primary-color);
 }
 .benefits-wrap h3:after {
 }
 .benefits-list {
   display: flex;
-  /* gap: 5em; */
   flex-wrap: wrap;
-  width: 55%;
 }
 .item {
-  padding-left: 5em;
-  padding-bottom: 2em;
+  width: 80px;
+padding-bottom: 1em;
+}
+.item img {width: 40%;}
+.item div {padding: 1em 0;}
+
+
+/* 반응형 */
+/* 1. mo tiny */
+@media screen and (max-width: 360px) {
+}
+
+/* 2. mo */
+@media screen and (max-width: 767px) {
+}
+
+/* 3. tb~ */
+@media screen and (min-width: 768px) {
+  .benefits-wrap {
+    display: flex;
+    justify-content: space-between;
+  padding-top: 100px;
+}
+.benefits-wrap h3 {
+  font-size: 2em;
+}
+  .benefits-list {
+  display: flex;
+  gap: 3em;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  width: 75%;
 }
 .item img {width: 50%;}
-.item div {padding: 1em 0;}
+}
+
+/* 4. only tb */
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 5. laptop 1280~ */
+@media screen and (min-width: 1280px) {
+    .benefits-wrap {
+  padding: 64px 0;
+}
+
+
+.benefits-list {
+  gap: 5em;
+  flex-direction: row-reverse;
+}
+
+}
+
+/* 6. laptop 1440~ */
+@media screen and (min-width: 1440px) {
+    .benefits-container {
+  padding: 0 80px;
+}
+
+.benefits-list {
+  width: 55%;
+}
+
+}
+
+/* 6. laptop 1921~ */
+@media screen and (min-width: 1921px) {}

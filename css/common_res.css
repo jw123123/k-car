@@ -434,6 +434,7 @@
         bottom: 0;
         width: 100%;
         border-bottom: 2px solid #fff;
+        /* transform-origin: center center; */ 
     }
 
     .mo-depth2 li:hover a {

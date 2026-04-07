@@ -55,21 +55,13 @@
 
 
 /* 메인 영역 */
-.sub-sec h2 {
-    font-size: 3.2em;
-    font-weight: 800;
-    width: 90%;
-    line-height: 1.3em;
-    padding-bottom:2em;
+.sub-sec {
+    padding: 2em 0;
 }
-
-#kcar-main,
-#kcar-main>* {}
-
-
-.ani-start {
-    opacity: 1;
-    transform: none;
+.sub-sec h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    line-height: 1.2em;
 }
 
 /* 반응형 */
@@ -234,6 +226,9 @@
     .sub {
         padding: 0 112px;
     }
+    .sub-sec {
+        padding: 100px 0;
+    }
 
     .sub .wrap {
         padding: 0 96px;
@@ -255,13 +250,18 @@
     }
 
     /* 메인 영역 */
-    .sub-sec {
-        padding-top: 100px;
-        padding-bottom: 200px;
+    .sub-sec h2 {
+        font-size: 3.8em;
+        width: 80%;
+        line-height: 1.3em;
+          padding-bottom: 200px;
     }
 
     .sub-sec h2 {
         /* font-size: 2.4em; */
+    }
+    .explain-list {
+        padding-top: 200px;
     }
 }
 
