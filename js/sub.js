@@ -16,7 +16,7 @@ $(function(){
   mainNum = bodyNum[0].slice(3,4);
   subNum = bodyNum[0].slice(5,6);
   // console.log(mainNum, subNum);
-  let subHdEl = "회사소개,서비스,PR센터,ESG,인재채용,IR";
+  let subHdEl = "K Car소개,서비스,PR센터,ESG,인재채용,IR";
   subHdEl = subHdEl.split(",");
   // console.log(subHdEl);
   let subEl = lnb.eq(mainNum).children().eq(subNum);
