@@ -23,10 +23,11 @@
         }
         .ceo-container {
           padding-top: 2em;
+          padding-bottom: inherit;
         }
         .ceo-img {
-          height: 72vw;
-          background: url("images/ceo-visual.jpg") left top /contain no-repeat;
+          height: 80vw;
+          background: url("images/ceo-visual.jpg") center top /contain no-repeat;
         }
         .ceo-message h3 {
             font-size: 1.5em;
@@ -37,10 +38,12 @@
             display: flex;
             flex-direction: row-reverse; 
             gap: 2.4em;
+            padding-top: inherit;
+            padding-bottom: 2em;
           }
           .ceo-img {
             width: 80rem;
-            /* height: 100%; */
+            height: inherit;
           }
           .ceo-message {
               /* padding-top: 100vw;
@@ -275,7 +278,7 @@
   <!-- 3. 메인영역 -->
   <main id="sub-main" class="sub-wrap">
       <section class="sub-sec company-ceo-sec">
-          <h2>대표 인사말</h2>
+          <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">대표 인사말</h2>
           <div class="ceo-container">
             <div class="ceo-img"><span class="blind">정인국대표사진</span></div>
             <div class="ceo-message">
