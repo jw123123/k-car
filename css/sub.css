@@ -221,13 +221,15 @@
 
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
-
+    body.sub .sub-hd {
+      margin-top: 5em;  
+    }
     /* 서브 공용 클래스 */
     .sub-wrap {
         padding: 0 112px;
     }
     .sub-sec {
-        padding: 100px 0;
+        padding: 1em 0;
     }
 
     .sub .wrap {
@@ -254,12 +256,12 @@
         font-size: 3.8em;
         width: 80%;
         line-height: 1.3em;
-          padding-bottom: 200px;
+        padding-bottom: 4rem;
+    }
+    .sub-page-title {
+        padding-bottom: 0;
     }
 
-    .sub-sec h2 {
-        /* font-size: 2.4em; */
-    }
     .explain-list {
         padding-top: 200px;
     }
