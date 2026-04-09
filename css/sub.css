@@ -222,7 +222,7 @@
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
     body.sub .sub-hd {
-      margin-top: 5em;  
+      margin-top: 10em;  
     }
     /* 서브 공용 클래스 */
     .sub-wrap {
@@ -247,7 +247,7 @@
     }
 
     .sub-hd-lnb h2 {
-        margin: 0.5em 0 0.2em;
+        margin: 0.5em 0 0.5em;
         font-size: 6em;
     }
 
@@ -256,7 +256,7 @@
         font-size: 3.8em;
         width: 80%;
         line-height: 1.3em;
-        padding-bottom: 4rem;
+        padding: 2rem 0 4rem 0;
     }
     .sub-page-title {
         padding-bottom: 0;
