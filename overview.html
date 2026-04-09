@@ -33,6 +33,10 @@
             width: 100%;
             content: "";
         }
+        .core-sub-container:after {
+            display: none;
+            /* border: 1px solid #f00; */
+        }
 
         .main-business {
             padding: 2rem;
@@ -44,10 +48,9 @@
 
         .main-business-lists {
             display: flex;
-            width: 100%;
+            flex-direction: column; /* 아이템을 위에서 아래로 세로 배치 */
             gap: 2em;
         }
-
         .main-business-lists>li {
             display: flex;
         }
@@ -95,7 +98,6 @@
             border: 1px solid #e2e8ee;
             border-radius: 0.8rem;
         }
-@media all and (min-width: 1024px) {.core-lists>li { width: 48%;}}
 
         .core-lists>li div {
             right: 0;
@@ -126,6 +128,15 @@
         .core-lists>li:nth-of-type(6):before {
             background: url("images/svg/icon-main-service-09.svg") left center / contain no-repeat ;
         }
+
+@media all and (min-width: 1024px) {
+  .main-business-lists {
+    flex-direction: row; /* 아이템을 위에서 아래로 세로 배치 */
+  }
+  .core-lists>li { 
+    width: 48%;
+  }
+}
     </style>
 </head>
 
@@ -351,8 +362,9 @@
   <main id="sub-main" class="sub-wrap">
       <section class="sub-sec">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">사업소개</h2>
-          <div class="overview-container">
-              <div class="sub-container">
+          <div class="sub-main-container">
+            <div class="overview-container">
+                <div class="sub-container">
                   <div class="overview-business">
                       <div class="business-content">
                           <p class="title">자동차 이커머스(E-Commerce) 시장의 선두주자, K Car </p>
@@ -365,87 +377,90 @@
                               2조원 돌파라는 놀라운 성장과 결실은 과감한 변화와 혁신에 집중하여 새로운 중고차 유통 구조를 만들어 가는 데 온 힘을 기울인 노력의 결과입니다.
                           </p>
                       </div>
-                      <div data-aos="fade-up"><img src="images/business-visual.png" alt="성장률이미지"></div>
+                      <div data-aos="fade-up">
+                        <img src="images/business-visual.png" alt="성장률이미지">
+                      </div>
                   </div>
-              </div>
-          </div><!--overview-container 종료  -->
-          <div class="main-business-container">
-              <h3>1. 주요 비즈니스</h3>
-              <div class="sub-container">
-                  <div class="main-business">
-                      <ul class="main-business-lists">
-                          <li data-aos="fade-up">
-                              <div><strong>내차사기</strong>
-                                  <ul class="guide-txt">
-                                      <li>K Car가 직접 매입, 진단한 중고차를 전국 직영점 및 온라인 채널을 통해 판매</li>
-                                      <li>고객 맞춤형 K Car 할부/금융 서비스 제공</li>
-                                  </ul>
-                              </div>
-                          </li>
-                          <li data-aos="fade-up">
-                              <div><strong>내차팔기</strong>
-                                  <ul class="guide-txt">
-                                      <li>K Car 차량평가사가 직접 고객을 찾아가 차량 진단, 평가 후 매입</li>
-                                      <li>공정하고 투명하게 고객이 법인차량을 팔 수 있는 솔루션 제공</li>
-                                      <li>오토리스사, 렌트사, 일반법인, 개인 위탁 등 을 통합하여 중고차 경매 진행</li>
-                                  </ul>
-                              </div>
-                          </li>
-                          <li data-aos="fade-up">
-                              <div><strong>중고차 장기렌트</strong>
-                                  <ul class="guide-txt">
-                                      <li>초기 비용과 운용비 부담을 크게 줄인 개월 단위의 장기렌트 서비스</li>
-                                  </ul>
-                              </div>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div><!--main-business-container 종료  -->
-          <div class="core-container">
-              <h3>2. 핵심 경쟁력</h3>
-              <div class="sub-container core-sub-container">
-                  <div class="core">
-                      <ul class="core-lists"  data-aos="fade-up">
-                          <li>
-                              <div><strong>국내 최대 네트워크</strong>
-                                  <p>K Car는 전국에 총 48개(2025년 7월 기준)에 이르는 직영점을 기반으로 국내 최대 규모의 네트워크를 구축하고 있습니다.</p>
-                              </div>
-                          </li>
-                          <li>
-                              <div><strong>내차사기 홈서비스</strong>
-                                  <p>K Car의 대표 온라인 구매 서비스로, PC 또는 모바일 기기를 이용해서 365일 24시간 언제든지 직영중고차를 구매할 수 있습니다. 지난
-                                      2016년 업계 최초로 서비스를 선보인 이후 지속적인 서비스 고도화를 통해 고객 만족도를 높여나가고 있습니다.</p>
-                              </div>
-                          </li>
-                          <li>
-                              <div><strong>내차팔기 홈서비스</strong>
-                                  <p>K Car의 차별화된 고객 차량 매입 서비스로, 전문 차량평가사가 고객의 일정에 맞춰 원하는 장소로 직접 찾아가 차량을 진단한 후 매입가를
-                                      안내합니다.</p>
-                              </div>
-                          </li>
-                          <li>
-                              <div><strong>K Car Warranty(KW)</strong>
-                                  <p>2014년 업체 최초로 실시한 품질보증 연장 서비스입니다. K Car Warranty는 중고차 구매 후 발생할 수 있는 차량 고장 및 수리에 대한
-                                      고객의 우려와 부담을 최소화하고 사후관리까지 책임지기 위해 마련했습니다.</p>
-                              </div>
-                          </li>
-                          <li>
-                              <div><strong>K Car 렌트</strong>
-                                  <p>월 렌트비를 납입하면 취득세, 보험료, 자동차세 등 추가 부담 없이 중고차를 이용할 수 있는 서비스로, 고객별 상황에 맞춰 기간과 월 납입금액을
-                                      선택할 수 있습니다.</p>
-                              </div>
-                          </li>
-                          <li>
-                              <div><strong>K Car 캐피탈</strong>
-                                  <p>K Car 캐피탈은 K Car의 관계사로서, 2019년 출범하여 보다 쉽고 빠른 중고차 할부금융 서비스에 힘을 기울이고 있습니다. K Car
-                                      캐피탈이 직접 알고리즘을 개발, 할부금융 승인율을 높이고 복잡한 승인심사 시간은 대폭 줄여 편리하게 이용할 수 있습니다.</p>
-                              </div>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div><!--core-container 종료  -->
+                </div>
+            </div><!--overview-container 종료  -->
+            <div class="main-business-container">
+                <h3>1. 주요 비즈니스</h3>
+                <div class="sub-container">
+                    <div class="main-business">
+                        <ul class="main-business-lists">
+                            <li data-aos="fade-up">
+                                <div><strong>내차사기</strong>
+                                    <ul class="guide-txt">
+                                        <li>K Car가 직접 매입, 진단한 중고차를 전국 직영점 및 온라인 채널을 통해 판매</li>
+                                        <li>고객 맞춤형 K Car 할부/금융 서비스 제공</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up">
+                                <div><strong>내차팔기</strong>
+                                    <ul class="guide-txt">
+                                        <li>K Car 차량평가사가 직접 고객을 찾아가 차량 진단, 평가 후 매입</li>
+                                        <li>공정하고 투명하게 고객이 법인차량을 팔 수 있는 솔루션 제공</li>
+                                        <li>오토리스사, 렌트사, 일반법인, 개인 위탁 등 을 통합하여 중고차 경매 진행</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up">
+                                <div><strong>중고차 장기렌트</strong>
+                                    <ul class="guide-txt">
+                                        <li>초기 비용과 운용비 부담을 크게 줄인 개월 단위의 장기렌트 서비스</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--main-business-container 종료  -->
+            <div class="core-container">
+                <h3>2. 핵심 경쟁력</h3>
+                <div class="sub-container core-sub-container">
+                    <div class="core">
+                        <ul class="core-lists"  data-aos="fade-up">
+                            <li>
+                                <div><strong>국내 최대 네트워크</strong>
+                                    <p>K Car는 전국에 총 48개(2025년 7월 기준)에 이르는 직영점을 기반으로 국내 최대 규모의 네트워크를 구축하고 있습니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div><strong>내차사기 홈서비스</strong>
+                                    <p>K Car의 대표 온라인 구매 서비스로, PC 또는 모바일 기기를 이용해서 365일 24시간 언제든지 직영중고차를 구매할 수 있습니다. 지난
+                                        2016년 업계 최초로 서비스를 선보인 이후 지속적인 서비스 고도화를 통해 고객 만족도를 높여나가고 있습니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div><strong>내차팔기 홈서비스</strong>
+                                    <p>K Car의 차별화된 고객 차량 매입 서비스로, 전문 차량평가사가 고객의 일정에 맞춰 원하는 장소로 직접 찾아가 차량을 진단한 후 매입가를
+                                        안내합니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div><strong>K Car Warranty(KW)</strong>
+                                    <p>2014년 업체 최초로 실시한 품질보증 연장 서비스입니다. K Car Warranty는 중고차 구매 후 발생할 수 있는 차량 고장 및 수리에 대한
+                                        고객의 우려와 부담을 최소화하고 사후관리까지 책임지기 위해 마련했습니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div><strong>K Car 렌트</strong>
+                                    <p>월 렌트비를 납입하면 취득세, 보험료, 자동차세 등 추가 부담 없이 중고차를 이용할 수 있는 서비스로, 고객별 상황에 맞춰 기간과 월 납입금액을
+                                        선택할 수 있습니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div><strong>K Car 캐피탈</strong>
+                                    <p>K Car 캐피탈은 K Car의 관계사로서, 2019년 출범하여 보다 쉽고 빠른 중고차 할부금융 서비스에 힘을 기울이고 있습니다. K Car
+                                        캐피탈이 직접 알고리즘을 개발, 할부금융 승인율을 높이고 복잡한 승인심사 시간은 대폭 줄여 편리하게 이용할 수 있습니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--core-container 종료  -->
+          </div>
       </section>
   </main>
 

@@ -19,39 +19,38 @@
     <style>
         .mission-box {
             position: relative;
+
             margin-top: 3.2rem;
-            height: 38rem;
             background-color: #f6f8fa;
             border-radius: .8rem 4rem .8rem 4rem;
+            padding: 2em;
         }
         .mission-box .desc {
-            padding-top: 25.6rem;
-            font-size: 1.4rem;
+            padding-top: 15rem;
             font-weight: 400;
-            line-height: 1.43;
             letter-spacing: -.4px;
             text-align: center;
             color: #16171d;
         }
         .mission-diagram {
             display: flex;
-            gap: 2em;
+            gap: 1em;
         }
         .mission-diagram:before {
             display: block;
             content: "";
-            width: 40.6rem;
+            width: 10rem;
             height: .1rem;
             border-bottom: 1px dotted #16171d;
             position: absolute;
-            top: 14rem;
+            top: 9rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
         }
         .mission-diagram>li {
-            width: 15rem;
-            height: 15rem;
+            width: 6rem;
+            height: 6rem;
             border-radius: 100%;
             color: #fff;
             display: flex;
@@ -59,6 +58,7 @@
             align-items: center;
             justify-content: center;
             position: absolute;
+            font-size: 0.6rem;
             top: 6.4rem;
             left: 50%;
             transform: translateX(-50%);
@@ -66,15 +66,48 @@
         }
         .mission-diagram>li:first-of-type {
             background-color: #b70f28;
-            margin-left: -25rem;
+            margin-left: -7rem;
         }
         .mission-diagram>li:nth-of-type(2) {
             background-color: #fff;
             border: 1px solid #979797;
+            padding: 1rem;
         }
         .mission-diagram>li:nth-of-type(3) {
             background-color: #f01d29;
-            margin-left: 25rem;
+            margin-left: 7rem;
+        }
+        @media all and (min-width: 768px) {
+          .mission-box {
+              height: 38rem;
+          }
+          .mission-box .desc {
+            padding-top: 25.6rem;
+            font-size: 1.4rem;
+            line-height: 1.43;
+          }
+          .mission-diagram {
+              gap: 2em;
+          }
+          .mission-diagram:before {
+              top: 14rem;
+              width: 40.6rem;
+          }
+          .mission-diagram>li {
+              width: 15rem;
+              height: 15rem;
+              top: 6.4rem;
+          }
+
+          .mission-diagram>li:first-of-type {
+              margin-left: -25rem;
+          }
+          .mission-diagram>li:nth-of-type(2) {
+              padding: 1rem;
+          }
+          .mission-diagram>li:nth-of-type(3) {
+              margin-left: 25rem;
+          }
         }
     </style>
 </head>

@@ -64,6 +64,11 @@
     line-height: 1.2em;
 }
 
+
+.sub-main-container {
+    padding-top: 2em;
+    padding-bottom: inherit;
+}
 /* 반응형 */
 
 /* 1. mo ~767px까지 */
@@ -260,6 +265,11 @@
     }
     .sub-page-title {
         padding-bottom: 0;
+    }
+    
+    .sub-main-container {
+        padding-top: inherit;
+        padding-bottom: 10em;
     }
 
     .explain-list {
