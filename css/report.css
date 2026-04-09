@@ -1,0 +1,223 @@
+@charset 'UTF-8';
+
+.news-slider {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.news-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.news-list {
+    display: flex;
+    gap: 16px;
+    width: auto;
+    width: max-content;
+    padding-right: 8px;
+}
+
+.news-item {
+    flex: 0 0 180px;
+    min-height: 260px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #d9d9d9 0%, #8f8f8f 100%);
+    transform: translateY(100%);
+    transition: transform 0.55s ease;
+    z-index: 0;
+}
+
+.news-link {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    padding: 18px 16px 16px;
+    color: inherit;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.news-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-title {
+    min-height: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--primary-font-color);
+    margin-bottom: 12px;
+    word-break: keep-all;
+    transition: color 0.45s ease;
+}
+
+.news-desc {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--primary-font-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.45s ease;
+}
+
+.news-date {
+    display: block;
+    margin-top: auto;
+    margin-top: 16px;
+    font-size: 10px;
+    color: var(--primary-font-color);
+    font-weight: 500;
+    transition: color 0.45s ease;
+}
+
+/* hover / focus / active 공통 */
+.news-item:hover::before,
+.news-item:focus-within::before,
+.news-item:active::before {
+    transform: translateY(0);
+}
+
+.news-item:hover .news-title,
+.news-item:hover .news-desc,
+.news-item:hover .news-date,
+.news-item:focus-within .news-title,
+.news-item:focus-within .news-desc,
+.news-item:focus-within .news-date,
+.news-item:active .news-title,
+.news-item:active .news-desc,
+.news-item:active .news-date {
+    color: #fff;
+}
+
+
+/* 반응형 */
+/* 1. mo tiny */
+@media screen and (max-width: 360px) {}
+
+/* 2. mo */
+@media screen and (max-width: 767px) {}
+
+/* 3. tb~ */
+@media screen and (min-width: 768px) {
+}
+
+/* 4. only tb */
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+/* 5. laptop 1280~ */
+@media screen and (min-width: 1280px) {
+ 
+
+      .news-list  {
+        display: flex;
+        gap: 2em;
+        justify-content: space-between;
+        margin:2em 0;
+      }
+      .news-item {
+        width: 24%;
+        border: 0.2rem solid #e2e8ee;
+        border-radius: 2.4rem;
+        position: relative;
+      }
+
+      .news-link {
+        display: block;
+        height: 100%;
+        padding: 4rem 3rem;
+        text-decoration: none;
+        z-index: 5;
+        box-sizing: border-box;
+      }
+
+      .news-desc {
+          line-height: 1.7;
+          margin-bottom: 0;
+          overflow: hidden;
+          word-break: keep-all;
+      }
+      .news-item:hover .news-title, .news-item:hover .news-date {
+        display: none;
+      }
+      .news-item:hover {
+        background-color: var(--primary-color);
+      }
+      .news-item:hover .news-desc{
+        font-size: 1.2em;
+        color: #fff;
+      }
+      .search-wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        border-radius: .4rem;
+        background-color: #f9fafb;
+      }
+
+      .search-wrap input[type="text"] {
+        height: 4.8rem;
+        border: 1px solid #d8dee8;
+        border-radius: .8rem;
+        font-family: "Spoqa Han Sans Neo";
+        font-weight: 400;
+        line-height: 1.43;
+        letter-spacing: -.4px;
+        color: #16171d;
+        padding: 0 5rem 0 1.2rem;
+      }
+      .search-input {
+          width: 48%;
+      }
+      .search-input:hover {
+          width: 100%;
+          border-color: #16171d ;
+      }
+      .table-wrapper table {
+        width: 100%;
+        border-collapse: collapse;;
+      }
+      .table-wrapper thead {
+        color: #909399;
+        background-color: #eee8e8;
+        font-weight: 500;
+        border-top: 1px solid #000;
+      }
+      .table-wrapper td, .table-wrapper th {
+        text-align: center;
+        padding: 1em;
+      }
+      .pagination , .paging {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+      }
+      .pagination {
+        width: 100%;
+        position: relative;
+      }
+}
+
+/* 6. laptop 1440~ */
+@media screen and (min-width: 1440px) {}
+
+/* 6. laptop 1921~ */
+@media screen and (min-width: 1921px) {}
