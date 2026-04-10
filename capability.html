@@ -11,135 +11,14 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/common_res.css">
     <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/capability.css">
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src='js/jquery-ui.min.js'></script>
     <script src="js/lenis.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
-    <style>
-        .point-lists {
-            width: 86rem;
-            margin: 6.4rem auto 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .point-lists>li {
-            width: 20rem;
-            height: 20rem;
-            padding-top: 13.8rem;
-            border: 1px solid #e1e8ef;
-            border-radius: 1.6rem;
-            font-size: 1.6rem;
-            font-weight: 700;
-            line-height: 1.38;
-            letter-spacing: -.5px;
-            text-align: center;
-            color: #16171d;
-        }
-
-        .point-lists>li:first-of-type {
-            background: url("images/svg/icon-point-list-01.svg") no-repeat center 4rem;
-            background-size: 9rem 8rem;
-        }
-
-        .point-lists>li:nth-of-type(2) {
-            background: url("images/svg/icon-point-list-02.svg") no-repeat center 4rem;
-            background-size: 9rem 8rem;
-        }
-
-        .point-lists>li:nth-of-type(3) {
-            background: url("images/svg/icon-point-list-03.svg") no-repeat center 4rem;
-            background-size: 9rem 8rem;
-        }
-
-        .point-lists>li:nth-of-type(4) {
-            background: url("images/svg/icon-point-list-04.svg") no-repeat center 4rem;
-            background-size: 9rem 8rem;
-        }
-
-        .desc-wrap {
-            position: relative;
-            height: 45.4rem;
-            background: url("images/svg/bg-differ-01.svg") no-repeat 0 0;
-            background-size: 100% 45.4rem;
-            margin-top: 4rem;
-        }
-
-        .diff-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 35rem;
-            position: absolute;
-            top: 6rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .diff-title h4 {
-            width: 32.8rem;
-            font-size: 1.6rem;
-            font-weight: 500;
-            line-height: 1.38;
-            letter-spacing: -.5px;
-            color: #16171d;
-        }
-        .diff-lists {
-            width: 75.2rem;
-            position: absolute;
-            top: 12.6rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .diff-lists li {
-            display: flex;
-            align-items: center;
-            height: 5.2rem;
-            margin-top: 2rem;
-            font-size: 1.4rem;
-            font-weight: 400;
-            line-height: 1.43;
-            letter-spacing: -.4px;
-            position: relative;
-        }
-        .diff-lists li:first-child {
-            margin-top: 0;
-        }
-        .diff-lists li span {
-            display: inline-block;
-        }
-        .diff-lists li span:first-of-type {
-            color: #54555a;
-            width: 38.4rem;
-            margin-right: 11rem;
-            text-align: right;
-        }
-        .diff-lists li span:nth-of-type(2) {
-            font-size: 1.3rem;
-            font-weight: 500;
-            line-height: 1.38;
-            letter-spacing: -.5px;
-            color: #16171d;
-        }
-        .diff-lists li span:nth-of-type(3) {
-            color: #fff;
-            width: calc(100% - 39.4rem);
-        }
-        .deco-arrow {
-            padding: .8rem 1.6rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            margin-left: 1.2rem;
-            width: 7rem;
-            height: 5.2rem;
-            background: url("images/svg/bg-deco-arrow.svg") no-repeat 0 0;
-            background-size: 7rem 5.2rem;
-        }
-    </style>
 </head>
 
 <body class="sub1-0 sub">
@@ -364,8 +243,8 @@
     <main id="sub-main" class="sub-wrap">
 
         <section class="sub-sec service-system-sec">
-            <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">국내 최대 직영시스템</h2>
-            <div class="system-container">
+            <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">국내 최대 직영시스템</h2>            
+            <div class="system-container  sub-main-container">
                 <ul class="point-lists">
                     <li>직접 구매 직접 판매</li>
                     <li>전국 직영점 46개</li>
@@ -400,6 +279,10 @@
                             <span>매입, 진단, 관리, 판매 <strong>K Car에서 직접 책임운영</strong></span>
                         </li>
                     </ul>
+                    <div class="desc-bg">
+                      <div class="bg-left"></div>
+                      <div class="bg-right"></div>
+                    </div>
                 </div>
             </div>
         </section>
