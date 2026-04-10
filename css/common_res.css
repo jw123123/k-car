@@ -434,17 +434,10 @@
 
 /* kcar-gnb 동작 마우스 진입했을 때 */
 .depth1.active .depth2 {
-    transform: translateY(0);
+    display: block;
 }
 
 .depth1.active .depth2 li {
-    opacity: 1;
-    transform: translateY(0);
-    transition: 0.4s 0.5s;
-}
-
-.shop-btn {
-    display: none;
 }
 
 

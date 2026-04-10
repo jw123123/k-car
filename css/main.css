@@ -29,11 +29,9 @@
 }
 
 .main-visual-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* 잘려나가도 꽉 채워서 빈 곳없이 채워라 cover contain fill*/
-    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .container-s {
@@ -52,12 +50,15 @@
 
 /* 애니메이션 mask */
 .v-txt {
-    overflow: hidden;
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+    color: #fff;
+    /* transform: translateY(-50%); */
 }
 
-.v-txt .txt {
+/* .v-txt .txt {
     display: block;
-    color: #fff;
     opacity: 0;
     transform: translateY(100%);
     animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -69,7 +70,7 @@
 
 .v-txt:nth-child(2) .txt {
     animation-delay: 1.2s;
-}
+} */
 
 .kcar-title {
     font-size: 32px;
@@ -119,6 +120,10 @@
     transform: translate(-50%, -32%);
     z-index: 4;
     /* display: none; */
+}
+
+.main-company-sec div {
+    padding-top: 0px;
 }
 
 .company-title {
@@ -184,22 +189,25 @@
 .svc-slide-inner {
     width: 100%;
     max-width: 320px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .svc-slide-img {
     width: 200px;
     height: 200px;
-    margin: 0 auto 28px;
+    /* margin: 0 auto 28px; */
     border-radius: 20px;
+    /* flex-shrink: 0; */
     overflow: hidden;
-    flex-shrink: 0;
 }
 
 .svc-slide-img img {
+    object-fit: cover;
+    ;
     display: block;
     width: 100%;
     height: 100%;
@@ -518,10 +526,20 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    height: 30px;
+    width: 230px;
 }
 
 .esg-page-btn {
-    width: 80px;
+    width: 100%;
+    height: 100%;
+}
+
+.esg-page-btn:before {
+    /* 페이지네이션 영역이 너무 작아 따로 before로 실선을 보여줌 */
+    content: '';
+    display: block;
+    width: 100%;
     height: 2px;
     padding: 0;
     border: 0;
@@ -529,10 +547,10 @@
     background: rgba(255, 255, 255, 0.35);
     cursor: pointer;
     pointer-events: auto;
-
 }
 
-.esg-page-btn.active {
+.esg-page-btn.active:before {
+    content: '';
     background: #fff;
 }
 
@@ -583,14 +601,12 @@
     min-height: 34px;
     padding: 8px 16px;
 }
+
 .news-header .btn-more .btn-label {
     font-size: 14px;
 }
+
 .news-slider {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
 }
 
 .news-slider::-webkit-scrollbar {
@@ -598,20 +614,14 @@
 }
 
 .news-list {
-    display: flex;
-    gap: 16px;
-    width: auto;
-    width: max-content;
-    padding-right: 8px;
 }
 
 .news-item {
-    flex: 0 0 180px;
-    min-height: 260px;
-    scroll-snap-align: start;
+    position: relative;
+    padding: 20px 20px;
+    height: 300px;
     background: #fff;
     border-radius: 12px;
-    position: relative;
     overflow: hidden;
 }
 
@@ -619,9 +629,10 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, #d9d9d9 0%, #8f8f8f 100%);
+    /* background: linear-gradient(180deg, #d9d9d9 0%, #8f8f8f 100%); */
+    background: var(--primary-color);
     transform: translateY(100%);
-    transition: transform 0.55s ease;
+    transition: transform 0.4s ease;
     z-index: 0;
 }
 
@@ -630,9 +641,7 @@
     z-index: 1;
     display: block;
     height: 100%;
-    padding: 18px 16px 16px;
     color: inherit;
-    text-decoration: none;
     box-sizing: border-box;
 }
 
@@ -640,25 +649,30 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    gap: 1em;
+    color: var(--primary-font-color);
 }
 
 .news-title {
     min-height: 40px;
-    font-size: 13px;
+    font-size: 1.3em;
     font-weight: 700;
     line-height: 1.4;
-    color: var(--primary-font-color);
-    margin-bottom: 12px;
-    word-break: keep-all;
     transition: color 0.45s ease;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;       /* 플렉스 박스와 유사한 설정 */
+    -webkit-line-clamp: 2;      /* [필수] 보여줄 줄 수 (여기서는 3줄) */
+    -webkit-box-orient: vertical; /* [필수] 수직 정렬 방향 */
+    overflow: hidden;           /* [필수] 넘치는 부분 숨기기 */
 }
 
 .news-desc {
-    font-size: 11px;
+    font-size: 0.9em;
     line-height: 1.6;
-    color: var(--primary-font-color);
     display: -webkit-box;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     overflow: hidden;
     transition: color 0.45s ease;
@@ -666,8 +680,6 @@
 
 .news-date {
     display: block;
-    margin-top: auto;
-    margin-top: 16px;
     font-size: 10px;
     color: var(--primary-font-color);
     font-weight: 500;
