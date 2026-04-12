@@ -92,7 +92,7 @@
 .news-item:hover::before,
 .news-item:focus-within::before,
 .news-item:active::before {
-    transform: translateY(0);
+    /* transform: translateY(0); */
 }
 
 .news-item:hover .news-title,
@@ -104,9 +104,97 @@
 .news-item:active .news-title,
 .news-item:active .news-desc,
 .news-item:active .news-date {
-    color: #fff;
+    /* color: #fff; */
 }
 
+.news-item:hover .news-title, .news-item:hover .news-date {
+  display: none;
+}
+.news-item:hover {
+  background-color: var(--primary-color);
+}
+.news-item:hover .news-desc{
+  font-size: 1.2em;
+  color: #fff;
+}
+.search-wrap * {
+  /* border: 1px solid #f00; */
+
+}
+.search-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0 1rem 2rem ;
+  padding-right: 5rem;
+  border-radius: .4rem;
+  background-color: #f9fafb;
+  position: relative;
+  margin-bottom: 1em;
+  /* border: 1px solid #0ff; */
+}
+
+.search-wrap input[type="text"] {
+  height: 2.8rem;
+  width: 100%;
+  border: 1px solid #d8dee8;
+  border-radius: .8rem;
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -.4px;
+  color: #16171d;
+  padding: 0 1.2rem 0 1.2rem;
+}
+.search-input button {
+  display: none;
+}
+.search-wrap button:after {
+    display: block;
+    content: "";
+    width: 2.8rem;
+    height: 2.8rem;
+    background: url("../images/svg/icon-search-search.svg") no-repeat 0 0;
+    background-size: 2.8rem 2.8rem;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+.search-input {
+    width: 100%;
+}
+.search-input:hover {
+    width: 100%;
+    border-color: #16171d ;
+}
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;;
+}
+.table-wrapper thead {
+  color: #909399;
+  background-color: #eee8e8;
+  font-weight: 500;
+  border-top: 1px solid #000;
+}
+.table-wrapper td, .table-wrapper th {
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9rem;
+}
+
+.pagination , .paging {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.pagination {
+  width: 100%;
+  position: relative;
+}
 
 /* 반응형 */
 /* 1. mo tiny */
@@ -124,7 +212,7 @@
 
 /* 5. laptop 1280~ */
 @media screen and (min-width: 1280px) {
- 
+  .notice-report-sec { margin-bottom: 2em;}
 
       .news-list  {
         display: flex;
@@ -154,66 +242,26 @@
           overflow: hidden;
           word-break: keep-all;
       }
-      .news-item:hover .news-title, .news-item:hover .news-date {
-        display: none;
-      }
-      .news-item:hover {
-        background-color: var(--primary-color);
-      }
-      .news-item:hover .news-desc{
-        font-size: 1.2em;
-        color: #fff;
-      }
-      .search-wrap {
-        display: flex;
-        justify-content: space-between;
-        padding: 2rem;
-        border-radius: .4rem;
-        background-color: #f9fafb;
-      }
+ 
+  .search-wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+  .search-input {
+      width: 100%;
+  }
 
-      .search-wrap input[type="text"] {
-        height: 4.8rem;
-        border: 1px solid #d8dee8;
-        border-radius: .8rem;
-        font-family: "Spoqa Han Sans Neo";
-        font-weight: 400;
-        line-height: 1.43;
-        letter-spacing: -.4px;
-        color: #16171d;
-        padding: 0 5rem 0 1.2rem;
-      }
-      .search-input {
-          width: 48%;
-      }
-      .search-input:hover {
-          width: 100%;
-          border-color: #16171d ;
-      }
-      .table-wrapper table {
-        width: 100%;
-        border-collapse: collapse;;
-      }
-      .table-wrapper thead {
-        color: #909399;
-        background-color: #eee8e8;
-        font-weight: 500;
-        border-top: 1px solid #000;
-      }
-      .table-wrapper td, .table-wrapper th {
-        text-align: center;
-        padding: 1em;
-      }
-      .pagination , .paging {
-        display: flex;
-        gap: 1em;
-        justify-content: center;
-        align-items: center;
-      }
-      .pagination {
-        width: 100%;
-        position: relative;
-      }
+  .search-wrap input[type="text"] {
+    height: 4.8rem;
+  }   
+  .search-wrap div:first-child {
+    width: 30%;
+  }     
+  .table-wrapper td, .table-wrapper th {
+    font-size: inherit;
+  }
+
 }
 
 /* 6. laptop 1440~ */

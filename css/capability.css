@@ -72,20 +72,6 @@
     letter-spacing: -.5px;
     color: #16171d;
 }
-.diff-lists {
-}
-.diff-lists li {
-    display: flex;
-    align-items: center;
-    height: 5.2rem;
-    margin-top: 2rem;
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 1.33;
-    letter-spacing: -.4px;
-    position: relative;
-}
-
 .desc-bg div {
     position: absolute;
     top: 0;
@@ -102,23 +88,49 @@
     width: 50%;
     background-color: #585c74;
 }
+.diff-lists {
+    /* width: ; */
+    /* position: absolute; */
+    /* top:0; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    margin-bottom: 1em;
+}
+.diff-lists li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5.2rem;
+    margin-top: 2rem;
+    /* font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33; */
+    line-height: 1.33; 
+    letter-spacing: -.4px;
+    position: relative;
+}
+
 .diff-lists li span {
     display: inline-block;
 }
 .diff-lists li strong {
   /* color: #7093aa;
-  font-weight: 700;
-  font-size: 1.8rem; */
+  font-weight: 700;*/
 }
 .diff-lists li span:first-of-type {
+    width: 40%;
+    color: #54555a;
+    margin-right: 5.5rem;
+    text-align: right;
 
 }
 .diff-lists li span:nth-of-type(2) {
+    color: #16171d;
 
 }
 .diff-lists li span:nth-of-type(3) {
     color: #fff;
-    width: calc(100% - 39.4rem);
+    width: calc(100% - 16rem);
 }
 .deco-arrow {
     padding: .8rem 1.6rem;
@@ -253,7 +265,6 @@
             display: inline-block;
         }
         .diff-lists li span:first-of-type {
-            color: #54555a;
             width: 38.4rem;
             margin-right: 11rem;
             text-align: right;
@@ -263,10 +274,8 @@
             font-weight: 500;
             line-height: 1.38;
             letter-spacing: -.5px;
-            color: #16171d;
         }
         .diff-lists li span:nth-of-type(3) {
-            color: #fff;
             width: calc(100% - 39.4rem);
         }
         .deco-arrow {
