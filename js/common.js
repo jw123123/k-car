@@ -41,16 +41,6 @@ $(function () {
       body.removeClass("mo tb").addClass("pc");
     }
   }
-  // 화면에 요소 보일 때쯤 애니메이션
-  let aniEl = $(".move-top, .ani-bottom,.ani-left, .ani-right, .fade-in");
-  aniEl.each(function () {
-    let aniElTop = $(this).offset().top - vH;
-    if (scTop > aniElTop) {
-      $(this).addClass("ani-start");
-    } else {
-      $(this).removeClass("ani-start");
-    }
-  });
 
 
   // 헤더 제어
@@ -68,16 +58,6 @@ $(function () {
     } else {
       hd.fadeIn(300);
     }
-
-    // 애니메이션 제어
-    aniEl.each(function () {
-      let aniElTop = $(this).offset().top - vH;
-      if (scTop > aniElTop) {
-        $(this).addClass("ani-start");
-      } else {
-        $(this).removeClass("ani-start");
-      }
-    });
 
   });
 
