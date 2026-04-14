@@ -10,39 +10,16 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/common_res.css">
     <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/ir.css">
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src='js/jquery-ui.min.js'></script>
     <script src="js/lenis.min.js"></script>
     <script src="js/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>   
+    <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/sub.js"></script>
-    <style>
-        .announce-item-list ,.event-item-list {
-            display: flex;
-            gap: 2rem;
-        }
-        .event-item-list {
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .announce-item, .event-item {            
-            padding: 2em;
-            border: 0.1rem solid #222;
-            border-radius: 0.5rem;
-        }
-        .event-item { 
-            width: 48%;
-        }
-        .dl_file {
-            padding-left: 2.4rem;
-            background: url("images/svg/download_red.svg") left center /contain no-repeat;
-        }
-        .dl_file dd:before {
-            display: block;
-            content: "";
-            width: 3.2rem;
-        }
-    </style>
     <script>
         $(window).ready(function () {
             const urlParams = new URLSearchParams(window.location.search);
@@ -382,19 +359,148 @@
       <section class="sub-sec earning-sec" id="earning-result">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">실적발표</h2>
           <div class="earning-container">
-              
+          <ul class="earning-list  only-icon">
+            <!-- pc/tablet -->
+            <li class="earning-item-head">
+              <div class="bl-head">2025년</div>
+              <div>
+                <span>1분기</span>
+              </div>
+              <div>
+                <span>2분기</span>
+              </div>
+              <div>
+                <span>3분기</span>
+              </div>
+              <div>
+                <span>4분기</span>
+              </div>
+            </li>
+            <li>
+              <div class="earning-item-th">실적발표자료</div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+            </li>
+            <li>
+              <div class="bl-head">보도자료</div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+            </li>
+            <li>
+          
+              <div class="bl-head">웹캐스팅</div>
+              <div><a href="https://irsvc.teletogether.com/kcar/kcar2025Q1_kor.php" target="_blank" title="새창으로 열림"><button class="link-icon"></button></a></div>
+              <div><a href="https://irsvc.teletogether.com/kcar/kcar2025Q2_kor.php" target="_blank" title="새창으로 열림"><button class="link-icon"></button></a></div>
+              <div><a href="https://irsvc.teletogether.com/kcar/kcar2025Q3_kor.php" target="_blank" title="새창으로 열림"><button class="link-icon"></button></a></div>
+              <div><a href="https://irsvc.teletogether.com/kcar/kcar2025Q4_Kor.php" target="_blank" title="새창으로 열림"><button class="link-icon"></button></a></div>
+            </li>
+          
+          
+            <li>
+              <div class="bl-head">Factsheet</div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+              <div ><button class="dl_file"></button></div>
+            </li>          
+          </ul>
           </div>
       </section>
       <section class="sub-sec irnotice-sec" id="ir-notice">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">전자공고</h2>
           <div class="irnotice-container">
-              
+            <ul class="board-list">
+              <li>            
+                <a href="#" class="news view-detail">
+                  <span class="blind">73129</span>
+            
+                  <span class="title">[공고] 제9기 (결산)재무제표 공고</span>
+            
+                </a>
+                <span class="date">2026.03.26</span>
+              </li>
+              <li>
+            
+                <a href="#" class="news view-detail">
+                  <span class="blind">72990</span>
+            
+                  <span class="title">[공고] 제9기 사업보고서</span>
+            
+                </a>
+                <span class="date">2026.03.18</span>
+              </li>
+              <li>
+            
+                <a href="#" class="news view-detail">
+                  <span  class="blind">72989</span>
+            
+                  <span class="title">[공고] 제9기 감사보고서</span>
+            
+                </a>
+                <span class="date">2026.03.18</span>
+              </li>
+              <li>
+            
+                <a href="#" class="news view-detail">
+                  <span  class="blind">72881</span>
+            
+                  <span class="title">[안내] 제9기 정기주주총회 의결권 대리행사 권유 및 위임장 교부</span>
+            
+                </a>
+                <span class="date">2026.03.11</span>
+              </li>
+              <li>
+            
+                <a href="#" class="news view-detail">
+                  <span  class="blind">72879</span>
+            
+                  <span class="title">[공고] 제9기 정기주주총회 소집공고</span>
+            
+                </a>
+                <span class="date">2026.03.11</span>
+              </li>
+            </ul>
           </div>
       </section>
       <section class="sub-sec disclosure-sec" id="disclosure-info">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">공시</h2>
           <div class="disclosure-container">
-              
+              <ul class="board-list">
+                <li class="dc-li">
+                  <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260407003005" class="" target="_blank" title="새창으로 열림">
+                    <span class="title">주식등의대량보유상황보고서(일반)</span>
+                  </a>
+                  <span class="date">2026.04.07</span>
+                </li>
+                <li class="dc-li">
+                  <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260407000533" class="" target="_blank" title="새창으로 열림">
+                    <span class="title">주식등의대량보유상황보고서(일반)</span>
+                  </a>
+                  <span class="date">2026.04.07</span>
+                </li>
+                <li class="dc-li">
+                  <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260402800965" class="" target="_blank" title="새창으로 열림">
+                    <span class="title">[기재정정]투자판단관련주요경영사항 </span>
+                  </a>
+                  <span class="date">2026.04.02</span>
+                </li>
+                <li class="dc-li">
+                  <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260401800005" class="" target="_blank" title="새창으로 열림">
+                    <span class="title">투자판단관련주요경영사항 </span>
+                  </a>
+                  <span class="date">2026.04.01</span>
+                </li>
+                <li class="dc-li">
+                  <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326802241" class="" target="_blank" title="새창으로 열림">
+                    <span class="title">기업가치제고계획(자율공시) </span>
+                  </a>
+                  <span class="date">2026.03.26</span>
+                </li>
+              </ul>
           </div>
       </section>
       <section class="sub-sec dividend-sec" id="dividend-info">
@@ -406,13 +512,343 @@
       <section class="sub-sec sholder-sec" id="sholder-info">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">주주구성</h2>
           <div class="sholder-container">
+              <div>
+                <div>
+                  <div class="chart-wrap">
+                    <div class="highcharts-figure">
+                      <div id="container" style="display:flex; justify-content:center; min-height:400px;">
+                        <canvas id="chart" width="400" height="400" tabindex="0"
+                          style="display: block; box-sizing: border-box; height: 400px; width: 400px;"></canvas>
+                      </div>
+                    </div>
+                    <script>
+
+                      let theme = document.querySelector('#container'); // 가상 클래스 요소 얻기
+                      let styles = getComputedStyle(theme);
+                      const screenWidth = screen.width;
+                      const isMobile = screenWidth <= 1586;
+
+                      const labels = [
+                        "\uCD5C\uB300\uC8FC\uC8FC \uC678 \uD2B9\uC218\uAD00\uACC4\uC778[1]",
+                        "\uAD6D\uB0B4\uAE30\uAD00",
+                        "\uAC1C\uC778",
+                        "\uC678\uAD6D\uC778",
+                        "",
+                        "",
+                      ];
+
+                      const stockHolderData = [
+                        {
+                          holder: "35,255,670".split(',').join(""),
+                          percent: "72.2",
+                        },
+                        {
+                          holder: "4,825,085".split(',').join(""),
+                          percent: "9.9",
+                        },
+                        {
+                          holder: "4,703,528".split(',').join(""),
+                          percent: "9.6",
+                        },
+                        {
+                          holder: "4,036,565".split(',').join(""),
+                          percent: "8.3",
+                        },
+                        {
+                          holder: "0".split(',').join(""),
+                          percent: "0.0",
+                        },
+                        {
+                          holder: "0".split(',').join(""),
+                          percent: "0.0",
+                        },
+                      ];
+
+                      const backgroundColor = [
+                        "#dc232d",
+                        "#b9232d",
+                        "#96232d",
+                        "#73232d",
+                        "#b9232d",
+                        "#96232d"
+                      ];
+
+                      const transparentBackgroundColor = backgroundColor.map(color => color + '4D');
+
+                      const data = {
+                        labels,
+                        datasets: [{
+                          label: '주주구성',
+                          data: stockHolderData,
+                          backgroundColor,
+                          datalabels: {
+                            align: 'end',
+                            anchor: 'start',
+                          },
+                          borderAlign: "center",
+                        }]
+                      };
+
+                      const chartPlugins = [{
+                        id: 'labelShadow',
+                        beforeDraw(chart, args, options) {
+                          if (chart.tooltip._active && chart.tooltip._active.length) {
+                            const ctx = chart.ctx;
+                            const transparentCode = '4D'; //hex color값에 붙일 투명도 코드
+                            const dataset = chart.getDatasetMeta(0).data;
+                            const { element: { x, y, outerRadius, startAngle, endAngle } } = chart.tooltip._active[0];
+                            const activeIndex = chart.tooltip._active[0].index;
+
+                            //set style
+                            ctx.lineWidth = 20;
+                            ctx.strokeStyle = dataset[activeIndex].options.backgroundColor + transparentCode;
+
+                            //draw
+                            ctx.beginPath();
+                            ctx.arc(x, y, outerRadius, startAngle, endAngle);
+                            ctx.stroke();
+                          }
+                        },
+                      }, {
+                        id: 'labelLine',
+                        afterDraw(chart, args, options) {
+
+                          if (isMobile) {
+                            return;
+                          }
+
+                          const { ctx, chartArea: { top, bottom, left, right, width, height } } = chart;
+
+                          chart.getDatasetMeta(0).data.forEach((datapoint, index) => {
+
+                            if (chart.data.datasets[0].data[index].holder != '0'
+                              && chart.data.datasets[0].data[index].percent != '0') {
+
+                              // 선 그리기 
+                              const { startAngle, endAngle, innerRadius, outerRadius, options: { offset, spacing } } = datapoint;
+                              const chartX = datapoint.x; // 차트의 X 값 
+                              const chartY = datapoint.y; // 차트의 Y 값
+
+                              const angle = startAngle + ((endAngle - startAngle) / 2);
+                              const startX = chartX + (Math.cos(angle) * outerRadius); // 선이 시작 될 위치 
+                              const startY = chartY + (Math.sin(angle) * outerRadius)
+
+                              const halfwidth = width / 2;
+                              const halfheight = height / 2;
+
+                              const xLine = startX >= halfwidth ? startX + 10 : startX - 10;
+                              const yLine = startY >= halfheight ? startY + 10 : startY - 10;
+                              const extraLine = startX >= halfwidth ? 5 : -5;
+
+                              ctx.beginPath();
+                              ctx.moveTo(startX, startY);
+                              ctx.lineTo(xLine, yLine);
+                              ctx.lineTo(xLine + extraLine, yLine);
+
+                              ctx.strokeStyle = datapoint.options.backgroundColor;
+                              ctx.lineWidth = 1;
+
+                              ctx.stroke();
+
+                              // 라벨 그리기
+                              const textWidth = ctx.measureText(chart.data.labels[index]).width;
+                              const textXPosition = startX > halfwidth ? 'left' : 'right';
+                              const plusFivePx = startX >= halfwidth ? 5 : -5;
+
+                              ctx.font = "bold 15px 'Lucida Grande', 'Lucida Sans Unicode', 'Arial', 'Helvetica', 'sans-serif'";
+                              ctx.textAlign = textXPosition;
+                              ctx.textBaseline = 'middle';
+                              ctx.fillStyle = '#313439';
+                              ctx.fillText(chart.data.datasets[0].data[index].percent + '%', xLine + extraLine + plusFivePx, yLine);
+
+                            }
+                          })
+                        }
+                      }
+
+                      ];
+
+                      const chart = new Chart(document.getElementById('chart').getContext('2d'), {
+                        type: 'doughnut',
+                        data: data,
+                        options: {
+                          responsive: true,
+                          maintainAspectRatio: false,
+                          parsing: {
+                            key: 'holder',
+                          },
+                          plugins: {
+                            legend: {
+                              display: false,
+                            },
+                            labels: {
+                              render: (args) => {
+                                let percentVal = args.value.percent;
+                                percentVal = percentVal > 0 ? percentVal + '%' : '';
+
+                                return isMobile ? percentVal : '';
+                              },
+                              fontSize: 13,
+                              fontColor: '#313439',
+                              fontFamily: "'Lucida Grande', 'Lucida Sans Unicode', 'Arial', 'Helvetica', 'sans-serif'",
+                              fontStyle: 'bold',
+                              showZero: false,
+                              position: 'outside',
+                              textMargin: 2,
+                            },
+                            tooltip: {
+                              displayColors: false,
+                              backgroundColor: '#ffffffE6',
+                              borderWidth: 1,
+                              borderColor: (tooltipItem) => {
+                                if (tooltipItem.tooltipItems[0]) {
+                                  return tooltipItem.tooltipItems[0].dataset.backgroundColor[tooltipItem.tooltipItems[0].dataIndex];
+                                }
+                              },
+                              cornerRadius: 2,
+                              caretSize: 0,
+                              boxPadding: 2,
+                              callbacks: {
+                                labelTextColor: (context) => {
+                                  return '#46464a';
+                                },
+                              },
+                              titleFont: {
+                                size: 30,
+                                weight: 'bold',
+                              },
+                            }
+                          },
+                          layout: {
+                            padding: 40
+                          },
+                          elements: {
+                            arc: {
+                              borderWidth: .7
+                            }
+                          }
+                        },
+                        plugins: chartPlugins,
+                      });
+
+                      function hoverEvent(move) {
+                        const points = chart.getElementsAtEventForMode(move, 'nearest', { intersect: true }, true);
+
+                        if (!isMobile && points[0]) {
+                          const activeIndex = points[0].index;
+                          const backgroundColorArr = new Array(chart.data.datasets[0].backgroundColor);
+
+                          chart.data.datasets[0].data.forEach((data, dataIndex) => {
+                            if (activeIndex === dataIndex) {
+                              backgroundColorArr[dataIndex] = backgroundColor[dataIndex];
+                            } else {
+                              backgroundColorArr[dataIndex] = transparentBackgroundColor[dataIndex];
+                            }
+                          });
+                          chart.data.datasets[0].backgroundColor = backgroundColorArr;
+                          chart.update();
+                        }
+                      }
+
+                      function hoverEventRemove() {
+                        chart.data.datasets[0].backgroundColor = backgroundColor;
+                        chart.update();
+                      }
+
+                      chart.canvas.onmousemove = hoverEvent;
+                      chart.canvas.onmouseleave = hoverEventRemove;
+
+                    </script>
+                    <div class="chart-table">
+                      <div class="table responsive">
+                        <table>
+                          <caption><span class="blind">구분, 주식수, 비율에 관한 정보를 나타낸 표입니다.</span></caption>
+                          <colgroup>
+                            <col span="3">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col" class="txt-left">구분</th>
+                              <th scope="col" class="txt-right">주식수</th>
+                              <th scope="col" class="txt-right">비율</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="txt-left">
+                                <span class="lank lank0">최대주주 외 특수관계인[1]</span>
+                              </td>
+                              <td class="txt-right">35,255,670</td>
+                              <td class="txt-right">72.2%</td>
+                            </tr>
               
+                            <tr>
+                              <td class="txt-left">
+                                <span class="lank lank1">국내기관</span>
+                              </td>
+                              <td class="txt-right">4,825,085</td>
+                              <td class="txt-right">9.9%</td>
+                            </tr>
+              
+                            <tr>
+                              <td class="txt-left">
+                                <span class="lank lank2">개인</span>
+                              </td>
+                              <td class="txt-right">4,703,528</td>
+                              <td class="txt-right">9.6%</td>
+                            </tr>
+              
+                            <tr>
+                              <td class="txt-left">
+                                <span class="lank lank3">외국인</span>
+                              </td>
+                              <td class="txt-right">4,036,565</td>
+                              <td class="txt-right">8.3%</td>
+                            </tr>              
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td class="txt-left">합계</td>
+                              <td class="txt-right">48,820,848</td>
+                              <td class="txt-right">100%</td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="note">※ 2025년 12월 31일 기준 (단위: 주)
+                    <br>[주1] 최대주주 및 특수관계인의 보유 주식수에는 당사의 등기임원인 정인국 대표집행임원의 지분 10,000주(전체 발행 주식수의 0.02%)가 포함되어 있습니다.
+                  </p>
+                </div>
+              </div>
           </div>
       </section>
       <section class="sub-sec ircontact-sec" id="ir-contact">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">IR Contact</h2>
           <div class="ircontact-container">
-              
+           <div class="contact-info">
+                <p class="desc">                    
+                    <em>케이카 IR Page에 방문해 주셔서 감사합니다.</em>
+                    <br>                    
+                    <em>케이카는 주주의 권리 보호를 위해 노력하며, 함께 성장하는 기업입니다.</em>
+                </p>
+                <dl class="info">
+                    <dt>주소</dt>
+                    <dd>서울특별시 중구 청계천로 100 시그니쳐타워 서관 6층</dd>
+                    <dt>이메일</dt>
+                    <dd>ir@kcar.com</dd>
+                </dl>
+                <div class="sns-link">
+                    <a href="https://company.kcar.com/ci/company/main" target="_blank" title="새창으로 열림"><img src="images/icon_home.png" alt="회사홈"></a>
+                    <a href="https://blog.naver.com/kcar-official" target="_blank" title="새창으로 열림"><img src="images/icon_blog_gr.png" alt="블로그"></a>
+                    <a href="https://www.facebook.com/kcar.official/" target="_blank" title="새창으로 열림"><img src="images/icon_facebook.png" alt="페이스북"></a>
+                    
+                    <a href="https://www.instagram.com/accounts/login/?next=/kcar.official/" target="_blank" title="새창으로 열림"><img src="images/icon_insta.png" alt="인스타그램"></a>
+                    <a href="https://www.youtube.com/channel/UCp5i9yE8cMxVMOAj5sw3cgA" target="_blank" title="새창으로 열림"><img src="images/icon_youtube_red.png" alt="유튜브"></a>
+                    
+                </div>
+            </div>   
           </div>
       </section>
   </main>
