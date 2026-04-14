@@ -34,6 +34,8 @@
                 scrollToSection(lnbId);
             }
         });
+
+        
     </script>
 </head>
 <body class="sub5-0 sub">
@@ -268,7 +270,7 @@
   <main id="sub-main" class="sub-wrap">
       <section class="sub-sec ir-announce-sec" id="ir-announce">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">IR 자료</h2>
-          <div class="announce-container">
+          <div class="announce-container sub-container">
               <div class="announce-item-list">
                   <div class="announce-item">
                       <dl class="dl_title">
@@ -303,7 +305,7 @@
       </section>
       <section class="sub-sec ir-event-sec" id="ir-event">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">IR일정</h2>
-          <div class="event-container">
+          <div class="event-container sub-container">
               <div class="event-item-list">
                   <div class="event-item">
                       <dl class="dl_event_day">
@@ -358,7 +360,7 @@
       </section>
       <section class="sub-sec earning-sec" id="earning-result">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">실적발표</h2>
-          <div class="earning-container">
+          <div class="earning-container sub-container">
           <ul class="earning-list  only-icon">
             <!-- pc/tablet -->
             <li class="earning-item-head">
@@ -468,7 +470,7 @@
       </section>
       <section class="sub-sec disclosure-sec" id="disclosure-info">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">공시</h2>
-          <div class="disclosure-container">
+          <div class="disclosure-container sub-container">
               <ul class="board-list">
                 <li class="dc-li">
                   <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260407003005" class="" target="_blank" title="새창으로 열림">
@@ -505,328 +507,487 @@
       </section>
       <section class="sub-sec dividend-sec" id="dividend-info">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">배당내역</h2>
-          <div class="dividend-container">
-              
-          </div>
-      </section>
-      <section class="sub-sec sholder-sec" id="sholder-info">
-          <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">주주구성</h2>
-          <div class="sholder-container">
-              <div>
-                <div>
-                  <div class="chart-wrap">
-                    <div class="highcharts-figure">
-                      <div id="container" style="display:flex; justify-content:center; min-height:400px;">
-                        <canvas id="chart" width="400" height="400" tabindex="0"
-                          style="display: block; box-sizing: border-box; height: 400px; width: 400px;"></canvas>
-                      </div>
-                    </div>
-                    <script>
-
-                      let theme = document.querySelector('#container'); // 가상 클래스 요소 얻기
-                      let styles = getComputedStyle(theme);
-                      const screenWidth = screen.width;
-                      const isMobile = screenWidth <= 1586;
-
-                      const labels = [
-                        "\uCD5C\uB300\uC8FC\uC8FC \uC678 \uD2B9\uC218\uAD00\uACC4\uC778[1]",
-                        "\uAD6D\uB0B4\uAE30\uAD00",
-                        "\uAC1C\uC778",
-                        "\uC678\uAD6D\uC778",
-                        "",
-                        "",
-                      ];
-
-                      const stockHolderData = [
-                        {
-                          holder: "35,255,670".split(',').join(""),
-                          percent: "72.2",
-                        },
-                        {
-                          holder: "4,825,085".split(',').join(""),
-                          percent: "9.9",
-                        },
-                        {
-                          holder: "4,703,528".split(',').join(""),
-                          percent: "9.6",
-                        },
-                        {
-                          holder: "4,036,565".split(',').join(""),
-                          percent: "8.3",
-                        },
-                        {
-                          holder: "0".split(',').join(""),
-                          percent: "0.0",
-                        },
-                        {
-                          holder: "0".split(',').join(""),
-                          percent: "0.0",
-                        },
-                      ];
-
-                      const backgroundColor = [
-                        "#dc232d",
-                        "#b9232d",
-                        "#96232d",
-                        "#73232d",
-                        "#b9232d",
-                        "#96232d"
-                      ];
-
-                      const transparentBackgroundColor = backgroundColor.map(color => color + '4D');
-
-                      const data = {
-                        labels,
-                        datasets: [{
-                          label: '주주구성',
-                          data: stockHolderData,
-                          backgroundColor,
-                          datalabels: {
-                            align: 'end',
-                            anchor: 'start',
-                          },
-                          borderAlign: "center",
-                        }]
-                      };
-
-                      const chartPlugins = [{
-                        id: 'labelShadow',
-                        beforeDraw(chart, args, options) {
-                          if (chart.tooltip._active && chart.tooltip._active.length) {
-                            const ctx = chart.ctx;
-                            const transparentCode = '4D'; //hex color값에 붙일 투명도 코드
-                            const dataset = chart.getDatasetMeta(0).data;
-                            const { element: { x, y, outerRadius, startAngle, endAngle } } = chart.tooltip._active[0];
-                            const activeIndex = chart.tooltip._active[0].index;
-
-                            //set style
-                            ctx.lineWidth = 20;
-                            ctx.strokeStyle = dataset[activeIndex].options.backgroundColor + transparentCode;
-
-                            //draw
-                            ctx.beginPath();
-                            ctx.arc(x, y, outerRadius, startAngle, endAngle);
-                            ctx.stroke();
-                          }
-                        },
-                      }, {
-                        id: 'labelLine',
-                        afterDraw(chart, args, options) {
-
-                          if (isMobile) {
-                            return;
-                          }
-
-                          const { ctx, chartArea: { top, bottom, left, right, width, height } } = chart;
-
-                          chart.getDatasetMeta(0).data.forEach((datapoint, index) => {
-
-                            if (chart.data.datasets[0].data[index].holder != '0'
-                              && chart.data.datasets[0].data[index].percent != '0') {
-
-                              // 선 그리기 
-                              const { startAngle, endAngle, innerRadius, outerRadius, options: { offset, spacing } } = datapoint;
-                              const chartX = datapoint.x; // 차트의 X 값 
-                              const chartY = datapoint.y; // 차트의 Y 값
-
-                              const angle = startAngle + ((endAngle - startAngle) / 2);
-                              const startX = chartX + (Math.cos(angle) * outerRadius); // 선이 시작 될 위치 
-                              const startY = chartY + (Math.sin(angle) * outerRadius)
-
-                              const halfwidth = width / 2;
-                              const halfheight = height / 2;
-
-                              const xLine = startX >= halfwidth ? startX + 10 : startX - 10;
-                              const yLine = startY >= halfheight ? startY + 10 : startY - 10;
-                              const extraLine = startX >= halfwidth ? 5 : -5;
-
-                              ctx.beginPath();
-                              ctx.moveTo(startX, startY);
-                              ctx.lineTo(xLine, yLine);
-                              ctx.lineTo(xLine + extraLine, yLine);
-
-                              ctx.strokeStyle = datapoint.options.backgroundColor;
-                              ctx.lineWidth = 1;
-
-                              ctx.stroke();
-
-                              // 라벨 그리기
-                              const textWidth = ctx.measureText(chart.data.labels[index]).width;
-                              const textXPosition = startX > halfwidth ? 'left' : 'right';
-                              const plusFivePx = startX >= halfwidth ? 5 : -5;
-
-                              ctx.font = "bold 15px 'Lucida Grande', 'Lucida Sans Unicode', 'Arial', 'Helvetica', 'sans-serif'";
-                              ctx.textAlign = textXPosition;
-                              ctx.textBaseline = 'middle';
-                              ctx.fillStyle = '#313439';
-                              ctx.fillText(chart.data.datasets[0].data[index].percent + '%', xLine + extraLine + plusFivePx, yLine);
-
-                            }
-                          })
-                        }
-                      }
-
-                      ];
-
-                      const chart = new Chart(document.getElementById('chart').getContext('2d'), {
-                        type: 'doughnut',
-                        data: data,
-                        options: {
-                          responsive: true,
-                          maintainAspectRatio: false,
-                          parsing: {
-                            key: 'holder',
-                          },
-                          plugins: {
-                            legend: {
-                              display: false,
-                            },
-                            labels: {
-                              render: (args) => {
-                                let percentVal = args.value.percent;
-                                percentVal = percentVal > 0 ? percentVal + '%' : '';
-
-                                return isMobile ? percentVal : '';
-                              },
-                              fontSize: 13,
-                              fontColor: '#313439',
-                              fontFamily: "'Lucida Grande', 'Lucida Sans Unicode', 'Arial', 'Helvetica', 'sans-serif'",
-                              fontStyle: 'bold',
-                              showZero: false,
-                              position: 'outside',
-                              textMargin: 2,
-                            },
-                            tooltip: {
-                              displayColors: false,
-                              backgroundColor: '#ffffffE6',
-                              borderWidth: 1,
-                              borderColor: (tooltipItem) => {
-                                if (tooltipItem.tooltipItems[0]) {
-                                  return tooltipItem.tooltipItems[0].dataset.backgroundColor[tooltipItem.tooltipItems[0].dataIndex];
-                                }
-                              },
-                              cornerRadius: 2,
-                              caretSize: 0,
-                              boxPadding: 2,
-                              callbacks: {
-                                labelTextColor: (context) => {
-                                  return '#46464a';
-                                },
-                              },
-                              titleFont: {
-                                size: 30,
-                                weight: 'bold',
-                              },
-                            }
-                          },
-                          layout: {
-                            padding: 40
-                          },
-                          elements: {
-                            arc: {
-                              borderWidth: .7
-                            }
-                          }
-                        },
-                        plugins: chartPlugins,
-                      });
-
-                      function hoverEvent(move) {
-                        const points = chart.getElementsAtEventForMode(move, 'nearest', { intersect: true }, true);
-
-                        if (!isMobile && points[0]) {
-                          const activeIndex = points[0].index;
-                          const backgroundColorArr = new Array(chart.data.datasets[0].backgroundColor);
-
-                          chart.data.datasets[0].data.forEach((data, dataIndex) => {
-                            if (activeIndex === dataIndex) {
-                              backgroundColorArr[dataIndex] = backgroundColor[dataIndex];
-                            } else {
-                              backgroundColorArr[dataIndex] = transparentBackgroundColor[dataIndex];
-                            }
-                          });
-                          chart.data.datasets[0].backgroundColor = backgroundColorArr;
-                          chart.update();
-                        }
-                      }
-
-                      function hoverEventRemove() {
-                        chart.data.datasets[0].backgroundColor = backgroundColor;
-                        chart.update();
-                      }
-
-                      chart.canvas.onmousemove = hoverEvent;
-                      chart.canvas.onmouseleave = hoverEventRemove;
-
-                    </script>
-                    <div class="chart-table">
-                      <div class="table responsive">
-                        <table>
-                          <caption><span class="blind">구분, 주식수, 비율에 관한 정보를 나타낸 표입니다.</span></caption>
-                          <colgroup>
-                            <col span="3">
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <th scope="col" class="txt-left">구분</th>
-                              <th scope="col" class="txt-right">주식수</th>
-                              <th scope="col" class="txt-right">비율</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="txt-left">
-                                <span class="lank lank0">최대주주 외 특수관계인[1]</span>
-                              </td>
-                              <td class="txt-right">35,255,670</td>
-                              <td class="txt-right">72.2%</td>
-                            </tr>
-              
-                            <tr>
-                              <td class="txt-left">
-                                <span class="lank lank1">국내기관</span>
-                              </td>
-                              <td class="txt-right">4,825,085</td>
-                              <td class="txt-right">9.9%</td>
-                            </tr>
-              
-                            <tr>
-                              <td class="txt-left">
-                                <span class="lank lank2">개인</span>
-                              </td>
-                              <td class="txt-right">4,703,528</td>
-                              <td class="txt-right">9.6%</td>
-                            </tr>
-              
-                            <tr>
-                              <td class="txt-left">
-                                <span class="lank lank3">외국인</span>
-                              </td>
-                              <td class="txt-right">4,036,565</td>
-                              <td class="txt-right">8.3%</td>
-                            </tr>              
-                          </tbody>
-                          <tfoot>
-                            <tr>
-                              <td class="txt-left">합계</td>
-                              <td class="txt-right">48,820,848</td>
-                              <td class="txt-right">100%</td>
-                            </tr>
-                          </tfoot>
-                        </table>
-                      </div>
-                    </div>
+          <div class="dividend-container sub-container">
+              <div class="divide-detail">
+                <!-- 230320 추가 -->
+                <div class="main-sub-tit dividend-select-wrap">
+                  <div class="select-wrap">
+                    <!-- <button type="button" id="dividendYear" class="selected" title="2022 2022 열기 열기">2022</button> -->
+                    <ul id="dividendYearBtn">
+                      <li class="active">
+                        <button>2025</button>
+                      </li>
+                      <li >
+                        <button>2024</button>
+                      </li>
+                      <li >
+                        <button>2023</button>
+                      </li>
+                      <li >
+                        <button>2022</button>
+                      </li>
+                      <li >
+                        <button>2021</button>
+                      </li>
+                    </ul>
                   </div>
-                  <p class="note">※ 2025년 12월 31일 기준 (단위: 주)
-                    <br>[주1] 최대주주 및 특수관계인의 보유 주식수에는 당사의 등기임원인 정인국 대표집행임원의 지분 10,000주(전체 발행 주식수의 0.02%)가 포함되어 있습니다.
-                  </p>
+                </div>
+                <div class="table responsive">
+                  <table>
+                    <caption><span class="blind">구분, 주식종류, 2025, 2024, 2023, 2022, 2021에 관한 정보를 나타낸 표입니다.</span></caption>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="txt-left">구분</th>
+                        <th scope="col" class="txt-right">주식종류</th>
+                        <th scope="col" class="txt-right only-pc">2025</th>
+                        <th scope="col" class="txt-right only-pc">2024</th>
+                        <th scope="col" class="txt-right only-pc">2023</th>
+                        <th scope="col" class="txt-right only-pc">2022</th>
+                        <th scope="col" class="txt-right only-pc">2021</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="txt-left">당기순이익(백만원)</td>
+                        <td class="txt-right"></td>
+                        <td class="txt-right v0" >50,886</td>
+                        <td class="txt-right v0" >43,965</td>
+                        <td class="txt-right v0" >28,366</td>
+                        <td class="txt-right v0" >30,364</td>
+                        <td class="txt-right v0" >46,776</td>
+                      </tr>
+                      <tr>
+                        <td class="txt-left">배당성향(%)</td>
+                        <td class="txt-right"></td>
+                        <td class="txt-right v0" >114.4</td>
+                        <td class="txt-right v0" >126.0</td>
+                        <td class="txt-right v0" >128.9</td>
+                        <td class="txt-right v0" >120.4</td>
+                        <td class="txt-right v0" >77.1</td>
+                      </tr>
+                      <tr class="group">
+                        <td class="txt-left">배당수익률(%)</td>
+                        <td class="txt-right">
+                          <div>
+                            <span>보통주</span>
+                          </div>
+              
+                        </td>
+                        <td class="txt-right v0" >
+                          <div class="">7.3</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">8.6</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">6.6</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">5.7</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">2.3</div>
+              
+                        </td>
+                      </tr>
+                      <tr class="group">
+                        <td class="txt-left">주당 현금배당(원)</td>
+                        <td class="txt-right">
+                          <div>
+                            <span>보통주</span>
+                          </div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">1,200</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">1,150</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">760</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">760</div>
+              
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">750</div>
+              
+                        </td>
+                      </tr>
+              
+                      <tr class="group">
+                        <td class="txt-left">배당총액(백만원)</td>
+                        <td class="txt-right">
+                          <div>
+                            <span>보통주</span>
+                          </div>
+                          <div>
+              
+                          </div>
+                          <div>
+              
+                          </div>
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">58,202</div>
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">55,409</div>
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">36,534</div>
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">36,546</div>
+                        </td>
+                        <td class="txt-right v0"  >
+                          <div class="">36,065</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              
                 </div>
               </div>
           </div>
       </section>
+      <section class="sub-sec sholder-sec" id="sholder-info">
+          <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">주주구성</h2>
+          <div class="sholder-container sub-container">
+              <div class="chart-wrap">
+                <div class="highcharts-figure">
+                  <div id="container" style="display:flex; justify-content:center; min-height:400px;">
+                    <canvas id="chart" width="400" height="400" tabindex="0"
+                      style="display: block; box-sizing: border-box; height: 400px; width: 400px;"></canvas>
+                  </div>
+                </div>
+                <script>
+
+                  let theme = document.querySelector('#container'); // 가상 클래스 요소 얻기
+                  let styles = getComputedStyle(theme);
+                  const screenWidth = screen.width;
+                  const isMobile = screenWidth <= 1586;
+
+                  const labels = [
+                    "\uCD5C\uB300\uC8FC\uC8FC \uC678 \uD2B9\uC218\uAD00\uACC4\uC778[1]",
+                    "\uAD6D\uB0B4\uAE30\uAD00",
+                    "\uAC1C\uC778",
+                    "\uC678\uAD6D\uC778",
+                    "",
+                    "",
+                  ];
+
+                  const stockHolderData = [
+                    {
+                      holder: "35,255,670".split(',').join(""),
+                      percent: "72.2",
+                    },
+                    {
+                      holder: "4,825,085".split(',').join(""),
+                      percent: "9.9",
+                    },
+                    {
+                      holder: "4,703,528".split(',').join(""),
+                      percent: "9.6",
+                    },
+                    {
+                      holder: "4,036,565".split(',').join(""),
+                      percent: "8.3",
+                    },
+                    {
+                      holder: "0".split(',').join(""),
+                      percent: "0.0",
+                    },
+                    {
+                      holder: "0".split(',').join(""),
+                      percent: "0.0",
+                    },
+                  ];
+
+                  const backgroundColor = [
+                    "#dc232d",
+                    "#b9232d",
+                    "#96232d",
+                    "#73232d",
+                    "#b9232d",
+                    "#96232d"
+                  ];
+
+                  const transparentBackgroundColor = backgroundColor.map(color => color + '4D');
+
+                  const data = {
+                    labels,
+                    datasets: [{
+                      label: '주주구성',
+                      data: stockHolderData,
+                      backgroundColor,
+                      datalabels: {
+                        align: 'end',
+                        anchor: 'start',
+                      },
+                      borderAlign: "center",
+                    }]
+                  };
+
+                  const chartPlugins = [{
+                    id: 'labelShadow',
+                    beforeDraw(chart, args, options) {
+                      if (chart.tooltip._active && chart.tooltip._active.length) {
+                        const ctx = chart.ctx;
+                        const transparentCode = '4D'; //hex color값에 붙일 투명도 코드
+                        const dataset = chart.getDatasetMeta(0).data;
+                        const { element: { x, y, outerRadius, startAngle, endAngle } } = chart.tooltip._active[0];
+                        const activeIndex = chart.tooltip._active[0].index;
+
+                        //set style
+                        ctx.lineWidth = 20;
+                        ctx.strokeStyle = dataset[activeIndex].options.backgroundColor + transparentCode;
+
+                        //draw
+                        ctx.beginPath();
+                        ctx.arc(x, y, outerRadius, startAngle, endAngle);
+                        ctx.stroke();
+                      }
+                    },
+                  }, {
+                    id: 'labelLine',
+                    afterDraw(chart, args, options) {
+
+                      if (isMobile) {
+                        return;
+                      }
+
+                      const { ctx, chartArea: { top, bottom, left, right, width, height } } = chart;
+
+                      chart.getDatasetMeta(0).data.forEach((datapoint, index) => {
+
+                        if (chart.data.datasets[0].data[index].holder != '0'
+                          && chart.data.datasets[0].data[index].percent != '0') {
+
+                          // 선 그리기 
+                          const { startAngle, endAngle, innerRadius, outerRadius, options: { offset, spacing } } = datapoint;
+                          const chartX = datapoint.x; // 차트의 X 값 
+                          const chartY = datapoint.y; // 차트의 Y 값
+
+                          const angle = startAngle + ((endAngle - startAngle) / 2);
+                          const startX = chartX + (Math.cos(angle) * outerRadius); // 선이 시작 될 위치 
+                          const startY = chartY + (Math.sin(angle) * outerRadius)
+
+                          const halfwidth = width / 2;
+                          const halfheight = height / 2;
+
+                          const xLine = startX >= halfwidth ? startX + 10 : startX - 10;
+                          const yLine = startY >= halfheight ? startY + 10 : startY - 10;
+                          const extraLine = startX >= halfwidth ? 5 : -5;
+
+                          ctx.beginPath();
+                          ctx.moveTo(startX, startY);
+                          ctx.lineTo(xLine, yLine);
+                          ctx.lineTo(xLine + extraLine, yLine);
+
+                          ctx.strokeStyle = datapoint.options.backgroundColor;
+                          ctx.lineWidth = 1;
+
+                          ctx.stroke();
+
+                          // 라벨 그리기
+                          const textWidth = ctx.measureText(chart.data.labels[index]).width;
+                          const textXPosition = startX > halfwidth ? 'left' : 'right';
+                          const plusFivePx = startX >= halfwidth ? 5 : -5;
+
+                          ctx.font = "bold 15px 'Lucida Grande', 'Lucida Sans Unicode', 'Arial', 'Helvetica', 'sans-serif'";
+                          ctx.textAlign = textXPosition;
+                          ctx.textBaseline = 'middle';
+                          ctx.fillStyle = '#313439';
+                          ctx.fillText(chart.data.datasets[0].data[index].percent + '%', xLine + extraLine + plusFivePx, yLine);
+
+                        }
+                      })
+                    }
+                  }
+
+                  ];
+
+                  const chart = new Chart(document.getElementById('chart').getContext('2d'), {
+                    type: 'doughnut',
+                    data: data,
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      parsing: {
+                        key: 'holder',
+                      },
+                      plugins: {
+                        legend: {
+                          display: false,
+                        },
+                        labels: {
+                          render: (args) => {
+                            let percentVal = args.value.percent;
+                            percentVal = percentVal > 0 ? percentVal + '%' : '';
+
+                            return isMobile ? percentVal : '';
+                          },
+                          fontSize: 13,
+                          fontColor: '#313439',
+                          fontFamily: "'Lucida Grande', 'Lucida Sans Unicode', 'Arial', 'Helvetica', 'sans-serif'",
+                          fontStyle: 'bold',
+                          showZero: false,
+                          position: 'outside',
+                          textMargin: 2,
+                        },
+                        tooltip: {
+                          displayColors: false,
+                          backgroundColor: '#ffffffE6',
+                          borderWidth: 1,
+                          borderColor: (tooltipItem) => {
+                            if (tooltipItem.tooltipItems[0]) {
+                              return tooltipItem.tooltipItems[0].dataset.backgroundColor[tooltipItem.tooltipItems[0].dataIndex];
+                            }
+                          },
+                          cornerRadius: 2,
+                          caretSize: 0,
+                          boxPadding: 2,
+                          callbacks: {
+                            labelTextColor: (context) => {
+                              return '#46464a';
+                            },
+                          },
+                          titleFont: {
+                            size: 30,
+                            weight: 'bold',
+                          },
+                        }
+                      },
+                      layout: {
+                        padding: 40
+                      },
+                      elements: {
+                        arc: {
+                          borderWidth: .7
+                        }
+                      }
+                    },
+                    plugins: chartPlugins,
+                  });
+
+                  function hoverEvent(move) {
+                    const points = chart.getElementsAtEventForMode(move, 'nearest', { intersect: true }, true);
+
+                    if (!isMobile && points[0]) {
+                      const activeIndex = points[0].index;
+                      const backgroundColorArr = new Array(chart.data.datasets[0].backgroundColor);
+
+                      chart.data.datasets[0].data.forEach((data, dataIndex) => {
+                        if (activeIndex === dataIndex) {
+                          backgroundColorArr[dataIndex] = backgroundColor[dataIndex];
+                        } else {
+                          backgroundColorArr[dataIndex] = transparentBackgroundColor[dataIndex];
+                        }
+                      });
+                      chart.data.datasets[0].backgroundColor = backgroundColorArr;
+                      chart.update();
+                    }
+                  }
+
+                  function hoverEventRemove() {
+                    chart.data.datasets[0].backgroundColor = backgroundColor;
+                    chart.update();
+                  }
+
+                  chart.canvas.onmousemove = hoverEvent;
+                  chart.canvas.onmouseleave = hoverEventRemove;
+
+                </script>
+                <div class="chart-table">
+                  <div class="table responsive">
+                    <table>
+                      <caption><span class="blind">구분, 주식수, 비율에 관한 정보를 나타낸 표입니다.</span></caption>
+                      <colgroup>
+                        <col width="*"/>
+                        <col width="25%"/>
+                        <col width="25%"/>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="txt-left">구분</th>
+                          <th scope="col" class="txt-right">주식수</th>
+                          <th scope="col" class="txt-right">비율</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="txt-left">
+                            <span class="lank lank0">최대주주 외 특수관계인[1]</span>
+                          </td>
+                          <td class="txt-right">35,255,670</td>
+                          <td class="txt-right">72.2%</td>
+                        </tr>
+          
+                        <tr>
+                          <td class="txt-left">
+                            <span class="lank lank1">국내기관</span>
+                          </td>
+                          <td class="txt-right">4,825,085</td>
+                          <td class="txt-right">9.9%</td>
+                        </tr>
+          
+                        <tr>
+                          <td class="txt-left">
+                            <span class="lank lank2">개인</span>
+                          </td>
+                          <td class="txt-right">4,703,528</td>
+                          <td class="txt-right">9.6%</td>
+                        </tr>
+          
+                        <tr>
+                          <td class="txt-left">
+                            <span class="lank lank3">외국인</span>
+                          </td>
+                          <td class="txt-right">4,036,565</td>
+                          <td class="txt-right">8.3%</td>
+                        </tr>              
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td class="txt-left">합계</td>
+                          <td class="txt-right">48,820,848</td>
+                          <td class="txt-right">100%</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                <!-- table responsive 종료 -->
+                </div>
+                <!-- chart-table 종료 -->
+              </div>
+                <!-- chart-wrap 종료 -->
+              <p class="note">※ 2025년 12월 31일 기준 (단위: 주)
+                <br>[주1] 최대주주 및 특수관계인의 보유 주식수에는 당사의 등기임원인 정인국 대표집행임원의 지분 10,000주(전체 발행 주식수의 0.02%)가 포함되어 있습니다.
+              </p>
+            </div>
+      </section>
       <section class="sub-sec ircontact-sec" id="ir-contact">
           <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">IR Contact</h2>
-          <div class="ircontact-container">
+          <div class="ircontact-container sub-container">
            <div class="contact-info">
                 <p class="desc">                    
                     <em>케이카 IR Page에 방문해 주셔서 감사합니다.</em>
