@@ -9,6 +9,7 @@
     background-color: #f9fafb;
     border-radius: .8rem;
     text-align: left;
+    padding: 1em;
 }
 .esg-list {
     margin-top: 2.4rem;
@@ -18,7 +19,7 @@
     width: 100%;
 }
 .esg-list img {
-    height: 8rem;
+    height: 7rem;
 }
 .esg-list > li {
     display: flex;
@@ -33,7 +34,7 @@
 }
 
 .esg-contents {
-    padding: 0 1.2rem;
+    padding: 0 1em;
 }
 .box-in-title {
     font-size: 1.1em;
