@@ -1,3 +1,4 @@
+// 서비스 영역
 let svcSwiper = null;
 
 function buildSvcSwiper() {
@@ -60,32 +61,10 @@ $(window).on('resize', function () {
   }, 150);
 });
 
-$(window).on('load', function () {
-  buildSvcSwiper();
-  // updateSvcPcByScroll();
-  // bindSvcWheelControl();
-});
-
-$(window).on('resize', function () {
-  clearTimeout(window.svcResizeTimer);
-  window.svcResizeTimer = setTimeout(function () {
-    buildSvcSwiper();
-    // updateSvcPcByScroll();
-    // bindSvcWheelControl();
-  }, 150);
-});
-
-// $(window).on('scroll', function () {
-//     updateSvcPcByScroll();
-// });
 
 
-
-
-
-
-//지속가능경영
 $(function () {
+  //지속가능경영
   const $esgSection = $('.esg-section');
   const $slides = $('.esg-slide');
   const $pageBtns = $('.esg-page-btn');
@@ -143,6 +122,7 @@ $(function () {
         // slidesPerGroup: 1
       },
       1280: {
+        loop: false,
         slidesPerView: 4,
         spaceBetween: 20,
       }
