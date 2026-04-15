@@ -43,7 +43,7 @@ $(function () {
   }
 
 
-  // 헤더 제어
+  // 헤더 제어 
   //console.log(scTop);
   $(window).scroll(function () {
     scTop = $(window).scrollTop();
@@ -126,9 +126,6 @@ $(function () {
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-
-  // 임시링크 문서 꼭대기로 이동하는 것 막아주기
-
 
   // AOS 플러그인
     AOS.init();

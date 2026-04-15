@@ -2,15 +2,23 @@
 @import url('var.css');
 /* 1. mo ~767px까지 */
 @media all and (max-width: 767px) {
-    .mo-lang-container {
-        display: none;
-    }
-
-    .kcar-mo-gnb-sec {}
 
     .mo-gnb-container {
         padding: 0 25px;
     }
+
+    .kcar-mo-gnb-sec {}
+
+    .ir .mo-depth2 {
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 2em;
+    }
+
+    .ir li {
+        width: 40%;
+    }
+
 
     .mo-depth1>a:after {
         /* 화살표 */
@@ -50,10 +58,15 @@
     .mo-depth1.active>a:after {
         transform: scaleY(-1);
     }
-
-
+.family-site-btn {
+    padding: 15px 10px;
+    min-height: inherit;
 }
 
+.btn-label  {
+    font-size: 0.8em;
+}
+}
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
     .wrap {
@@ -64,9 +77,10 @@
     body {
         font-size: 16px;
     }
-.kcar-logo {
-    z-index: 0;
-}
+
+    .kcar-logo {
+        z-index: 0;
+    }
 
 
     .kcar-logo {
@@ -160,6 +174,10 @@
         height: 64px;
         background-size: 36px;
     }
+        #kcar-ft .ft-logo {
+        width: 300px;
+        height: 38px;
+    }
 }
 
 /* 3. only tb 768px ~ 1279px */
@@ -195,9 +213,11 @@
     body {
         font-size: 17px;
     }
+
     .hd-wrap {
         height: 80px;
-}
+    }
+
     #kcar-gnb {
         display: block;
         width: 48%;
@@ -217,6 +237,7 @@
     body.sub #kcar-gnb.sub-on:before {
         background-color: #fff;
     }
+
     body.sub #kcar-gnb.sub-on:after {
         display: block;
     }
@@ -229,14 +250,13 @@
     /* 사이트맵 */
 
     .kcar-mo-gnb-sec {
-        display: none;
-        top: 0;
+        top: -100%;
         left: 0;
         overflow: hidden;
     }
-
+    
     .kcar-mo-gnb-sec.active {
-        display: block;
+        top: 0;
     }
 
     .sitemap-close-btn:after {
@@ -303,12 +323,13 @@
     .mo-depth1:hover>a {
         color: #fff;
     }
-    .mo-depth1:hover .mo-depth2 li a{
+
+    .mo-depth1:hover .mo-depth2 li a {
         color: #fff;
         opacity: 0.7;
         transition: 0.3s;
     }
-    
+
     .mo-depth2 {
         /* display: flex;
         flex-direction: column; */
@@ -339,6 +360,7 @@
         transform: scaleX(0);
         transition: 0.3s;
     }
+
     .mo-depth2 li:hover a:after {
         content: '';
         display: block;
@@ -348,7 +370,7 @@
         width: 100%;
         border-bottom: 2px solid #fff;
         transform: scaleX(100%);
-        transform-origin: center center; 
+        transform-origin: center center;
     }
 
     .mo-depth1:hover .mo-depth2 li:hover a {
@@ -362,10 +384,7 @@
         padding: 60px 0;
     }
 
-    #kcar-ft .ft-logo {
-        width: 150px;
-        height: 38px;
-    }
+
 
     .ft-bottom {
         gap: 60px;
@@ -374,7 +393,7 @@
     #kcar-ft .ft-awards-list {
         display: block;
         position: absolute;
-        right: 96px;
+        right: 0;
         top: 66px;
     }
 
@@ -383,10 +402,6 @@
         padding-bottom: 10px;
         font-size: 12px;
         line-height: 1.4;
-    }
-
-    #kcar-ft .ft-family-site {
-        right: 96px;
     }
 
     .ft-company-info .company dl:after {
@@ -437,8 +452,7 @@
     display: block;
 }
 
-.depth1.active .depth2 li {
-}
+.depth1.active .depth2 li {}
 
 
 /* 4.3 하단(footer) */
