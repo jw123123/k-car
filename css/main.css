@@ -1,5 +1,9 @@
 @charset 'UTF-8';
 
+.Material_Symbols_Outlined {
+  font-variation-settings: 'wght' 100; /* 100~700 사이 값으로 두께 조절 */
+}
+
 #kcar-main {}
 
 .main-sec {
@@ -60,7 +64,6 @@
     font-size: 32px;
     font-weight: 900;
     line-height: 1.1;
-    letter-spacing: 2px;
     margin-bottom: 4px;
 }
 
@@ -780,4 +783,25 @@
     content: '\e89e';
     font-family: var(--google-icon);
     font-style: normal;
+}
+
+
+/* 애니메이션 */
+.slogan-ani1 {
+    animation: slogan-ani1 10s both infinite;
+}
+.slogan-ani2 {
+    animation: slogan-ani2 10s both infinite;
+    animation-delay: 6s;
+}
+
+@keyframes slogan-ani1 {
+    0% { opacity: 0; transform: translateY(50px); }
+    6%, 55% { opacity: 1; transform: translateY(0); }  /* 6초 지점까지 유지 */
+    60%, 100% { opacity: 0; transform: translateY(-50px); } /* 퇴장 */
+}
+@keyframes slogan-ani2 {
+    0% { opacity: 0; transform: translateY(30px); } /* 앞 6초간은 숨어있음 */
+    5%, 35% { opacity: 1; transform: translateY(0); }  /* 뒤 3초간 노출 */
+    40%, 100% { opacity: 0; transform: translateY(-30px); }
 }

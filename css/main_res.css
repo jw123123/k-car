@@ -369,10 +369,11 @@
   .kcar-title {
     font-size: 96px;
     font-weight: 900;
+    letter-spacing: normal;
   }
 
   .txt-s {
-    font-size: 54px;
+    font-size: 32px;
   }
 
 

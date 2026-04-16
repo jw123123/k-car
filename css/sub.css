@@ -58,18 +58,17 @@
 
 /* 메인 영역 */
 .sub-sec {
-    padding: 2em 0;
+    padding: 2em 0 3em;
 }
 .sub-sec h2 {
     font-size: 1.8em;
     font-weight: 700;
     line-height: 1.2em;
+    padding-bottom: 2rem;
 }
 
-
 .sub-main-container {
-    padding-top: 2em;
-    padding-bottom: inherit;
+    padding: 2em 0 2em;
 }
 /* 반응형 */
 
@@ -133,7 +132,10 @@
 
     /* 서브 공용 클래스 */
     .sub-wrap {
-        padding: 0 70px;
+        padding: 0 72px;
+    }
+    .sub-main-container {
+    padding: 2em 0 6em;
     }
 
     .sub .wrap {
@@ -214,12 +216,10 @@
     /* 메인 영역 */
     #kcar-main,
     #kcar-main>* {
-        /* padding-top: 40px;
-        padding-bottom: 40px; */
     }
 
     .sub-sec h2 {
-        /* font-size: 1.8em; */
+        padding-bottom: 2rem;
     }
 }
 
@@ -233,10 +233,10 @@
     }
     /* 서브 공용 클래스 */
     .sub-wrap {
-        padding: 0 112px;
+        padding: 0 120px;
     }
     .sub-sec {
-        padding: 1em 0;
+            padding: 2em 0 160px;
     }
 
     .sub .wrap {
@@ -270,12 +270,10 @@
     }
     
     .sub-main-container {
-        padding-top: inherit;
-        padding-bottom: 10em;
+        padding-top: 7em;
     }
 
     .explain-list {
-        padding-top: 200px;
     }
 }
 
