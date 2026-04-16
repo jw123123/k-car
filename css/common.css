@@ -462,7 +462,7 @@ body.sub .sitemap-open-btn:before {
 
 .sitemap-close-btn {
     position: absolute;
-    right: 40px;
+    right: 20px;
     top: 15px;
     width: 24px;
     height: 24px;
@@ -692,6 +692,7 @@ body.sub .sitemap-open-btn:before {
 .icon-plus:after {
     content: '\e89e';
     font-family: var(--google-icon);
+    font-size: 18px;
 }
 
 #kcar-ft .ft-awards-list {

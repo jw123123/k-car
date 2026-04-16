@@ -42,7 +42,6 @@
 
   .kcar-title {
     font-size: 40px;
-    letter-spacing: 4px;
   }
 
   .txt-s {
@@ -359,7 +358,6 @@
   }
 
   .main-visual-container {
-    padding-top: 100%;
   }
 
   .main-visual-video {}
