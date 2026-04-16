@@ -36,18 +36,16 @@
         /*서브메뉴*/
         height: 0;
         overflow: hidden;
-        padding: 0 2em 1em;
         opacity: 0;
     }
 
     .mo-depth1>a {
-        padding: 0 1em;
     }
 
     .mo-depth1.active .mo-depth2 {
         /*서브메뉴 동작*/
         height: auto;
-        padding: 0 2em 1em;
+        padding: 0 1em 1em;
         opacity: 1;
     }
 
@@ -97,7 +95,7 @@
     }
 
     .sitemap-close-btn:before {
-        font-size: 50px;
+        font-size: 40px;
     }
 
 
@@ -158,7 +156,6 @@
 
     .shop-btn {
         display: block;
-        width: 90%;
         margin: 0;
         /* margin: 2em auto; */
         /* 버튼 가운데 정렬 */
@@ -200,7 +197,6 @@
     }
 
     .mo-depth1 {
-        width: 90%;
     }
 }
 
