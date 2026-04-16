@@ -216,7 +216,6 @@
 
 /* 5. laptop 1280~ */
 @media screen and (min-width: 1280px) {
-  .notice-report-sec { margin-bottom: 2em;}
   .news-slider {
     overflow: hidden;
     padding-left: 0;

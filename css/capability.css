@@ -49,7 +49,6 @@
  }
 .desc-wrap {    
   position: relative;
-  margin-top: 2rem;
 }
 .diff-title {
   display: flex;
@@ -222,7 +221,6 @@
             height: 45.4rem;
             background: url("../images/svg/bg-differ-01.svg") no-repeat 0 0;
             background-size: 100% 45.4rem;
-            margin-top: 4rem;
         }
         .diff-title {
             justify-content: space-between;
