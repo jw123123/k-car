@@ -8,7 +8,7 @@
 .event-item {
   display: flex;
   justify-content: space-between;
-  align-items: top;
+  align-items: center;
   padding: 1em;
   border: 0.1rem solid #222;
   border-radius: 0.5rem;
