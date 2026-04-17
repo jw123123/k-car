@@ -692,7 +692,7 @@ body.sub .sitemap-open-btn:before {
 .icon-plus:after {
     content: '\e89e';
     font-family: var(--google-icon);
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #kcar-ft .ft-awards-list {
