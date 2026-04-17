@@ -2,7 +2,7 @@
 
 .news-slider {
   width: 90%;
-  padding: 2em;
+  padding: 2em 2em 4em;
 }
 
 .news-slider::-webkit-scrollbar {
