@@ -57,7 +57,7 @@
         transform: scaleY(-1);
     }
 .family-site-btn {
-    padding: 15px 10px;
+    padding: 10px 10px;
     min-height: inherit;
 }
 
@@ -375,6 +375,11 @@
         padding: 60px 0;
     }
 
+.icon-plus:after {
+
+    font-size: 18px;
+
+}
 
 
     .ft-bottom {

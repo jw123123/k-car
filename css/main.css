@@ -804,11 +804,11 @@
 
 @keyframes slogan-ani1 {
     0% { opacity: 0; transform: translateY(50px); }
-    8%, 58% { opacity: 1; transform: translateY(0); }  /* 6초 지점까지 유지 */
+    15%, 55% { opacity: 1; transform: translateY(0); }  /* 6초 지점까지 유지 */
     63%, 100% { opacity: 0; transform: translateY(-50px); } /* 퇴장 */
 }
 @keyframes slogan-ani2 {
     0% { opacity: 0; transform: translateY(30px); } /* 앞 6초간은 숨어있음 */
-    8%, 33% { opacity: 1; transform: translateY(0); }  /* 뒤 3초간 노출 */
+    8%, 30% { opacity: 1; transform: translateY(0); }  /* 뒤 3초간 노출 */
     37%, 100% { opacity: 0; transform: translateY(-30px); }
 }
