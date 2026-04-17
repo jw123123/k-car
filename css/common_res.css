@@ -39,8 +39,7 @@
         opacity: 0;
     }
 
-    .mo-depth1>a {
-    }
+    .mo-depth1>a {}
 
     .mo-depth1.active .mo-depth2 {
         /*서브메뉴 동작*/
@@ -56,15 +55,17 @@
     .mo-depth1.active>a:after {
         transform: scaleY(-1);
     }
-.family-site-btn {
-    padding: 10px 10px;
-    min-height: inherit;
+
+    .family-site-btn {
+        padding: 10px 10px;
+        min-height: inherit;
+    }
+
+    .btn-label {
+        font-size: 0.8em;
+    }
 }
 
-.btn-label  {
-    font-size: 0.8em;
-}
-}
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
     .wrap {
@@ -171,10 +172,16 @@
         height: 64px;
         background-size: 36px;
     }
-        #kcar-ft .ft-logo {
+
+    #kcar-ft .ft-logo {
         width: 300px;
         height: 38px;
     }
+
+    .ft-company-info dl {
+        font-size: 1.2em;
+    }
+
 }
 
 /* 3. only tb 768px ~ 1279px */
@@ -196,8 +203,7 @@
         line-height: 1.5;
     }
 
-    .mo-depth1 {
-    }
+    .mo-depth1 {}
 }
 
 /* 4. pc 1280px부터~ */
@@ -250,7 +256,7 @@
         left: 0;
         overflow: hidden;
     }
-    
+
     .kcar-mo-gnb-sec.active {
         display: block;
     }
@@ -355,7 +361,7 @@
         transform: scaleX(0);
         transition: 0.4s;
     }
-    
+
     .mo-depth2 li:hover a:after {
         content: '';
         border-bottom: 2px solid #fff;
@@ -375,11 +381,11 @@
         padding: 60px 0;
     }
 
-.icon-plus:after {
+    .icon-plus:after {
 
-    font-size: 18px;
+        font-size: 18px;
 
-}
+    }
 
 
     .ft-bottom {

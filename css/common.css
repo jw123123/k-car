@@ -619,18 +619,20 @@ body.sub .sitemap-open-btn:before {
 
 .ft-company-info dl {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
+    padding-bottom: 0.5em;
 }
 
-.ft-company-info dt:before {
+.ft-company-info dd:after {
     content: " : ";
-    padding-right: 1em;
 }
 
 .ft-company-info .address {
     display: inline-flex;
 }
-
+.address dd {
+    white-space: nowrap;
+}
 #kcar-ft .ft-sns-icons {
     display: flex;
     gap: 20px;
