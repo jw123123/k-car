@@ -274,7 +274,7 @@
     justify-content: center;
   }
 
-  .news-title {
+  .news-text .news-title {
     font-size: 1.4em;
     overflow: hidden;
     
