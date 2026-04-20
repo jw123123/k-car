@@ -2,14 +2,17 @@
 /* 웹폰트 CDN(Content Delivery Network) 연결 */
 @import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('var.css');
 
 
 /* 기본 디자인, 모바일 위주 */
 /* 1. 초기화 */
+/* html{
+    scroll-behavior: smooth;
+} */
+
 * {
     margin: 0;
     padding: 0;
@@ -34,6 +37,7 @@ body {
 a {
     text-decoration: none;
     color: var(--primary-font-color);
+    cursor: pointer;
 }
 
 img {
@@ -42,7 +46,6 @@ img {
 }
 
 body.fixed {
-    position: fixed;
     overflow: hidden;
 }
 
@@ -107,11 +110,12 @@ button:focus {
     text-decoration: none;
     cursor: pointer;
     white-space: nowrap;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: 0.1s;
 }
 
 .btn-common:hover {
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
 }
 
 /* 안쪽 텍스트/아이콘 묶음 */
@@ -269,7 +273,7 @@ body.sub #kcar-gnb:after {
     width: 100%;
     height: 1px;
     background-color: #000;
-    opacity: 0.2;
+    opacity: 0.05;
 }
 
 .kcar-gnb {
@@ -405,7 +409,7 @@ body.sub #kcar-gnb:after {
 
 .lang-wrap.active .lang-list {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 10%);
     pointer-events: auto;
 }
 
@@ -458,7 +462,7 @@ body.sub .sitemap-open-btn:before {
 
 .sitemap-close-btn {
     position: absolute;
-    right: 40px;
+    right: 20px;
     top: 15px;
     width: 24px;
     height: 24px;
@@ -467,7 +471,7 @@ body.sub .sitemap-open-btn:before {
 .sitemap-close-btn:before {
     content: '\e5cd';
     font-family: var(--google-icon);
-    font-size: 40px;
+    font-size: 24px;
 }
 
 .mo-gnb-container {}
@@ -565,9 +569,10 @@ body.sub .sitemap-open-btn:before {
 }
 
 .ft-wrap {
+}
+.ft-info{
     position: relative;
 }
-
 .ft-inner {}
 
 .ft-bottom {
@@ -614,18 +619,20 @@ body.sub .sitemap-open-btn:before {
 
 .ft-company-info dl {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
+    padding-bottom: 0.5em;
 }
 
-.ft-company-info dt:before {
+.ft-company-info dd:after {
     content: " : ";
-    padding-right: 1em;
 }
 
 .ft-company-info .address {
     display: inline-flex;
 }
-
+.address dd {
+    white-space: nowrap;
+}
 #kcar-ft .ft-sns-icons {
     display: flex;
     gap: 20px;
@@ -662,10 +669,10 @@ body.sub .sitemap-open-btn:before {
     background-image: url('../images/icon_cafe.png');
 }
 
-#kcar-ft .ft-family-site {
+.ft-family-site {
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 0;
 }
 
 .family-site-btn {
@@ -676,9 +683,6 @@ body.sub .sitemap-open-btn:before {
     font-size: 18px;
 }
 
-.family-site-btn:hover {
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
-}
 
 .ft-family-site .icon-plus {
     display: flex;
@@ -690,6 +694,7 @@ body.sub .sitemap-open-btn:before {
 .icon-plus:after {
     content: '\e89e';
     font-family: var(--google-icon);
+    font-size: 16px;
 }
 
 #kcar-ft .ft-awards-list {
@@ -743,3 +748,4 @@ body.sub .sitemap-open-btn:before {
 #kcar-ft .btn-top-scroll:hover {
     background-color: var(--primary-color);
 }
+

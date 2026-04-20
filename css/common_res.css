@@ -2,15 +2,23 @@
 @import url('var.css');
 /* 1. mo ~767px까지 */
 @media all and (max-width: 767px) {
-    .mo-lang-container {
-        display: none;
-    }
-
-    .kcar-mo-gnb-sec {}
 
     .mo-gnb-container {
         padding: 0 25px;
     }
+
+    .kcar-mo-gnb-sec {}
+
+    .ir .mo-depth2 {
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 2em;
+    }
+
+    .ir li {
+        width: 40%;
+    }
+
 
     .mo-depth1>a:after {
         /* 화살표 */
@@ -28,18 +36,15 @@
         /*서브메뉴*/
         height: 0;
         overflow: hidden;
-        padding: 0 2em 1em;
         opacity: 0;
     }
 
-    .mo-depth1>a {
-        padding: 0 1em;
-    }
+    .mo-depth1>a {}
 
     .mo-depth1.active .mo-depth2 {
         /*서브메뉴 동작*/
         height: auto;
-        padding: 0 2em 1em;
+        padding: 0 1em 1em;
         opacity: 1;
     }
 
@@ -51,7 +56,14 @@
         transform: scaleY(-1);
     }
 
+    .family-site-btn {
+        padding: 10px 10px;
+        min-height: inherit;
+    }
 
+    .btn-label {
+        font-size: 0.8em;
+    }
 }
 
 /* 2. tb 768px부터~ */
@@ -64,9 +76,10 @@
     body {
         font-size: 16px;
     }
-.kcar-logo {
-    z-index: 0;
-}
+
+    .kcar-logo {
+        z-index: 0;
+    }
 
 
     .kcar-logo {
@@ -83,7 +96,7 @@
     }
 
     .sitemap-close-btn:before {
-        font-size: 50px;
+        font-size: 40px;
     }
 
 
@@ -144,7 +157,6 @@
 
     .shop-btn {
         display: block;
-        width: 90%;
         margin: 0;
         /* margin: 2em auto; */
         /* 버튼 가운데 정렬 */
@@ -160,6 +172,16 @@
         height: 64px;
         background-size: 36px;
     }
+
+    #kcar-ft .ft-logo {
+        width: 300px;
+        height: 38px;
+    }
+
+    .ft-company-info dl {
+        font-size: 1.2em;
+    }
+
 }
 
 /* 3. only tb 768px ~ 1279px */
@@ -181,9 +203,7 @@
         line-height: 1.5;
     }
 
-    .mo-depth1 {
-        width: 90%;
-    }
+    .mo-depth1 {}
 }
 
 /* 4. pc 1280px부터~ */
@@ -195,9 +215,11 @@
     body {
         font-size: 17px;
     }
+
     .hd-wrap {
         height: 80px;
-}
+    }
+
     #kcar-gnb {
         display: block;
         width: 48%;
@@ -207,7 +229,7 @@
     #kcar-gnb.sub-on:before {
         height: 21rem;
         background-color: #000;
-        box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0, 0, 0, 0.25);
+        box-shadow: 0 2.4rem 2.4rem -1.2rem rgba(0, 0, 0, 0.1);
     }
 
     #kcar-gnb.sub-on:after {
@@ -217,6 +239,7 @@
     body.sub #kcar-gnb.sub-on:before {
         background-color: #fff;
     }
+
     body.sub #kcar-gnb.sub-on:after {
         display: block;
     }
@@ -230,7 +253,6 @@
 
     .kcar-mo-gnb-sec {
         display: none;
-        top: 0;
         left: 0;
         overflow: hidden;
     }
@@ -303,12 +325,13 @@
     .mo-depth1:hover>a {
         color: #fff;
     }
-    .mo-depth1:hover .mo-depth2 li a{
+
+    .mo-depth1:hover .mo-depth2 li a {
         color: #fff;
         opacity: 0.7;
         transition: 0.3s;
     }
-    
+
     .mo-depth2 {
         /* display: flex;
         flex-direction: column; */
@@ -335,20 +358,16 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        border-bottom: 2px solid #fff;
         transform: scaleX(0);
-        transition: 0.3s;
+        transition: 0.4s;
     }
+
     .mo-depth2 li:hover a:after {
         content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
         border-bottom: 2px solid #fff;
         transform: scaleX(100%);
-        transform-origin: center center; 
+        transform-origin: center center;
+        transition: 0.4s;
     }
 
     .mo-depth1:hover .mo-depth2 li:hover a {
@@ -362,10 +381,12 @@
         padding: 60px 0;
     }
 
-    #kcar-ft .ft-logo {
-        width: 150px;
-        height: 38px;
+    .icon-plus:after {
+
+        font-size: 18px;
+
     }
+
 
     .ft-bottom {
         gap: 60px;
@@ -374,7 +395,7 @@
     #kcar-ft .ft-awards-list {
         display: block;
         position: absolute;
-        right: 96px;
+        right: 0;
         top: 66px;
     }
 
@@ -383,10 +404,6 @@
         padding-bottom: 10px;
         font-size: 12px;
         line-height: 1.4;
-    }
-
-    #kcar-ft .ft-family-site {
-        right: 96px;
     }
 
     .ft-company-info .company dl:after {
@@ -437,8 +454,7 @@
     display: block;
 }
 
-.depth1.active .depth2 li {
-}
+.depth1.active .depth2 li {}
 
 
 /* 4.3 하단(footer) */

@@ -43,7 +43,7 @@ $(function () {
   }
 
 
-  // 헤더 제어
+  // 헤더 제어 
   //console.log(scTop);
   $(window).scroll(function () {
     scTop = $(window).scrollTop();
@@ -127,9 +127,27 @@ $(function () {
   }
   requestAnimationFrame(raf);
 
-  // 임시링크 문서 꼭대기로 이동하는 것 막아주기
+  // 상태 감지 함수
+  function checkFixed() {
+    if (document.body.classList.contains('fixed')) {
+      lenis.stop();   // 스크롤 완전 정지
+    } else {
+      lenis.start();  // 다시 활성화
+    }
+  }
+  // 클래스 변경 시 실행
+  const observer = new MutationObserver(checkFixed);
 
+  observer.observe(document.body, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
 
   // AOS 플러그인
     AOS.init();
 });
+
+// 임시링크 문서 꼭대기로 이동하는 것 막아주기
+  $("a[href='#']").click(function (e) {
+    e.preventDefault();
+  });

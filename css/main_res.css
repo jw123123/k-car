@@ -1,8 +1,18 @@
 @charset 'UTF-8';
 /* 1. mo ~767px까지 */
 @media all and (max-width: 767px) {
+
+
+/* ESG 영역 */
+.esg-section .esg-card-container {
+    width: calc(100% - 24px);
+    max-width: 351px;
+}
+
+
+
   /* news 영역 */
-.news-slider {
+  .news-slider {
     padding: 0 60px;
 }
 .news-text {
@@ -32,13 +42,26 @@
 
   .kcar-title {
     font-size: 40px;
-    letter-spacing: 4px;
   }
 
   .txt-s {
-    font-size: 32px;
+    font-size: 24px;
   }
 
+  /* company */
+  .company-title {
+
+    font-size: 56px;
+
+}
+
+  .company-desc {
+    max-width: 710px;
+    font-size: 28px;
+}
+
+
+  /* career */
   .career-content-wrap {
     position: relative;
   }
@@ -110,7 +133,6 @@
 
   .svc-controls {
     gap: 18px;
-    margin-top: 32px;
   }
 
   .svc-pagination {
@@ -127,32 +149,31 @@
 
   /* 지속가능경영 */
   .esg-section {
-    height: 430px;
+    height: 600px;
   }
 
   .esg-section .esg-main-title {
-    top: 22px;
-    left: 20px;
-    font-size: 18px;
+    top: 13%;
+    left: 60px;
+    font-size: 2.5em;
   }
 
   .esg-section .esg-card-container {
-    top: 80px;
-    width: calc(100% - 40px);
-    max-width: 745px;
-    min-height: 240px;
+    height: 300px;
+    margin: 180px 60px 0;
     padding: 14px 16px 12px;
     border-radius: 12px;
   }
 
   .esg-section .card-title {
-    padding-bottom: 12px;
-    font-size: 12px;
+    padding:10px 0 20px;
+    font-size: 24px;
   }
 
   .esg-section .card-stats {
     display: flex;
-    margin-top: 8px;
+    height: 200px;
+    padding-top: 1em;
   }
 
   .esg-section .stat {
@@ -178,17 +199,17 @@
     flex: none;
     justify-content: center;
     padding-left: 12px;
-    font-size: 34px;
+    font-size: 40px;
   }
 
   .esg-section .num small {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .icon-up:before {
     top: 2px;
-    left: 0;
-    font-size: 12px;
+    left: -8px;
+    font-size: 18px;
   }
 
   .esg-section .stat>i {
@@ -205,12 +226,12 @@
   }
 
   .esg-section .desc {
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.45;
   }
 
   .esg-pagination {
-    bottom: 16px;
+    bottom: 10%;
     width: 250px;
     gap: 12px;
   }
@@ -219,16 +240,15 @@
 
   /* NEWS */
   .main-news-sec {
-    min-height: 500px;
-    padding: 40px 0 48px;
+    min-height: 600px;
   }
 
   .news-header {
-    margin-bottom: 34px;
+    margin: 32px 0 56px;
   }
 
   .news-header .sec-title {
-    font-size: 34px;
+    font-size: 3em;
   }
 
   .news-header .btn-more {
@@ -338,7 +358,6 @@
   }
 
   .main-visual-container {
-    padding-top: 100%;
   }
 
   .main-visual-video {}
@@ -348,10 +367,11 @@
   .kcar-title {
     font-size: 96px;
     font-weight: 900;
+    letter-spacing: normal;
   }
 
   .txt-s {
-    font-size: 54px;
+    font-size: 32px;
   }
 
 
@@ -381,14 +401,12 @@
   .company-title {
     font-size: 96px;
     font-weight: 700;
-    z-index: 5;
-    /* margin-bottom: 10px; */
   }
 
   .company-desc {
+    max-width: 960px;
     font-size: 36px;
     line-height: 1.6;
-    z-index: 5;
   }
 
 
@@ -507,6 +525,7 @@
   }
 
   .esg-section .esg-card-container {
+    position: absolute;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -517,11 +536,12 @@
     padding: 50px 60px;
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.1);
+    margin: 0;
   }
 
   .esg-section .card-title {
-    padding-bottom: 45px;
-    font-size: 28px;
+    padding-bottom: 40px;
+    font-size: 32px;
   }
 
   .esg-section .card-stats {
