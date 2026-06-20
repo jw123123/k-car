@@ -76,8 +76,6 @@ button:focus {
 /* 2. 공용클래스(공통디자인) */
 .wrap {
     width: 100%;
-    max-width: 120em;
-    /* 1920 기준 */
     margin: 0 0;
     padding: 0 20px;
 }

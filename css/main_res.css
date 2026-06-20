@@ -861,7 +861,7 @@
 /* 6. pc 1920px부터~ */
 @media all and (min-width: 1920px) {
     .svc-pagination {
-    left: 30%;
+    left: 35%;
   }
 
 }

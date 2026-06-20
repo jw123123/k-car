@@ -8,14 +8,11 @@ $(function(){
   let lnb = $(".kcar-lnb-depth2");
   let pageTitle = "Company,Business,Notice,Sustainability,Career,Investor Relations";
   pageTitle = pageTitle.split(",");
-  // console.log(pageTitle);
   let bodyNum, mainNum, subNum;
   bodyNum = body.attr("class");
   bodyNum = bodyNum.split(" ");
-  // console.log(bodyNum[0]);
   mainNum = bodyNum[0].slice(3,4);
   subNum = bodyNum[0].slice(5,6);
-  // console.log(mainNum, subNum);
   let subHdEl = "K Car소개,사업분야,PR센터,ESG,인재채용,IR";
   subHdEl = subHdEl.split(",");
   // console.log(subHdEl);
