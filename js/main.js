@@ -1,52 +1,123 @@
-$(function(){
-  let vH = window.innerHeight;
-  let scTop = $(window).scrollTop();
-  const hd = $("#cv-hd");
+// 서비스 영역
+let svcSwiper = null;
 
-  // 각 섹션별 헤더 디자인 제어
-  $(".main-sec.wh").each(function(){
-    let sec = $(this);
-    let secOffsetMin = sec.offset().top - vH;
-    let secOffsetMax = sec.offset().top + sec.innerHeight();
-    //console.log(sec.index(), secOffsetMin, secOffsetMax);
-    $(window).scroll(function() {
-      scTop = $(window).scrollTop();
-      if(scTop >= secOffsetMin && scTop < secOffsetMax){ //2번째 섹션일 때
-        hd.addClass("wh");
-      } else {
-        hd.removeClass("wh");
+function buildSvcSwiper() {
+  const isPC = $('body').hasClass('pc');
+
+  if (svcSwiper) {
+    svcSwiper.destroy(true, true);
+    svcSwiper = null;
+  }
+
+  svcSwiper = new Swiper('.svc-swiper', {
+    direction: isPC ? 'vertical' : 'horizontal',
+    effect: isPC ? 'fade' : 'slide', // pc일 때 슬라이드 fade 효과
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+    speed: 850,
+    resistanceRatio: 0,
+    observer: true,
+    observeParents: true,
+    fadeEffect: {
+      crossFade: true
+    },
+
+    allowTouchMove: !isPC,
+    simulateTouch: !isPC,
+
+    mousewheel: isPC
+      ? {
+        forceToAxis: true,
+        releaseOnEdges: true,
+        sensitivity: 1.8,
+        thresholdDelta: 40,
+        thresholdTime: 200
       }
-      // 맨위
-      if(scTop < vH) {
-        hd.addClass("wh");
-      }
-    });
+      : false,
+
+    pagination: {
+      el: '.svc-pagination',
+      type: 'fraction',
+      clickable: false
+    },
+
+    navigation: {
+      nextEl: '.svc-next',
+      prevEl: '.svc-prev'
+    }
+  });
+}
+
+$(window).on('load', function () {
+  buildSvcSwiper();
+});
+
+$(window).on('resize', function () {
+  clearTimeout(window.svcResizeTimer);
+  window.svcResizeTimer = setTimeout(function () {
+    buildSvcSwiper();
+  }, 150);
+});
+
+
+$(function () {
+  //지속가능경영
+  const $esgSection = $('.esg-section');
+  const $slides = $('.esg-slide');
+  const $pageBtns = $('.esg-page-btn');
+  const $sideBtns = $('.side-bar-item');
+
+  function setEsgSlide(index) {
+    index = Number(index);
+
+    $slides.removeClass('active').eq(index).addClass('active');
+    $pageBtns.removeClass('active').eq(index).addClass('active');
+
+    $esgSection.removeClass('is-e is-s is-g');
+
+    if (index === 0) {
+      $esgSection.addClass('is-e');
+    } else if (index === 1) {
+      $esgSection.addClass('is-s');
+    } else if (index === 2) {
+      $esgSection.addClass('is-g');
+    }
+  }
+
+  $pageBtns.on('click', function () {
+    setEsgSlide($(this).data('target'));
   });
 
+  $sideBtns.on('click', function () {
+    setEsgSlide($(this).data('target'));
+  });
 
-  // 1. 메인 제품 영역 변수
-
-
-  // 현재페이지 / 전체페이지
-
-
-  // 화면 사이즈가 조정될 때마다 제품 좌표 리셋
+  // 처음 진입 상태
+  setEsgSlide(0);
 
 
-  // 제품리스트 클릭할 때 실행
-
-
-  // 선택한 제품 슬라이드 함수
-
-
-  // 제품 슬라이드 영역에서 마우스 커서 바꾸기
-  
-  
-  /*
-  easing.js 추가한 후 다른 그래프 사용 가능
-  사용가능 easing (참고:https://api.jqueryui.com/easings/)
-  linear swing easeInQuad easeOutQuad easeInOutQuad easeInCubic easeOutCubic easeInOutCubic easeInQuart easeOutQuart easeInOutQuart easeInQuint easeOutQuint
-  easeInOutQuint easeInSine easeOutSine easeInOutSine easeInExpo easeOutExpo easeInOutExpo easeInCirc easeOutCirc easeInOutCirc easeInElastic easeOutElastic 
-  easeInOutElastic easeInBack easeOutBack easeInOutBack easeInBounce easeOutBounce easeInOutBounce
-  */
+  // news 영역 swiper
+  let swiper1 = new Swiper(".news-slider", {
+    slidesPerView: 1,
+    spaceBetween: 60,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+    loop: true,
+    speed: 500,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      1280: {
+        loop: false,
+        slidesPerView: 4,
+        spaceBetween: 20,
+      }
+    }
+  });
 });

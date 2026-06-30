@@ -1,0 +1,26 @@
+<svg width="1028" height="456" viewBox="0 0 1028 456" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-2.6%" y="-2.1%" width="105.2%" height="106%" filterUnits="objectBoundingBox" id="n3xx9iovda">
+            <feMorphology radius="1" in="SourceAlpha" result="shadowSpreadOuter1"/>
+            <feOffset dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0.0862745098 0 0 0 0 0.0901960784 0 0 0 0 0.11372549 0 0 0 0.1 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter2"/>
+            <feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter2" result="shadowBlurOuter2"/>
+            <feColorMatrix values="0 0 0 0 0.0862745098 0 0 0 0 0.0901960784 0 0 0 0 0.11372549 0 0 0 0.2 0" in="shadowBlurOuter2" result="shadowMatrixOuter2"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="shadowMatrixOuter2"/>
+            </feMerge>
+        </filter>
+        <path d="M8 0h494v434H8a8 8 0 0 1-8-8V8a8 8 0 0 1 8-8z" id="fom2eiij1b"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(8 10)">
+            <use fill="#000" filter="url(#n3xx9iovda)" xlink:href="#fom2eiij1b"/>
+            <use fill="#FFF" xlink:href="#fom2eiij1b"/>
+        </g>
+        <path d="M510 0h510a8 8 0 0 1 8 8v438a8 8 0 0 1-8 8H510V0z" fill="#585C74"/>
+        <path fill="#16171D" d="m494 10 16-10v10zM494 444l16 10v-10z"/>
+    </g>
+</svg>
