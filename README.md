@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ### 🚗 K Car 회사 소개 사이트 리뉴얼
+=======
+### 🔴 K Car 회사 소개 사이트 리뉴얼
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 
 > 직영 인증 시스템을 기반으로 안전하고 투명한 중고차 거래 경험을 제공하는 플랫폼
 
@@ -36,22 +40,37 @@
 
 ## 🛠 Tech Stack
 
+<<<<<<< HEAD
 | Front-end | Design / 영상 | 협업/배포 | AI |
 |---|---|---|---|
 | HTML | Figma | Notion | Gemini |
 | CSS | Photoshop | GitHub | ChatGPT |
 | JavaScript | Illustrator | | Midjourney |
 | | Premiere Pro | | |
+=======
+| Front-end | Design / 영상 | 기획/협업 | 배포 | AI |
+|---|---|---|---|---|
+| HTML | Figma | Notion | GitHub | Gemini |
+| CSS | Photoshop | | | ChatGPT |
+| JavaScript | Illustrator | | | Midjourney |
+| | Premiere Pro | | | |
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 
 ---
 
 ## 🏗 Architecture
 
+<<<<<<< HEAD
+=======
+> 배포 사이트 페이지 구성을 기준으로 정리하였으며, 실제 저장소 폴더/파일 명과는 다를 수 있습니다. 정확한 구조는 저장소를 직접 확인해 주세요.
+
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 ```
 k-car
 ├── css
 ├── images
 ├── js
+<<<<<<< HEAD
 ├── index.html        
 ├── overview.html      
 ├── ceo.html           
@@ -62,6 +81,18 @@ k-car
 ├── career.html         
 ├── benefits.html       
 └── ir.html             
+=======
+├── index.html        (메인)
+├── overview.html      (K Car 소개 · 사업소개)
+├── ceo.html            (대표 인사말)
+├── philosophy.html    (Mission & Vision)
+├── capability.html    (사업분야 · 직영 시스템)
+├── report.html         (PR센터 · 보도자료)
+├── sustainability.html (ESG 경영)
+├── career.html         (인재채용 · 인재상)
+├── benefits.html       (인사/복지제도)
+└── ir.html              (IR)
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 ```
 
 ---
@@ -110,8 +141,13 @@ k-car
 
 ### 개선 사항
 
+<<<<<<< HEAD
 - API 연동을 통한 실시간 데이터(시세, 매물 등) 관리
 - ESG 서브페이지 디자인 개선
+=======
+- 모바일 반응형 지원 강화
+- API 연동을 통한 실시간 데이터(시세, 매물 등) 관리
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 - 차량 비교/추천 기능 고도화
 - 접근성(Accessibility) 개선
 
@@ -120,7 +156,11 @@ k-car
 ## 🔗 Links
 
 - 최종 결과물: [https://jw123123.github.io/k-car/](https://jw123123.github.io/k-car/)
+<<<<<<< HEAD
 - 피그마 디자인시안: https://www.figma.com/design/ThsGCsbWiT4yIMXUIIxTW6/%EC%BC%80%EC%9D%B4%EC%B9%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-%EB%94%94%EC%9E%90%EC%9D%B8?node-id=0-1&t=JJVwBiEmBb6vBpJM-1
+=======
+- 피그마 디자인시안: https://www.figma.com/design/ThsGCsbWiT4yIMXUIIxTW6/%EC%BC%80%EC%9D%B4%EC%B9%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-%EB%94%94%EC%9E%90%EC%9D%B8?node-id=168-513&t=5YD5MiLBs0q9tKeJ-1
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 - 결과보고서: [k-car.pdf](https://github.com/user-attachments/files/29157869/k-car.pdf)
 
 ---

@@ -772,6 +772,30 @@
   
   .news-title {
     font-size: 1.6em;
+<<<<<<< HEAD
+=======
+
+}
+
+
+
+
+.news-desc {
+
+    font-size: 1.2em;
+
+}
+
+
+
+
+}
+
+/* 6. pc 1920px부터~ */
+@media all and (min-width: 1920px) {
+    .svc-pagination {
+    left: 35%;
+>>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
   }
 
   .news-desc {
