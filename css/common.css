@@ -67,16 +67,10 @@ button:focus {
 
 /* 공용클래스(공통디자인) */
 .wrap {
-<<<<<<< HEAD
   width: 100%;
   max-width: 120em;
   margin: 0 0;
   padding: 0 20px;
-=======
-    width: 100%;
-    margin: 0 0;
-    padding: 0 20px;
->>>>>>> a0052b045e42a5a814a09ec5811149970074b02d
 }
 
 .clearfix::after {
