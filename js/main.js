@@ -11,7 +11,7 @@ function buildSvcSwiper() {
 
   svcSwiper = new Swiper('.svc-swiper', {
     direction: isPC ? 'vertical' : 'horizontal',
-    effect: isPC ? 'fade' : 'slide', // 슬라이드 fade 효과 주기 위한 소스
+    effect: isPC ? 'fade' : 'slide', // pc일 때 슬라이드 fade 효과
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 0,
@@ -19,7 +19,6 @@ function buildSvcSwiper() {
     resistanceRatio: 0,
     observer: true,
     observeParents: true,
-    // fade 효과일 때만 작동하는 옵션으로 글자가 겹쳐지는 현상 없애기 위해 
     fadeEffect: {
       crossFade: true
     },
@@ -62,7 +61,6 @@ $(window).on('resize', function () {
 });
 
 
-
 $(function () {
   //지속가능경영
   const $esgSection = $('.esg-section');
@@ -99,7 +97,6 @@ $(function () {
   setEsgSlide(0);
 
 
-
   // news 영역 swiper
   let swiper1 = new Swiper(".news-slider", {
     slidesPerView: 1,
@@ -111,15 +108,10 @@ $(function () {
       },
     loop: true,
     speed: 500,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
     breakpoints: {
       768: {
         slidesPerView: 2,
         spaceBetween: 40,
-        // slidesPerGroup: 1
       },
       1280: {
         loop: false,

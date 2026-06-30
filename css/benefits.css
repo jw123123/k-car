@@ -6,9 +6,10 @@
     line-height: 1.2em;
     padding-bottom: 2rem;
 }
+
 .benefits-sec {}
-.benefits-container {
-}
+.benefits-container {}
+
 .benefits-wrap {
   padding-top: 64px;
 }
@@ -18,50 +19,55 @@
   padding-bottom: 1em;
   color: var(--primary-color);
 }
-.benefits-wrap h3:after {
-}
+
+.benefits-wrap h3:after {}
+
 .benefits-list {
   display: flex;
   flex-wrap: wrap;
 }
+
 .item {
   width: 80px;
-padding-bottom: 1em;
+  padding-bottom: 1em;
 }
+
 .item img {width: 40%;}
 .item div {padding: 1em 0;}
 
 
 /* 반응형 */
 /* 1. mo tiny */
-@media screen and (max-width: 360px) {
-}
+@media screen and (max-width: 360px) {}
 
 /* 2. mo */
-@media screen and (max-width: 767px) {
-}
+@media screen and (max-width: 767px) {}
 
 /* 3. tb~ */
 @media screen and (min-width: 768px) {
-      .sub-sec h3 {
-        padding-bottom: 2rem;
-    }
+  .sub-sec h3 {
+    padding-bottom: 2rem;
+  }
+  
   .benefits-wrap {
     display: flex;
     justify-content: space-between;
-  padding-top: 100px;
-}
-.benefits-wrap h3 {
-  font-size: 2em;
-}
+    padding-top: 100px;
+  }
+  
+  .benefits-wrap h3 {
+    font-size: 2em;
+  }
+  
   .benefits-list {
-  display: flex;
-  gap: 3em;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  width: 75%;
-}
-.item img {width: 50%;}
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 75%;
+  }
+
+  .item img {width: 50%;}
 }
 
 /* 4. only tb */
@@ -69,34 +75,31 @@ padding-bottom: 1em;
 
 /* 5. laptop 1280~ */
 @media screen and (min-width: 1280px) {
-      .sub-sec h3 {
-        font-size: 3.8em;
-        width: 80%;
-        line-height: 1.3em;
-        padding: 2rem 0 4rem 0;
-    }
-    .benefits-wrap {
-  padding: 64px 0;
-}
+  .sub-sec h3 {
+    font-size: 3.8em;
+    width: 80%;
+    line-height: 1.3em;
+    padding: 2rem 0 4rem 0;
+  }
+  .benefits-wrap {
+    padding: 64px 0;
+  }
 
-
-.benefits-list {
-  gap: 5em;
-  flex-direction: row-reverse;
-}
-
+  .benefits-list {
+    gap: 5em;
+    flex-direction: row-reverse;
+  }
 }
 
 /* 6. laptop 1440~ */
 @media screen and (min-width: 1440px) {
-    .benefits-container {
-  padding: 0 80px;
-}
+  .benefits-container {
+    padding: 0 80px;
+  }
 
-.benefits-list {
-  width: 55%;
-}
-
+  .benefits-list {
+    width: 55%;
+  }
 }
 
 /* 6. laptop 1921~ */

@@ -1,10 +1,9 @@
 $(function () {
-  // 반응형 구현
   const body = $("body");
   const tbWidth = 768;
   const pcWidth = 1280;
   let scTop = $(window).scrollTop();
-  let vW, vH; //화면 크기 저장하는 변수
+  let vW, vH;
   const hd = $("#kcar-hd");
   const ft = $("#kcar-ft");
   let hdHeight = hd.height();
@@ -21,7 +20,6 @@ $(function () {
   const speed = 600;
 
 
-
   rwd();
   $(window).resize(function () {
     rwd();
@@ -29,7 +27,6 @@ $(function () {
 
 
   // 반응형 구현
-  //해상도에 반응하기 위해 실행
   function rwd() {
     vW = window.innerWidth;
     vH = window.innerHeight;
@@ -44,21 +41,18 @@ $(function () {
 
 
   // 헤더 제어 
-  //console.log(scTop);
   $(window).scroll(function () {
     scTop = $(window).scrollTop();
-    if (scTop > hdHeight) { //헤더만큼 스크롤 됐을 때
+    if (scTop > hdHeight) {
       hd.addClass("fixed");
     } else {
       hd.removeClass("fixed");
     }
-    // 푸터가 화면에 표시 될 때쯤 헤더 숨기기
     if (scTop > ftOffset) {
       hd.fadeOut(300);
     } else {
       hd.fadeIn(300);
     }
-
   });
 
 
@@ -73,10 +67,12 @@ $(function () {
     $(this).removeClass("sub-on");
   });
 
+
   // 로고링크 제어
   logo.click(function () {
     $(location).attr('href', 'index.html');
   });
+
 
   // 언어영역 제어
   langBtn.click(function () {
@@ -88,7 +84,6 @@ $(function () {
   openBtn.click(function () {
     body.addClass("fixed");
     siteMap.attr("style", "");
-    //해상도가 모바일이라면 = body의 클래스가 "mo"라면
     if (body.hasClass("pc")) {
       siteMap.addClass("active");
     } else { //mo, tb일 때
@@ -98,6 +93,7 @@ $(function () {
       }, speed);
     }
   });
+
   closeBtn.click(function () {
     body.removeClass("fixed");
     if (body.hasClass("pc")) {
@@ -127,27 +123,30 @@ $(function () {
   }
   requestAnimationFrame(raf);
 
+  
   // 상태 감지 함수
   function checkFixed() {
     if (document.body.classList.contains('fixed')) {
-      lenis.stop();   // 스크롤 완전 정지
+      lenis.stop();
     } else {
-      lenis.start();  // 다시 활성화
+      lenis.start();
     }
   }
-  // 클래스 변경 시 실행
-  const observer = new MutationObserver(checkFixed);
 
+  const observer = new MutationObserver(checkFixed);
   observer.observe(document.body, {
     attributes: true,
     attributeFilter: ['class']
   });
 
+  
   // AOS 플러그인
-    AOS.init();
+  AOS.init();
+  
+  
+  // 임시링크 문서 꼭대기로 이동하는 것 막아주기
+    $("a[href='#']").click(function (e) {
+      e.preventDefault();
+    });
 });
 
-// 임시링크 문서 꼭대기로 이동하는 것 막아주기
-  $("a[href='#']").click(function (e) {
-    e.preventDefault();
-  });

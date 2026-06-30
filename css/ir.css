@@ -20,9 +20,7 @@
   flex-wrap: wrap;
 }
 
-.dl_title {
-  /* width: 70%; */
-}
+.dl_title {}
 
 .dl_file,
 .link-icon {
@@ -34,7 +32,6 @@
 
 .event-item-list .dl_file,
 .earning-list .dl_file {
-  /* border: 1px solid #000; */
   background-image: url("../images/svg/download_bk.svg");
   width: 1.8rem;
   height: 1.8rem;
@@ -119,7 +116,6 @@
   font-size: 0.9em;
 }
 
-/* table */
 .table table {
   table-layout: fixed;
   width: 100%;
@@ -130,7 +126,6 @@
 .table table th {
   padding: 1rem 0.8rem;
   word-break: keep-all;
-  /* font-size: 1.6rem; */
 }
 
 .table table thead tr {
@@ -184,11 +179,9 @@ tbody tr:first-of-type {
   text-align: right;
 }
 
-/* 배당내역 */
 
-.dividend-select-wrap * {
-  /* border: 1px solid #f00; */
-}
+/* 배당내역 */
+.dividend-select-wrap * {}
 
 .dividend-select-wrap {
   width: 100%;
@@ -237,6 +230,7 @@ tbody tr:first-of-type {
   width: 0;
 }
 
+
 /* 주주현황 */
 .sholder-sec {
   --chartColor0: #d80546;
@@ -247,9 +241,7 @@ tbody tr:first-of-type {
   --chartColor5: #8e8e93;
 }
 
-.chart-wrap * {
-  /* border: 1px solid #0ff; */
-}
+.chart-wrap * {}
 
 .chart-wrap {
   display: flex;
@@ -405,6 +397,7 @@ tbody tr:first-of-type {
   margin-top: 1rem;
 }
 
+
 /* IR Contact */
 .contact-info {
   position: relative;
@@ -430,51 +423,8 @@ tbody tr:first-of-type {
   margin-top: 1.1rem;
 }
 
-.ir-contact-link {
-  display: flex;
-  margin-top: 4.8rem;
-}
-
-.ir-contact-link a {
-  background: #F2F2F2;
-  border: 1px solid transparent;
-  padding: 2.2rem;
-  flex: 1;
-  text-align: center;
-  transition: 0.2s;
-}
-
-.ir-contact-link a:hover,
-.ir-contact-link a:focus {
-  background: #d9d9d9;
-  border-color: #ccc;
-}
-
-.ir-contact-link a~a {
-  margin-left: 2.6rem;
-}
-
-.ir-contact-link a small {
-  margin-left: 2rem;
-}
-
-.sns-link {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-.sns-link a {
-  display: block;
-}
-
-.sns-link a~a {
-  margin-left: 2rem;
-}
-
-
+/* 주주 */
 .table table tbody * {
-  /* border: 1px solid #000; */
 }
 
 .table table thead * {
@@ -485,13 +435,14 @@ tbody tr:first-of-type {
   border-top: 1.15px solid #333333;
 }
 
+
 /* 반응형 */
 /* 1. mo tiny */
 @media screen and (max-width: 360px) {}
 
 /* 2. mo */
 @media screen and (max-width: 767px) {
-
+  /* 실적발표 */
   .earning-list div,
   .earning-list li:nth-child(1) {
     display: none;
@@ -506,6 +457,7 @@ tbody tr:first-of-type {
     width: 80%;
   }
 
+  /* 주주 */
   .chart-table .lank {
     padding-left: 1rem;
   }
@@ -523,11 +475,7 @@ tbody tr:first-of-type {
   .table table th.txt-left {
     padding-left: 0.2rem;
     text-align: left;
-    ;
   }
-
-  /* 주주현황 */
-  /* Contact */
 }
 
 /* 3. tb~ */
@@ -538,13 +486,17 @@ tbody tr:first-of-type {
 
 /* 5. laptop 1280~ */
 @media screen and (min-width: 1280px) {
+  /* ir자료 */
   .sub-container {
     margin-top: 0;
   }
-.dl_title dd {
-  font-size: 1.2em;
-  font-weight: 500;
-}
+  .dl_title dd {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
+
+  /* ir일정 */
   .announce-item-list,
   .event-item-list {
     display: flex;
@@ -553,7 +505,6 @@ tbody tr:first-of-type {
 
   .event-item-list {
     flex-wrap: wrap;
-    /* justify-content: space-between; */
   }
 
   .announce-item,
@@ -561,106 +512,110 @@ tbody tr:first-of-type {
     padding: 2em;
     border: 0.1rem solid #222;
     border-radius: 0.5rem;
+  }
+  .event-item {
+    width: 48%;
+  }
 
-    .event-item {
-      width: 48%;
-    }
+  .dl_file {
+    padding-left: 0;
+  }
 
-    .dl_file {
-      padding-left: 0;
-    }
+  .dl_file dd:before {
+    display: block;
+    content: "";
+    width: 3.2rem;
+  }
 
-    .dl_file dd:before {
-      display: block;
-      content: "";
-      width: 3.2rem;
-    }
+  .dl_event_day {
+    width: 7rem;
+    height: 7rem;
+    flex: 0 0 7rem 56px;
+    margin-right: 3rem;
+    padding: 1em;
+  }
 
-    .dl_event_day {
-      width: 7rem;
-      height: 7rem;
-      flex: 0 0 7rem 56px;
-      margin-right: 3rem;
-      padding: 1em;
-    }
+  .dl_event_day .date {
+    display: block;
+  }
 
-    .dl_event_day .date {
-      display: block;
-    }
 
-    .earning-list,
-    .board-list {
-      margin-top: 0;
-    }
+  /* 실적발표 */
+  .earning-list,
+  .board-list {
+    margin-top: 0;
+  }
 
-    .earning-list li,
-    .earning-item-head {
-      font-size: inherit;
-      padding: 1.5em;
-    }
+  .earning-list li,
+  .earning-item-head {
+    font-size: inherit;
+    padding: 1.5em;
+  }
 
-    .board-list li {
-      flex-direction: row;
-      justify-content: space-between;
-      font-size: inherit;
-      padding: 1.5em;
-    }
+  .board-list li {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: inherit;
+    padding: 1.5em;
+  }
 
-    /* 배당내역 */
-    .dividend-container table colgroup col:nth-child(4),
-    .dividend-container table colgroup col:nth-child(5),
-    .dividend-container table colgroup col:nth-child(6),
-    .dividend-container table colgroup col:nth-child(7) {
-      width: inherit;
-    }
 
-    .dividend-container table thead th:nth-child(4),
-    .dividend-container table thead th:nth-child(5),
-    .dividend-container table thead th:nth-child(6),
-    .dividend-container table thead th:nth-child(7),
-    .dividend-container table tbody tr td:nth-child(4),
-    .dividend-container table tbody tr td:nth-child(5),
-    .dividend-container table tbody tr td:nth-child(6),
-    .dividend-container table tbody tr td:nth-child(7) {
-      display: table-cell;
-    }
+  /* 배당내역 */
+  .dividend-container table colgroup col:nth-child(4),
+  .dividend-container table colgroup col:nth-child(5),
+  .dividend-container table colgroup col:nth-child(6),
+  .dividend-container table colgroup col:nth-child(7) {
+    width: inherit;
+  }
 
-    .dividend-select-wrap {
-      display: none;
-    }
+  .dividend-container table thead th:nth-child(4),
+  .dividend-container table thead th:nth-child(5),
+  .dividend-container table thead th:nth-child(6),
+  .dividend-container table thead th:nth-child(7),
+  .dividend-container table tbody tr td:nth-child(4),
+  .dividend-container table tbody tr td:nth-child(5),
+  .dividend-container table tbody tr td:nth-child(6),
+  .dividend-container table tbody tr td:nth-child(7) {
+    display: table-cell;
+  }
 
-    .divide-detail {
-      margin-top: -1.5rem;
-    }
+  .dividend-select-wrap {
+    display: none;
+  }
 
-    .divide-detail .table td {
-      border-top: 1px solid #e8e8e8;
-    }
+  .divide-detail {
+    margin-top: -1.5rem;
+  }
 
-    /* 주주현황 */
-    .chart-wrap {
-      flex-direction: row;
-    }
+  .divide-detail .table td {
+    border-top: 1px solid #e8e8e8;
+  }
 
-    .highcharts-figure {
-      min-width: 32rem;
-      max-width: 50rem;
-      flex: 0 0 50rem;
-    }
 
-    .note {
-      font-size: 0.7rem;
-      color: #707070;
-      margin-top: 1rem;
-    }
+  /* 주주현황 */
+  .chart-wrap {
+    flex-direction: row;
+  }
 
-    /* Contact */
-    .sns-link {
-      position: absolute;
-      right: 0;
-      top: 0;
-      margin-top: 0;
-    }
+  .highcharts-figure {
+    min-width: 32rem;
+    max-width: 50rem;
+    flex: 0 0 50rem;
+  }
+
+  .note {
+    font-size: 0.7rem;
+    color: #707070;
+    margin-top: 1rem;
+  }
+
+
+  /* Contact */
+  .sns-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0;
   }
 }
 

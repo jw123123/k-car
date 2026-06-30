@@ -10,15 +10,10 @@ $(function(){
       },
     loop: true,
     speed: 500,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
     breakpoints: {
       768: {
         slidesPerView: 2,
         spaceBetween: 40,
-        // slidesPerGroup: 1
       },
       1280: {
         loop: false,

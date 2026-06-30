@@ -1,31 +1,28 @@
 @charset 'UTF-8';
+
 /* 1. mo ~767px까지 */
 @media all and (max-width: 767px) {
 
-
-/* ESG 영역 */
-.esg-section .esg-card-container {
+  /* ESG 영역 */
+  .esg-section .esg-card-container {
     width: calc(100% - 24px);
     max-width: 351px;
-}
-
+  }
 
 
   /* news 영역 */
   .news-slider {
     padding: 0 60px;
-}
-.news-text {
+  }
 
+  .news-text {
     justify-content: center;
-
-}
-
+  }
 }
 
 /* 2. tb 768px부터~ */
 @media all and (min-width: 768px) {
-
+/* 비주얼 */
   #kcar-main {
     padding-top: 71px;
   }
@@ -34,10 +31,8 @@
     padding-top: 56.25%;
   }
 
-
   .container-s {
     padding: 0 60px 40px;
-
   }
 
   .kcar-title {
@@ -48,20 +43,19 @@
     font-size: 24px;
   }
 
-  /* company */
+
+  /* 기업 소개 */
   .company-title {
-
     font-size: 56px;
-
-}
+  }
 
   .company-desc {
     max-width: 710px;
     font-size: 28px;
-}
+  }
 
 
-  /* career */
+  /* 인재채용 */
   .career-content-wrap {
     position: relative;
   }
@@ -88,6 +82,7 @@
     align-items: center;
   }
 
+
   /* 서비스 */
   .svc-section {
     padding: 100px 0;
@@ -105,8 +100,6 @@
   .svc-head-desc {
     font-size: 18px;
   }
-
-  .svc-slide-inner {}
 
   .svc-slide-img {
     width: 320px;
@@ -131,13 +124,9 @@
     font-size: 18px;
   }
 
-  .svc-controls {
-    gap: 18px;
-  }
+  .svc-controls {gap: 18px;}
 
-  .svc-pagination {
-    font-size: 24px;
-  }
+  .svc-pagination {font-size: 24px;}
 
   .svc-prev,
   .svc-next {
@@ -146,11 +135,8 @@
   }
 
 
-
   /* 지속가능경영 */
-  .esg-section {
-    height: 600px;
-  }
+  .esg-section {height: 600px;}
 
   .esg-section .esg-main-title {
     top: 13%;
@@ -216,15 +202,6 @@
     flex: none;
   }
 
-  .icon-heart:before,
-  .icon-partner_heart:before,
-  .icon-eco:before,
-  .icon-edit_square:before,
-  .icon-diversity:before,
-  .icon-balance:before {
-    /* font-size: 24px; */
-  }
-
   .esg-section .desc {
     font-size: 16px;
     line-height: 1.45;
@@ -236,7 +213,6 @@
     gap: 12px;
   }
 
-  .esg-page-btn {}
 
   /* NEWS */
   .main-news-sec {
@@ -261,11 +237,8 @@
     font-size: 14px;
   }
 
-  .news-slider {
-  }
-
   .news-list {
-        width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -294,6 +267,7 @@
     font-size: 11px;
   }
 
+  
   /* CAREER */
   .main-career-sec {
     min-height: 620px;
@@ -301,10 +275,6 @@
     display: flex;
     align-items: center;
   }
-
-  .career-content-wrap {}
-
-
 
   .career-title {
     font-size: 40px;
@@ -323,46 +293,28 @@
     display: contents;
   }
 
-
   .btn-circle {
     width: 110px;
     height: 110px;
     font-size: 16px;
   }
-
-
 }
 
 
 /* 4. pc 1280px부터~ */
 @media all and (min-width: 1280px) {
-
   #kcar-main {
     padding-top: 0;
   }
 
   .main-sec {
     min-height: 100vh;
-    /* position: relative;
-    padding: 100px 0;
-    width: 100%;
-    background-color: #fff;
-    overflow: hidden; */
   }
-
-
 
   .main-sec.main-sec-visual {
     position: relative;
     height: 100vh;
   }
-
-  .main-visual-container {
-  }
-
-  .main-visual-video {}
-
-  .v-txt {}
 
   .kcar-title {
     font-size: 96px;
@@ -375,12 +327,9 @@
   }
 
 
-
-
   /* 기업소개 */
   .main-company-sec {
     height: 100vh;
-    /* 섹션 밖으로 나가는 것은 모두 숨김 */
   }
 
   .main-company-sec img {
@@ -415,7 +364,6 @@
     position: relative;
     height: 500vh;
     padding: 0;
-    /* display: flex; */
     align-items: center;
     overflow: visible;
   }
@@ -467,7 +415,6 @@
   .svc-slide-img {
     width: 80%;
     height: 80%;
-
   }
 
   .svc-slide-text {
@@ -506,10 +453,6 @@
     padding-left: 5px;
   }
 
-  .svc-prev,
-  .svc-next {
-    /* display: none; */
-  }
 
   /* 지속가능경영 */
   .esg-section {
@@ -518,9 +461,7 @@
 
   .esg-section .esg-main-title {
     padding-top: 100px;
-    /*헤더 높이만큼 패딩줌*/
     left: 180px;
-    /*패딩만큼 96px할랬는데 왼쪽으로 넘어가는 사이드 바 면적으로 이렇게 진행*/
     font-size: 50px;
   }
 
@@ -626,10 +567,9 @@
   }
 
   .esg-section .side-bar-item {
+    display: none;
     width: 85px;
     height: 100%;
-    display: none;
-    /* 기본 숨김 */
     align-items: flex-end;
     justify-content: center;
     padding: 0 0 160px;
@@ -712,7 +652,6 @@
     overflow: hidden;
     padding-left: 0;
     padding-right: 0;
-
   }
 
   .news-list {
@@ -729,7 +668,6 @@
   .news-link {
     width: 100%;
     padding: 55px 5px;
-    /* align-items: center; */
   }
 
   .news-text {
@@ -744,7 +682,6 @@
   .news-title {
     font-size: 1.4em;
     overflow: hidden;
-    
   }
 
   .news-desc {
@@ -756,9 +693,8 @@
     font-size: 15px;
   }
 
-  /* CAREER */
-  .main-career-sec * {}
 
+  /* CAREER */
   .main-career-sec {
     width: 100%;
     height: 100vh;
@@ -819,49 +755,34 @@
     left: 0;
     bottom: 10%;
   }
-
 }
-
 
 
 /* 5. pc 1600px부터~ */
 @media all and (min-width: 1600px) {
-
   /* news 영역 */
-    .news-item {
-
+  .news-item {
     height: 500px;
-
     justify-content: center;
   }
 
   .news-link {
     padding: 35px 25px;
   }
-.news-title {
-
+  
+  .news-title {
     font-size: 1.6em;
-
-}
-
-
-
-
-.news-desc {
-
-    font-size: 1.2em;
-
-}
-
-
-
-
-}
-
-/* 6. pc 1920px부터~ */
-@media all and (min-width: 1920px) {
-    .svc-pagination {
-    left: 30%;
   }
 
+  .news-desc {
+    font-size: 1.2em;
+  }
+}
+
+
+/* 6. pc 1920px부터~ */
+@media all and (min-width: 1920px) { 
+  .svc-pagination {
+    left: 30%;
+  }
 }
